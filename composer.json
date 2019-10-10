@@ -1,0 +1,40 @@
+{
+    "name": "worldline/sips-office-sdk",
+    "description": "This library simplifies the use of Sips 2.O, the e-payments API.",
+    "type": "library",
+    "homepage": "https://github.com/nicolasros/sips-office-sdk-php",
+    "license": "MIT",
+    "keywords": [
+        "Sips",
+        "Worldline",
+        "PSP",
+        "Bancontact",
+        "Payments"
+    ],
+    "authors": [
+        {
+            "name": "Nicolas Ros",
+            "email": "supportsips-benelux@worldline.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=7.1.0",
+        "guzzlehttp/guzzle": "@stable",
+        "symfony/serializer": "^4.3",
+        "symfony/property-access": "^4.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "@stable"
+    },
+    "autoload": {
+        "psr-4": {
+            "Worldline\\Sips\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Worldline\\Sips\\Tests\\": "tests/"
+        }
+    }
+}
