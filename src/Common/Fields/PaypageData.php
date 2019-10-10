@@ -3,8 +3,6 @@
 namespace Worldline\Sips\Common\Fields;
 
 
-use Worldline\Sips\Common\Fields\Field;
-
 /**
  * Class PaypageData
  *

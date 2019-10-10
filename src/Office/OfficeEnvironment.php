@@ -3,6 +3,7 @@
 namespace Worldline\Sips\Office;
 
 
+use Exception;
 use Worldline\Sips\Common\SipsEnvironment;
 
 class OfficeEnvironment extends SipsEnvironment
@@ -24,7 +25,7 @@ class OfficeEnvironment extends SipsEnvironment
         if (key_exists(strtoupper($environment), $this->possibleEnvironments)) {
             $this->environment = $this->possibleEnvironments[$environment];
         } else {
-            throw new \Exception("Invalid environment. Choose between SIMU, TEST or PROD");
+            throw new Exception("Invalid environment. Choose between SIMU, TEST or PROD");
         }
     }
 }

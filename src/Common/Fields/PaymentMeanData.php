@@ -16,20 +16,20 @@ class PaymentMeanData extends Field
     protected $bcmcMobile;
 
     /**
-     * @return \Worldline\Sips\Common\Fields\BcmcMobile|null
+     * @return BcmcMobile|null
      */
-    public function getBcmcMobile(): ?\Worldline\Sips\Common\Fields\BcmcMobile
+    public function getBcmcMobile(): ?BcmcMobile
     {
         return $this->bcmcMobile;
     }
 
     /**
-     * @param \Worldline\Sips\Common\Fields\BcmcMobile|null $bcmcMobile
+     * @param BcmcMobile|null $bcmcMobile
      *
      * @return PaymentMeanData
      */
     public function setBcmcMobile(
-        ?\Worldline\Sips\Common\Fields\BcmcMobile $bcmcMobile
+        ?BcmcMobile $bcmcMobile
     ): PaymentMeanData {
         $this->bcmcMobile = $bcmcMobile;
 

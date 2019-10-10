@@ -56,7 +56,7 @@ class ShoppingCartDetail extends Field
     /**
      * @param int|null $discountAmount
      *
-     * @return ShoppingCartDetail
+     * @return \Worldline\Sips\Common\Fields\ShoppingCartDetail
      */
     public function setDiscountAmount(?int $discountAmount): ShoppingCartDetail
     {

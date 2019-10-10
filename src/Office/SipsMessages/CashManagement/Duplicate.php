@@ -23,186 +23,232 @@ use Worldline\Sips\Common\SipsMessages\SipsMessage;
  */
 class Duplicate extends SipsMessage
 {
+    
     /**
      * @var string
      */
     private $serviceUrl;
+    
     /**
      * @var null|int
      */
     protected $amount;
+    
     /**
      * @var null|int
      */
     protected $captureDay;
+    
     /**
      * @var null|string
      */
     protected $captureMode;
+    
     /**
      * @var null|string
      */
     protected $currencyCode;
+    
     /**
      * @var null|string
      */
     protected $customerEmail;
+    
     /**
      * @var null|string
      */
     protected $customerId;
+    
     /**
      * @var null|string
      */
     protected $customerIpAddress;
+    
     /**
      * @var null|FraudData
      */
     protected $fraudData;
+    
     /**
      * @var null|string
      */
     protected $fromTransactionReference;
+    
     /**
      * @var null|string
      */
     protected $merchantId;
+    
     /**
      * @var null|string
      */
     protected $merchantTransactionDateTime;
+    
     /**
      * @var null|string
      */
     protected $orderChannel;
+    
     /**
      * @var null|string
      */
     protected $orderId;
+    
     /**
      * @var null|string
      */
     protected $interfaceVersion;
+    
     /**
      * @var null|string
      */
     protected $returnContext;
+    
     /**
      * @var null|string
      */
     protected $transactionReference;
+    
     /**
      * @var null|string
      */
     protected $transactionOrigin;
+    
     /**
      * @var null|string
      */
     protected $fromMerchantId;
+    
     /**
      * @var null|Address
      */
     protected $deliveryAddress;
+    
     /**
      * @var null|Contact
      */
     protected $deliveryContact;
+    
     /**
      * @var null|Address
      */
     protected $billingAddress;
+    
     /**
      * @var null|Contact
      */
     protected $billingContact;
+    
     /**
      * @var null|Address
      */
     protected $customerAddress;
+    
     /**
      * @var null|Contact
      */
     protected $customerContact;
+    
     /**
      * @var null|CustomerData
      */
     protected $customerData;
+    
     /**
      * @var null|string
      */
     protected $statementReference;
+    
     /**
      * @var null|DeliveryData
      */
     protected $deliveryData;
+    
     /**
      * @var null|ShoppingCartDetail
      */
     protected $shoppingCartDetail;
+    
     /**
      * @var null|S10TransactionReference
      */
     protected $s10TransactionReference;
+    
     /**
      * @var null|S10TransactionReference
      */
     protected $s10FromTransactionReference;
+    
     /**
      * @var null|PaymentMeanData
      */
     protected $paymentMeanData;
+    
     /**
      * @var null|string
      */
     protected $intermediateServiceProviderId;
+    
     /**
      * @var null|string
      */
     protected $seal;
+    
     /**
      * @var null|string
      */
     protected $keyVersion;
+    
     /**
      * @var null|string
      */
     protected $sealAlgorithm;
+    
     /**
      * @var null|string
      */
     protected $subMerchantId;
+    
     /**
      * @var null|string
      */
     protected $subMerchantShortName;
+    
     /**
      * @var null|string
      */
     protected $subMerchantCategoryCode;
+    
     /**
      * @var null|string
      */
     protected $subMerchantLegalId;
+    
     /**
      * @var null|Address
      */
     protected $subMerchantAddress;
+    
     /**
      * @var null|Address
      */
     protected $holderAddress;
+    
     /**
      * @var null|Contact
      */
     protected $holderContact;
+    
     /**
      * @var null|AuthenticationData
      */
     protected $authenticationData;
+    
     /**
      * @var null|TravelContext
      */
     protected $travelContext;
+    
     /**
      * @var null|OrderContext
      */

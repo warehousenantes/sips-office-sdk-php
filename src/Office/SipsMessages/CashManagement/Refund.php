@@ -52,7 +52,7 @@ class Refund extends SipsMessage
     protected $operationOrigin;
     
     /**
-     * @var null|string
+     * @var null|PaymentMeanData
      */
     protected $paymentMeanData;
     
@@ -229,19 +229,19 @@ class Refund extends SipsMessage
     }
 
     /**
-     * @return string|null
+     * @return PaymentMeanData|null
      */
-    public function getPaymentMeanData(): ?string
+    public function getPaymentMeanData(): ?PaymentMeanData
     {
         return $this->paymentMeanData;
     }
 
     /**
-     * @param string|null $paymentMeanData
+     * @param PaymentMeanData|null $paymentMeanData
      *
      * @return Refund
      */
-    public function setPaymentMeanData(?string $paymentMeanData): Refund
+    public function setPaymentMeanData(?PaymentMeanData $paymentMeanData): Refund
     {
         $this->paymentMeanData = $paymentMeanData;
 

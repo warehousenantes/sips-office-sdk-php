@@ -12,106 +12,132 @@ use Worldline\Sips\Common\SipsMessages\SipsMessage;
  */
 class DuplicateResponse extends SipsMessage
 {
+    
     /**
      * @var null|string
      */
     protected $acquirerResponseCode;
+    
     /**
      * @var null|string
      */
     protected $authorisationId;
+    
     /**
      * @var null|string
      */
     protected $complementaryCode;
+    
     /**
      * @var null|string
      */
     protected $complementaryInfo;
+    
     /**
      * @var null|string
      */
     protected $maskedPan;
+    
     /**
      * @var null|string
      */
     protected $panExpiryDate;
+    
     /**
      * @var null|string
      */
     protected $paymentMeanBrand;
+    
     /**
      * @var null|string
      */
     protected $scoreValue;
+    
     /**
      * @var null|string
      */
     protected $scoreColor;
+    
     /**
      * @var null|string
      */
     protected $scoreInfo;
+    
     /**
      * @var null|string
      */
     protected $scoreProfile;
+    
     /**
      * @var null|string
      */
     protected $scoreThreshold;
+    
     /**
      * @var null|string
      */
     protected $responseCode;
+    
     /**
      * @var null|string
      */
     protected $transactionDateTime;
+    
     /**
      * @var null|array
      */
     protected $s10TransactionReference;
+    
     /**
      * @var null|string
      */
     protected $transactionReference;
+    
     /**
      * @var null|array
      */
     protected $cardData;
+    
     /**
      * @var null|string
      */
     protected $seal;
+    
     /**
      * @var null|string
      */
     protected $paymentMeanBrandSelectionStatus;
+    
     /**
      * @var null|string
      */
     protected $preAuthorisationProfile;
+    
     /**
      * @var null|string
      */
     protected $preAuthorisationProfileValue;
+    
     /**
      * @var null|array
      */
     protected $preAuthorisationRuleResultList;
+    
     /**
      * @var null|string
      */
     protected $transactionPlatform;
+    
     /**
      * @var null|string
      */
     protected $avsPostcodeResponseCode;
+    
     /**
      * @var null|string
      */
     protected $avsAddressResponseCode;
+    
     /**
      * @var null|string
      */

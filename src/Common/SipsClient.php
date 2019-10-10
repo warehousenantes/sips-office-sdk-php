@@ -4,6 +4,7 @@
 namespace Worldline\Sips\Common;
 
 
+use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Request;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
@@ -215,13 +216,13 @@ class SipsClient
         $paymentMeanId = "1",
         string $statementReference = null,
         string $transactionReference = null,
-        string $orderChannel = "INTERNET"
+        string $orderChannel = null
     ): WalletOrderResponse {
         $walletOrder = new WalletOrder();
-        $walletOrder->setAmount($amount);
-        $walletOrder->setCurrencyCode($currencyCode);
-        $walletOrder->setMerchantWalletId($merchantWalletId);
-        $walletOrder->setPaymentMeanId($paymentMeanId);
+        $walletOrder->setAmount($amount)
+          ->setCurrencyCode($currencyCode)
+          ->setMerchantWalletId($merchantWalletId)
+          ->setPaymentMeanId($paymentMeanId);
         if (isset($statementReference)) {
             $walletOrder->setStatementReference($statementReference);
         }
@@ -229,7 +230,13 @@ class SipsClient
             $walletOrder->setTransactionReference($transactionReference);
         }
         $walletOrder->setOrderChannel($orderChannel);
-        $result = $this->send($walletOrder);
+        try {
+            $result = $this->send($walletOrder);
+        } catch (Exception $e) {
+            $result = new WalletOrderResponse();
+            $result->setErrorFieldName("Seal: seal does not match")
+                ->setResponseCode("34");
+        }
 
         return $result;
     }
@@ -332,7 +339,7 @@ class SipsClient
             $_POST['Data'],
             $this->getSecretKey()
         )) {
-            throw new \Exception(
+            throw new Exception(
                 "Invalid seal in response. Response not trusted."
             );
         } else {
@@ -411,13 +418,13 @@ class SipsClient
 
                 return $response;
             } else {
-                throw new \Exception(
+                throw new Exception(
                     "Transaction is in a non-refundable state. Status : ".$transactionInfo->getTransactionStatus(
                     )
                 );
             }
         } else {
-            throw new \Exception(
+            throw new Exception(
                 "TransactionData could not be fetched. getTransDataResponseCode =  ".$transactionInfo->getGetTransDataResponseCode(
                 )
             );
@@ -510,7 +517,13 @@ class SipsClient
         $request = new GetPaymentMeanData();
         $request->setMerchantWalletId($merchantWalletId)
             ->setPaymentMeanId($paymentMeanId);
-        $result = $this->send($request);
+        try {
+            $result = $this->send($request);
+        } catch (Exception $e) {
+            $result = new GetPaymentMeanDataResponse();
+            $result->setErrorFieldName("Seal: seal does not match")
+                ->setWalletResponseCode("34");
+        }
 
         return $result;
     }
@@ -559,7 +572,7 @@ class SipsClient
         $seal = $_POST['Seal'];
         $sealCalculator = new PostSealCalculator();
         if (!$sealCalculator->isCorrectSeal($seal, $data, $this->secretKey)) {
-            throw new \Exception(
+            throw new Exception(
                 "Invalid seal in response. Response not trusted."
             );
         }
@@ -606,7 +619,7 @@ class SipsClient
                 $this->getSecretKey()
             );
             if (!$validSeal) {
-                throw new \Exception(
+                throw new Exception(
                     "Invalid seal in response. Response not trusted."
                 );
             }

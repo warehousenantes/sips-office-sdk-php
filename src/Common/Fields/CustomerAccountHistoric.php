@@ -9,36 +9,44 @@ namespace Worldline\Sips\Common\Fields;
  */
 class CustomerAccountHistoric extends Field
 {
-    /**
-     *@var null|string
+    
+     /**
+     * @var null|string
      */
     protected $creationDate;
-    /**
-     *@var null|int
+    
+     /**
+     * @var null|int
      */
     protected $numberOfAttemptsAddCard24Hours;
-    /**
-     *@var null|int
+    
+     /**
+     * @var null|int
      */
     protected $numberOfPurchase;
-    /**
-     *@var null|int
+    
+     /**
+     * @var null|int
      */
     protected $numberOfPurchase180Days;
-    /**
-     *@var null|int
+    
+     /**
+     * @var null|int
      */
     protected $numberOfTransaction24Hours;
-    /**
-     *@var null|int
+    
+     /**
+     * @var null|int
      */
     protected $suspiciousActivityIndicator;
-    /**
-     *@var null|string
+    
+     /**
+     * @var null|string
      */
     protected $firstPurchaseDate;
-    /**
-     *@var null|string
+    
+     /**
+     * @var null|string
      */
     protected $lastPurchaseDate;
 

@@ -12,37 +12,37 @@ use Worldline\Sips\Common\SipsMessages\SipsMessage;
  */
 class WalletManagementInitResponse extends SipsMessage
 {
-     /**
+    /**
      * @var null|string
      */
     protected $redirectionData;
     
-     /**
+    /**
      * @var null|string
      */
     protected $redirectionStatusCode;
     
-     /**
+    /**
      * @var null|string
      */
     protected $redirectionStatusMessage;
     
-     /**
+    /**
      * @var null|string
      */
     protected $redirectionUrl;
     
-     /**
+    /**
      * @var null|string
      */
     protected $redirectionVersion;
     
-     /**
+    /**
      * @var null|string
      */
     protected $seal;
     
-     /**
+    /**
      * @var null|string
      */
     protected $errorfieldName;

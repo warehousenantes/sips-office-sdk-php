@@ -12,43 +12,43 @@ namespace Worldline\Sips\Common\Fields;
 class CustomerData extends Field
 {
 
-    /**
-     *@var null|string
+     /**
+     * @var null|string
      */
     protected $birthCity;
 
-    /**
-     *@var null|string
+     /**
+     * @var null|string
      */
     protected $birthCountry;
-
-    /**
-     *@var null|string
+    
+     /**
+     * @var null|string
      */
     protected $birthDate;
 
-    /**
-     *@var null|string
+     /**
+     * @var null|string
      */
     protected $birthZipCode;
-
-    /**
-     *@var null|string
+    
+     /**
+     * @var null|string
      */
     protected $nationalityCountry;
-
-    /**
-     *@var null|string
+    
+     /**
+     * @var null|string
      */
     protected $newPwd;
-
-    /**
-     *@var null|string
+    
+     /**
+     * @var null|string
      */
     protected $pwd;
 
-    /**
-     *@var null|string
+     /**
+     * @var null|string
      */
     protected $maidenName;
 

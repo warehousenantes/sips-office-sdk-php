@@ -37,6 +37,7 @@ class JsonSealCalculator
     /**
      * @param string $sealData
      * @param string $secretKey
+     *
      * @return string
      */
     private function encrypt(string $sealData, string $secretKey): string
@@ -48,7 +49,8 @@ class JsonSealCalculator
     }
 
     /**
-     * @param array $array
+     * @param SipsMessage $array
+     *
      * @return string
      */
     public function getSealData(SipsMessage $array): string
@@ -59,6 +61,7 @@ class JsonSealCalculator
     /**
      * @param SipsMessage $sipsResponse
      * @param $secretKey
+     *
      * @return bool
      */
     public function isCorrectSeal(SipsMessage $sipsResponse, $secretKey): bool

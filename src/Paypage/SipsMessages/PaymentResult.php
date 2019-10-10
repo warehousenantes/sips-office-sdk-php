@@ -462,7 +462,8 @@ class PaymentResult extends SipsMessage
     protected $walletType;
 
     /**
-     * PaypageResult constructor.
+     * PaymentResult constructor.
+     *
      * @param string $data
      */
     public function __construct(string $data)

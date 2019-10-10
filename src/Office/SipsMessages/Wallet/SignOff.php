@@ -13,42 +13,42 @@ use Worldline\Sips\Common\SipsMessages\SipsMessage;
 class SignOff extends SipsMessage
 {
     
-     /**
+    /**
      * @var string
      */
     private $serviceUrl;
     
-     /**
+    /**
      * @var null|string
      */
     protected $interfaceVersion;
     
-     /**
+    /**
      * @var null|string
      */
     protected $intermediateServiceProviderId;
     
-     /**
+    /**
      * @var null|int
      */
     protected $keyVersion;
     
-     /**
+    /**
      * @var null|string
      */
     protected $merchantId;
     
-     /**
+    /**
      * @var null|string
      */
     protected $merchantWalletId;
     
-     /**
+    /**
      * @var null|string
      */
     protected $seal;
     
-     /**
+    /**
      * @var null|string
      */
     protected $sealAlgorithm;

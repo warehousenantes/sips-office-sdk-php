@@ -439,7 +439,7 @@ class PaymentInit extends SipsMessage
     protected $subMerchantContractNumber;
 
     /**
-     * @var null|string
+     * @var null|CustomerAccountHistoric
      */
     protected $customerAccountHistoric;
 
@@ -2128,19 +2128,19 @@ class PaymentInit extends SipsMessage
     }
 
     /**
-     * @return string|null
+     * @return CustomerAccountHistoric|null
      */
-    public function getCustomerAccountHistoric(): ?string
+    public function getCustomerAccountHistoric(): ?CustomerAccountHistoric
     {
         return $this->customerAccountHistoric;
     }
 
     /**
-     * @param string|null $customerAccountHistoric
+     * @param CustomerAccountHistoric|null $customerAccountHistoric
      *
      * @return PaymentInit
      */
-    public function setCustomerAccountHistoric(?string $customerAccountHistoric
+    public function setCustomerAccountHistoric(?CustomerAccountHistoric $customerAccountHistoric
     ): PaymentInit {
         $this->customerAccountHistoric = $customerAccountHistoric;
 

@@ -24,277 +24,277 @@ use Worldline\Sips\Common\SipsMessages\SipsMessage;
  */
 class CardOrder extends SipsMessage
 {
-     /**
+    /**
      * @var string
      */
     private $serviceUrl;
     
-     /**
+    /**
      * @var null|int
      */
     protected $amount;
     
-     /**
+    /**
      * @var null|int
      */
     protected $captureDay;
     
-     /**
+    /**
      * @var null|string
      */
     protected $captureMode;
     
-     /**
+    /**
      * @var null|string
      */
     protected $cardCSCValue;
     
-     /**
+    /**
      * @var null|string
      */
     protected $cardEffectiveDate;
     
-     /**
+    /**
      * @var null|string
      */
     protected $cardExpiryDate;
     
-     /**
+    /**
      * @var null|string
      */
     protected $cardNumber;
     
-     /**
+    /**
      * @var null|string
      */
     protected $cardSeqNumber;
     
-     /**
+    /**
      * @var null|string
      */
     protected $currencyCode;
     
-     /**
+    /**
      * @var null|string
      */
     protected $customerId;
     
-     /**
+    /**
      * @var null|string
      */
     protected $customerIpAddress;
     
-     /**
+    /**
      * @var null|FraudData
      */
     protected $fraudData;
     
-     /**
+    /**
      * @var null|string
      */
     protected $merchantId;
     
-     /**
+    /**
      * @var null|string
      */
     protected $merchantTransactionDateTime;
     
-     /**
+    /**
      * @var null|string
      */
     protected $orderChannel;
     
-     /**
+    /**
      * @var null|string
      */
     protected $orderId;
     
-     /**
+    /**
      * @var null|string
      */
     protected $interfaceVersion;
     
-     /**
+    /**
      * @var null|string
      */
     protected $returnContext;
     
-     /**
+    /**
      * @var null|string
      */
     protected $transactionReference;
     
-     /**
+    /**
      * @var null|string
      */
     protected $transactionOrigin;
     
-     /**
+    /**
      * @var null|Address
      */
     protected $billingAddress;
     
-     /**
+    /**
      * @var null|Contact
      */
     protected $billingContact;
     
-     /**
+    /**
      * @var null|Address
      */
     protected $customerAddress;
     
-     /**
+    /**
      * @var null|Contact
      */
     protected $customerContact;
     
-     /**
+    /**
      * @var null|Address
      */
     protected $deliveryAddress;
     
-     /**
+    /**
      * @var null|Contact
      */
     protected $deliveryContact;
     
-     /**
+    /**
      * @var null|DeliveryData
      */
     protected $deliveryData;
     
-     /**
+    /**
      * @var null|Address
      */
     protected $holderAddress;
     
-     /**
+    /**
      * @var null|Contact
      */
     protected $holderContact;
     
-     /**
+    /**
      * @var null|CustomerData
      */
     protected $customerData;
     
-     /**
+    /**
      * @var null|AuthenticationData
      */
     protected $authenticationData;
     
-     /**
+    /**
      * @var null|string
      */
     protected $invoiceReference;
     
-     /**
+    /**
      * @var null|string
      */
     protected $statementReference;
     
-     /**
+    /**
      * @var null|string
      */
     protected $paymentPattern;
     
-     /**
+    /**
      * @var null|string
      */
     protected $panType;
     
-     /**
+    /**
      * @var null|string
      */
     protected $paymentMeanBrand;
     
-     /**
+    /**
      * @var null|PaymentMeanData
      */
     protected $paymentMeanData;
     
-     /**
+    /**
      * @var null|HolderData
      */
     protected $holderData;
     
-     /**
+    /**
      * @var null|S10TransactionReference
      */
     protected $s10TransactionReference;
     
-     /**
+    /**
      * @var null|array
      */
     protected $riskManagementCustomDataList;
     
-     /**
+    /**
      * @var null|ShoppingCartDetail
      */
     protected $shoppingCartDetail;
     
-     /**
+    /**
      * @var null|string
      */
     protected $intermediateServiceProviderId;
     
-     /**
+    /**
      * @var null|string
      */
     protected $seal;
     
-     /**
+    /**
      * @var null|string
      */
     protected $keyVersion;
     
-     /**
+    /**
      * @var null|string
      */
     protected $sealAlgorithm;
     
-     /**
+    /**
      * @var null|string
      */
     protected $paymentMeanBrandSelectionStatus;
     
-     /**
+    /**
      * @var null|string
      */
     protected $subMerchantId;
     
-     /**
+    /**
      * @var null|string
      */
     protected $subMerchantShortName;
     
-     /**
+    /**
      * @var null|string
      */
     protected $subMerchantCategoryCode;
     
-     /**
+    /**
      * @var null|string
      */
     protected $subMerchantLegalId;
     
-     /**
+    /**
      * @var null|Address
      */
     protected $subMerchantAddress;
     
-     /**
+    /**
      * @var null|string
      */
     protected $customerLanguage;
     
-     /**
+    /**
      * @var null|TravelContext
      */
     protected $travelContext;
     
-     /**
+    /**
      * @var null|OrderContext
      */
     protected $orderContext;

@@ -56,6 +56,7 @@ class CardData extends Field
 
     /**
      * @param string $cardProductCode
+     *
      * @return CardData
      */
     public function setCardProductCode(string $cardProductCode): CardData
@@ -74,6 +75,7 @@ class CardData extends Field
 
     /**
      * @param string $cardProductName
+     *
      * @return CardData
      */
     public function setCardProductName(string $cardProductName): CardData
@@ -92,6 +94,7 @@ class CardData extends Field
 
     /**
      * @param string $cardProductProfile
+     *
      * @return CardData
      */
     public function setCardProductProfile(string $cardProductProfile): CardData
@@ -110,6 +113,7 @@ class CardData extends Field
 
     /**
      * @param string $cardScheme
+     *
      * @return CardData
      */
     public function setCardScheme(string $cardScheme): CardData
@@ -128,6 +132,7 @@ class CardData extends Field
 
     /**
      * @param string $issuerCode
+     *
      * @return CardData
      */
     public function setIssuerCode(string $issuerCode): CardData
@@ -146,6 +151,7 @@ class CardData extends Field
 
     /**
      * @param string $issuerCountryCode
+     *
      * @return CardData
      */
     public function setIssuerCountryCode(string $issuerCountryCode): CardData
@@ -164,6 +170,7 @@ class CardData extends Field
 
     /**
      * @param string $cardProductUsageLabel
+     *
      * @return CardData
      */
     public function setCardProductUsageLabel(string $cardProductUsageLabel): CardData

@@ -12,62 +12,62 @@ use Worldline\Sips\Common\SipsMessages\SipsMessage;
  */
 class CardValidateAuthenticationAndOrder extends SipsMessage
 {
-     /**
+    /**
      * @var string
      */
     private $serviceUrl;
     
-     /**
+    /**
      * @var null|string
      */
     protected $interfaceVersion="";
     
-     /**
+    /**
      * @var null|string
      */
     protected $messageVersion="";
     
-     /**
+    /**
      * @var null|string
      */
     protected $merchantId="";
     
-     /**
+    /**
      * @var null|string
      */
     protected $redirectionData="";
     
-     /**
+    /**
      * @var null|string
      */
     protected $transactionReference="";
     
-     /**
+    /**
      * @var null|string
      */
     protected $s10TransactionReference="";
     
-     /**
+    /**
      * @var null|string
      */
     protected $paResMessage="";
     
-     /**
+    /**
      * @var null|string
      */
     protected $intermediateServiceProviderId="";
     
-     /**
+    /**
      * @var null|string
      */
     protected $seal="";
     
-     /**
+    /**
      * @var null|string
      */
     protected $keyVersion="";
     
-     /**
+    /**
      * @var null|string
      */
     protected $sealAlgorithm="";

@@ -12,237 +12,237 @@ use Worldline\Sips\Common\SipsMessages\SipsMessage;
  */
 class CardOrderResponse extends SipsMessage
 {
-     /**
+    /**
      * @var null|string
      */
     protected $acquirerResponseCode;
     
-     /**
+    /**
      * @var null|string
      */
     protected $authorisationId;
     
-     /**
+    /**
      * @var null|string
      */
     protected $cardScheme;
     
-     /**
+    /**
      * @var null|string
      */
     protected $complementaryCode;
     
-     /**
+    /**
      * @var null|string
      */
     protected $complementaryInfo;
     
-     /**
+    /**
      * @var null|string
      */
     protected $guaranteeIndicator;
     
-     /**
+    /**
      * @var null|string
      */
     protected $holderAuthentRelegationCode;
     
-     /**
+    /**
      * @var null|string
      */
     protected $holderAuthentStatus;
     
-     /**
+    /**
      * @var null|string
      */
     protected $maskedPan;
     
-     /**
+    /**
      * @var null|string
      */
     protected $responseCode;
     
-     /**
+    /**
      * @var null|string
      */
     protected $returnContext;
     
-     /**
+    /**
      * @var null|string
      */
     protected $scoreColor;
     
-     /**
+    /**
      * @var null|string
      */
     protected $scoreInfo;
     
-     /**
+    /**
      * @var null|string
      */
     protected $scoreProfile;
     
-     /**
+    /**
      * @var null|string
      */
     protected $scoreThreshold;
     
-     /**
+    /**
      * @var null|string
      */
     protected $scoreValue;
     
-     /**
+    /**
      * @var null|string
      */
     protected $transactionDateTime;
     
-     /**
+    /**
      * @var null|string
      */
     protected $tokenPan;
     
-     /**
+    /**
      * @var null|string
      */
     protected $cardCSCResultCode;
     
-     /**
+    /**
      * @var null|string
      */
     protected $avsPostcodeResponseCode;
     
-     /**
+    /**
      * @var null|string
      */
     protected $avsAddressResponseCode;
     
-     /**
+    /**
      * @var null|string
      */
     protected $recurringResponseCode;
     
-     /**
+    /**
      * @var null|string
      */
     protected $acquirerResponseIdentifier;
     
-     /**
+    /**
      * @var null|string
      */
     protected $acquirerResponseMessage;
     
-     /**
+    /**
      * @var null|string
      */
     protected $paymentMeanTradingName;
     
-     /**
+    /**
      * @var null|array
      */
     protected $paymentMeanData;
     
-     /**
+    /**
      * @var null|array
      */
     protected $s10TransactionReference;
     
-     /**
+    /**
      * @var null|string
      */
     protected $transactionReference;
     
-     /**
+    /**
      * @var null|array
      */
     protected $cardData;
     
-     /**
+    /**
      * @var null|string
      */
     protected $seal;
     
-     /**
+    /**
      * @var null|string
      */
     protected $preAuthorisationProfile;
     
-     /**
+    /**
      * @var null|string
      */
     protected $preAuthorisationProfileValue;
     
-     /**
+    /**
      * @var null|string
      */
     protected $preAuthorisationRuleResultList;
     
-     /**
+    /**
      * @var null|string
      */
     protected $paymentMeanBrandSelectionStatus;
     
-     /**
+    /**
      * @var null|string
      */
     protected $captureDay;
     
-     /**
+    /**
      * @var null|string
      */
     protected $captureMode;
     
-     /**
+    /**
      * @var null|string
      */
     protected $transactionPlatform;
     
-     /**
+    /**
      * @var null|string
      */
     protected $authorMessageReference;
     
-     /**
+    /**
      * @var null|string
      */
     protected $authorisationTypeLabel;
     
-     /**
+    /**
      * @var null|string
      */
     protected $acceptanceSystemApplicationId;
     
-     /**
+    /**
      * @var null|string
      */
     protected $errorFieldName;
     
-     /**
+    /**
      * @var null|string
      */
     protected $panEntryMode;
     
-     /**
+    /**
      * @var null|string
      */
     protected $walletType;
     
-     /**
+    /**
      * @var null|string
      */
     protected $issuerWalletInformation;
     
-     /**
+    /**
      * @var null|string
      */
     protected $paymentMeanBrand;
     
-     /**
+    /**
      * @var null|string
      */
     protected $intermediateServiceProviderOperationId;
     
-     /**
+    /**
      * @var null|string
      */
     protected $orderId;

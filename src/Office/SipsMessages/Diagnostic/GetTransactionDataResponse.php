@@ -12,277 +12,277 @@ use Worldline\Sips\Common\SipsMessages\SipsMessage;
  */
 class GetTransactionDataResponse extends SipsMessage
 {
-     /**
+    /**
      * @var null|string
      */
     protected $automaticResponseStatus;
     
-     /**
+    /**
      * @var null|string
      */
     protected $authorisationId;
     
-     /**
+    /**
      * @var null|string
      */
     protected $captureLimitDate;
     
-     /**
+    /**
      * @var null|string
      */
     protected $paymentMeanType;
     
-     /**
+    /**
      * @var null|string
      */
     protected $paymentMeanBrand;
     
-     /**
+    /**
      * @var null|string
      */
     protected $currencyCode;
     
-     /**
+    /**
      * @var null|string
      */
     protected $currentAmount;
     
-     /**
+    /**
      * @var null|string
      */
     protected $customerId;
     
-     /**
+    /**
      * @var null|string
      */
     protected $customerIpAddress;
     
-     /**
+    /**
      * @var null|string
      */
     protected $lastOperationDateTime;
     
-     /**
+    /**
      * @var null|string
      */
     protected $lastOperationName;
     
-     /**
+    /**
      * @var null|string
      */
     protected $orderId;
     
-     /**
+    /**
      * @var null|string
      */
     protected $originAmount;
     
-     /**
+    /**
      * @var null|string
      */
     protected $transactionDateTime;
     
-     /**
+    /**
      * @var null|string
      */
     protected $responseCode;
     
-     /**
+    /**
      * @var null|string
      */
     protected $tokenPan;
     
-     /**
+    /**
      * @var null|string
      */
     protected $transactionStatus;
     
-     /**
+    /**
      * @var null|string
      */
     protected $orderChannel;
     
-     /**
+    /**
      * @var null|string
      */
     protected $paymentPattern;
     
-     /**
+    /**
      * @var null|string
      */
     protected $merchantId;
     
-     /**
+    /**
      * @var null|string
      */
     protected $panEntryMode;
     
-     /**
+    /**
      * @var null|string
      */
     protected $walletType;
     
-     /**
+    /**
      * @var null|string
      */
     protected $holderAuthentMethod;
     
-     /**
+    /**
      * @var null|string
      */
     protected $holderAuthentStatus;
     
-     /**
+    /**
      * @var null|string
      */
     protected $holderAuthentProgram;
     
-     /**
+    /**
      * @var null|string
      */
     protected $dccStatus;
     
-     /**
+    /**
      * @var null|string
      */
     protected $remainingAmount;
     
-     /**
+    /**
      * @var null|string
      */
     protected $fromTransactionReference;
     
-     /**
+    /**
      * @var null|string
      */
     protected $maskedPan;
     
-     /**
+    /**
      * @var null|string
      */
     protected $panExpiryDate;
     
-     /**
+    /**
      * @var null|array
      */
     protected $s10TransactionReference;
     
-     /**
+    /**
      * @var null|array
      */
     protected $s10FromTransactionReference;
     
-     /**
+    /**
      * @var null|string
      */
     protected $transactionReference;
     
-     /**
+    /**
      * @var null|array
      */
     protected $cardData;
     
-     /**
+    /**
      * @var null|string
      */
     protected $acquirerResponseMessage;
     
-     /**
+    /**
      * @var null|string
      */
     protected $seal;
     
-     /**
+    /**
      * @var null|string
      */
     protected $complementaryCode;
     
-     /**
+    /**
      * @var null|string
      */
     protected $preAuthenticationColor;
     
-     /**
+    /**
      * @var null|string
      */
     protected $preAuthenticationProfile;
     
-     /**
+    /**
      * @var null|string
      */
     protected $preAuthenticationProfileValue;
     
-     /**
+    /**
      * @var null|string
      */
     protected $preAuthenticationThreshold;
     
-     /**
+    /**
      * @var null|string
      */
     protected $preAuthenticationValue;
     
-     /**
+    /**
      * @var null|string
      */
     protected $preAuthorisationProfile;
     
-     /**
+    /**
      * @var null|string
      */
     protected $preAuthorisationProfileValue;
     
-     /**
+    /**
      * @var null|string
      */
     protected $scoreColor;
     
-     /**
+    /**
      * @var null|string
      */
     protected $scoreProfile;
     
-     /**
+    /**
      * @var null|string
      */
     protected $scoreThreshold;
     
-     /**
+    /**
      * @var null|string
      */
     protected $scoreValue;
     
-     /**
+    /**
      * @var null|string
      */
     protected $cardCSCResultCode;
     
-     /**
+    /**
      * @var null|string
      */
     protected $avsPostcodeResponseCode;
     
-     /**
+    /**
      * @var null|string
      */
     protected $avsAddressResponseCode;
     
-     /**
+    /**
      * @var null|string
      */
     protected $getTransDataResponseCode;
     
-     /**
+    /**
      * @var null|string
      */
     protected $acquirerResponseCode;
     
-     /**
+    /**
      * @var null|string
      */
     protected $paymentAttemptNumber;
     
-     /**
+    /**
      * @var null|string
      */
     protected $errorFieldName;

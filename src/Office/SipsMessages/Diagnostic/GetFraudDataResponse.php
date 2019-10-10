@@ -12,87 +12,87 @@ use Worldline\Sips\Common\SipsMessages\SipsMessage;
  */
 class GetFraudDataResponse extends SipsMessage
 {
-     /**
+    /**
      * @var null|string
      */
     protected $complementaryCode;
     
-     /**
+    /**
      * @var null|string
      */
     protected $fraudResponseCode;
     
-     /**
+    /**
      * @var null|string
      */
     protected $preAuthenticationColor;
     
-     /**
+    /**
      * @var null|string
      */
     protected $preAuthenticationProfile;
     
-     /**
+    /**
      * @var null|string
      */
     protected $preAuthenticationProfileValue;
     
-     /**
+    /**
      * @var null|array
      */
     protected $preAuthenticationRuleResultList;
     
-     /**
+    /**
      * @var null|string
      */
     protected $preAuthenticationThreshold;
     
-     /**
+    /**
      * @var null|string
      */
     protected $preAuthenticationValue;
     
-     /**
+    /**
      * @var null|string
      */
     protected $preAuthorisationProfile;
     
-     /**
+    /**
      * @var null|string
      */
     protected $preAuthorisationProfileValue;
     
-     /**
+    /**
      * @var null|array
      */
     protected $preAuthorisationRuleResultList;
     
-     /**
+    /**
      * @var null|string
      */
     protected $scoreColor;
     
-     /**
+    /**
      * @var null|string
      */
     protected $scoreProfile;
     
-     /**
+    /**
      * @var null|string
      */
     protected $scoreThreshold;
     
-     /**
+    /**
      * @var null|string
      */
     protected $scoreValue;
     
-     /**
+    /**
      * @var null|string
      */
     protected $seal;
     
-     /**
+    /**
      * @var null|string
      */
     protected $errorFieldName;

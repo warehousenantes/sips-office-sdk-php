@@ -16,167 +16,167 @@ use Worldline\Sips\Common\SipsMessages\SipsMessage;
  */
 class WalletManagementInit extends SipsMessage
 {
-     /**
+    /**
      * @var string
      */
     private $serviceUrl;
     
-     /**
+    /**
      * @var null|string
      */
     protected $automaticResponseURL;
     
-     /**
+    /**
      * @var null|string
      */
     protected $customerId;
     
-     /**
+    /**
      * @var null|string
      */
     protected $customerIpAddress;
     
-     /**
+    /**
      * @var null|string
      */
     protected $customerLAnguage;
     
-     /**
+    /**
      * @var null|string
      */
     protected $intermediateServiceProviderId;
     
-     /**
+    /**
      * @var null|string
      */
     protected $interfaceVersion;
     
-     /**
+    /**
      * @var null|string
      */
     protected $keyVersion;
     
-     /**
+    /**
      * @var null|string
      */
     protected $mandateId;
     
-     /**
+    /**
      * @var null|string
      */
     protected $merchantId;
     
-     /**
+    /**
      * @var null|string
      */
     protected $merchantSessionId;
     
-     /**
+    /**
      * @var null|string
      */
     protected $merchantWalletId;
     
-     /**
+    /**
      * @var null|string
      */
     protected $normalReturnUrl;
     
-     /**
+    /**
      * @var null|string
      */
     protected $paymentMeanBrandList;
     
-     /**
+    /**
      * @var null|string
      */
     protected $paymentMeanData;
     
-     /**
+    /**
      * @var null|string
      */
     protected $requestDateTime;
     
-     /**
+    /**
      * @var null|string
      */
     protected $responseEncoding;
     
-     /**
+    /**
      * @var null|string
      */
     protected $returnContext;
     
-     /**
+    /**
      * @var null|string
      */
     protected $seal;
     
-     /**
+    /**
      * @var null|string
      */
     protected $sealAlgorithm;
     
-     /**
+    /**
      * @var null|string
      */
     protected $templateName;
     
-     /**
+    /**
      * @var null|string
      */
     protected $transactionActors;
     
-     /**
+    /**
      * @var null|array
      */
     protected $walletActionNameList;
     
-     /**
+    /**
      * @var null|FraudData
      */
     protected $fraudData;
     
-     /**
+    /**
      * @var null|Address
      */
     protected $customerAddress;
     
-     /**
+    /**
      * @var null|Contact
      */
     protected $customerContact;
     
-     /**
+    /**
      * @var null|CustomerData
      */
     protected $customerData;
     
-     /**
+    /**
      * @var null|Address
      */
     protected $billingAddress;
     
-     /**
+    /**
      * @var null|Contact
      */
     protected $billingContact;
     
-     /**
+    /**
      * @var null|Address
      */
     protected $deliveryAddress;
     
-     /**
+    /**
      * @var null|Contact
      */
     protected $deliveryContact;
     
-     /**
+    /**
      * @var null|Address
      */
     protected $holderAddress;
     
-     /**
+    /**
      * @var null|Contact
      */
     protected $holderContact;

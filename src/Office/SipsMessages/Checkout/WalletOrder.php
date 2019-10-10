@@ -16,147 +16,182 @@ use Worldline\Sips\Common\SipsMessages\SipsMessage;
  */
 class WalletOrder extends SipsMessage
 {
+    
     /**
      * @var string
      */
     private $serviceUrl;
-
+    
     /**
      * @var int
      */
     protected $amount;
+    
     /**
      * @var int
      */
     protected $captureDay;
+    
     /**
      * @var string
      */
     protected $captureMode;
+    
     /**
      * @var string
      */
     protected $currencyCode;
+    
     /**
      * @var string
      */
     protected $customerId;
+    
     /**
      * @var string
      */
     protected $customerIpAddress;
+    
     /**
      * @var string
      */
     protected $customerLanguage;
+    
     /**
      * @var string
      */
     protected $cardCSCValue;
+    
     /**
      * @var string
      */
     protected $invoiceReference;
+    
     /**
      * @var string
      */
     protected $interfaceVersion;
+    
     /**
      * @var string
      */
     protected $intermediateServiceProviderId;
+    
     /**
      * @var int
      */
     protected $keyVersion;
+    
     /**
      * @var string
      */
     protected $merchantId;
+    
     /**
      * @var string
      */
     protected $merchantTransactionDateTime;
+    
     /**
      * @var string
      */
     protected $merchantWalletId;
+    
     /**
      * @var string
      */
     protected $orderChannel;
+    
     /**
      * @var string
      */
     protected $orderId;
+    
     /**
      * @var string
      */
     protected $paymentMeanId;
+    
     /**
      * @var string
      */
     protected $returnContext;
+    
     /**
      * @var string
      */
     protected $seal;
+    
     /**
      * @var string
      */
     protected $sealAlgorithm;
+    
     /**
      * @var string
      */
     protected $statementReference;
+    
     /**
      * @var string
      */
     protected $transactionOrigin;
+    
     /**
      * @var string
      */
     protected $paymentPattern;
+    
     /**
      * @var Address
      */
     protected $billingAddess;
+    
     /**
      * @var Contact
      */
     protected $billingContact;
+    
     /**
      * @var Address
      */
     protected $customerAddress;
+    
     /**
      * @var Contact
      */
     protected $customerContact;
+    
     /**
      * @var Address
      */
     protected $deliveryAddress;
+    
     /**
      * @var Contact
      */
     protected $deliveryContact;
+    
     /**
      * @var FraudData
      */
     protected $fraudData;
+    
     /**
      * @var Address
      */
     protected $holderAddress;
+    
     /**
      * @var Contact
      */
     protected $holderContact;
+    
     /**
      * @var AuthenticationData
      */
     protected $authenticationData;
+    
     /**
      * @var string
      */

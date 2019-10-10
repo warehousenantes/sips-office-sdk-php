@@ -12,47 +12,47 @@ use Worldline\Sips\Common\SipsMessages\SipsMessage;
  */
 class PanToToken extends SipsMessage
 {
-     /**
+    /**
      * @var string
      */
     private $serviceUrl;
     
-     /**
+    /**
      * @var null|string
      */
     protected $merchantId;
     
-     /**
+    /**
      * @var null|string
      */
     protected $interfaceVersion;
     
-     /**
+    /**
      * @var null|string
      */
     protected $userId;
     
-     /**
+    /**
      * @var null|array
      */
     protected $panDataList;
     
-     /**
+    /**
      * @var null|string
      */
     protected $intermediateServiceProviderId;
     
-     /**
+    /**
      * @var null|string
      */
     protected $seal;
     
-     /**
+    /**
      * @var null|string
      */
     protected $keyVersion;
     
-     /**
+    /**
      * @var null|string
      */
     protected $sealAlgorithm;
