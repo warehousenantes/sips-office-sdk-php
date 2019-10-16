@@ -470,7 +470,7 @@ class SipsClient
      * @param string|null $paymentMeanAlias
      * @param string|null $paymentMeanBrand
      *
-     * @return \Worldline\Sips\Office\SipsMessages\Wallet\AddCardResponse
+     * @return AddCardResponse
      * @throws \Exception
      */
     public function doAddCard(
@@ -498,7 +498,7 @@ class SipsClient
     /**
      * @param string $merchantWalletId
      *
-     * @return \Worldline\Sips\Office\SipsMessages\Wallet\GetWalletDataResponse
+     * @return GetWalletDataResponse
      * @throws \Exception
      */
     public function doGetWalletData(string $merchantWalletId
@@ -532,7 +532,7 @@ class SipsClient
      * @param string $merchantWalletId
      * @param string $paymentMeanId
      *
-     * @return \Worldline\Sips\Office\SipsMessages\Wallet\DeletePaymentMeanResponse
+     * @return DeletePaymentMeanResponse
      * @throws \Exception
      */
     public function doDeletePaymentMean(
@@ -550,7 +550,7 @@ class SipsClient
     /**
      * @param string $mercahntWalletId
      *
-     * @return \Worldline\Sips\Office\SipsMessages\Wallet\SignOffResponse
+     * @return SignOffResponse
      * @throws \Exception
      */
     public function doSignOffWallet(string $mercahntWalletId): SignOffResponse
