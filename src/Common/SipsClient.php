@@ -30,7 +30,6 @@ use Worldline\Sips\Office\SipsMessages\Wallet\AddCard;
 use Worldline\Sips\Office\SipsMessages\Wallet\AddCardResponse;
 use Worldline\Sips\Office\SipsMessages\Wallet\DeletePaymentMean;
 use Worldline\Sips\Office\SipsMessages\Wallet\DeletePaymentMeanResponse;
-use Worldline\Sips\Office\SipsMessages\Wallet\GetPaymentMean;
 use Worldline\Sips\Office\SipsMessages\Wallet\GetPaymentMeanData;
 use Worldline\Sips\Office\SipsMessages\Wallet\GetPaymentMeanDataResponse;
 use Worldline\Sips\Office\SipsMessages\Wallet\GetWalletData;
@@ -144,19 +143,29 @@ class SipsClient
     }
 
     /**
+     * @param bool $prettyPrint
      * @return string
      */
-    public function getLastRequestAsJson(): string
+    public function getLastRequestAsJson($prettyPrint = false): string
     {
-        return $this->lastRequestAsJson;
+        if ($prettyPrint) {
+            return json_encode(json_decode($this->lastRequestAsJson,true),JSON_PRETTY_PRINT);
+        } else {
+            return $this->lastRequestAsJson;
+        }
     }
 
     /**
+     * @param bool $prettyPrint
      * @return string
      */
-    public function getLastResponseAsJson(): string
+    public function getLastResponseAsJson($prettyPrint = false): string
     {
-        return $this->lastResponseAsJson;
+        if ($prettyPrint) {
+            return json_encode(json_decode($this->lastResponseAsJson,true),JSON_PRETTY_PRINT);
+        } else {
+            return $this->lastResponseAsJson;
+        }
     }
 
     /**
@@ -164,6 +173,7 @@ class SipsClient
      * @param string $currencyCode
      * @param string $cardNumber
      * @param string $cardExpiryDate
+     * @param string $cardCSCValue
      * @param string|null $statementReference
      * @param string|null $transactionReference
      * @param string|null $captureMode
@@ -171,24 +181,26 @@ class SipsClient
      * @param string|null $orderChannel
      *
      * @return CardOrderResponse
-     * @throws \Exception
+     * @throws Exception
      */
     public function doCardOrder(
         int $amount,
         string $currencyCode,
         string $cardNumber,
         string $cardExpiryDate,
+        string $cardCSCValue,
+        string $orderChannel = null,
         string $statementReference = null,
-        string $transactionReference = null,
         string $captureMode = null,
         int $captureDay = null,
-        string $orderChannel = null
+        string $transactionReference = null
     ): CardOrderResponse {
         $cardOrder = new CardOrder();
         $cardOrder->setAmount($amount);
         $cardOrder->setCurrencyCode($currencyCode);
         $cardOrder->setCardNumber($cardNumber);
         $cardOrder->setCardExpiryDate($cardExpiryDate);
+        $cardOrder->setCardCSCValue($cardCSCValue);
         if (isset($statementReference)) {
             $cardOrder->setStatementReference($statementReference);
         }
