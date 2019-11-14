@@ -22,7 +22,8 @@
         "php": ">=7.1.0",
         "guzzlehttp/guzzle": "@stable",
         "symfony/serializer": "^4.3",
-        "symfony/property-access": "^4.3"
+        "symfony/property-access": "^4.3",
+      "ext-json": "*"
     },
     "require-dev": {
         "phpunit/phpunit": "@stable"
