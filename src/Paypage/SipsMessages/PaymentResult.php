@@ -55,11 +55,11 @@ class PaymentResult extends SipsMessage
     /**
      * @var null|string
      */
-    protected $autherMessageReference;
+    protected $authorMessageReference;
     /**
      * @var null|string
      */
-    protected $avsAdressResponseCode;
+    protected $avsAddressResponseCode;
     /**
      * @var null|string
      */
@@ -71,7 +71,7 @@ class PaymentResult extends SipsMessage
     /**
      * @var null|string
      */
-    protected $captureLimitData;
+    protected $captureLimitDate;
     /**
      * @var null|string
      */
@@ -95,11 +95,15 @@ class PaymentResult extends SipsMessage
     /**
      * @var null|string
      */
-    protected $cardProductUsageLAbel;
+    protected $cardProductUsageLabel;
     /**
      * @var null|string
      */
     protected $complementaryCode;
+    /**
+     * @var null|string
+     */
+    protected $complementaryInfo;
     /**
      * @var null|string
      */
@@ -155,7 +159,7 @@ class PaymentResult extends SipsMessage
     /**
      * @var null|string
      */
-    protected $dccEchangeRateValidity;
+    protected $dccExchangeRateValidity;
     /**
      * @var null|string
      */
@@ -199,15 +203,15 @@ class PaymentResult extends SipsMessage
     /**
      * @var null|string
      */
+    protected $holderContactEmail;
+    /**
+     * @var null|string
+     */
     protected $holderAuthentStatus;
     /**
      * @var null|string
      */
     protected $holderAuthentType;
-    /**
-     * @var null|string
-     */
-    protected $holderContactEmail;
     /**
      * @var null|string
      */
@@ -287,7 +291,7 @@ class PaymentResult extends SipsMessage
     /**
      * @var null|string
      */
-    protected $merchantTransactionDataTime;
+    protected $merchantTransactionDateTime;
     /**
      * @var null|string
      */
@@ -307,7 +311,7 @@ class PaymentResult extends SipsMessage
     /**
      * @var null|string
      */
-    protected $panExpireDate;
+    protected $panExpiryDate;
     /**
      * @var null|string
      */
@@ -363,7 +367,7 @@ class PaymentResult extends SipsMessage
     /**
      * @var null|string
      */
-    protected $preAuthorisationThreshold;
+    protected $preAuthenticationThreshold;
     /**
      * @var null|string
      */
@@ -399,7 +403,7 @@ class PaymentResult extends SipsMessage
     /**
      * @var null|string
      */
-    protected $s10TransactionIdsList;
+    protected $s10transactionIdsList;
     /**
      * @var null|string
      */
@@ -420,6 +424,10 @@ class PaymentResult extends SipsMessage
      * @var null|string
      */
     protected $scoreValue;
+    /**
+     * @var null|string
+     */
+    protected $secureReference;
     /**
      * @var null|string
      */
@@ -478,7 +486,23 @@ class PaymentResult extends SipsMessage
             $this->$key = $value;
         }
     }
-    
+
+    /**
+     * @return string|null
+     */
+    public function getAcceptanceSystemApplicationId(): ?string
+    {
+        return $this->acceptanceSystemApplicationId;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getAcquirerContractNumber(): ?string
+    {
+        return $this->acquirerContractNumber;
+    }
+
     /**
      * @return string|null
      */
@@ -530,9 +554,33 @@ class PaymentResult extends SipsMessage
     /**
      * @return string|null
      */
-    public function getAvsAdressResponseCode(): ?string
+    public function getAuthorisationId(): ?string
     {
-        return $this->avsAdressResponseCode;
+        return $this->authorisationId;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getAuthorisationTypeLabel(): ?string
+    {
+        return $this->authorisationTypeLabel;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getAuthorMessageReference(): ?string
+    {
+        return $this->authorMessageReference;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getAvsAddressResponseCode(): ?string
+    {
+        return $this->avsAddressResponseCode;
     }
 
     /**
@@ -546,14 +594,6 @@ class PaymentResult extends SipsMessage
     /**
      * @return string|null
      */
-    public function getAuthorisationId(): ?string
-    {
-        return $this->authorisationId;
-    }
-
-    /**
-     * @return string|null
-     */
     public function getCaptureDay(): ?string
     {
         return $this->captureDay;
@@ -562,9 +602,9 @@ class PaymentResult extends SipsMessage
     /**
      * @return string|null
      */
-    public function getCaptureLimitData(): ?string
+    public function getCaptureLimitDate(): ?string
     {
-        return $this->captureLimitData;
+        return $this->captureLimitDate;
     }
 
     /**
@@ -610,9 +650,25 @@ class PaymentResult extends SipsMessage
     /**
      * @return string|null
      */
+    public function getCardProductUsageLabel(): ?string
+    {
+        return $this->cardProductUsageLabel;
+    }
+
+    /**
+     * @return string|null
+     */
     public function getComplementaryCode(): ?string
     {
         return $this->complementaryCode;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getComplementaryInfo(): ?string
+    {
+        return $this->complementaryInfo;
     }
 
     /**
@@ -706,6 +762,14 @@ class PaymentResult extends SipsMessage
     /**
      * @return string|null
      */
+    public function getDccCurrencyCode(): ?string
+    {
+        return $this->dccCurrencyCode;
+    }
+
+    /**
+     * @return string|null
+     */
     public function getDccExchangeRate(): ?string
     {
         return $this->dccExchangeRate;
@@ -714,9 +778,9 @@ class PaymentResult extends SipsMessage
     /**
      * @return string|null
      */
-    public function getDccEchangeRateValidity(): ?string
+    public function getDccExchangeRateValidity(): ?string
     {
-        return $this->dccEchangeRateValidity;
+        return $this->dccExchangeRateValidity;
     }
 
     /**
@@ -741,6 +805,14 @@ class PaymentResult extends SipsMessage
     public function getDccResponseCode(): ?string
     {
         return $this->dccResponseCode;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getDueDate(): ?string
+    {
+        return $this->dueDate;
     }
 
     /**
@@ -794,9 +866,25 @@ class PaymentResult extends SipsMessage
     /**
      * @return string|null
      */
+    public function getHolderContactEmail(): ?string
+    {
+        return $this->holderContactEmail;
+    }
+
+    /**
+     * @return string|null
+     */
     public function getHolderAuthentStatus(): ?string
     {
         return $this->holderAuthentStatus;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getHolderAuthentType(): ?string
+    {
+        return $this->holderAuthentType;
     }
 
     /**
@@ -837,6 +925,14 @@ class PaymentResult extends SipsMessage
     public function getInterfaceVersion(): ?string
     {
         return $this->interfaceVersion;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getIntermediateServiceProviderOperationId(): ?string
+    {
+        return $this->intermediateServiceProviderOperationId;
     }
 
     /**
@@ -946,9 +1042,9 @@ class PaymentResult extends SipsMessage
     /**
      * @return string|null
      */
-    public function getMerchantTransactionDataTime(): ?string
+    public function getMerchantTransactionDateTime(): ?string
     {
-        return $this->merchantTransactionDataTime;
+        return $this->merchantTransactionDateTime;
     }
 
     /**
@@ -986,9 +1082,9 @@ class PaymentResult extends SipsMessage
     /**
      * @return string|null
      */
-    public function getPanExpireDate(): ?string
+    public function getPanExpiryDate(): ?string
     {
-        return $this->panExpireDate;
+        return $this->panExpiryDate;
     }
 
     /**
@@ -1098,9 +1194,9 @@ class PaymentResult extends SipsMessage
     /**
      * @return string|null
      */
-    public function getPreAuthorisationThreshold(): ?string
+    public function getPreAuthenticationThreshold(): ?string
     {
-        return $this->preAuthorisationThreshold;
+        return $this->preAuthenticationThreshold;
     }
 
     /**
@@ -1170,9 +1266,9 @@ class PaymentResult extends SipsMessage
     /**
      * @return string|null
      */
-    public function getS10TransactionIdsList(): ?string
+    public function getS10transactionIdsList(): ?string
     {
-        return $this->s10TransactionIdsList;
+        return $this->s10transactionIdsList;
     }
 
     /**
@@ -1194,6 +1290,14 @@ class PaymentResult extends SipsMessage
     /**
      * @return string|null
      */
+    public function getScoreProfile(): ?string
+    {
+        return $this->scoreProfile;
+    }
+
+    /**
+     * @return string|null
+     */
     public function getScoreThreshold(): ?string
     {
         return $this->scoreThreshold;
@@ -1205,6 +1309,14 @@ class PaymentResult extends SipsMessage
     public function getScoreValue(): ?string
     {
         return $this->scoreValue;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getSecureReference(): ?string
+    {
+        return $this->secureReference;
     }
 
     /**
@@ -1266,6 +1378,14 @@ class PaymentResult extends SipsMessage
     /**
      * @return string|null
      */
+    public function getTransactionPlatform(): ?string
+    {
+        return $this->transactionPlatform;
+    }
+
+    /**
+     * @return string|null
+     */
     public function getTransactionReference(): ?string
     {
         return $this->transactionReference;
@@ -1279,100 +1399,5 @@ class PaymentResult extends SipsMessage
         return $this->walletType;
     }
 
-    /**
-     * @return string|null
-     */
-    public function getAcceptanceSystemApplicationId(): ?string
-    {
-        return $this->acceptanceSystemApplicationId;
-    }
 
-    /**
-     * @return string|null
-     */
-    public function getAcquirerContractNumber(): ?string
-    {
-        return $this->acquirerContractNumber;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getAuthorisationTypeLabel(): ?string
-    {
-        return $this->authorisationTypeLabel;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getAutherMessageReference(): ?string
-    {
-        return $this->autherMessageReference;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getCardProductUsageLAbel(): ?string
-    {
-        return $this->cardProductUsageLAbel;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getDccCurrencyCode(): ?string
-    {
-        return $this->dccCurrencyCode;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getDueDate(): ?string
-    {
-        return $this->dueDate;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getHolderAuthentType(): ?string
-    {
-        return $this->holderAuthentType;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getHolderContactEmail(): ?string
-    {
-        return $this->holderContactEmail;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getIntermediateServiceProviderOperationId(): ?string
-    {
-        return $this->intermediateServiceProviderOperationId;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getScoreProfile(): ?string
-    {
-        return $this->scoreProfile;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getTransactionPlatform(): ?string
-    {
-        return $this->transactionPlatform;
-    }
-    
 }
