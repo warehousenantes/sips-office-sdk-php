@@ -4,6 +4,7 @@
 namespace Worldline\Sips\Office\SipsMessages\Token;
 
 
+use Worldline\Sips\Common\Fields\PanDataList;
 use Worldline\Sips\Common\SipsMessages\SipsMessage;
 
 /**
@@ -19,7 +20,7 @@ class PanToTokenResponse extends SipsMessage
     protected $responseCode;
 
     /**
-     * @var null|array
+     * @var null|PanDataList
      */
     protected $responseTokenPanDataList;
 
@@ -42,19 +43,19 @@ class PanToTokenResponse extends SipsMessage
     }
 
     /**
-     * @return array|null
+     * @return PanDataList|null
      */
-    public function getResponseTokenPanDataList(): ?array
+    public function getResponseTokenPanDataList(): ?PanDataList
     {
         return $this->responseTokenPanDataList;
     }
 
     /**
-     * @param array|null $responseTokenPanDataList
+     * @param PanDataList|null $responseTokenPanDataList
      *
      * @return PanToTokenResponse
      */
-    public function setResponseTokenPanDataList(?array $responseTokenPanDataList
+    public function setResponseTokenPanDataList(?PanDataList $responseTokenPanDataList
     ): PanToTokenResponse {
         $this->responseTokenPanDataList = $responseTokenPanDataList;
 
