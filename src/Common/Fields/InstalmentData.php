@@ -23,7 +23,7 @@ class InstalmentData extends Field
     /**
      * @var null|array
      */
-    protected $transactionReferenceList;
+    protected $transactionReferencesList;
 
     /**
      * @var null|array
@@ -78,19 +78,19 @@ class InstalmentData extends Field
     /**
      * @return array|null
      */
-    public function getTransactionReferenceList(): ?array
+    public function getTransactionReferencesList(): ?array
     {
-        return $this->transactionReferenceList;
+        return $this->transactionReferencesList;
     }
 
     /**
-     * @param array|null $transactionReferenceList
+     * @param array|null $transactionReferencesList
      *
      * @return InstalmentData
      */
-    public function setTransactionReferenceList(?array $transactionReferenceList
+    public function setTransactionReferencesList(?array $transactionReferencesList
     ): InstalmentData {
-        $this->transactionReferenceList = $transactionReferenceList;
+        $this->transactionReferencesList = $transactionReferencesList;
 
         return $this;
     }
