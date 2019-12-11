@@ -33,7 +33,7 @@ class ThreeD extends Field
     /**
      * @var null|string
      */
-    protected $xId;
+    protected $xd;
 
     /**
      * @return string|null
@@ -138,19 +138,19 @@ class ThreeD extends Field
     /**
      * @return string|null
      */
-    public function getXId(): ?string
+    public function getxid(): ?string
     {
-        return $this->xId;
+        return $this->xid;
     }
 
     /**
-     * @param string|null $xId
+     * @param string|null $xid
      *
      * @return ThreeD
      */
-    public function setXId(?string $xId): ThreeD
+    public function setxid(?string $xid): ThreeD
     {
-        $this->xId = $xId;
+        $this->xid = $xid;
 
         return $this;
     }
