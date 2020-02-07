@@ -59,11 +59,31 @@ class CardValidateAuthenticationResponse
     }
 
     /**
+     * @param string|null $responseCode
+     * @return CardValidateAuthenticationResponse
+     */
+    public function setResponseCode(?string $responseCode): CardValidateAuthenticationResponse
+    {
+        $this->responseCode = $responseCode;
+        return $this;
+    }
+
+    /**
      * @return string|null
      */
     public function getHolderAuthentResponseCode(): ?string
     {
         return $this->holderAuthentResponseCode;
+    }
+
+    /**
+     * @param string|null $holderAuthentResponseCode
+     * @return CardValidateAuthenticationResponse
+     */
+    public function setHolderAuthentResponseCode(?string $holderAuthentResponseCode): CardValidateAuthenticationResponse
+    {
+        $this->holderAuthentResponseCode = $holderAuthentResponseCode;
+        return $this;
     }
 
     /**
@@ -75,11 +95,31 @@ class CardValidateAuthenticationResponse
     }
 
     /**
+     * @param string|null $seal
+     * @return CardValidateAuthenticationResponse
+     */
+    public function setSeal(?string $seal): CardValidateAuthenticationResponse
+    {
+        $this->seal = $seal;
+        return $this;
+    }
+
+    /**
      * @return string|null
      */
     public function getErrorFieldName(): ?string
     {
         return $this->errorFieldName;
+    }
+
+    /**
+     * @param string|null $errorFieldName
+     * @return CardValidateAuthenticationResponse
+     */
+    public function setErrorFieldName(?string $errorFieldName): CardValidateAuthenticationResponse
+    {
+        $this->errorFieldName = $errorFieldName;
+        return $this;
     }
 
     /**
@@ -91,11 +131,31 @@ class CardValidateAuthenticationResponse
     }
 
     /**
+     * @param string|null $holderAuthentStatus
+     * @return CardValidateAuthenticationResponse
+     */
+    public function setHolderAuthentStatus(?string $holderAuthentStatus): CardValidateAuthenticationResponse
+    {
+        $this->holderAuthentStatus = $holderAuthentStatus;
+        return $this;
+    }
+
+    /**
      * @return string|null
      */
     public function getHolderAuthentMethod(): ?string
     {
         return $this->holderAuthentMethod;
+    }
+
+    /**
+     * @param string|null $holderAuthentMethod
+     * @return CardValidateAuthenticationResponse
+     */
+    public function setHolderAuthentMethod(?string $holderAuthentMethod): CardValidateAuthenticationResponse
+    {
+        $this->holderAuthentMethod = $holderAuthentMethod;
+        return $this;
     }
 
     /**
@@ -107,11 +167,31 @@ class CardValidateAuthenticationResponse
     }
 
     /**
+     * @param string|null $holderAuthentProgram
+     * @return CardValidateAuthenticationResponse
+     */
+    public function setHolderAuthentProgram(?string $holderAuthentProgram): CardValidateAuthenticationResponse
+    {
+        $this->holderAuthentProgram = $holderAuthentProgram;
+        return $this;
+    }
+
+    /**
      * @return ThreeD|null
      */
     public function getThreeD(): ?ThreeD
     {
         return $this->threeD;
+    }
+
+    /**
+     * @param ThreeD|null $threeD
+     * @return CardValidateAuthenticationResponse
+     */
+    public function setThreeD(?ThreeD $threeD): CardValidateAuthenticationResponse
+    {
+        $this->threeD = $threeD;
+        return $this;
     }
 
     /**
@@ -121,5 +201,16 @@ class CardValidateAuthenticationResponse
     {
         return $this->threeDV2;
     }
-    
+
+    /**
+     * @param ThreeDV2|null $threeDV2
+     * @return CardValidateAuthenticationResponse
+     */
+    public function setThreeDV2(?ThreeDV2 $threeDV2): CardValidateAuthenticationResponse
+    {
+        $this->threeDV2 = $threeDV2;
+        return $this;
+    }
+
+
 }
