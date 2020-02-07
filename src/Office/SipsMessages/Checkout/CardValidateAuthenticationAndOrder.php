@@ -20,57 +20,57 @@ class CardValidateAuthenticationAndOrder extends SipsMessage
     /**
      * @var null|string
      */
-    protected $interfaceVersion="";
+    protected $interfaceVersion;
     
     /**
      * @var null|string
      */
-    protected $messageVersion="";
+    protected $messageVersion;
     
     /**
      * @var null|string
      */
-    protected $merchantId="";
+    protected $merchantId;
     
     /**
      * @var null|string
      */
-    protected $redirectionData="";
+    protected $redirectionData;
     
     /**
      * @var null|string
      */
-    protected $transactionReference="";
+    protected $transactionReference;
     
     /**
      * @var null|string
      */
-    protected $s10TransactionReference="";
+    protected $s10TransactionReference;
     
     /**
      * @var null|string
      */
-    protected $paResMessage="";
+    protected $paResMessage;
     
     /**
      * @var null|string
      */
-    protected $intermediateServiceProviderId="";
+    protected $intermediateServiceProviderId;
     
     /**
      * @var null|string
      */
-    protected $seal="";
+    protected $seal;
     
     /**
      * @var null|string
      */
-    protected $keyVersion="";
+    protected $keyVersion;
     
     /**
      * @var null|string
      */
-    protected $sealAlgorithm="";
+    protected $sealAlgorithm;
 
     /**
      * CardValidateAuthenticationAndOrder constructor.

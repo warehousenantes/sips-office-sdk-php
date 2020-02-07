@@ -42,11 +42,11 @@ class CardValidateAuthenticationResponse
      */
     protected $holderAuthentProgram;
     /**
-     * @var null|ThreeD
+     * @var null|array
      */
     protected $threeD;
     /**
-     * @var null|ThreeDV2
+     * @var null|array
      */
     protected $threeDV2;
 
@@ -177,9 +177,9 @@ class CardValidateAuthenticationResponse
     }
 
     /**
-     * @return ThreeD|null
+     * @return array|null
      */
-    public function getThreeD(): ?ThreeD
+    public function getThreeD(): ?array
     {
         return $this->threeD;
     }
@@ -188,25 +188,25 @@ class CardValidateAuthenticationResponse
      * @param ThreeD|null $threeD
      * @return CardValidateAuthenticationResponse
      */
-    public function setThreeD(?ThreeD $threeD): CardValidateAuthenticationResponse
+    public function setThreeD(?array $threeD): CardValidateAuthenticationResponse
     {
         $this->threeD = $threeD;
         return $this;
     }
 
     /**
-     * @return ThreeDV2|null
+     * @return array|null
      */
-    public function getThreeDV2(): ?ThreeDV2
+    public function getThreeDV2(): ?array
     {
         return $this->threeDV2;
     }
 
     /**
-     * @param ThreeDV2|null $threeDV2
+     * @param array|null $threeDV2
      * @return CardValidateAuthenticationResponse
      */
-    public function setThreeDV2(?ThreeDV2 $threeDV2): CardValidateAuthenticationResponse
+    public function setThreeDV2(?array $threeDV2): CardValidateAuthenticationResponse
     {
         $this->threeDV2 = $threeDV2;
         return $this;
