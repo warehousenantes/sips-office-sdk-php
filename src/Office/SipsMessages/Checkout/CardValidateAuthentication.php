@@ -100,10 +100,10 @@ class CardValidateAuthentication extends SipsMessage
     /**
      * @param string|null $interfaceVersion
      *
-     * @return CardValidateAuthenticationAndOrder
+     * @return cardValidateAuthentication
      */
     public function setInterfaceVersion(?string $interfaceVersion
-    ): CardValidateAuthenticationAndOrder {
+    ): cardValidateAuthentication {
         $this->interfaceVersion = $interfaceVersion;
 
         return $this;
@@ -120,10 +120,10 @@ class CardValidateAuthentication extends SipsMessage
     /**
      * @param string|null $messageVersion
      *
-     * @return CardValidateAuthenticationAndOrder
+     * @return cardValidateAuthentication
      */
     public function setMessageVersion(?string $messageVersion
-    ): CardValidateAuthenticationAndOrder {
+    ): cardValidateAuthentication {
         $this->messageVersion = $messageVersion;
 
         return $this;
@@ -140,10 +140,10 @@ class CardValidateAuthentication extends SipsMessage
     /**
      * @param string|null $merchantId
      *
-     * @return CardValidateAuthenticationAndOrder
+     * @return cardValidateAuthentication
      */
     public function setMerchantId(?string $merchantId
-    ): CardValidateAuthenticationAndOrder {
+    ): cardValidateAuthentication {
         $this->merchantId = $merchantId;
 
         return $this;
@@ -160,10 +160,10 @@ class CardValidateAuthentication extends SipsMessage
     /**
      * @param string|null $redirectionData
      *
-     * @return CardValidateAuthenticationAndOrder
+     * @return cardValidateAuthentication
      */
     public function setRedirectionData(?string $redirectionData
-    ): CardValidateAuthenticationAndOrder {
+    ): cardValidateAuthentication {
         $this->redirectionData = $redirectionData;
 
         return $this;
@@ -180,10 +180,10 @@ class CardValidateAuthentication extends SipsMessage
     /**
      * @param string|null $transactionReference
      *
-     * @return CardValidateAuthenticationAndOrder
+     * @return cardValidateAuthentication
      */
     public function setTransactionReference(?string $transactionReference
-    ): CardValidateAuthenticationAndOrder {
+    ): cardValidateAuthentication {
         $this->transactionReference = $transactionReference;
 
         return $this;
@@ -200,10 +200,10 @@ class CardValidateAuthentication extends SipsMessage
     /**
      * @param string|null $s10TransactionReference
      *
-     * @return CardValidateAuthenticationAndOrder
+     * @return cardValidateAuthentication
      */
     public function setS10TransactionReference(?string $s10TransactionReference
-    ): CardValidateAuthenticationAndOrder {
+    ): cardValidateAuthentication {
         $this->s10TransactionReference = $s10TransactionReference;
 
         return $this;
@@ -220,10 +220,10 @@ class CardValidateAuthentication extends SipsMessage
     /**
      * @param string|null $paResMessage
      *
-     * @return CardValidateAuthenticationAndOrder
+     * @return cardValidateAuthentication
      */
     public function setPaResMessage(?string $paResMessage
-    ): CardValidateAuthenticationAndOrder {
+    ): cardValidateAuthentication {
         $this->paResMessage = $paResMessage;
 
         return $this;
@@ -240,11 +240,11 @@ class CardValidateAuthentication extends SipsMessage
     /**
      * @param string|null $intermediateServiceProviderId
      *
-     * @return CardValidateAuthenticationAndOrder
+     * @return cardValidateAuthentication
      */
     public function setIntermediateServiceProviderId(
         ?string $intermediateServiceProviderId
-    ): CardValidateAuthenticationAndOrder {
+    ): cardValidateAuthentication {
         $this->intermediateServiceProviderId = $intermediateServiceProviderId;
 
         return $this;
@@ -261,9 +261,9 @@ class CardValidateAuthentication extends SipsMessage
     /**
      * @param string|null $seal
      *
-     * @return CardValidateAuthenticationAndOrder
+     * @return cardValidateAuthentication
      */
-    public function setSeal(?string $seal): CardValidateAuthenticationAndOrder
+    public function setSeal(?string $seal): cardValidateAuthentication
     {
         $this->seal = $seal;
 
@@ -281,10 +281,10 @@ class CardValidateAuthentication extends SipsMessage
     /**
      * @param string|null $keyVersion
      *
-     * @return CardValidateAuthenticationAndOrder
+     * @return cardValidateAuthentication
      */
     public function setKeyVersion(?string $keyVersion
-    ): CardValidateAuthenticationAndOrder {
+    ): cardValidateAuthentication {
         $this->keyVersion = $keyVersion;
 
         return $this;
@@ -301,10 +301,10 @@ class CardValidateAuthentication extends SipsMessage
     /**
      * @param string|null $sealAlgorithm
      *
-     * @return CardValidateAuthenticationAndOrder
+     * @return cardValidateAuthentication
      */
     public function setSealAlgorithm(?string $sealAlgorithm
-    ): CardValidateAuthenticationAndOrder {
+    ): cardValidateAuthentication {
         $this->sealAlgorithm = $sealAlgorithm;
 
         return $this;
