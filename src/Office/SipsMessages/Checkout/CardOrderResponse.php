@@ -893,18 +893,18 @@ class CardOrderResponse extends SipsMessage
     /**
      * @return string|null
      */
-    public function getPreAuthorisationRuleResultList(): ?string
+    public function getPreAuthorisationRuleResultList(): ?array
     {
         return $this->preAuthorisationRuleResultList;
     }
 
     /**
-     * @param string|null $preAuthorisationRuleResultList
+     * @param array|null $preAuthorisationRuleResultList
      *
      * @return CardOrderResponse
      */
     public function setPreAuthorisationRuleResultList(
-        ?string $preAuthorisationRuleResultList
+        ?array $preAuthorisationRuleResultList
     ): CardOrderResponse {
         $this->preAuthorisationRuleResultList = $preAuthorisationRuleResultList;
 
