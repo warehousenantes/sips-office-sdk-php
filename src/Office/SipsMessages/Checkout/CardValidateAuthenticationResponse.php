@@ -6,12 +6,13 @@ namespace Worldline\Sips\Office\SipsMessages\Checkout;
 
 use Worldline\Sips\Common\Fields\ThreeD;
 use Worldline\Sips\Common\Fields\ThreeDV2;
+use Worldline\Sips\Common\SipsMessages\SipsMessage;
 
 /**
  * Class CardValidateAuthenticationResponse
  * @package Worldline\Sips\Office\SipsMessages\Checkout
  */
-class CardValidateAuthenticationResponse
+class CardValidateAuthenticationResponse extends SipsMessage
 {
     /**
      * @var null|string
