@@ -40,9 +40,11 @@ class JsonSealCalculator
      *
      * @return string
      */
-    private function encrypt(string $sealData, string $secretKey): string
+    public function encrypt(string $sealData, string $secretKey): string
     {
-        $sealData = utf8_encode($sealData);
+        if (mb_detect_encoding($sealData, 'UTF-8', true) != "UTF-8") {
+            $sealData = utf8_encode($sealData);
+        }
         $secretKey = utf8_encode($secretKey);
         $seal = hash_hmac("sha256", $sealData, $secretKey);
         return $seal;
