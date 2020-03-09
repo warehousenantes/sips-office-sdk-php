@@ -4,6 +4,8 @@
 namespace Worldline\Sips\Office\SipsMessages\Diagnostic;
 
 
+use Worldline\Sips\Common\Fields\CardData;
+use Worldline\Sips\Common\Fields\S10TransactionReference;
 use Worldline\Sips\Common\SipsMessages\SipsMessage;
 
 /**
@@ -43,7 +45,7 @@ class GetTransactionDataResponse extends SipsMessage
     protected $currencyCode;
     
     /**
-     * @var null|string
+     * @var null|int
      */
     protected $currentAmount;
     
@@ -163,12 +165,12 @@ class GetTransactionDataResponse extends SipsMessage
     protected $panExpiryDate;
     
     /**
-     * @var null|array
+     * @var null|S10TransactionReference
      */
     protected $s10TransactionReference;
     
     /**
-     * @var null|array
+     * @var null|S10TransactionReference
      */
     protected $s10FromTransactionReference;
     
@@ -178,7 +180,7 @@ class GetTransactionDataResponse extends SipsMessage
     protected $transactionReference;
     
     /**
-     * @var null|array
+     * @var null|CardData
      */
     protected $cardData;
     
@@ -408,19 +410,19 @@ class GetTransactionDataResponse extends SipsMessage
     }
 
     /**
-     * @return string|null
+     * @return int|null
      */
-    public function getCurrentAmount(): ?string
+    public function getCurrentAmount(): ?int
     {
         return $this->currentAmount;
     }
 
     /**
-     * @param string|null $currentAmount
+     * @param int|null $currentAmount
      *
      * @return GetTransactionDataResponse
      */
-    public function setCurrentAmount(?string $currentAmount
+    public function setCurrentAmount(?int $currentAmount
     ): GetTransactionDataResponse {
         $this->currentAmount = $currentAmount;
 
@@ -889,19 +891,19 @@ class GetTransactionDataResponse extends SipsMessage
     }
 
     /**
-     * @return array|null
+     * @return S10TransactionReference|null
      */
-    public function getS10TransactionReference(): ?array
+    public function getS10TransactionReference(): ?S10TransactionReference
     {
         return $this->s10TransactionReference;
     }
 
     /**
-     * @param array|null $s10TransactionReference
+     * @param S10TransactionReference|null $s10TransactionReference
      *
      * @return GetTransactionDataResponse
      */
-    public function setS10TransactionReference(?array $s10TransactionReference
+    public function setS10TransactionReference(?S10TransactionReference $s10TransactionReference
     ): GetTransactionDataResponse {
         $this->s10TransactionReference = $s10TransactionReference;
 
@@ -909,20 +911,20 @@ class GetTransactionDataResponse extends SipsMessage
     }
 
     /**
-     * @return array|null
+     * @return S10TransactionReference|null
      */
-    public function getS10FromTransactionReference(): ?array
+    public function getS10FromTransactionReference(): ?S10TransactionReference
     {
         return $this->s10FromTransactionReference;
     }
 
     /**
-     * @param array|null $s10FromTransactionReference
+     * @param S10TransactionReference|null $s10FromTransactionReference
      *
      * @return GetTransactionDataResponse
      */
     public function setS10FromTransactionReference(
-        ?array $s10FromTransactionReference
+        ?S10TransactionReference $s10FromTransactionReference
     ): GetTransactionDataResponse {
         $this->s10FromTransactionReference = $s10FromTransactionReference;
 
@@ -950,19 +952,19 @@ class GetTransactionDataResponse extends SipsMessage
     }
 
     /**
-     * @return array|null
+     * @return CardData|null
      */
-    public function getCardData(): ?array
+    public function getCardData(): ?CardData
     {
         return $this->cardData;
     }
 
     /**
-     * @param array|null $cardData
+     * @param CardData|null $cardData
      *
      * @return GetTransactionDataResponse
      */
-    public function setCardData(?array $cardData): GetTransactionDataResponse
+    public function setCardData(?CardData $cardData): GetTransactionDataResponse
     {
         $this->cardData = $cardData;
 

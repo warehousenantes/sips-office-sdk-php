@@ -11,7 +11,7 @@ namespace Worldline\Sips\Common\Fields;
 class S10TransactionReference extends Field
 {
     /**
-     * @var null|int
+     * @var null|string
      */
     protected $s10TransactionId;
     /**
@@ -20,19 +20,19 @@ class S10TransactionReference extends Field
     protected $s10TransactionIdDate;
 
     /**
-     * @return int|null
+     * @return string|null
      */
-    public function getS10TransactionId(): ?int
+    public function getS10TransactionId(): ?string
     {
         return $this->s10TransactionId;
     }
 
     /**
-     * @param int|null $s10TransactionId
+     * @param string|null $s10TransactionId
      *
      * @return S10TransactionReference
      */
-    public function setS10TransactionId(?int $s10TransactionId
+    public function setS10TransactionId(?string $s10TransactionId
     ): S10TransactionReference {
         $this->s10TransactionId = $s10TransactionId;
 

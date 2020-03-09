@@ -4,6 +4,9 @@
 namespace Worldline\Sips\Office\SipsMessages\Checkout;
 
 
+use Worldline\Sips\Common\Fields\CardData;
+use Worldline\Sips\Common\Fields\PaymentMeanData;
+use Worldline\Sips\Common\Fields\S10TransactionReference;
 use Worldline\Sips\Common\SipsMessages\SipsMessage;
 
 /**
@@ -138,12 +141,12 @@ class CardOrderResponse extends SipsMessage
     protected $paymentMeanTradingName;
     
     /**
-     * @var null|array
+     * @var null|PaymentMeanData
      */
     protected $paymentMeanData;
     
     /**
-     * @var null|array
+     * @var S10TransactionReference|null
      */
     protected $s10TransactionReference;
     
@@ -153,7 +156,7 @@ class CardOrderResponse extends SipsMessage
     protected $transactionReference;
     
     /**
-     * @var null|array
+     * @var null|CardData
      */
     protected $cardData;
     
@@ -183,7 +186,7 @@ class CardOrderResponse extends SipsMessage
     protected $paymentMeanBrandSelectionStatus;
     
     /**
-     * @var null|string
+     * @var null|int
      */
     protected $captureDay;
     
@@ -750,19 +753,19 @@ class CardOrderResponse extends SipsMessage
     }
 
     /**
-     * @return array|null
+     * @return PaymentMeanData|null
      */
-    public function getPaymentMeanData(): ?array
+    public function getPaymentMeanData(): ?PaymentMeanData
     {
         return $this->paymentMeanData;
     }
 
     /**
-     * @param array|null $paymentMeanData
+     * @param PaymentMeanData|null $paymentMeanData
      *
      * @return CardOrderResponse
      */
-    public function setPaymentMeanData(?array $paymentMeanData
+    public function setPaymentMeanData(?PaymentMeanData $paymentMeanData
     ): CardOrderResponse {
         $this->paymentMeanData = $paymentMeanData;
 
@@ -770,19 +773,19 @@ class CardOrderResponse extends SipsMessage
     }
 
     /**
-     * @return array|null
+     * @return S10TransactionReference|null
      */
-    public function getS10TransactionReference(): ?array
+    public function getS10TransactionReference(): ?S10TransactionReference
     {
         return $this->s10TransactionReference;
     }
 
     /**
-     * @param array|null $s10TransactionReference
+     * @param S10TransactionReference|null $s10TransactionReference
      *
      * @return CardOrderResponse
      */
-    public function setS10TransactionReference(?array $s10TransactionReference
+    public function setS10TransactionReference(?S10TransactionReference $s10TransactionReference
     ): CardOrderResponse {
         $this->s10TransactionReference = $s10TransactionReference;
 
@@ -810,19 +813,19 @@ class CardOrderResponse extends SipsMessage
     }
 
     /**
-     * @return array|null
+     * @return CardData|null
      */
-    public function getCardData(): ?array
+    public function getCardData(): ?CardData
     {
         return $this->cardData;
     }
 
     /**
-     * @param array|null $cardData
+     * @param CardData|null $cardData
      *
      * @return CardOrderResponse
      */
-    public function setCardData(?array $cardData): CardOrderResponse
+    public function setCardData(?CardData $cardData): CardOrderResponse
     {
         $this->cardData = $cardData;
 
@@ -933,19 +936,19 @@ class CardOrderResponse extends SipsMessage
     }
 
     /**
-     * @return string|null
+     * @return int|null
      */
-    public function getCaptureDay(): ?string
+    public function getCaptureDay(): ?int
     {
         return $this->captureDay;
     }
 
     /**
-     * @param string|null $captureDay
+     * @param int|null $captureDay
      *
      * @return CardOrderResponse
      */
-    public function setCaptureDay(?string $captureDay): CardOrderResponse
+    public function setCaptureDay(?int $captureDay): CardOrderResponse
     {
         $this->captureDay = $captureDay;
 

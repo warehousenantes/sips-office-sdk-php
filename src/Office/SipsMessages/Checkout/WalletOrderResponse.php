@@ -4,6 +4,8 @@
 namespace Worldline\Sips\Office\SipsMessages\Checkout;
 
 
+use Worldline\Sips\Common\Fields\CardData;
+use Worldline\Sips\Common\Fields\S10TransactionReference;
 use Worldline\Sips\Common\SipsMessages\SipsMessage;
 
 /**
@@ -88,7 +90,7 @@ class WalletOrderResponse extends SipsMessage
     protected $scoreValue;
 
     /**
-     * @var null|array
+     * @var null|S10TransactionReference
      */
     protected $s10TransactionReference;
 
@@ -98,7 +100,7 @@ class WalletOrderResponse extends SipsMessage
     protected $transactionReference;
 
     /**
-     * @var null|array
+     * @var null|CardData
      */
     protected $cardData;
 
@@ -123,7 +125,7 @@ class WalletOrderResponse extends SipsMessage
     protected $preAuthorisationRuleResultList;
 
     /**
-     * @var null|string
+     * @var null|int
      */
     protected $captureDay;
 
@@ -508,19 +510,19 @@ class WalletOrderResponse extends SipsMessage
     }
 
     /**
-     * @return array|null
+     * @return S10TransactionReference|null
      */
-    public function getS10TransactionReference(): ?array
+    public function getS10TransactionReference(): ?S10TransactionReference
     {
         return $this->s10TransactionReference;
     }
 
     /**
-     * @param array|null $s10TransactionReference
+     * @param S10TransactionReference|null $s10TransactionReference
      *
      * @return WalletOrderResponse
      */
-    public function setS10TransactionReference(?array $s10TransactionReference
+    public function setS10TransactionReference(?S10TransactionReference $s10TransactionReference
     ): WalletOrderResponse {
         $this->s10TransactionReference = $s10TransactionReference;
 
@@ -548,19 +550,19 @@ class WalletOrderResponse extends SipsMessage
     }
 
     /**
-     * @return array|null
+     * @return CardData|null
      */
-    public function getCardData(): ?array
+    public function getCardData(): ?CardData
     {
         return $this->cardData;
     }
 
     /**
-     * @param array|null $cardData
+     * @param CardData|null $cardData
      *
      * @return WalletOrderResponse
      */
-    public function setCardData(?array $cardData): WalletOrderResponse
+    public function setCardData(?CardData $cardData): WalletOrderResponse
     {
         $this->cardData = $cardData;
 
@@ -650,19 +652,19 @@ class WalletOrderResponse extends SipsMessage
     }
 
     /**
-     * @return string|null
+     * @return int|null
      */
-    public function getCaptureDay(): ?string
+    public function getCaptureDay(): ?int
     {
         return $this->captureDay;
     }
 
     /**
-     * @param string|null $captureDay
+     * @param int|null $captureDay
      *
      * @return WalletOrderResponse
      */
-    public function setCaptureDay(?string $captureDay): WalletOrderResponse
+    public function setCaptureDay(?int $captureDay): WalletOrderResponse
     {
         $this->captureDay = $captureDay;
 

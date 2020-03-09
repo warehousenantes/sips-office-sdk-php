@@ -3,6 +3,8 @@
 
 namespace Worldline\Sips\Office\SipsMessages\Checkout;
 
+use Worldline\Sips\Common\Fields\CardData;
+use Worldline\Sips\Common\Fields\S10TransactionReference;
 use Worldline\Sips\Common\SipsMessages\SipsMessage;
 
 /**
@@ -22,7 +24,7 @@ class PaymentProviderFinalizeResponse extends SipsMessage
     protected $transactionReference;
     
     /**
-     * @var null|string
+     * @var null|int
      */
     protected $amount;
     
@@ -37,7 +39,7 @@ class PaymentProviderFinalizeResponse extends SipsMessage
     protected $captureMode;
     
     /**
-     * @var null|string
+     * @var null|int
      */
     protected $captureDay;
     
@@ -207,7 +209,7 @@ class PaymentProviderFinalizeResponse extends SipsMessage
     protected $issuerWalletInformation;
     
     /**
-     * @var null|array
+     * @var null|S10TransactionReference
      */
     protected $s10TransactionReference;
     
@@ -222,7 +224,7 @@ class PaymentProviderFinalizeResponse extends SipsMessage
     protected $acquirerResponseMessage;
     
     /**
-     * @var null|array
+     * @var null|CardData
      */
     protected $cardData;
     
@@ -317,19 +319,19 @@ class PaymentProviderFinalizeResponse extends SipsMessage
     }
 
     /**
-     * @return string|null
+     * @return int|null
      */
-    public function getAmount(): ?string
+    public function getAmount(): ?int
     {
         return $this->amount;
     }
 
     /**
-     * @param string|null $amount
+     * @param int|null $amount
      *
      * @return PaymentProviderFinalizeResponse
      */
-    public function setAmount(?string $amount): PaymentProviderFinalizeResponse
+    public function setAmount(?int $amount): PaymentProviderFinalizeResponse
     {
         $this->amount = $amount;
 
@@ -377,19 +379,19 @@ class PaymentProviderFinalizeResponse extends SipsMessage
     }
 
     /**
-     * @return string|null
+     * @return int|null
      */
-    public function getCaptureDay(): ?string
+    public function getCaptureDay(): ?int
     {
         return $this->captureDay;
     }
 
     /**
-     * @param string|null $captureDay
+     * @param int|null $captureDay
      *
      * @return PaymentProviderFinalizeResponse
      */
-    public function setCaptureDay(?string $captureDay
+    public function setCaptureDay(?int $captureDay
     ): PaymentProviderFinalizeResponse {
         $this->captureDay = $captureDay;
 
@@ -1058,19 +1060,19 @@ class PaymentProviderFinalizeResponse extends SipsMessage
     }
 
     /**
-     * @return array|null
+     * @return S10TransactionReference|null
      */
-    public function getS10TransactionReference(): ?array
+    public function getS10TransactionReference(): ?S10TransactionReference
     {
         return $this->s10TransactionReference;
     }
 
     /**
-     * @param array|null $s10TransactionReference
+     * @param S10TransactionReference|null $s10TransactionReference
      *
      * @return PaymentProviderFinalizeResponse
      */
-    public function setS10TransactionReference(?array $s10TransactionReference
+    public function setS10TransactionReference(?S10TransactionReference $s10TransactionReference
     ): PaymentProviderFinalizeResponse {
         $this->s10TransactionReference = $s10TransactionReference;
 
@@ -1118,19 +1120,19 @@ class PaymentProviderFinalizeResponse extends SipsMessage
     }
 
     /**
-     * @return array|null
+     * @return CardData|null
      */
-    public function getCardData(): ?array
+    public function getCardData(): ?CardData
     {
         return $this->cardData;
     }
 
     /**
-     * @param array|null $cardData
+     * @param CardData|null $cardData
      *
      * @return PaymentProviderFinalizeResponse
      */
-    public function setCardData(?array $cardData
+    public function setCardData(?CardData $cardData
     ): PaymentProviderFinalizeResponse {
         $this->cardData = $cardData;
 

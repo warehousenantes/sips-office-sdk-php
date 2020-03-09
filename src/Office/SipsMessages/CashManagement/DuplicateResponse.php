@@ -4,6 +4,8 @@
 namespace Worldline\Sips\Office\SipsMessages\CashManagement;
 
 
+use Worldline\Sips\Common\Fields\CardData;
+use Worldline\Sips\Common\Fields\S10TransactionReference;
 use Worldline\Sips\Common\SipsMessages\SipsMessage;
 
 /**
@@ -84,7 +86,7 @@ class DuplicateResponse extends SipsMessage
     protected $transactionDateTime;
     
     /**
-     * @var null|array
+     * @var null|S10TransactionReference
      */
     protected $s10TransactionReference;
     
@@ -94,7 +96,7 @@ class DuplicateResponse extends SipsMessage
     protected $transactionReference;
     
     /**
-     * @var null|array
+     * @var null|CardData
      */
     protected $cardData;
     
@@ -424,19 +426,19 @@ class DuplicateResponse extends SipsMessage
     }
 
     /**
-     * @return array|null
+     * @return S10TransactionReference|null
      */
-    public function getS10TransactionReference(): ?array
+    public function getS10TransactionReference(): ?S10TransactionReference
     {
         return $this->s10TransactionReference;
     }
 
     /**
-     * @param array|null $s10TransactionReference
+     * @param S10TransactionReference|null $s10TransactionReference
      *
      * @return DuplicateResponse
      */
-    public function setS10TransactionReference(?array $s10TransactionReference
+    public function setS10TransactionReference(?S10TransactionReference $s10TransactionReference
     ): DuplicateResponse {
         $this->s10TransactionReference = $s10TransactionReference;
 
@@ -464,19 +466,19 @@ class DuplicateResponse extends SipsMessage
     }
 
     /**
-     * @return array|null
+     * @return CardData|null
      */
-    public function getCardData(): ?array
+    public function getCardData(): ?CardData
     {
         return $this->cardData;
     }
 
     /**
-     * @param array|null $cardData
+     * @param CardData|null $cardData
      *
      * @return DuplicateResponse
      */
-    public function setCardData(?array $cardData): DuplicateResponse
+    public function setCardData(?CardData $cardData): DuplicateResponse
     {
         $this->cardData = $cardData;
 

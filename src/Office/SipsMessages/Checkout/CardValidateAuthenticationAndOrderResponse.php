@@ -4,6 +4,8 @@
 namespace Worldline\Sips\Office\SipsMessages\Checkout;
 
 
+use Worldline\Sips\Common\Fields\CardData;
+use Worldline\Sips\Common\Fields\S10TransactionReference;
 use Worldline\Sips\Common\SipsMessages\SipsMessage;
 
 /**
@@ -23,7 +25,7 @@ class CardValidateAuthenticationAndOrderResponse extends SipsMessage
     protected $acquirerResponseMessage;
     
     /**
-     * @var null|string
+     * @var null|int
      */
     protected $amount;
     
@@ -43,7 +45,7 @@ class CardValidateAuthenticationAndOrderResponse extends SipsMessage
     protected $avsPostcodeResponseCode;
     
     /**
-     * @var null|string
+     * @var null|int
      */
     protected $captureDay;
     
@@ -218,7 +220,7 @@ class CardValidateAuthenticationAndOrderResponse extends SipsMessage
     protected $scoreValue;
     
     /**
-     * @var null|array
+     * @var null|S10TransactionReference
      */
     protected $s10TransactionReference;
     
@@ -263,7 +265,7 @@ class CardValidateAuthenticationAndOrderResponse extends SipsMessage
     protected $holderAuthentRelegationCode;
     
     /**
-     * @var null|array
+     * @var null|CardData
      */
     protected $cardData;
     
@@ -348,19 +350,19 @@ class CardValidateAuthenticationAndOrderResponse extends SipsMessage
     }
 
     /**
-     * @return string|null
+     * @return int|null
      */
-    public function getAmount(): ?string
+    public function getAmount(): ?int
     {
         return $this->amount;
     }
 
     /**
-     * @param string|null $amount
+     * @param int|null $amount
      *
      * @return CardValidateAuthenticationAndOrderResponse
      */
-    public function setAmount(?string $amount
+    public function setAmount(?int $amount
     ): CardValidateAuthenticationAndOrderResponse {
         $this->amount = $amount;
 
@@ -428,19 +430,19 @@ class CardValidateAuthenticationAndOrderResponse extends SipsMessage
     }
 
     /**
-     * @return string|null
+     * @return int|null
      */
-    public function getCaptureDay(): ?string
+    public function getCaptureDay(): ?int
     {
         return $this->captureDay;
     }
 
     /**
-     * @param string|null $captureDay
+     * @param int|null $captureDay
      *
      * @return CardValidateAuthenticationAndOrderResponse
      */
-    public function setCaptureDay(?string $captureDay
+    public function setCaptureDay(?int $captureDay
     ): CardValidateAuthenticationAndOrderResponse {
         $this->captureDay = $captureDay;
 
@@ -1130,19 +1132,19 @@ class CardValidateAuthenticationAndOrderResponse extends SipsMessage
     }
 
     /**
-     * @return array|null
+     * @return S10TransactionReference|null
      */
-    public function getS10TransactionReference(): ?array
+    public function getS10TransactionReference(): ?S10TransactionReference
     {
         return $this->s10TransactionReference;
     }
 
     /**
-     * @param array|null $s10TransactionReference
+     * @param S10TransactionReference|null $s10TransactionReference
      *
      * @return CardValidateAuthenticationAndOrderResponse
      */
-    public function setS10TransactionReference(?array $s10TransactionReference
+    public function setS10TransactionReference(?S10TransactionReference $s10TransactionReference
     ): CardValidateAuthenticationAndOrderResponse {
         $this->s10TransactionReference = $s10TransactionReference;
 
@@ -1315,19 +1317,19 @@ class CardValidateAuthenticationAndOrderResponse extends SipsMessage
     }
 
     /**
-     * @return array|null
+     * @return CardData|null
      */
-    public function getCardData(): ?array
+    public function getCardData(): ?CardData
     {
         return $this->cardData;
     }
 
     /**
-     * @param array|null $cardData
+     * @param CardData|null $cardData
      *
      * @return CardValidateAuthenticationAndOrderResponse
      */
-    public function setCardData(?array $cardData
+    public function setCardData(?CardData $cardData
     ): CardValidateAuthenticationAndOrderResponse {
         $this->cardData = $cardData;
 

@@ -23,7 +23,7 @@ class RefundResponse extends SipsMessage
     protected $authorisationId;
     
     /**
-     * @var null|string
+     * @var null|int
      */
     protected $newAmount;
     
@@ -93,19 +93,19 @@ class RefundResponse extends SipsMessage
     }
 
     /**
-     * @return string|null
+     * @return int|null
      */
-    public function getNewAmount(): ?string
+    public function getNewAmount(): ?int
     {
         return $this->newAmount;
     }
 
     /**
-     * @param string|null $newAmount
+     * @param int|null $newAmount
      *
      * @return RefundResponse
      */
-    public function setNewAmount(?string $newAmount): RefundResponse
+    public function setNewAmount(?int $newAmount): RefundResponse
     {
         $this->newAmount = $newAmount;
 
