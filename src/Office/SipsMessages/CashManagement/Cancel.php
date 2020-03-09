@@ -22,62 +22,62 @@ class Cancel extends SipsMessage
     /**
      * @var null|int
      */
-    protected $operationAmount;
+    private $operationAmount;
 
     /**
      * @var null|string
      */
-    protected $currencyCode;
+    private $currencyCode;
 
     /**
      * @var null|string
      */
-    protected $merchantId;
+    private $merchantId;
 
     /**
      * @var null|string
      */
-    protected $interfaceVersion;
+    private $interfaceVersion;
 
     /**
      * @var null|string
      */
-    protected $transactionReference;
+    private $transactionReference;
 
     /**
      * @var null|string
      */
-    protected $operationOrigin;
+    private $operationOrigin;
 
     /**
      * @var null|S10TransactionReference
      */
-    protected $s10TransactionReference;
+    private $s10TransactionReference;
 
     /**
      * @var null|string
      */
-    protected $intermediateServiceProviderId;
+    private $intermediateServiceProviderId;
 
     /**
      * @var null|string
      */
-    protected $seal;
+    private $seal;
 
     /**
      * @var null|string
      */
-    protected $keyVersion;
+    private $keyVersion;
 
     /**
      * @var null|string
      */
-    protected $sealAlgorithm;
+    private $sealAlgorithm;
 
     /**
      * @var null|Contact
      */
-    protected $customerContact;
+    private $customerContact;
 
     /**
      * Cancel constructor.

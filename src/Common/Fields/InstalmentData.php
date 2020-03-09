@@ -13,27 +13,27 @@ class InstalmentData extends Field
     /**
      * @var null|int
      */
-    protected $number;
+    private $number;
 
     /**
      * @var null|array
      */
-    protected $datesList;
+    private $datesList;
 
     /**
      * @var null|array
      */
-    protected $transactionReferencesList;
+    private $transactionReferencesList;
 
     /**
      * @var null|array
      */
-    protected $amountsList;
+    private $amountsList;
 
     /**
      * @var null|array
      */
-    protected $s10TransactionIdsList;
+    private $s10TransactionIdsList;
 
     /**
      * @return int|null

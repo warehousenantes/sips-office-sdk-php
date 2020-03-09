@@ -13,11 +13,11 @@ class S10TransactionReference extends Field
     /**
      * @var null|string
      */
-    protected $s10TransactionId;
+    private $s10TransactionId;
     /**
      * @var null|string
      */
-    protected $s10TransactionIdDate;
+    private $s10TransactionIdDate;
 
     /**
      * @return string|null

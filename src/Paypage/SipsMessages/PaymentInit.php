@@ -36,417 +36,417 @@ class PaymentInit extends SipsMessage
     /**
      * @var null|int
      */
-    protected $amount;
+    private $amount;
 
     /**
      * @var null|string
      */
-    protected $automaticResponseUrl;
+    private $automaticResponseUrl;
 
     /**
      * @var null|string
      */
-    protected $captureDay;
+    private $captureDay;
 
     /**
      * @var null|string
      */
-    protected $captureMode;
+    private $captureMode;
 
     /**
      * @var null|string
      */
-    protected $currencyCode;
+    private $currencyCode;
 
     /**
      * @var null|string
      */
-    protected $customerEmail;
+    private $customerEmail;
 
     /**
      * @var null|string
      */
-    protected $customerId;
+    private $customerId;
 
     /**
      * @var null|string
      */
-    protected $customerLanguage;
+    private $customerLanguage;
 
     /**
      * @var null|FraudData
      */
-    protected $fraudData;
+    private $fraudData;
 
     /**
      * @var null|string
      */
-    protected $hashSalt1;
+    private $hashSalt1;
 
     /**
      * @var null|string
      */
-    protected $hashSalt2;
+    private $hashSalt2;
 
     /**
      * @var null|string
      */
-    protected $hashAlgorithm1;
+    private $hashAlgorithm1;
 
     /**
      * @var null|string
      */
-    protected $hashAlgorithm2;
+    private $hashAlgorithm2;
 
     /**
      * @var null|string
      */
-    protected $interfaceVersion;
+    private $interfaceVersion;
 
     /**
      * @var null|string
      */
-    protected $merchantId;
+    private $merchantId;
 
     /**
      * @var null|string
      */
-    protected $merchantSessionId;
+    private $merchantSessionId;
 
     /**
      * @var null|string
      */
-    protected $merchantTransactionDateTime;
+    private $merchantTransactionDateTime;
 
     /**
      * @var null|string
      */
-    protected $merchantWalletId;
+    private $merchantWalletId;
 
     /**
      * @var null|string
      */
-    protected $normalReturnUrl;
+    private $normalReturnUrl;
 
     /**
      * @var null|string
      */
-    protected $orderChannel;
+    private $orderChannel;
 
     /**
      * @var null|string
      */
-    protected $orderId;
+    private $orderId;
 
     /**
      * @var null|array
      */
-    protected $paymentMeanBrandList;
+    private $paymentMeanBrandList;
 
     /**
      * @var null|PaymentMeanData
      */
-    protected $paymentMeanData;
+    private $paymentMeanData;
 
     /**
      * @var null|int
      */
-    protected $responseKeyVersion;
+    private $responseKeyVersion;
 
     /**
      * @var null|string
      */
-    protected $returnContext;
+    private $returnContext;
 
     /**
      * @var null|string
      */
-    protected $templateName;
+    private $templateName;
 
     /**
      * @var null|string
      */
-    protected $transactionActors;
+    private $transactionActors;
 
     /**
      * @var null|string
      */
-    protected $transactionReference;
+    private $transactionReference;
 
     /**
      * @var null|string
      */
-    protected $transactionOrigin;
+    private $transactionOrigin;
 
     /**
      * @var null|string
      */
-    protected $invoiceReference;
+    private $invoiceReference;
 
     /**
      * @var null|string
      */
-    protected $bypassReceiptPage;
+    private $bypassReceiptPage;
 
     /**
      * @var null|string
      */
-    protected $customerIpAddress;
+    private $customerIpAddress;
 
     /**
      * @var null|string
      */
-    protected $customerTimestampIpAddress;
+    private $customerTimestampIpAddress;
 
     /**
      * @var null|string
      */
-    protected $bypassDcc;
+    private $bypassDcc;
 
     /**
      * @var null|InstalmentData
      */
-    protected $instalmentData;
+    private $instalmentData;
 
     /**
      * @var null|Address
      */
-    protected $billingAddress;
+    private $billingAddress;
 
     /**
      * @var null|Contact
      */
-    protected $billingContact;
+    private $billingContact;
 
     /**
      * @var null|Address
      */
-    protected $customerAddress;
+    private $customerAddress;
 
     /**
      * @var null|Contact
      */
-    protected $customerContact;
+    private $customerContact;
 
     /**
      * @var null|Address
      */
-    protected $deliveryAddress;
+    private $deliveryAddress;
 
     /**
      * @var null|Contact
      */
-    protected $deliveryContact;
+    private $deliveryContact;
 
     /**
      * @var null|Address
      */
-    protected $holderAddress;
+    private $holderAddress;
 
     /**
      * @var null|Contact
      */
-    protected $holderContact;
+    private $holderContact;
 
     /**
      * @var null|CustomerData
      */
-    protected $customerData;
+    private $customerData;
 
     /**
      * @var null|string
      */
-    protected $paymentPattern;
+    private $paymentPattern;
 
     /**
      * @var null|string
      */
-    protected $statementReference;
+    private $statementReference;
 
     /**
      * @var null|AuthenticationData
      */
-    protected $authenticationData;
+    private $authenticationData;
 
     /**
      * @var null|string
      */
-    protected $mandateId;
+    private $mandateId;
 
     /**
      * @var null|string
      */
-    protected $billingFirstDate;
+    private $billingFirstDate;
 
     /**
      * @var null|string
      */
-    protected $customer3DSTransactionDate;
+    private $customer3DSTransactionDate;
 
     /**
      * @var null|string
      */
-    protected $customerBillingNb;
+    private $customerBillingNb;
 
     /**
      * @var null|string
      */
-    protected $customerDeliverySuccessFlag;
+    private $customerDeliverySuccessFlag;
 
     /**
      * @var null|string
      */
-    protected $customerPhoneValidationMethod;
+    private $customerPhoneValidationMethod;
 
     /**
      * @var null|string
      */
-    protected $customerRegistrationDateOnline;
+    private $customerRegistrationDateOnline;
 
     /**
      * @var null|string
      */
-    protected $customerRegistrationDateProxi;
+    private $customerRegistrationDateProxi;
 
     /**
      * @var null|string
      */
-    protected $deliveryFirstDate;
+    private $deliveryFirstDate;
 
     /**
      * @var null|string
      */
-    protected $evidenceAcquisitionDate;
+    private $evidenceAcquisitionDate;
 
     /**
      * @var null|string
      */
-    protected $evidenceNumber;
+    private $evidenceNumber;
 
     /**
      * @var null|string
      */
-    protected $evidenceType;
+    private $evidenceType;
 
     /**
      * @var null|string
      */
-    protected $valueDate;
+    private $valueDate;
 
     /**
      * @var null|DeliveryData
      */
-    protected $deliveryData;
+    private $deliveryData;
 
     /**
      * @var null|ShoppingCartDetail
      */
-    protected $shoppingCartDetail;
+    private $shoppingCartDetail;
 
     /**
      * @var null|HolderData
      */
-    protected $holderData;
+    private $holderData;
 
     /**
      * @var null|S10TransactionReference
      */
-    protected $s10TransactionReference;
+    private $s10TransactionReference;
 
     /**
      * @var null|string
      */
-    protected $holderAdditionalReference;
+    private $holderAdditionalReference;
 
     /**
      * @var null|array
      */
-    protected $riskManagementCustomDataList;
+    private $riskManagementCustomDataList;
 
     /**
      * @var null|string
      */
-    protected $intermediateServiceProviderId;
+    private $intermediateServiceProviderId;
 
     /**
      * @var null|string
      */
-    protected $seal;
+    private $seal;
 
     /**
      * @var null|string
      */
-    protected $keyVersion;
+    private $keyVersion;
 
     /**
      * @var null|string
      */
-    protected $sealAlgorithm;
+    private $sealAlgorithm;
 
     /**
      * @var null|PaypageData
      */
-    protected $paypageData;
+    private $paypageData;
 
     /**
      * @var null|string
      */
-    protected $subMerchantId;
+    private $subMerchantId;
 
     /**
      * @var null|string
      */
-    protected $subMerchantShortName;
+    private $subMerchantShortName;
 
     /**
      * @var null|string
      */
-    protected $subMerchantCategoryCode;
+    private $subMerchantCategoryCode;
 
     /**
      * @var null|string
      */
-    protected $subMerchantLegalId;
+    private $subMerchantLegalId;
 
     /**
      * @var null|Address
      */
-    protected $subMerchantAddress;
+    private $subMerchantAddress;
 
     /**
      * @var null|OrderContext
      */
-    protected $orderContext;
+    private $orderContext;
 
     /**
      * @var null|TravelContext
      */
-    protected $travelContext;
+    private $travelContext;
 
     /**
      * @var null|string
      */
-    protected $responseEncoding;
+    private $responseEncoding;
 
     /**
      * @var null|string
      */
-    protected $subMerchantName;
+    private $subMerchantName;
 
     /**
      * @var null|string
      */
-    protected $subMerchantContractNumber;
+    private $subMerchantContractNumber;
 
     /**
      * @var null|CustomerAccountHistoric
      */
-    protected $customerAccountHistoric;
+    private $customerAccountHistoric;
 
     /**
      * @var null|string
      */
-    protected $merchantName;
+    private $merchantName;
 
     /**
      * PaymentInit constructor.

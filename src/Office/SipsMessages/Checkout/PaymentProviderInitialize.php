@@ -27,192 +27,192 @@ class PaymentProviderInitialize extends SipsMessage
     /**
      * @var null|int
      */
-    protected $amount;
+    private $amount;
     
     /**
      * @var null|int
      */
-    protected $captureDay;
+    private $captureDay;
     
     /**
      * @var null|string
      */
-    protected $captureMode;
+    private $captureMode;
     
     /**
      * @var null|string
      */
-    protected $currencyCode;
+    private $currencyCode;
     
     /**
      * @var null|string
      */
-    protected $customerId;
+    private $customerId;
     
     /**
      * @var null|string
      */
-    protected $customerIpAddress;
+    private $customerIpAddress;
     
     /**
      * @var null|string
      */
-    protected $customerLanguage;
+    private $customerLanguage;
     
     /**
      * @var null|string
      */
-    protected $interfaceVersion;
+    private $interfaceVersion;
     
     /**
      * @var null|string
      */
-    protected $intermediateServiceProviderId;
+    private $intermediateServiceProviderId;
     
     /**
      * @var null|string
      */
-    protected $invoiceReference;
+    private $invoiceReference;
     
     /**
      * @var null|int
      */
-    protected $keyVersion;
+    private $keyVersion;
     
     /**
      * @var null|string
      */
-    protected $merchantId;
+    private $merchantId;
     
     /**
      * @var null|string
      */
-    protected $merchantReturnUrl;
+    private $merchantReturnUrl;
     
     /**
      * @var null|string
      */
-    protected $merchantTransactionDateTime;
+    private $merchantTransactionDateTime;
     
     /**
      * @var null|string
      */
-    protected $orderChannel;
+    private $orderChannel;
     
     /**
      * @var null|string
      */
-    protected $orderId;
+    private $orderId;
     
     /**
      * @var null|string
      */
-    protected $paymentMeanBrand;
+    private $paymentMeanBrand;
     
     /**
      * @var null|string
      */
-    protected $paymentPattern;
+    private $paymentPattern;
     
     /**
      * @var null|string
      */
-    protected $returnContext;
+    private $returnContext;
     
     /**
      * @var null|string
      */
-    protected $seal;
+    private $seal;
     
     /**
      * @var null|string
      */
-    protected $sealAlgorithm;
+    private $sealAlgorithm;
     
     /**
      * @var null|string
      */
-    protected $statementReference;
+    private $statementReference;
     
     /**
      * @var null|string
      */
-    protected $transactionReference;
+    private $transactionReference;
     
     /**
      * @var null|string
      */
-    protected $transactionOrigin;
+    private $transactionOrigin;
     
     /**
      * @var null|Address
      */
-    protected $billingAddress;
+    private $billingAddress;
     
     /**
      * @var null|Contact
      */
-    protected $billingContact;
+    private $billingContact;
     
     /**
      * @var null|Address
      */
-    protected $customerAddress;
+    private $customerAddress;
     
     /**
      * @var null|Contact
      */
-    protected $customerContact;
+    private $customerContact;
     
     /**
      * @var null|Address
      */
-    protected $deliveryAddress;
+    private $deliveryAddress;
     
     /**
      * @var null|Contact
      */
-    protected $deliveryContact;
+    private $deliveryContact;
     
     /**
      * @var null|DeliveryData
      */
-    protected $deliveryData;
+    private $deliveryData;
     
     /**
      * @var null|AuthenticationData
      */
-    protected $authenticationData;
+    private $authenticationData;
     
     /**
      * @var null|CustomerData
      */
-    protected $customerData;
+    private $customerData;
     
     /**
      * @var null|FraudData
      */
-    protected $fraudData;
+    private $fraudData;
     
     /**
      * @var null|Address
      */
-    protected $holderAddress;
+    private $holderAddress;
     
     /**
      * @var null|Contact
      */
-    protected $holderContact;
+    private $holderContact;
     
     /**
      * @var null|int
      */
-    protected $responseKeyVersion;
+    private $responseKeyVersion;
     
     /**
      * @var null|PaymentMeanData
      */
-    protected $paymentMeanData;
+    private $paymentMeanData;
 
     /**
      * PaymentProviderInitialize constructor.

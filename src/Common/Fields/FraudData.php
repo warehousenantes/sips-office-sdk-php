@@ -15,57 +15,57 @@ class FraudData extends Field
     /**
      * @var null|string
      */
-    protected $allowedCardArea;
+    private $allowedCardArea;
 
     /**
      * @var null|array
      */
-    protected $allowedCardCountryList;
+    private $allowedCardCountryList;
 
     /**
      * @var null|string
      */
-    protected $allowedIpArea;
+    private $allowedIpArea;
 
     /**
      * @var null|array
      */
-    protected $allowedIpCountryList;
+    private $allowedIpCountryList;
 
     /**
      * @var null|string
      */
-    protected $bypass3DS;
+    private $bypass3DS;
 
     /**
      * @var null|array
      */
-    protected $bypassCtrlList;
+    private $bypassCtrlList;
 
     /**
      * @var null|array
      */
-    protected $bypassInfoList;
+    private $bypassInfoList;
 
     /**
      * @var null|string
      */
-    protected $deniedCardArea;
+    private $deniedCardArea;
 
     /**
      * @var null|array
      */
-    protected $deniedCardCountryList;
+    private $deniedCardCountryList;
 
     /**
      * @var null|string
      */
-    protected $deniedIpArea;
+    private $deniedIpArea;
 
     /**
      * @var null|array
      */
-    protected $deniedIpCountryList;
+    private $deniedIpCountryList;
 
     /**
      * @return string|null

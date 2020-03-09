@@ -15,22 +15,22 @@ class UpdatePaymentMeanResponse extends SipsMessage
     /**
      * @var null|string
      */
-    protected $walletActionDateTime;
+    private $walletActionDateTime;
     
     /**
      * @var null|string
      */
-    protected $walletResponseCode;
+    private $walletResponseCode;
     
     /**
      * @var null|string
      */
-    protected $errorFieldName;
+    private $errorFieldName;
     
     /**
      * @var null|string
      */
-    protected $seal;
+    private $seal;
 
     /**
      * @return string|null

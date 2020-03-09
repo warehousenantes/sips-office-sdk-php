@@ -13,42 +13,42 @@ class Contact extends Field
     /**
      *@var null|string
      */
-    protected $email;
+    private $email;
     
     /**
      *@var null|string
      */
-    protected $firstname;
+    private $firstname;
     
     /**
      *@var null|string
      */
-    protected $gender;
+    private $gender;
     
     /**
      *@var null|string
      */
-    protected $lastname;
+    private $lastname;
     
     /**
      *@var null|string
      */
-    protected $legalId;
+    private $legalId;
     
     /**
      *@var null|string
      */
-    protected $mobile;
+    private $mobile;
     
     /**
      *@var null|string
      */
-    protected $phone;
+    private $phone;
     
     /**
      *@var null|string
      */
-    protected $title;
+    private $title;
 
     /**
      * @return string|null

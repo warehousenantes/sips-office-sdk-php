@@ -15,39 +15,39 @@ class ValidateResponse extends SipsMessage
     /**
      * @var null|string
      */
-    protected $acquirerResponseCode;
+    private $acquirerResponseCode;
     /**
      * @var null|string
      */
-    protected $authorisationId;
+    private $authorisationId;
     /**
      * @var null|int
      */
-    protected $newAmount;
+    private $newAmount;
     /**
      * @var null|string
      */
-    protected $newStatus;
+    private $newStatus;
     /**
      * @var null|string
      */
-    protected $operationDateTime;
+    private $operationDateTime;
     /**
      * @var null|string
      */
-    protected $responseCode;
+    private $responseCode;
     /**
      * @var null|string
      */
-    protected $captureLimitDate;
+    private $captureLimitDate;
     /**
      * @var null|string
      */
-    protected $seal;
+    private $seal;
     /**
      * @var null|string
      */
-    protected $errorFieldName;
+    private $errorFieldName;
 
     /**
      * @return string|null

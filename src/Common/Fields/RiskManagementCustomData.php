@@ -12,12 +12,12 @@ class RiskManagementCustomData extends Field
     /**
      * @var null|int
      */
-    protected $riskManagementCustomSequence;
+    private $riskManagementCustomSequence;
     
     /**
      * @var null|string
      */
-    protected $risktManagementCustomValue;
+    private $risktManagementCustomValue;
 
     /**
      * @return int|null

@@ -24,162 +24,162 @@ class WalletManagementInit extends SipsMessage
     /**
      * @var null|string
      */
-    protected $automaticResponseURL;
+    private $automaticResponseURL;
     
     /**
      * @var null|string
      */
-    protected $customerId;
+    private $customerId;
     
     /**
      * @var null|string
      */
-    protected $customerIpAddress;
+    private $customerIpAddress;
     
     /**
      * @var null|string
      */
-    protected $customerLAnguage;
+    private $customerLAnguage;
     
     /**
      * @var null|string
      */
-    protected $intermediateServiceProviderId;
+    private $intermediateServiceProviderId;
     
     /**
      * @var null|string
      */
-    protected $interfaceVersion;
+    private $interfaceVersion;
     
     /**
      * @var null|string
      */
-    protected $keyVersion;
+    private $keyVersion;
     
     /**
      * @var null|string
      */
-    protected $mandateId;
+    private $mandateId;
     
     /**
      * @var null|string
      */
-    protected $merchantId;
+    private $merchantId;
     
     /**
      * @var null|string
      */
-    protected $merchantSessionId;
+    private $merchantSessionId;
     
     /**
      * @var null|string
      */
-    protected $merchantWalletId;
+    private $merchantWalletId;
     
     /**
      * @var null|string
      */
-    protected $normalReturnUrl;
+    private $normalReturnUrl;
     
     /**
      * @var null|string
      */
-    protected $paymentMeanBrandList;
+    private $paymentMeanBrandList;
     
     /**
      * @var null|string
      */
-    protected $paymentMeanData;
+    private $paymentMeanData;
     
     /**
      * @var null|string
      */
-    protected $requestDateTime;
+    private $requestDateTime;
     
     /**
      * @var null|string
      */
-    protected $responseEncoding;
+    private $responseEncoding;
     
     /**
      * @var null|string
      */
-    protected $returnContext;
+    private $returnContext;
     
     /**
      * @var null|string
      */
-    protected $seal;
+    private $seal;
     
     /**
      * @var null|string
      */
-    protected $sealAlgorithm;
+    private $sealAlgorithm;
     
     /**
      * @var null|string
      */
-    protected $templateName;
+    private $templateName;
     
     /**
      * @var null|string
      */
-    protected $transactionActors;
+    private $transactionActors;
     
     /**
      * @var null|array
      */
-    protected $walletActionNameList;
+    private $walletActionNameList;
     
     /**
      * @var null|FraudData
      */
-    protected $fraudData;
+    private $fraudData;
     
     /**
      * @var null|Address
      */
-    protected $customerAddress;
+    private $customerAddress;
     
     /**
      * @var null|Contact
      */
-    protected $customerContact;
+    private $customerContact;
     
     /**
      * @var null|CustomerData
      */
-    protected $customerData;
+    private $customerData;
     
     /**
      * @var null|Address
      */
-    protected $billingAddress;
+    private $billingAddress;
     
     /**
      * @var null|Contact
      */
-    protected $billingContact;
+    private $billingContact;
     
     /**
      * @var null|Address
      */
-    protected $deliveryAddress;
+    private $deliveryAddress;
     
     /**
      * @var null|Contact
      */
-    protected $deliveryContact;
+    private $deliveryContact;
     
     /**
      * @var null|Address
      */
-    protected $holderAddress;
+    private $holderAddress;
     
     /**
      * @var null|Contact
      */
-    protected $holderContact;
+    private $holderContact;
 
     /**
      * WalletManagementInit constructor.

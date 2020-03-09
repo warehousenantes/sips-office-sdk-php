@@ -13,12 +13,12 @@ class BcmcMobile extends Field
     /**
      * @var null|string
      */
-    protected $defaultRedirectUrl;
+    private $defaultRedirectUrl;
 
     /**
      * @var null|string
      */
-    protected $completionRedirectUrl;
+    private $completionRedirectUrl;
 
     /**
      * @return string|null

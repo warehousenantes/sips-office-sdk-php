@@ -13,52 +13,52 @@ class ShoppingCartItem extends Field
     /**
      * @var null|string
      */
-    protected $productName;
+    private $productName;
 
     /**
      * @var null|string
      */
-    protected $productDescription;
+    private $productDescription;
 
     /**
      * @var null|string
      */
-    protected $productCode;
+    private $productCode;
 
     /**
      * @var null|string
      */
-    protected $productSKU;
+    private $productSKU;
 
     /**
      * @var null|int
      */
-    protected $productUnitAmount;
+    private $productUnitAmount;
 
     /**
      * @var null|int
      */
-    protected $productQuantity;
+    private $productQuantity;
 
     /**
      * @var null|string
      */
-    protected $productTaxRate;
+    private $productTaxRate;
 
     /**
      * @var null|int
      */
-    protected $productUnitTaxAmount;
+    private $productUnitTaxAmount;
 
     /**
      * @var null|string
      */
-    protected $productCategory;
+    private $productCategory;
 
     /**
      * @var null|string
      */
-    protected $productTaxCategory;
+    private $productTaxCategory;
 
     /**
      * @return string|null

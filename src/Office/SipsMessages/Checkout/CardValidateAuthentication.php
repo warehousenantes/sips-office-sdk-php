@@ -20,57 +20,57 @@ class CardValidateAuthentication extends SipsMessage
     /**
      * @var null|string
      */
-    protected $interfaceVersion;
+    private $interfaceVersion;
 
     /**
      * @var null|string
      */
-    protected $messageVersion;
+    private $messageVersion;
 
     /**
      * @var null|string
      */
-    protected $merchantId;
+    private $merchantId;
 
     /**
      * @var null|string
      */
-    protected $redirectionData;
+    private $redirectionData;
 
     /**
      * @var null|string
      */
-    protected $transactionReference;
+    private $transactionReference;
 
     /**
      * @var null|string
      */
-    protected $s10TransactionReference;
+    private $s10TransactionReference;
 
     /**
      * @var null|string
      */
-    protected $paResMessage;
+    private $paResMessage;
 
     /**
      * @var null|string
      */
-    protected $intermediateServiceProviderId;
+    private $intermediateServiceProviderId;
 
     /**
      * @var null|string
      */
-    protected $seal;
+    private $seal;
 
     /**
      * @var null|string
      */
-    protected $keyVersion;
+    private $keyVersion;
 
     /**
      * @var null|string
      */
-    protected $sealAlgorithm;
+    private $sealAlgorithm;
 
     /**
      * CardValidateAuthentication constructor.

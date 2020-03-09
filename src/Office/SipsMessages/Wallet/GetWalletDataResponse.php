@@ -16,32 +16,32 @@ class GetWalletDataResponse extends SipsMessage
     /**
      * @var null|string
      */
-    protected $walletCreationDateTime;
+    private $walletCreationDateTime;
     
     /**
      * @var null|string
      */
-    protected $walletLAstActionDateTime;
+    private $walletLAstActionDateTime;
     
     /**
      * @var null|string
      */
-    protected $walletResponseCode;
+    private $walletResponseCode;
     
     /**
      * @var null|array
      */
-    protected $walletPaymentMeanDataList;
+    private $walletPaymentMeanDataList;
     
     /**
      * @var null|string
      */
-    protected $errorFieldName;
+    private $errorFieldName;
     
     /**
      * @var null|string
      */
-    protected $seal;
+    private $seal;
 
     /**
      * @return string|null

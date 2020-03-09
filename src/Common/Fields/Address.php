@@ -15,62 +15,62 @@ class Address extends Field
     /**
      * @var null|string
      */
-    protected $addressAdditional1;
+    private $addressAdditional1;
     
     /**
      * @var null|string
      */
-    protected $addressAdditional2;
+    private $addressAdditional2;
 
     /**
      * @var null|string
      */
-    protected $addressAdditional3;
+    private $addressAdditional3;
 
     /**
      * @var null|string
      */
-    protected $city;
+    private $city;
 
     /**
      * @var null|string
      */
-    protected $company;
+    private $company;
 
     /**
      * @var null|string
      */
-    protected $country;
+    private $country;
 
     /**
      * @var null|string
      */
-    protected $postBox;
+    private $postBox;
 
     /**
      * @var null|string
      */
-    protected $state;
+    private $state;
 
     /**
      * @var null|string
      */
-    protected $street;
+    private $street;
 
     /**
      * @var null|string
      */
-    protected $streetNumber;
+    private $streetNumber;
 
     /**
      * @var null|string
      */
-    protected $zipCode;
+    private $zipCode;
 
     /**
      * @var null|string
      */
-    protected $businessName;
+    private $businessName;
 
     /**
      * @return string|null

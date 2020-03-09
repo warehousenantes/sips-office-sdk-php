@@ -13,42 +13,42 @@ class DeliveryData extends Field
     /**
      * @var null|int
      */
-    protected $deliveryChargeAmount;
+    private $deliveryChargeAmount;
 
     /**
      * @var null|string
      */
-    protected $deliveryMethod;
+    private $deliveryMethod;
 
     /**
      * @var null|string
      */
-    protected $deliveryMode;
+    private $deliveryMode;
 
     /**
      * @var null|string
      */
-    protected $deliveryOperator;
+    private $deliveryOperator;
 
     /**
      * @var null|string
      */
-    protected $estimatedDeliveryDate;
+    private $estimatedDeliveryDate;
 
     /**
      * @var null|string
      */
-    protected $deliveryAddressCreationDate;
+    private $deliveryAddressCreationDate;
 
     /**
      * @var null|string
      */
-    protected $estimatedDeliveryDelay;
+    private $estimatedDeliveryDelay;
 
     /**
      * @var null|string
      */
-    protected $electronicDeliveryIndicator;
+    private $electronicDeliveryIndicator;
 
     /**
      * @return int|null

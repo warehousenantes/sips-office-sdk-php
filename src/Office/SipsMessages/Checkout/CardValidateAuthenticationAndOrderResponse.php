@@ -17,297 +17,297 @@ class CardValidateAuthenticationAndOrderResponse extends SipsMessage
     /**
      * @var null|string
      */
-    protected $acquirerResponseCode;
+    private $acquirerResponseCode;
     
     /**
      * @var null|string
      */
-    protected $acquirerResponseMessage;
+    private $acquirerResponseMessage;
     
     /**
      * @var null|int
      */
-    protected $amount;
+    private $amount;
     
     /**
      * @var null|string
      */
-    protected $authorisationId;
+    private $authorisationId;
     
     /**
      * @var null|string
      */
-    protected $avsAddressResponseCode;
+    private $avsAddressResponseCode;
     
     /**
      * @var null|string
      */
-    protected $avsPostcodeResponseCode;
+    private $avsPostcodeResponseCode;
     
     /**
      * @var null|int
      */
-    protected $captureDay;
+    private $captureDay;
     
     /**
      * @var null|string
      */
-    protected $captureMode;
+    private $captureMode;
     
     /**
      * @var null|string
      */
-    protected $cardCSCResultCode;
+    private $cardCSCResultCode;
     
     /**
      * @var null|string
      */
-    protected $cardExpiryDate;
+    private $cardExpiryDate;
     
     /**
      * @var null|string
      */
-    protected $complementaryCode;
+    private $complementaryCode;
     
     /**
      * @var null|string
      */
-    protected $complementaryInfo;
+    private $complementaryInfo;
     
     /**
      * @var null|string
      */
-    protected $currencyCode;
+    private $currencyCode;
     
     /**
      * @var null|string
      */
-    protected $customerId;
+    private $customerId;
     
     /**
      * @var null|string
      */
-    protected $customerIpAddress;
+    private $customerIpAddress;
     
     /**
      * @var null|string
      */
-    protected $errorFieldName;
+    private $errorFieldName;
     
     /**
      * @var null|string
      */
-    protected $holderAuthentMethod;
+    private $holderAuthentMethod;
     
     /**
      * @var null|string
      */
-    protected $holderAuthentRelegation;
+    private $holderAuthentRelegation;
     
     /**
      * @var null|string
      */
-    protected $holderAuthentStatus;
+    private $holderAuthentStatus;
     
     /**
      * @var null|string
      */
-    protected $holderAuthentProgram;
+    private $holderAuthentProgram;
     
     /**
      * @var null|string
      */
-    protected $invoiceReference;
+    private $invoiceReference;
     
     /**
      * @var null|string
      */
-    protected $guaranteeIndicator;
+    private $guaranteeIndicator;
     
     /**
      * @var null|string
      */
-    protected $maskedPan;
+    private $maskedPan;
     
     /**
      * @var null|string
      */
-    protected $merchantTransactionDateTime;
+    private $merchantTransactionDateTime;
     
     /**
      * @var null|string
      */
-    protected $merchantId;
+    private $merchantId;
     
     /**
      * @var null|string
      */
-    protected $orderChannel;
+    private $orderChannel;
     
     /**
      * @var null|string
      */
-    protected $orderId;
+    private $orderId;
     
     /**
      * @var null|string
      */
-    protected $paymentMeanBrand;
+    private $paymentMeanBrand;
     
     /**
      * @var null|string
      */
-    protected $paymentPattern;
+    private $paymentPattern;
     
     /**
      * @var null|string
      */
-    protected $responseCode;
+    private $responseCode;
     
     /**
      * @var null|string
      */
-    protected $returnContext;
+    private $returnContext;
     
     /**
      * @var null|string
      */
-    protected $statementReference;
+    private $statementReference;
     
     /**
      * @var null|string
      */
-    protected $holderAuthentResponseCode;
+    private $holderAuthentResponseCode;
     
     /**
      * @var null|string
      */
-    protected $transactionDateTime;
+    private $transactionDateTime;
     
     /**
      * @var null|string
      */
-    protected $transactionReference;
+    private $transactionReference;
     
     /**
      * @var null|string
      */
-    protected $tokenPan;
+    private $tokenPan;
     
     /**
      * @var null|string
      */
-    protected $scoreColor;
+    private $scoreColor;
     
     /**
      * @var null|string
      */
-    protected $scoreInfo;
+    private $scoreInfo;
     
     /**
      * @var null|string
      */
-    protected $scoreProfile;
+    private $scoreProfile;
     
     /**
      * @var null|string
      */
-    protected $scoreThreshold;
+    private $scoreThreshold;
     
     /**
      * @var null|string
      */
-    protected $scoreValue;
+    private $scoreValue;
     
     /**
      * @var null|S10TransactionReference
      */
-    protected $s10TransactionReference;
+    private $s10TransactionReference;
     
     /**
      * @var null|string
      */
-    protected $seal;
+    private $seal;
     
     /**
      * @var null|string
      */
-    protected $paymentMeanBrandSelectionStatus;
+    private $paymentMeanBrandSelectionStatus;
     
     /**
      * @var null|string
      */
-    protected $preAuthorisationProfile;
+    private $preAuthorisationProfile;
     
     /**
      * @var null|string
      */
-    protected $preAuthorisationProfileValue;
+    private $preAuthorisationProfileValue;
     
     /**
      * @var null|string
      */
-    protected $preAuthorisationRuleResultList;
+    private $preAuthorisationRuleResultList;
     
     /**
      * @var null|string
      */
-    protected $acquirerNativeResponseCode;
+    private $acquirerNativeResponseCode;
     
     /**
      * @var null|string
      */
-    protected $transactionPlatform;
+    private $transactionPlatform;
     
     /**
      * @var null|string
      */
-    protected $holderAuthentRelegationCode;
+    private $holderAuthentRelegationCode;
     
     /**
      * @var null|CardData
      */
-    protected $cardData;
+    private $cardData;
     
     /**
      * @var null|string
      */
-    protected $authorMessageReference;
+    private $authorMessageReference;
     
     /**
      * @var null|string
      */
-    protected $authorisationTypeLabel;
+    private $authorisationTypeLabel;
     
     /**
      * @var null|string
      */
-    protected $acceptanceSystemApplicationId;
+    private $acceptanceSystemApplicationId;
     
     /**
      * @var null|string
      */
-    protected $panEntryMode;
+    private $panEntryMode;
     
     /**
      * @var null|string
      */
-    protected $walletType;
+    private $walletType;
     
     /**
      * @var null|string
      */
-    protected $issuerWalletInformation;
+    private $issuerWalletInformation;
     
     /**
      * @var null|string
      */
-    protected $intermediateServiceProviderOperationId;
+    private $intermediateServiceProviderOperationId;
     
     /**
      * @var null|string
      */
-    protected $holderAuthentType;
+    private $holderAuthentType;
 
     /**
      * @return string|null

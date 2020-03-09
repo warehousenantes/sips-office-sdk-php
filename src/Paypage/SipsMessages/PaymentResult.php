@@ -15,459 +15,459 @@ class PaymentResult extends SipsMessage
     /**
      * @var null|string
      */
-    protected $acceptanceSystemApplicationId;
+    private $acceptanceSystemApplicationId;
     /**
      * @var null|string
      */
-    protected $acquirerContractNumber;
+    private $acquirerContractNumber;
     /**
      * @var null|string
      */
-    protected $acquirerNativeResponseCode;
+    private $acquirerNativeResponseCode;
     /**
      * @var null|string
      */
-    protected $acquirerResponseCode;
+    private $acquirerResponseCode;
     /**
      * @var null|string
      */
-    protected $acquirerResponseIdentifier;
+    private $acquirerResponseIdentifier;
     /**
      * @var null|string
      */
-    protected $acquirerResponseMessage;
+    private $acquirerResponseMessage;
     /**
      * @var null|string
      */
-    protected $additionalAuthorisationNumber;
+    private $additionalAuthorisationNumber;
     /**
      * @var null|string
      */
-    protected $amount;
+    private $amount;
     /**
      * @var null|string
      */
-    protected $authorisationId;
+    private $authorisationId;
     /**
      * @var null|string
      */
-    protected $authorisationTypeLabel;
+    private $authorisationTypeLabel;
     /**
      * @var null|string
      */
-    protected $authorMessageReference;
+    private $authorMessageReference;
     /**
      * @var null|string
      */
-    protected $avsAddressResponseCode;
+    private $avsAddressResponseCode;
     /**
      * @var null|string
      */
-    protected $avsPostcodeResponseCode;
+    private $avsPostcodeResponseCode;
     /**
      * @var null|string
      */
-    protected $captureDay;
+    private $captureDay;
     /**
      * @var null|string
      */
-    protected $captureLimitDate;
+    private $captureLimitDate;
     /**
      * @var null|string
      */
-    protected $captureMode;
+    private $captureMode;
     /**
      * @var null|string
      */
-    protected $cardCSCResultCode;
+    private $cardCSCResultCode;
     /**
      * @var null|string
      */
-    protected $cardProductCode;
+    private $cardProductCode;
     /**
      * @var null|string
      */
-    protected $cardProductName;
+    private $cardProductName;
     /**
      * @var null|string
      */
-    protected $cardProductProfile;
+    private $cardProductProfile;
     /**
      * @var null|string
      */
-    protected $cardProductUsageLabel;
+    private $cardProductUsageLabel;
     /**
      * @var null|string
      */
-    protected $complementaryCode;
+    private $complementaryCode;
     /**
      * @var null|string
      */
-    protected $complementaryInfo;
+    private $complementaryInfo;
     /**
      * @var null|string
      */
-    protected $creditorId;
+    private $creditorId;
     /**
      * @var null|string
      */
-    protected $currencyCode;
+    private $currencyCode;
     /**
      * @var null|string
      */
-    protected $customerBusinessName;
+    private $customerBusinessName;
     /**
      * @var null|string
      */
-    protected $customerCompanyName;
+    private $customerCompanyName;
     /**
      * @var null|string
      */
-    protected $customerEmail;
+    private $customerEmail;
     /**
      * @var null|string
      */
-    protected $customerId;
+    private $customerId;
     /**
      * @var null|string
      */
-    protected $customerIpAddress;
+    private $customerIpAddress;
     /**
      * @var null|string
      */
-    protected $customerLegalId;
+    private $customerLegalId;
     /**
      * @var null|string
      */
-    protected $customerMobilePhone;
+    private $customerMobilePhone;
     /**
      * @var null|string
      */
-    protected $customerPositionOccupied;
+    private $customerPositionOccupied;
     /**
      * @var null|string
      */
-    protected $dccAmount;
+    private $dccAmount;
     /**
      * @var null|string
      */
-    protected $dccCurrencyCode;
+    private $dccCurrencyCode;
     /**
      * @var null|string
      */
-    protected $dccExchangeRate;
+    private $dccExchangeRate;
     /**
      * @var null|string
      */
-    protected $dccExchangeRateValidity;
+    private $dccExchangeRateValidity;
     /**
      * @var null|string
      */
-    protected $dccProvider;
+    private $dccProvider;
     /**
      * @var null|string
      */
-    protected $dccStatus;
+    private $dccStatus;
     /**
      * @var null|string
      */
-    protected $dccResponseCode;
+    private $dccResponseCode;
     /**
      * @var null|string
      */
-    protected $dueDate;
+    private $dueDate;
     /**
      * @var null|string
      */
-    protected $guaranteeIndicator;
+    private $guaranteeIndicator;
     /**
      * @var null|string
      */
-    protected $hashPan1;
+    private $hashPan1;
     /**
      * @var null|string
      */
-    protected $hashPan2;
+    private $hashPan2;
     /**
      * @var null|string
      */
-    protected $holderAuthentMethod;
+    private $holderAuthentMethod;
     /**
      * @var null|string
      */
-    protected $holderAuthentProgram;
+    private $holderAuthentProgram;
     /**
      * @var null|string
      */
-    protected $holderAuthentRelegation;
+    private $holderAuthentRelegation;
     /**
      * @var null|string
      */
-    protected $holderContactEmail;
+    private $holderContactEmail;
     /**
      * @var null|string
      */
-    protected $holderAuthentStatus;
+    private $holderAuthentStatus;
     /**
      * @var null|string
      */
-    protected $holderAuthentType;
+    private $holderAuthentType;
     /**
      * @var null|string
      */
-    protected $instalmentAmountsList;
+    private $instalmentAmountsList;
     /**
      * @var null|string
      */
-    protected $instalmentDatesList;
+    private $instalmentDatesList;
     /**
      * @var null|string
      */
-    protected $instalmentNumber;
+    private $instalmentNumber;
     /**
      * @var null|string
      */
-    protected $instalmentTransactionReferencesList;
+    private $instalmentTransactionReferencesList;
     /**
      * @var null|string
      */
-    protected $interfaceVersion;
+    private $interfaceVersion;
     /**
      * @var null|string
      */
-    protected $intermediateServiceProviderOperationId;
+    private $intermediateServiceProviderOperationId;
     /**
      * @var null|string
      */
-    protected $invoiceReference;
+    private $invoiceReference;
     /**
      * @var null|string
      */
-    protected $issuerCode;
+    private $issuerCode;
     /**
      * @var null|string
      */
-    protected $issuerCountryCode;
+    private $issuerCountryCode;
     /**
      * @var null|string
      */
-    protected $issuerEnrollementIndicator;
+    private $issuerEnrollementIndicator;
     /**
      * @var null|string
      */
-    protected $issuerWalletInformation;
+    private $issuerWalletInformation;
     /**
      * @var null|string
      */
-    protected $keyVersion;
+    private $keyVersion;
     /**
      * @var null|string
      */
-    protected $mandateAuthentMethod;
+    private $mandateAuthentMethod;
     /**
      * @var null|string
      */
-    protected $mandateCertificationType;
+    private $mandateCertificationType;
     /**
      * @var null|string
      */
-    protected $mandateId;
+    private $mandateId;
     /**
      * @var null|string
      */
-    protected $mandateUsage;
+    private $mandateUsage;
     /**
      * @var null|string
      */
-    protected $maskedPan;
+    private $maskedPan;
     /**
      * @var null|string
      */
-    protected $merchantId;
+    private $merchantId;
     /**
      * @var null|string
      */
-    protected $merchantSessionId;
+    private $merchantSessionId;
     /**
      * @var null|string
      */
-    protected $merchantTransactionDateTime;
+    private $merchantTransactionDateTime;
     /**
      * @var null|string
      */
-    protected $merchantWalletId;
+    private $merchantWalletId;
     /**
      * @var null|string
      */
-    protected $orderChannel;
+    private $orderChannel;
     /**
      * @var null|string
      */
-    protected $orderId;
+    private $orderId;
     /**
      * @var null|string
      */
-    protected $panEntryMode;
+    private $panEntryMode;
     /**
      * @var null|string
      */
-    protected $panExpiryDate;
+    private $panExpiryDate;
     /**
      * @var null|string
      */
-    protected $paymentAttemptNumber;
+    private $paymentAttemptNumber;
     /**
      * @var null|string
      */
-    protected $paymentMeanBrand;
+    private $paymentMeanBrand;
     /**
      * @var null|string
      */
-    protected $paymentMeanBrandSelectionStatus;
+    private $paymentMeanBrandSelectionStatus;
     /**
      * @var null|string
      */
-    protected $paymentMeanData;
+    private $paymentMeanData;
     /**
      * @var null|string
      */
-    protected $paymentMeanId;
+    private $paymentMeanId;
     /**
      * @var null|string
      */
-    protected $paymentMeanTradingName;
+    private $paymentMeanTradingName;
     /**
      * @var null|string
      */
-    protected $paymentMeanType;
+    private $paymentMeanType;
     /**
      * @var null|string
      */
-    protected $paymentPattern;
+    private $paymentPattern;
     /**
      * @var null|string
      */
-    protected $preAuthenticationColor;
+    private $preAuthenticationColor;
     /**
      * @var null|string
      */
-    protected $preAuthenticationInfo;
+    private $preAuthenticationInfo;
     /**
      * @var null|string
      */
-    protected $preAuthenticationProfile;
+    private $preAuthenticationProfile;
     /**
      * @var null|string
      */
-    protected $preAuthenticationProfileValue;
+    private $preAuthenticationProfileValue;
     /**
      * @var null|string
      */
-    protected $preAuthenticationRuleResultList;
+    private $preAuthenticationRuleResultList;
     /**
      * @var null|string
      */
-    protected $preAuthenticationThreshold;
+    private $preAuthenticationThreshold;
     /**
      * @var null|string
      */
-    protected $preAuthenticationValue;
+    private $preAuthenticationValue;
     /**
      * @var null|string
      */
-    protected $preAuthorisationProfile;
+    private $preAuthorisationProfile;
     /**
      * @var null|string
      */
-    protected $preAuthorisationProfileValue;
+    private $preAuthorisationProfileValue;
     /**
      * @var null|string
      */
-    protected $preAuthorisationRuleResultList;
+    private $preAuthorisationRuleResultList;
     /**
      * @var null|string
      */
-    protected $responseCode;
+    private $responseCode;
     /**
      * @var null|string
      */
-    protected $returnContext;
+    private $returnContext;
     /**
      * @var null|string
      */
-    protected $s10TransactionId;
+    private $s10TransactionId;
     /**
      * @var null|string
      */
-    protected $s10TransactionIdDate;
+    private $s10TransactionIdDate;
     /**
      * @var null|string
      */
-    protected $s10transactionIdsList;
+    private $s10transactionIdsList;
     /**
      * @var null|string
      */
-    protected $scoreColor;
+    private $scoreColor;
     /**
      * @var null|string
      */
-    protected $scoreInfo;
+    private $scoreInfo;
     /**
      * @var null|string
      */
-    protected $scoreProfile;
+    private $scoreProfile;
     /**
      * @var null|string
      */
-    protected $scoreThreshold;
+    private $scoreThreshold;
     /**
      * @var null|string
      */
-    protected $scoreValue;
+    private $scoreValue;
     /**
      * @var null|string
      */
-    protected $secureReference;
+    private $secureReference;
     /**
      * @var null|string
      */
-    protected $settlementMode;
+    private $settlementMode;
     /**
      * @var null|string
      */
-    protected $settlementModeComplement;
+    private $settlementModeComplement;
     /**
      * @var null|string
      */
-    protected $statementReference;
+    private $statementReference;
     /**
      * @var null|string
      */
-    protected $tokenPan;
+    private $tokenPan;
     /**
      * @var null|string
      */
-    protected $transactionActors;
+    private $transactionActors;
     /**
      * @var null|string
      */
-    protected $transactionDateTime;
+    private $transactionDateTime;
     /**
      * @var null|string
      */
-    protected $transactionOrigin;
+    private $transactionOrigin;
     /**
      * @var null|string
      */
-    protected $transactionPlatform;
+    private $transactionPlatform;
     /**
      * @var null|string
      */
-    protected $transactionReference;
+    private $transactionReference;
     /**
      * @var null|string
      */
-    protected $walletType;
+    private $walletType;
 
     /**
      * PaymentResult constructor.

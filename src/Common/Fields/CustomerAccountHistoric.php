@@ -13,42 +13,42 @@ class CustomerAccountHistoric extends Field
      /**
      * @var null|string
      */
-    protected $creationDate;
+    private $creationDate;
     
      /**
      * @var null|int
      */
-    protected $numberOfAttemptsAddCard24Hours;
+    private $numberOfAttemptsAddCard24Hours;
     
      /**
      * @var null|int
      */
-    protected $numberOfPurchase;
+    private $numberOfPurchase;
     
      /**
      * @var null|int
      */
-    protected $numberOfPurchase180Days;
+    private $numberOfPurchase180Days;
     
      /**
      * @var null|int
      */
-    protected $numberOfTransaction24Hours;
+    private $numberOfTransaction24Hours;
     
      /**
      * @var null|int
      */
-    protected $suspiciousActivityIndicator;
+    private $suspiciousActivityIndicator;
     
      /**
      * @var null|string
      */
-    protected $firstPurchaseDate;
+    private $firstPurchaseDate;
     
      /**
      * @var null|string
      */
-    protected $lastPurchaseDate;
+    private $lastPurchaseDate;
 
     /**
      * @return string|null

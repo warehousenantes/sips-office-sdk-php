@@ -15,47 +15,47 @@ class CardCheckEnrollmentResponse extends SipsMessage
      /**
      * @var null|string
      */
-    protected $redirectionUrl;
+    private $redirectionUrl;
     
      /**
      * @var null|string
      */
-    protected $errorFieldName;
+    private $errorFieldName;
     
      /**
      * @var null|string
      */
-    protected $paReqMessage;
+    private $paReqMessage;
     
      /**
      * @var null|string
      */
-    protected $redirectionData;
+    private $redirectionData;
     
      /**
      * @var null|string
      */
-    protected $redirectionStatusCode;
+    private $redirectionStatusCode;
     
      /**
      * @var null|string
      */
-    protected $messageVersion;
+    private $messageVersion;
     
      /**
      * @var null|string
      */
-    protected $seal;
+    private $seal;
     
      /**
      * @var null|string
      */
-    protected $paymentMeanBrandSelectionStatus;
+    private $paymentMeanBrandSelectionStatus;
     
      /**
      * @var null|string
      */
-    protected $responseCode;
+    private $responseCode;
 
     /**
      * @return string|null

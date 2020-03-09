@@ -14,37 +14,37 @@ class CardData extends Field
     /**
      * @var null|string
      */
-    protected $cardProductCode;
+    private $cardProductCode;
 
     /**
      * @var null|string
      */
-    protected $cardProductName;
+    private $cardProductName;
 
     /**
      * @var null|string
      */
-    protected $cardProductProfile;
+    private $cardProductProfile;
 
     /**
      * @var null|string
      */
-    protected $cardScheme;
+    private $cardScheme;
 
     /**
      * @var null|string
      */
-    protected $issuerCode;
+    private $issuerCode;
 
     /**
      * @var null|string
      */
-    protected $issuerCountryCode;
+    private $issuerCountryCode;
 
     /**
      * @var null|string
      */
-    protected $cardProductUsageLabel;
+    private $cardProductUsageLabel;
 
     /**
      * @return string|null

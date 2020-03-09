@@ -18,132 +18,132 @@ class DuplicateResponse extends SipsMessage
     /**
      * @var null|string
      */
-    protected $acquirerResponseCode;
+    private $acquirerResponseCode;
     
     /**
      * @var null|string
      */
-    protected $authorisationId;
+    private $authorisationId;
     
     /**
      * @var null|string
      */
-    protected $complementaryCode;
+    private $complementaryCode;
     
     /**
      * @var null|string
      */
-    protected $complementaryInfo;
+    private $complementaryInfo;
     
     /**
      * @var null|string
      */
-    protected $maskedPan;
+    private $maskedPan;
     
     /**
      * @var null|string
      */
-    protected $panExpiryDate;
+    private $panExpiryDate;
     
     /**
      * @var null|string
      */
-    protected $paymentMeanBrand;
+    private $paymentMeanBrand;
     
     /**
      * @var null|string
      */
-    protected $scoreValue;
+    private $scoreValue;
     
     /**
      * @var null|string
      */
-    protected $scoreColor;
+    private $scoreColor;
     
     /**
      * @var null|string
      */
-    protected $scoreInfo;
+    private $scoreInfo;
     
     /**
      * @var null|string
      */
-    protected $scoreProfile;
+    private $scoreProfile;
     
     /**
      * @var null|string
      */
-    protected $scoreThreshold;
+    private $scoreThreshold;
     
     /**
      * @var null|string
      */
-    protected $responseCode;
+    private $responseCode;
     
     /**
      * @var null|string
      */
-    protected $transactionDateTime;
+    private $transactionDateTime;
     
     /**
      * @var null|S10TransactionReference
      */
-    protected $s10TransactionReference;
+    private $s10TransactionReference;
     
     /**
      * @var null|string
      */
-    protected $transactionReference;
+    private $transactionReference;
     
     /**
      * @var null|CardData
      */
-    protected $cardData;
+    private $cardData;
     
     /**
      * @var null|string
      */
-    protected $seal;
+    private $seal;
     
     /**
      * @var null|string
      */
-    protected $paymentMeanBrandSelectionStatus;
+    private $paymentMeanBrandSelectionStatus;
     
     /**
      * @var null|string
      */
-    protected $preAuthorisationProfile;
+    private $preAuthorisationProfile;
     
     /**
      * @var null|string
      */
-    protected $preAuthorisationProfileValue;
+    private $preAuthorisationProfileValue;
     
     /**
      * @var null|array
      */
-    protected $preAuthorisationRuleResultList;
+    private $preAuthorisationRuleResultList;
     
     /**
      * @var null|string
      */
-    protected $transactionPlatform;
+    private $transactionPlatform;
     
     /**
      * @var null|string
      */
-    protected $avsPostcodeResponseCode;
+    private $avsPostcodeResponseCode;
     
     /**
      * @var null|string
      */
-    protected $avsAddressResponseCode;
+    private $avsAddressResponseCode;
     
     /**
      * @var null|string
      */
-    protected $errorFieldName;
+    private $errorFieldName;
 
     /**
      * @return string|null

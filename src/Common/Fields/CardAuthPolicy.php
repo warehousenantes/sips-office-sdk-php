@@ -13,22 +13,22 @@ class CardAuthPolicy extends Field
     /**
      * @var null|string
      */
-    protected $checkAVS;
+    private $checkAVS;
     
     /**
      * @var null|string
      */
-    protected $ignorePostCodeCheckResult;
+    private $ignorePostCodeCheckResult;
     
     /**
      * @var null|string
      */
-    protected $ignoreAddressCheckResult;
+    private $ignoreAddressCheckResult;
     
     /**
      * @var null|string
      */
-    protected $automaticReverse;
+    private $automaticReverse;
     
     /**
      * @return string|null
