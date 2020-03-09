@@ -21,8 +21,8 @@
     "require": {
         "php": ">=7.1.0",
         "guzzlehttp/guzzle": "@stable",
-        "symfony/serializer": "^4.3",
-        "symfony/property-access": "^4.3",
+        "symfony/serializer": "@stable",
+        "symfony/property-access": "@stable",
         "doctrine/annotations": "@stable",
         "doctrine/cache": "@stable",
         "symfony/property-info": "@stable",
