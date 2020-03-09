@@ -593,7 +593,13 @@ class SipsClient
                 "Invalid seal in response. Response not trusted."
             );
         }
-        $result = new PaymentResult($data);
+        $data = explode('|', $data);
+        $dataArray = [];
+        foreach ($data as $value) {
+            $value = explode('=', $value, 2);
+            $dataArray[$value[0]] = $value[1];
+        }
+        $result = $this->serializer->denormalize($dataArray, PaymentResult::class);
 
         return $result;
     }
