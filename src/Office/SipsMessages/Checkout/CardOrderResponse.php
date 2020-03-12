@@ -176,7 +176,7 @@ class CardOrderResponse extends SipsMessage
     private $preAuthorisationProfileValue;
     
     /**
-     * @var null|string
+     * @var null|array
      */
     private $preAuthorisationRuleResultList;
     
@@ -894,7 +894,7 @@ class CardOrderResponse extends SipsMessage
     }
 
     /**
-     * @return string|null
+     * @return array|null
      */
     public function getPreAuthorisationRuleResultList(): ?array
     {

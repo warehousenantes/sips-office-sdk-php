@@ -245,7 +245,7 @@ class CardValidateAuthenticationAndOrderResponse extends SipsMessage
     private $preAuthorisationProfileValue;
     
     /**
-     * @var null|string
+     * @var null|array
      */
     private $preAuthorisationRuleResultList;
     
@@ -1234,20 +1234,20 @@ class CardValidateAuthenticationAndOrderResponse extends SipsMessage
     }
 
     /**
-     * @return string|null
+     * @return array|null
      */
-    public function getPreAuthorisationRuleResultList(): ?string
+    public function getPreAuthorisationRuleResultList(): ?array
     {
         return $this->preAuthorisationRuleResultList;
     }
 
     /**
-     * @param string|null $preAuthorisationRuleResultList
+     * @param array|null $preAuthorisationRuleResultList
      *
      * @return CardValidateAuthenticationAndOrderResponse
      */
     public function setPreAuthorisationRuleResultList(
-        ?string $preAuthorisationRuleResultList
+        ?array $preAuthorisationRuleResultList
     ): CardValidateAuthenticationAndOrderResponse {
         $this->preAuthorisationRuleResultList = $preAuthorisationRuleResultList;
 
