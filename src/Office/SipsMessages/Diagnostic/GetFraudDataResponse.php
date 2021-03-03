@@ -15,87 +15,87 @@ class GetFraudDataResponse extends SipsMessage
     /**
      * @var null|string
      */
-    protected $complementaryCode;
+    private $complementaryCode;
     
     /**
      * @var null|string
      */
-    protected $fraudResponseCode;
+    private $fraudResponseCode;
     
     /**
      * @var null|string
      */
-    protected $preAuthenticationColor;
+    private $preAuthenticationColor;
     
     /**
      * @var null|string
      */
-    protected $preAuthenticationProfile;
+    private $preAuthenticationProfile;
     
     /**
      * @var null|string
      */
-    protected $preAuthenticationProfileValue;
+    private $preAuthenticationProfileValue;
     
     /**
      * @var null|array
      */
-    protected $preAuthenticationRuleResultList;
+    private $preAuthenticationRuleResultList;
     
     /**
      * @var null|string
      */
-    protected $preAuthenticationThreshold;
+    private $preAuthenticationThreshold;
     
     /**
      * @var null|string
      */
-    protected $preAuthenticationValue;
+    private $preAuthenticationValue;
     
     /**
      * @var null|string
      */
-    protected $preAuthorisationProfile;
+    private $preAuthorisationProfile;
     
     /**
      * @var null|string
      */
-    protected $preAuthorisationProfileValue;
+    private $preAuthorisationProfileValue;
     
     /**
      * @var null|array
      */
-    protected $preAuthorisationRuleResultList;
+    private $preAuthorisationRuleResultList;
     
     /**
      * @var null|string
      */
-    protected $scoreColor;
+    private $scoreColor;
     
     /**
      * @var null|string
      */
-    protected $scoreProfile;
+    private $scoreProfile;
     
     /**
      * @var null|string
      */
-    protected $scoreThreshold;
+    private $scoreThreshold;
     
     /**
      * @var null|string
      */
-    protected $scoreValue;
+    private $scoreValue;
     
     /**
      * @var null|string
      */
-    protected $seal;
+    private $seal;
     
     /**
      * @var null|string
      */
-    protected $errorFieldName;
+    private $errorFieldName;
 
     /**
      * @return string|null

@@ -13,39 +13,39 @@ use Worldline\Sips\Common\SipsMessages\SipsMessage;
 class CancelResponse extends SipsMessage
 {
     /**
-     * @var null|string
+     * @var null|int
      */
-    protected $newAmount;
+    private $newAmount;
     
     /**
      * @var null|string
      */
-    protected $operationDateTime;
+    private $operationDateTime;
     
     /**
      * @var null|string
      */
-    protected $responseCode;
+    private $responseCode;
     
     /**
      * @var null|string
      */
-    protected $newStatus;
+    private $newStatus;
     
     /**
      * @var null|string
      */
-    protected $seal;
+    private $seal;
     
     /**
      * @var null|string
      */
-    protected $acquirerResponseCode;
+    private $acquirerResponseCode;
     
     /**
      * @var null|string
      */
-    protected $errorFieldName;
+    private $errorFieldName;
     
     /**
      * @return string|null
@@ -56,11 +56,11 @@ class CancelResponse extends SipsMessage
     }
 
     /**
-     * @param string|null $newAmount
+     * @param int|null $newAmount
      *
      * @return CancelResponse
      */
-    public function setNewAmount(?string $newAmount): CancelResponse
+    public function setNewAmount(?int $newAmount): CancelResponse
     {
         $this->newAmount = $newAmount;
 
@@ -68,9 +68,9 @@ class CancelResponse extends SipsMessage
     }
 
     /**
-     * @return string|null
+     * @return int|null
      */
-    public function getOperationDateTime(): ?string
+    public function getOperationDateTime(): ?int
     {
         return $this->operationDateTime;
     }

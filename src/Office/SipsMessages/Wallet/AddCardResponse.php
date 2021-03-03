@@ -16,32 +16,32 @@ class AddCardResponse extends SipsMessage
     /**
      * @var null|string
      */
-    protected $walletActionDateTime;
+    private $walletActionDateTime;
 
     /**
      * @var null|string
      */
-    protected $paymentMeanId;
+    private $paymentMeanId;
 
     /**
      * @var null|string
      */
-    protected $maskedPan;
+    private $maskedPan;
 
     /**
      * @var null|string
      */
-    protected $walletResponseCode;
+    private $walletResponseCode;
 
     /**
      * @var null|string
      */
-    protected $errorFieldName;
+    private $errorFieldName;
 
     /**
      * @var null|string
      */
-    protected $seal;
+    private $seal;
 
     /**
      * @return string|null

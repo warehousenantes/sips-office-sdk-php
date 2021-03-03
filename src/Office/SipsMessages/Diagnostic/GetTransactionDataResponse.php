@@ -4,6 +4,8 @@
 namespace Worldline\Sips\Office\SipsMessages\Diagnostic;
 
 
+use Worldline\Sips\Common\Fields\CardData;
+use Worldline\Sips\Common\Fields\S10TransactionReference;
 use Worldline\Sips\Common\SipsMessages\SipsMessage;
 
 /**
@@ -15,277 +17,277 @@ class GetTransactionDataResponse extends SipsMessage
     /**
      * @var null|string
      */
-    protected $automaticResponseStatus;
+    private $automaticResponseStatus;
     
     /**
      * @var null|string
      */
-    protected $authorisationId;
+    private $authorisationId;
     
     /**
      * @var null|string
      */
-    protected $captureLimitDate;
+    private $captureLimitDate;
     
     /**
      * @var null|string
      */
-    protected $paymentMeanType;
+    private $paymentMeanType;
     
     /**
      * @var null|string
      */
-    protected $paymentMeanBrand;
+    private $paymentMeanBrand;
     
     /**
      * @var null|string
      */
-    protected $currencyCode;
+    private $currencyCode;
+    
+    /**
+     * @var null|int
+     */
+    private $currentAmount;
     
     /**
      * @var null|string
      */
-    protected $currentAmount;
+    private $customerId;
     
     /**
      * @var null|string
      */
-    protected $customerId;
+    private $customerIpAddress;
     
     /**
      * @var null|string
      */
-    protected $customerIpAddress;
+    private $lastOperationDateTime;
     
     /**
      * @var null|string
      */
-    protected $lastOperationDateTime;
+    private $lastOperationName;
     
     /**
      * @var null|string
      */
-    protected $lastOperationName;
+    private $orderId;
     
     /**
      * @var null|string
      */
-    protected $orderId;
+    private $originAmount;
     
     /**
      * @var null|string
      */
-    protected $originAmount;
+    private $transactionDateTime;
     
     /**
      * @var null|string
      */
-    protected $transactionDateTime;
+    private $responseCode;
     
     /**
      * @var null|string
      */
-    protected $responseCode;
+    private $tokenPan;
     
     /**
      * @var null|string
      */
-    protected $tokenPan;
+    private $transactionStatus;
     
     /**
      * @var null|string
      */
-    protected $transactionStatus;
+    private $orderChannel;
     
     /**
      * @var null|string
      */
-    protected $orderChannel;
+    private $paymentPattern;
     
     /**
      * @var null|string
      */
-    protected $paymentPattern;
+    private $merchantId;
     
     /**
      * @var null|string
      */
-    protected $merchantId;
+    private $panEntryMode;
     
     /**
      * @var null|string
      */
-    protected $panEntryMode;
+    private $walletType;
     
     /**
      * @var null|string
      */
-    protected $walletType;
+    private $holderAuthentMethod;
     
     /**
      * @var null|string
      */
-    protected $holderAuthentMethod;
+    private $holderAuthentStatus;
     
     /**
      * @var null|string
      */
-    protected $holderAuthentStatus;
+    private $holderAuthentProgram;
     
     /**
      * @var null|string
      */
-    protected $holderAuthentProgram;
+    private $dccStatus;
     
     /**
      * @var null|string
      */
-    protected $dccStatus;
+    private $remainingAmount;
     
     /**
      * @var null|string
      */
-    protected $remainingAmount;
+    private $fromTransactionReference;
     
     /**
      * @var null|string
      */
-    protected $fromTransactionReference;
+    private $maskedPan;
     
     /**
      * @var null|string
      */
-    protected $maskedPan;
+    private $panExpiryDate;
+    
+    /**
+     * @var null|S10TransactionReference
+     */
+    private $s10TransactionReference;
+    
+    /**
+     * @var null|S10TransactionReference
+     */
+    private $s10FromTransactionReference;
     
     /**
      * @var null|string
      */
-    protected $panExpiryDate;
+    private $transactionReference;
     
     /**
-     * @var null|array
+     * @var null|CardData
      */
-    protected $s10TransactionReference;
-    
-    /**
-     * @var null|array
-     */
-    protected $s10FromTransactionReference;
+    private $cardData;
     
     /**
      * @var null|string
      */
-    protected $transactionReference;
-    
-    /**
-     * @var null|array
-     */
-    protected $cardData;
+    private $acquirerResponseMessage;
     
     /**
      * @var null|string
      */
-    protected $acquirerResponseMessage;
+    private $seal;
     
     /**
      * @var null|string
      */
-    protected $seal;
+    private $complementaryCode;
     
     /**
      * @var null|string
      */
-    protected $complementaryCode;
+    private $preAuthenticationColor;
     
     /**
      * @var null|string
      */
-    protected $preAuthenticationColor;
+    private $preAuthenticationProfile;
     
     /**
      * @var null|string
      */
-    protected $preAuthenticationProfile;
+    private $preAuthenticationProfileValue;
     
     /**
      * @var null|string
      */
-    protected $preAuthenticationProfileValue;
+    private $preAuthenticationThreshold;
     
     /**
      * @var null|string
      */
-    protected $preAuthenticationThreshold;
+    private $preAuthenticationValue;
     
     /**
      * @var null|string
      */
-    protected $preAuthenticationValue;
+    private $preAuthorisationProfile;
     
     /**
      * @var null|string
      */
-    protected $preAuthorisationProfile;
+    private $preAuthorisationProfileValue;
     
     /**
      * @var null|string
      */
-    protected $preAuthorisationProfileValue;
+    private $scoreColor;
     
     /**
      * @var null|string
      */
-    protected $scoreColor;
+    private $scoreProfile;
     
     /**
      * @var null|string
      */
-    protected $scoreProfile;
+    private $scoreThreshold;
     
     /**
      * @var null|string
      */
-    protected $scoreThreshold;
+    private $scoreValue;
     
     /**
      * @var null|string
      */
-    protected $scoreValue;
+    private $cardCSCResultCode;
     
     /**
      * @var null|string
      */
-    protected $cardCSCResultCode;
+    private $avsPostcodeResponseCode;
     
     /**
      * @var null|string
      */
-    protected $avsPostcodeResponseCode;
+    private $avsAddressResponseCode;
     
     /**
      * @var null|string
      */
-    protected $avsAddressResponseCode;
+    private $getTransDataResponseCode;
     
     /**
      * @var null|string
      */
-    protected $getTransDataResponseCode;
+    private $acquirerResponseCode;
     
     /**
      * @var null|string
      */
-    protected $acquirerResponseCode;
+    private $paymentAttemptNumber;
     
     /**
      * @var null|string
      */
-    protected $paymentAttemptNumber;
-    
-    /**
-     * @var null|string
-     */
-    protected $errorFieldName;
+    private $errorFieldName;
 
     /**
      * @return string|null
@@ -408,19 +410,19 @@ class GetTransactionDataResponse extends SipsMessage
     }
 
     /**
-     * @return string|null
+     * @return int|null
      */
-    public function getCurrentAmount(): ?string
+    public function getCurrentAmount(): ?int
     {
         return $this->currentAmount;
     }
 
     /**
-     * @param string|null $currentAmount
+     * @param int|null $currentAmount
      *
      * @return GetTransactionDataResponse
      */
-    public function setCurrentAmount(?string $currentAmount
+    public function setCurrentAmount(?int $currentAmount
     ): GetTransactionDataResponse {
         $this->currentAmount = $currentAmount;
 
@@ -889,19 +891,19 @@ class GetTransactionDataResponse extends SipsMessage
     }
 
     /**
-     * @return array|null
+     * @return S10TransactionReference|null
      */
-    public function getS10TransactionReference(): ?array
+    public function getS10TransactionReference(): ?S10TransactionReference
     {
         return $this->s10TransactionReference;
     }
 
     /**
-     * @param array|null $s10TransactionReference
+     * @param S10TransactionReference|null $s10TransactionReference
      *
      * @return GetTransactionDataResponse
      */
-    public function setS10TransactionReference(?array $s10TransactionReference
+    public function setS10TransactionReference(?S10TransactionReference $s10TransactionReference
     ): GetTransactionDataResponse {
         $this->s10TransactionReference = $s10TransactionReference;
 
@@ -909,20 +911,20 @@ class GetTransactionDataResponse extends SipsMessage
     }
 
     /**
-     * @return array|null
+     * @return S10TransactionReference|null
      */
-    public function getS10FromTransactionReference(): ?array
+    public function getS10FromTransactionReference(): ?S10TransactionReference
     {
         return $this->s10FromTransactionReference;
     }
 
     /**
-     * @param array|null $s10FromTransactionReference
+     * @param S10TransactionReference|null $s10FromTransactionReference
      *
      * @return GetTransactionDataResponse
      */
     public function setS10FromTransactionReference(
-        ?array $s10FromTransactionReference
+        ?S10TransactionReference $s10FromTransactionReference
     ): GetTransactionDataResponse {
         $this->s10FromTransactionReference = $s10FromTransactionReference;
 
@@ -950,19 +952,19 @@ class GetTransactionDataResponse extends SipsMessage
     }
 
     /**
-     * @return array|null
+     * @return CardData|null
      */
-    public function getCardData(): ?array
+    public function getCardData(): ?CardData
     {
         return $this->cardData;
     }
 
     /**
-     * @param array|null $cardData
+     * @param CardData|null $cardData
      *
      * @return GetTransactionDataResponse
      */
-    public function setCardData(?array $cardData): GetTransactionDataResponse
+    public function setCardData(?CardData $cardData): GetTransactionDataResponse
     {
         $this->cardData = $cardData;
 

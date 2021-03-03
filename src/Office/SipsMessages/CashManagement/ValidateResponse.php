@@ -15,39 +15,39 @@ class ValidateResponse extends SipsMessage
     /**
      * @var null|string
      */
-    protected $acquirerResponseCode;
+    private $acquirerResponseCode;
     /**
      * @var null|string
      */
-    protected $authorisationId;
+    private $authorisationId;
+    /**
+     * @var null|int
+     */
+    private $newAmount;
     /**
      * @var null|string
      */
-    protected $newAmount;
+    private $newStatus;
     /**
      * @var null|string
      */
-    protected $newStatus;
+    private $operationDateTime;
     /**
      * @var null|string
      */
-    protected $operationDateTime;
+    private $responseCode;
     /**
      * @var null|string
      */
-    protected $responseCode;
+    private $captureLimitDate;
     /**
      * @var null|string
      */
-    protected $captureLimitDate;
+    private $seal;
     /**
      * @var null|string
      */
-    protected $seal;
-    /**
-     * @var null|string
-     */
-    protected $errorFieldName;
+    private $errorFieldName;
 
     /**
      * @return string|null
@@ -86,18 +86,18 @@ class ValidateResponse extends SipsMessage
     }
 
     /**
-     * @return string|null
+     * @return int|null
      */
-    public function getNewAmount(): ?string
+    public function getNewAmount(): ?int
     {
         return $this->newAmount;
     }
 
     /**
-     * @param string|null $newAmount
+     * @param int|null $newAmount
      * @return ValidateResponse
      */
-    public function setNewAmount(?string $newAmount): ValidateResponse
+    public function setNewAmount(?int $newAmount): ValidateResponse
     {
         $this->newAmount = $newAmount;
         return $this;

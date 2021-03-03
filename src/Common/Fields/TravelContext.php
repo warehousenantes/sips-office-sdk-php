@@ -13,57 +13,57 @@ class TravelContext extends Field
     /**
      * @var null|string
      */
-    protected $departureDate;
+    private $departureDate;
 
     /**
      * @var null|string
      */
-    protected $passengerName;
+    private $passengerName;
 
     /**
      * @var null|string
      */
-    protected $originAirport;
+    private $originAirport;
 
     /**
      * @var null|int
      */
-    protected $numberOfRoutingCities;
+    private $numberOfRoutingCities;
 
     /**
      * @var null|array
      */
-    protected $routingCityList;
+    private $routingCityList;
 
     /**
      * @var null|int
      */
-    protected $numberOfAirlineCarriers;
+    private $numberOfAirlineCarriers;
 
     /**
      * @var null|array
      */
-    protected $airlineCarrierList;
+    private $airlineCarrierList;
 
     /**
      * @var null|string
      */
-    protected $fareBasis;
+    private $fareBasis;
 
     /**
      * @var null|int
      */
-    protected $numberOfPassengers;
+    private $numberOfPassengers;
 
     /**
      * @var null|string
      */
-    protected $destinationAirport;
+    private $destinationAirport;
 
     /**
      * @var null|string
      */
-    protected $reservationCode;
+    private $reservationCode;
 
     /**
      * @return string|null

@@ -4,6 +4,8 @@
 namespace Worldline\Sips\Office\SipsMessages\Checkout;
 
 
+use Worldline\Sips\Common\Fields\CardData;
+use Worldline\Sips\Common\Fields\S10TransactionReference;
 use Worldline\Sips\Common\SipsMessages\SipsMessage;
 
 /**
@@ -15,197 +17,197 @@ class WalletOrderResponse extends SipsMessage
     /**
      * @var null|string
      */
-    protected $acquirerResponseCode;
+    private $acquirerResponseCode;
 
     /**
      * @var null|string
      */
-    protected $authorisationId;
+    private $authorisationId;
 
     /**
      * @var null|string
      */
-    protected $cardScheme;
+    private $cardScheme;
 
     /**
      * @var null|string
      */
-    protected $complementaryCode;
+    private $complementaryCode;
 
     /**
      * @var null|string
      */
-    protected $complementaryInfo;
+    private $complementaryInfo;
 
     /**
      * @var null|string
      */
-    protected $maskedPan;
+    private $maskedPan;
 
     /**
      * @var null|string
      */
-    protected $responseCode;
+    private $responseCode;
 
     /**
      * @var null|string
      */
-    protected $returnContext;
+    private $returnContext;
 
     /**
      * @var null|string
      */
-    protected $transactionDateTime;
+    private $transactionDateTime;
 
     /**
      * @var null|string
      */
-    protected $tokenPan;
+    private $tokenPan;
 
     /**
      * @var null|string
      */
-    protected $scoreColor;
+    private $scoreColor;
 
     /**
      * @var null|string
      */
-    protected $scoreInfo;
+    private $scoreInfo;
 
     /**
      * @var null|string
      */
-    protected $scoreProfile;
+    private $scoreProfile;
 
     /**
      * @var null|string
      */
-    protected $scoreThreshold;
+    private $scoreThreshold;
 
     /**
      * @var null|string
      */
-    protected $scoreValue;
+    private $scoreValue;
+
+    /**
+     * @var null|S10TransactionReference
+     */
+    private $s10TransactionReference;
+
+    /**
+     * @var null|string
+     */
+    private $transactionReference;
+
+    /**
+     * @var null|CardData
+     */
+    private $cardData;
+
+    /**
+     * @var null|string
+     */
+    private $seal;
+
+    /**
+     * @var null|string
+     */
+    private $preAuthorisationProfile;
+
+    /**
+     * @var null|string
+     */
+    private $preAuthorisationProfileValue;
 
     /**
      * @var null|array
      */
-    protected $s10TransactionReference;
+    private $preAuthorisationRuleResultList;
+
+    /**
+     * @var null|int
+     */
+    private $captureDay;
 
     /**
      * @var null|string
      */
-    protected $transactionReference;
-
-    /**
-     * @var null|array
-     */
-    protected $cardData;
+    private $captureMode;
 
     /**
      * @var null|string
      */
-    protected $seal;
+    private $transactionPlatform;
 
     /**
      * @var null|string
      */
-    protected $preAuthorisationProfile;
+    private $cardCSCResultCode;
 
     /**
      * @var null|string
      */
-    protected $preAuthorisationProfileValue;
-
-    /**
-     * @var null|array
-     */
-    protected $preAuthorisationRuleResultList;
+    private $avsPostcodeResponseCode;
 
     /**
      * @var null|string
      */
-    protected $captureDay;
+    private $avsAddressResponseCode;
 
     /**
      * @var null|string
      */
-    protected $captureMode;
+    private $authorMessageReference;
 
     /**
      * @var null|string
      */
-    protected $transactionPlatform;
+    private $authorisationTypeLabel;
 
     /**
      * @var null|string
      */
-    protected $cardCSCResultCode;
+    private $acquirerResponseMessage;
 
     /**
      * @var null|string
      */
-    protected $avsPostcodeResponseCode;
+    private $recurringResponseCode;
 
     /**
      * @var null|string
      */
-    protected $avsAddressResponseCode;
+    private $holderAuthentRelegationCode;
 
     /**
      * @var null|string
      */
-    protected $authorMessageReference;
+    private $holderAuthentStatus;
 
     /**
      * @var null|string
      */
-    protected $authorisationTypeLabel;
+    private $guaranteeIndicator;
 
     /**
      * @var null|string
      */
-    protected $acquirerResponseMessage;
+    private $acceptanceSystemApplicationId;
 
     /**
      * @var null|string
      */
-    protected $recurringResponseCode;
+    private $errorFieldName;
 
     /**
      * @var null|string
      */
-    protected $holderAuthentRelegationCode;
+    private $intermediateServiceProviderOperationId;
 
     /**
      * @var null|string
      */
-    protected $holderAuthentStatus;
-
-    /**
-     * @var null|string
-     */
-    protected $guaranteeIndicator;
-
-    /**
-     * @var null|string
-     */
-    protected $acceptanceSystemApplicationId;
-
-    /**
-     * @var null|string
-     */
-    protected $errorFieldName;
-
-    /**
-     * @var null|string
-     */
-    protected $intermediateServiceProviderOperationId;
-
-    /**
-     * @var null|string
-     */
-    protected $orderId;
+    private $orderId;
 
     /**
      * @return string|null
@@ -508,19 +510,19 @@ class WalletOrderResponse extends SipsMessage
     }
 
     /**
-     * @return array|null
+     * @return S10TransactionReference|null
      */
-    public function getS10TransactionReference(): ?array
+    public function getS10TransactionReference(): ?S10TransactionReference
     {
         return $this->s10TransactionReference;
     }
 
     /**
-     * @param array|null $s10TransactionReference
+     * @param S10TransactionReference|null $s10TransactionReference
      *
      * @return WalletOrderResponse
      */
-    public function setS10TransactionReference(?array $s10TransactionReference
+    public function setS10TransactionReference(?S10TransactionReference $s10TransactionReference
     ): WalletOrderResponse {
         $this->s10TransactionReference = $s10TransactionReference;
 
@@ -548,19 +550,19 @@ class WalletOrderResponse extends SipsMessage
     }
 
     /**
-     * @return array|null
+     * @return CardData|null
      */
-    public function getCardData(): ?array
+    public function getCardData(): ?CardData
     {
         return $this->cardData;
     }
 
     /**
-     * @param array|null $cardData
+     * @param CardData|null $cardData
      *
      * @return WalletOrderResponse
      */
-    public function setCardData(?array $cardData): WalletOrderResponse
+    public function setCardData(?CardData $cardData): WalletOrderResponse
     {
         $this->cardData = $cardData;
 
@@ -650,19 +652,19 @@ class WalletOrderResponse extends SipsMessage
     }
 
     /**
-     * @return string|null
+     * @return int|null
      */
-    public function getCaptureDay(): ?string
+    public function getCaptureDay(): ?int
     {
         return $this->captureDay;
     }
 
     /**
-     * @param string|null $captureDay
+     * @param int|null $captureDay
      *
      * @return WalletOrderResponse
      */
-    public function setCaptureDay(?string $captureDay): WalletOrderResponse
+    public function setCaptureDay(?int $captureDay): WalletOrderResponse
     {
         $this->captureDay = $captureDay;
 

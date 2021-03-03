@@ -13,7 +13,7 @@ class PaymentMeanData extends Field
     /**
      * @var null|BcmcMobile
      */
-    protected $bcmcMobile;
+    private $bcmcMobile;
 
     /**
      * @return BcmcMobile|null

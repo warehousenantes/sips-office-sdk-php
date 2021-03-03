@@ -15,22 +15,22 @@ class OrderContext extends Field
     /**
      * @var null|string
      */
-    protected $customerHostName;
+    private $customerHostName;
 
     /**
      * @var null|string
      */
-    protected $customerBrowserType;
+    private $customerBrowserType;
 
     /**
      * @var null|string
      */
-    protected $customerANI;
+    private $customerANI;
 
     /**
      * @var null|string
      */
-    protected $customerANIInformationIdentifier;
+    private $customerANIInformationIdentifier;
 
     /**
      * @return string|null

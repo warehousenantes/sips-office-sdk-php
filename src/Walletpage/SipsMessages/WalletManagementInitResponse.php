@@ -15,37 +15,37 @@ class WalletManagementInitResponse extends SipsMessage
     /**
      * @var null|string
      */
-    protected $redirectionData;
+    private $redirectionData;
     
     /**
      * @var null|string
      */
-    protected $redirectionStatusCode;
+    private $redirectionStatusCode;
     
     /**
      * @var null|string
      */
-    protected $redirectionStatusMessage;
+    private $redirectionStatusMessage;
     
     /**
      * @var null|string
      */
-    protected $redirectionUrl;
+    private $redirectionUrl;
     
     /**
      * @var null|string
      */
-    protected $redirectionVersion;
+    private $redirectionVersion;
     
     /**
      * @var null|string
      */
-    protected $seal;
+    private $seal;
     
     /**
      * @var null|string
      */
-    protected $errorfieldName;
+    private $errorfieldName;
 
     /**
      * @return string|null

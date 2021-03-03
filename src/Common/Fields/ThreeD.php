@@ -13,27 +13,27 @@ class ThreeD extends Field
     /**
      * @var null|string
      */
-    protected $cavv;
+    private $cavv;
     /**
      * @var null|string
      */
-    protected $cavvAlgorithm;
+    private $cavvAlgorithm;
     /**
      * @var null|string
      */
-    protected $eci;
+    private $eci;
     /**
      * @var null|string
      */
-    protected $securityIndicator;
+    private $securityIndicator;
     /**
      * @var null|string
      */
-    protected $txStatus;
+    private $txStatus;
     /**
      * @var null|string
      */
-    protected $xd;
+    private $xd;
 
     /**
      * @return string|null

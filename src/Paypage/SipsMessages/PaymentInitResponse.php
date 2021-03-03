@@ -15,47 +15,47 @@ class PaymentInitResponse extends SipsMessage
     /**
      * @var null|string
      */
-    protected $errorFieldName;
+    private $errorFieldName;
 
     /**
      * @var null|string
      */
-    protected $redirectionData;
+    private $redirectionData;
 
     /**
      * @var null|string
      */
-    protected $redirectionStatusCode;
+    private $redirectionStatusCode;
 
     /**
      * @var null|string
      */
-    protected $redirectionStatusMessage;
+    private $redirectionStatusMessage;
 
     /**
      * @var null|string
      */
-    protected $redirectionUrl;
+    private $redirectionUrl;
 
     /**
      * @var null|string
      */
-    protected $redirectionVersion;
+    private $redirectionVersion;
 
     /**
      * @var null|string
      */
-    protected $responseCode;
+    private $responseCode;
 
     /**
      * @var null|string
      */
-    protected $seal;
+    private $seal;
 
     /**
      * @var null|string
      */
-    protected $responseEncoding;
+    private $responseEncoding;
 
     /**
      * @return string|null

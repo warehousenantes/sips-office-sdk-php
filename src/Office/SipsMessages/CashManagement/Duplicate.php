@@ -32,227 +32,227 @@ class Duplicate extends SipsMessage
     /**
      * @var null|int
      */
-    protected $amount;
+    private $amount;
     
     /**
      * @var null|int
      */
-    protected $captureDay;
+    private $captureDay;
     
     /**
      * @var null|string
      */
-    protected $captureMode;
+    private $captureMode;
     
     /**
      * @var null|string
      */
-    protected $currencyCode;
+    private $currencyCode;
     
     /**
      * @var null|string
      */
-    protected $customerEmail;
+    private $customerEmail;
     
     /**
      * @var null|string
      */
-    protected $customerId;
+    private $customerId;
     
     /**
      * @var null|string
      */
-    protected $customerIpAddress;
+    private $customerIpAddress;
     
     /**
      * @var null|FraudData
      */
-    protected $fraudData;
+    private $fraudData;
     
     /**
      * @var null|string
      */
-    protected $fromTransactionReference;
+    private $fromTransactionReference;
     
     /**
      * @var null|string
      */
-    protected $merchantId;
+    private $merchantId;
     
     /**
      * @var null|string
      */
-    protected $merchantTransactionDateTime;
+    private $merchantTransactionDateTime;
     
     /**
      * @var null|string
      */
-    protected $orderChannel;
+    private $orderChannel;
     
     /**
      * @var null|string
      */
-    protected $orderId;
+    private $orderId;
     
     /**
      * @var null|string
      */
-    protected $interfaceVersion;
+    private $interfaceVersion;
     
     /**
      * @var null|string
      */
-    protected $returnContext;
+    private $returnContext;
     
     /**
      * @var null|string
      */
-    protected $transactionReference;
+    private $transactionReference;
     
     /**
      * @var null|string
      */
-    protected $transactionOrigin;
+    private $transactionOrigin;
     
     /**
      * @var null|string
      */
-    protected $fromMerchantId;
+    private $fromMerchantId;
     
     /**
      * @var null|Address
      */
-    protected $deliveryAddress;
+    private $deliveryAddress;
     
     /**
      * @var null|Contact
      */
-    protected $deliveryContact;
+    private $deliveryContact;
     
     /**
      * @var null|Address
      */
-    protected $billingAddress;
+    private $billingAddress;
     
     /**
      * @var null|Contact
      */
-    protected $billingContact;
+    private $billingContact;
     
     /**
      * @var null|Address
      */
-    protected $customerAddress;
+    private $customerAddress;
     
     /**
      * @var null|Contact
      */
-    protected $customerContact;
+    private $customerContact;
     
     /**
      * @var null|CustomerData
      */
-    protected $customerData;
+    private $customerData;
     
     /**
      * @var null|string
      */
-    protected $statementReference;
+    private $statementReference;
     
     /**
      * @var null|DeliveryData
      */
-    protected $deliveryData;
+    private $deliveryData;
     
     /**
      * @var null|ShoppingCartDetail
      */
-    protected $shoppingCartDetail;
+    private $shoppingCartDetail;
     
     /**
      * @var null|S10TransactionReference
      */
-    protected $s10TransactionReference;
+    private $s10TransactionReference;
     
     /**
      * @var null|S10TransactionReference
      */
-    protected $s10FromTransactionReference;
+    private $s10FromTransactionReference;
     
     /**
      * @var null|PaymentMeanData
      */
-    protected $paymentMeanData;
+    private $paymentMeanData;
     
     /**
      * @var null|string
      */
-    protected $intermediateServiceProviderId;
+    private $intermediateServiceProviderId;
     
     /**
      * @var null|string
      */
-    protected $seal;
+    private $seal;
     
     /**
      * @var null|string
      */
-    protected $keyVersion;
+    private $keyVersion;
     
     /**
      * @var null|string
      */
-    protected $sealAlgorithm;
+    private $sealAlgorithm;
     
     /**
      * @var null|string
      */
-    protected $subMerchantId;
+    private $subMerchantId;
     
     /**
      * @var null|string
      */
-    protected $subMerchantShortName;
+    private $subMerchantShortName;
     
     /**
      * @var null|string
      */
-    protected $subMerchantCategoryCode;
+    private $subMerchantCategoryCode;
     
     /**
      * @var null|string
      */
-    protected $subMerchantLegalId;
+    private $subMerchantLegalId;
     
     /**
      * @var null|Address
      */
-    protected $subMerchantAddress;
+    private $subMerchantAddress;
     
     /**
      * @var null|Address
      */
-    protected $holderAddress;
+    private $holderAddress;
     
     /**
      * @var null|Contact
      */
-    protected $holderContact;
+    private $holderContact;
     
     /**
      * @var null|AuthenticationData
      */
-    protected $authenticationData;
+    private $authenticationData;
     
     /**
      * @var null|TravelContext
      */
-    protected $travelContext;
+    private $travelContext;
     
     /**
      * @var null|OrderContext
      */
-    protected $orderContext;
+    private $orderContext;
 
     /**
      * Duplicate constructor.

@@ -13,37 +13,37 @@ class ShoppingCartDetail extends Field
     /**
      * @var null|int
      */
-    protected $discountAmount;
+    private $discountAmount;
 
     /**
      * @var null|string
      */
-    protected $mainProduct;
+    private $mainProduct;
 
     /**
      * @var null|array
      */
-    protected $mainProductCategoryList;
+    private $mainProductCategoryList;
 
     /**
      * @var null|array
      */
-    protected $shoppingCartItemList;
+    private $shoppingCartItemList;
 
     /**
      * @var null|int
      */
-    protected $shoppingCartTotalAmount;
+    private $shoppingCartTotalAmount;
 
     /**
      * @var null|int
      */
-    protected $shoppingCartTotalQuantity;
+    private $shoppingCartTotalQuantity;
 
     /**
      * @var null|int
      */
-    protected $shoppingCartTotalTaxAmount;
+    private $shoppingCartTotalTaxAmount;
 
     /**
      * @return int|null

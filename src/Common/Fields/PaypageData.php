@@ -14,7 +14,7 @@ class PaypageData extends Field
     /**
      * @var null|string
      */
-    protected $bypassReceiptPage;
+    private $bypassReceiptPage;
 
     /**
      * @return string|null

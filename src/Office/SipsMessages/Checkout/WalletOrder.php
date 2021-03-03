@@ -25,177 +25,177 @@ class WalletOrder extends SipsMessage
     /**
      * @var int
      */
-    protected $amount;
+    private $amount;
     
     /**
      * @var int
      */
-    protected $captureDay;
+    private $captureDay;
     
     /**
      * @var string
      */
-    protected $captureMode;
+    private $captureMode;
     
     /**
      * @var string
      */
-    protected $currencyCode;
+    private $currencyCode;
     
     /**
      * @var string
      */
-    protected $customerId;
+    private $customerId;
     
     /**
      * @var string
      */
-    protected $customerIpAddress;
+    private $customerIpAddress;
     
     /**
      * @var string
      */
-    protected $customerLanguage;
+    private $customerLanguage;
     
     /**
      * @var string
      */
-    protected $cardCSCValue;
+    private $cardCSCValue;
     
     /**
      * @var string
      */
-    protected $invoiceReference;
+    private $invoiceReference;
     
     /**
      * @var string
      */
-    protected $interfaceVersion;
+    private $interfaceVersion;
     
     /**
      * @var string
      */
-    protected $intermediateServiceProviderId;
+    private $intermediateServiceProviderId;
     
     /**
      * @var int
      */
-    protected $keyVersion;
+    private $keyVersion;
     
     /**
      * @var string
      */
-    protected $merchantId;
+    private $merchantId;
     
     /**
      * @var string
      */
-    protected $merchantTransactionDateTime;
+    private $merchantTransactionDateTime;
     
     /**
      * @var string
      */
-    protected $merchantWalletId;
+    private $merchantWalletId;
     
     /**
      * @var string
      */
-    protected $orderChannel;
+    private $orderChannel;
     
     /**
      * @var string
      */
-    protected $orderId;
+    private $orderId;
     
     /**
      * @var string
      */
-    protected $paymentMeanId;
+    private $paymentMeanId;
     
     /**
      * @var string
      */
-    protected $returnContext;
+    private $returnContext;
     
     /**
      * @var string
      */
-    protected $seal;
+    private $seal;
     
     /**
      * @var string
      */
-    protected $sealAlgorithm;
+    private $sealAlgorithm;
     
     /**
      * @var string
      */
-    protected $statementReference;
+    private $statementReference;
     
     /**
      * @var string
      */
-    protected $transactionOrigin;
+    private $transactionOrigin;
     
     /**
      * @var string
      */
-    protected $paymentPattern;
+    private $paymentPattern;
     
     /**
      * @var Address
      */
-    protected $billingAddess;
+    private $billingAddess;
     
     /**
      * @var Contact
      */
-    protected $billingContact;
+    private $billingContact;
     
     /**
      * @var Address
      */
-    protected $customerAddress;
+    private $customerAddress;
     
     /**
      * @var Contact
      */
-    protected $customerContact;
+    private $customerContact;
     
     /**
      * @var Address
      */
-    protected $deliveryAddress;
+    private $deliveryAddress;
     
     /**
      * @var Contact
      */
-    protected $deliveryContact;
+    private $deliveryContact;
     
     /**
      * @var FraudData
      */
-    protected $fraudData;
+    private $fraudData;
     
     /**
      * @var Address
      */
-    protected $holderAddress;
+    private $holderAddress;
     
     /**
      * @var Contact
      */
-    protected $holderContact;
+    private $holderContact;
     
     /**
      * @var AuthenticationData
      */
-    protected $authenticationData;
+    private $authenticationData;
     
     /**
      * @var string
      */
-    protected $transactionReference;
+    private $transactionReference;
 
     /**
      * WalletOrder constructor.

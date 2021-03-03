@@ -13,42 +13,42 @@ class HolderData extends Field
     /**
      * @var null|string
      */
-    protected $birthCity;
+    private $birthCity;
 
     /**
      * @var null|string
      */
-    protected $birthCountry;
+    private $birthCountry;
 
     /**
      * @var null|string
      */
-    protected $birthDate;
+    private $birthDate;
 
     /**
      * @var null|string
      */
-    protected $birthZipCode;
+    private $birthZipCode;
 
     /**
      * @var null|string
      */
-    protected $nationalityCountry;
+    private $nationalityCountry;
 
     /**
      * @var null|string
      */
-    protected $newPassword;
+    private $newPassword;
 
     /**
      * @var null|string
      */
-    protected $password;
+    private $password;
 
     /**
      * @var null|string
      */
-    protected $maidenName;
+    private $maidenName;
 
     /**
      * @return string|null

@@ -16,22 +16,22 @@ class PanToTokenResponse extends SipsMessage
     /**
      * @var null|string
      */
-    protected $responseCode;
+    private $responseCode;
 
     /**
      * @var null|array
      */
-    protected $responseTokenPanDataList;
+    private $responseTokenPanDataList;
 
     /**
      * @var null|string
      */
-    protected $seal;
+    private $seal;
 
     /**
      * @var null|string
      */
-    protected $errorFieldName;
+    private $errorFieldName;
 
     /**
      * @return string|null

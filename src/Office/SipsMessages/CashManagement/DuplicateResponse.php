@@ -4,6 +4,8 @@
 namespace Worldline\Sips\Office\SipsMessages\CashManagement;
 
 
+use Worldline\Sips\Common\Fields\CardData;
+use Worldline\Sips\Common\Fields\S10TransactionReference;
 use Worldline\Sips\Common\SipsMessages\SipsMessage;
 
 /**
@@ -16,132 +18,132 @@ class DuplicateResponse extends SipsMessage
     /**
      * @var null|string
      */
-    protected $acquirerResponseCode;
+    private $acquirerResponseCode;
     
     /**
      * @var null|string
      */
-    protected $authorisationId;
+    private $authorisationId;
     
     /**
      * @var null|string
      */
-    protected $complementaryCode;
+    private $complementaryCode;
     
     /**
      * @var null|string
      */
-    protected $complementaryInfo;
+    private $complementaryInfo;
     
     /**
      * @var null|string
      */
-    protected $maskedPan;
+    private $maskedPan;
     
     /**
      * @var null|string
      */
-    protected $panExpiryDate;
+    private $panExpiryDate;
     
     /**
      * @var null|string
      */
-    protected $paymentMeanBrand;
+    private $paymentMeanBrand;
     
     /**
      * @var null|string
      */
-    protected $scoreValue;
+    private $scoreValue;
     
     /**
      * @var null|string
      */
-    protected $scoreColor;
+    private $scoreColor;
     
     /**
      * @var null|string
      */
-    protected $scoreInfo;
+    private $scoreInfo;
     
     /**
      * @var null|string
      */
-    protected $scoreProfile;
+    private $scoreProfile;
     
     /**
      * @var null|string
      */
-    protected $scoreThreshold;
+    private $scoreThreshold;
     
     /**
      * @var null|string
      */
-    protected $responseCode;
+    private $responseCode;
     
     /**
      * @var null|string
      */
-    protected $transactionDateTime;
+    private $transactionDateTime;
+    
+    /**
+     * @var null|S10TransactionReference
+     */
+    private $s10TransactionReference;
+    
+    /**
+     * @var null|string
+     */
+    private $transactionReference;
+    
+    /**
+     * @var null|CardData
+     */
+    private $cardData;
+    
+    /**
+     * @var null|string
+     */
+    private $seal;
+    
+    /**
+     * @var null|string
+     */
+    private $paymentMeanBrandSelectionStatus;
+    
+    /**
+     * @var null|string
+     */
+    private $preAuthorisationProfile;
+    
+    /**
+     * @var null|string
+     */
+    private $preAuthorisationProfileValue;
     
     /**
      * @var null|array
      */
-    protected $s10TransactionReference;
+    private $preAuthorisationRuleResultList;
     
     /**
      * @var null|string
      */
-    protected $transactionReference;
-    
-    /**
-     * @var null|array
-     */
-    protected $cardData;
+    private $transactionPlatform;
     
     /**
      * @var null|string
      */
-    protected $seal;
+    private $avsPostcodeResponseCode;
     
     /**
      * @var null|string
      */
-    protected $paymentMeanBrandSelectionStatus;
+    private $avsAddressResponseCode;
     
     /**
      * @var null|string
      */
-    protected $preAuthorisationProfile;
-    
-    /**
-     * @var null|string
-     */
-    protected $preAuthorisationProfileValue;
-    
-    /**
-     * @var null|array
-     */
-    protected $preAuthorisationRuleResultList;
-    
-    /**
-     * @var null|string
-     */
-    protected $transactionPlatform;
-    
-    /**
-     * @var null|string
-     */
-    protected $avsPostcodeResponseCode;
-    
-    /**
-     * @var null|string
-     */
-    protected $avsAddressResponseCode;
-    
-    /**
-     * @var null|string
-     */
-    protected $errorFieldName;
+    private $errorFieldName;
 
     /**
      * @return string|null
@@ -424,19 +426,19 @@ class DuplicateResponse extends SipsMessage
     }
 
     /**
-     * @return array|null
+     * @return S10TransactionReference|null
      */
-    public function getS10TransactionReference(): ?array
+    public function getS10TransactionReference(): ?S10TransactionReference
     {
         return $this->s10TransactionReference;
     }
 
     /**
-     * @param array|null $s10TransactionReference
+     * @param S10TransactionReference|null $s10TransactionReference
      *
      * @return DuplicateResponse
      */
-    public function setS10TransactionReference(?array $s10TransactionReference
+    public function setS10TransactionReference(?S10TransactionReference $s10TransactionReference
     ): DuplicateResponse {
         $this->s10TransactionReference = $s10TransactionReference;
 
@@ -464,19 +466,19 @@ class DuplicateResponse extends SipsMessage
     }
 
     /**
-     * @return array|null
+     * @return CardData|null
      */
-    public function getCardData(): ?array
+    public function getCardData(): ?CardData
     {
         return $this->cardData;
     }
 
     /**
-     * @param array|null $cardData
+     * @param CardData|null $cardData
      *
      * @return DuplicateResponse
      */
-    public function setCardData(?array $cardData): DuplicateResponse
+    public function setCardData(?CardData $cardData): DuplicateResponse
     {
         $this->cardData = $cardData;
 

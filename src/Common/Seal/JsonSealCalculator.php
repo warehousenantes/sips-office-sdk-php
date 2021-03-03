@@ -6,6 +6,7 @@ namespace Worldline\Sips\Common\Seal;
 
 
 
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;
 use Worldline\Sips\Common\SipsMessages\SipsMessage;
 
@@ -20,8 +21,9 @@ class JsonSealCalculator
      * JsonSealCalculator constructor.
      */
     public function __construct() {
-        $normalizers = [new SealDataNormalizer()];
-        $this->serializer = new Serializer($normalizers);
+        $encoders = [new SealStringEncoder()];
+        $normalizers = [new ObjectNormalizer()];
+        $this->serializer = new Serializer($normalizers, $encoders);
     }
 
     /**
@@ -57,7 +59,8 @@ class JsonSealCalculator
      */
     public function getSealData(SipsMessage $array): string
     {
-        return $this->serializer->normalize($array, null, ['ignored_attributes' => ['serviceUrl','keyVersion','sealAlgorithm','seal'], 'skip_null_values' => true]);
+        return $this->serializer->serialize($array, 'sealstring', ['ignored_attributes' => ['serviceUrl','keyVersion','sealAlgorithm','seal'], 'skip_null_values' => true]);
+        //return $this->serializer->normalize($array, null, ['ignored_attributes' => ['serviceUrl','keyVersion','sealAlgorithm','seal'], 'skip_null_values' => true]);
     }
 
     /**

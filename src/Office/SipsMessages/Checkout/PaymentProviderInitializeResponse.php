@@ -15,57 +15,57 @@ class PaymentProviderInitializeResponse extends SipsMessage
     /**
      * @var null|string
      */
-    protected $responseCode;
+    private $responseCode;
 
     /**
      * @var null|string
      */
-    protected $redirectionUrl;
+    private $redirectionUrl;
 
     /**
      * @var null|string
      */
-    protected $redirectionData;
+    private $redirectionData;
 
     /**
      * @var null|string
      */
-    protected $messageVersion;
+    private $messageVersion;
 
     /**
      * @var null|string
      */
-    protected $paymentProviderSessionId;
+    private $paymentProviderSessionId;
 
     /**
      * @var null|string
      */
-    protected $outerRedirectionUrl;
+    private $outerRedirectionUrl;
 
     /**
      * @var null|string
      */
-    protected $acquirerNativeResponseCode;
+    private $acquirerNativeResponseCode;
 
     /**
      * @var null|string
      */
-    protected $acquirerResponseIdentifier;
+    private $acquirerResponseIdentifier;
 
     /**
      * @var null|string
      */
-    protected $acquirerResponseMessage;
+    private $acquirerResponseMessage;
 
     /**
      * @var null|string
      */
-    protected $seal;
+    private $seal;
 
     /**
      * @var null|string
      */
-    protected $errorFieldName;
+    private $errorFieldName;
 
     /**
      * @return string|null

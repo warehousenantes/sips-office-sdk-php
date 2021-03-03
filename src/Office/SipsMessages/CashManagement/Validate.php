@@ -21,71 +21,71 @@ class Validate extends SipsMessage
     /**
      * @var null|int
      */
-    protected $operationAmount;
+    private $operationAmount;
     /**
      * @var null|string
      */
-    protected $currencyCode;
+    private $currencyCode;
     /**
      * @var null|string
      */
-    protected $merchantId;
+    private $merchantId;
     /**
      * @var null|string
      */
-    protected $interfaceVersion;
+    private $interfaceVersion;
     /**
      * @var null|string
      */
-    protected $transactionReference;
+    private $transactionReference;
     /**
      * @var null|string
      */
-    protected $operationOrigin;
+    private $operationOrigin;
     /**
      * @var null|string
      */
-    protected $lastRecoveryIndicator;
+    private $lastRecoveryIndicator;
     /**
      * @var null|S10TransactionReference
      */
-    protected $s10TransactionReference;
+    private $s10TransactionReference;
     /**
      * @var null|string
      */
-    protected $intermediateServiceProviderId;
+    private $intermediateServiceProviderId;
     /**
      * @var null|string
      */
-    protected $seal;
+    private $seal;
     /**
      * @var null|string
      */
-    protected $keyVersion;
+    private $keyVersion;
     /**
      * @var null|string
      */
-    protected $sealAlgorithm;
+    private $sealAlgorithm;
     /**
      * @var null|string
      */
-    protected $subMerchantId;
+    private $subMerchantId;
     /**
      * @var null|string
      */
-    protected $subMerchantShortName;
+    private $subMerchantShortName;
     /**
      * @var null|string
      */
-    protected $subMerchantCategoryCode;
+    private $subMerchantCategoryCode;
     /**
      * @var null|string
      */
-    protected $subMerchantLegalId;
+    private $subMerchantLegalId;
     /**
      * @var null|Address
      */
-    protected $subMerchantAddress;
+    private $subMerchantAddress;
 
     /**
      * Validate constructor.

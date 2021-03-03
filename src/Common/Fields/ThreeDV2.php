@@ -13,59 +13,59 @@ class ThreeDV2
     /**
      * @var null|string
      */
-    protected $cavv;
+    private $cavv;
     /**
      * @var null|string
      */
-    protected $cavvAlgorithm;
+    private $cavvAlgorithm;
     /**
      * @var null|string
      */
-    protected $securityIndicator;
+    private $securityIndicator;
     /**
      * @var null|string
      */
-    protected $eci;
+    private $eci;
     /**
      * @var null|string
      */
-    protected $txStatus;
+    private $txStatus;
     /**
      * @var null|string
      */
-    protected $authentTransStatusReason;
+    private $authentTransStatusReason;
     /**
      * @var null|string
      */
-    protected $authentDsTransId;
+    private $authentDsTransId;
     /**
      * @var null|string
      */
-    protected $authentAmount;
+    private $authentAmount;
     /**
      * @var null|string
      */
-    protected $authentAcsTransId;
+    private $authentAcsTransId;
     /**
      * @var null|string
      */
-    protected $authentDateTime;
+    private $authentDateTime;
     /**
      * @var null|string
      */
-    protected $holderAuthentType;
+    private $holderAuthentType;
     /**
      * @var null|string
      */
-    protected $authentScoreValue;
+    private $authentScoreValue;
     /**
      * @var null|string
      */
-    protected $challengeMode3DS;
+    private $challengeMode3DS;
     /**
      * @var null|string
      */
-    protected $authentCancelReason;
+    private $authentCancelReason;
 
     /**
      * @return string|null

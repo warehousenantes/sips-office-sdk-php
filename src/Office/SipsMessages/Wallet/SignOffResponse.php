@@ -15,22 +15,22 @@ class SignOffResponse extends SipsMessage
     /**
      * @var null|string
      */
-    protected $walletActionDateTime;
+    private $walletActionDateTime;
     
     /**
      * @var null|string
      */
-    protected $walletOrderResponseCode;
+    private $walletOrderResponseCode;
     
     /**
      * @var null|string
      */
-    protected $errorFieldName;
+    private $errorFieldName;
     
     /**
      * @var null|string
      */
-    protected $seal;
+    private $seal;
 
     /**
      * @return string|null

@@ -17,39 +17,39 @@ class CardValidateAuthenticationResponse extends SipsMessage
     /**
      * @var null|string
      */
-    protected $responseCode;
+    private $responseCode;
     /**
      * @var null|string
      */
-    protected $holderAuthentResponseCode;
+    private $holderAuthentResponseCode;
     /**
      * @var null|string
      */
-    protected $seal;
+    private $seal;
     /**
      * @var null|string
      */
-    protected $errorFieldName;
+    private $errorFieldName;
     /**
      * @var null|string
      */
-    protected $holderAuthentStatus;
+    private $holderAuthentStatus;
     /**
      * @var null|string
      */
-    protected $holderAuthentMethod;
+    private $holderAuthentMethod;
     /**
      * @var null|string
      */
-    protected $holderAuthentProgram;
+    private $holderAuthentProgram;
     /**
      * @var null|array
      */
-    protected $threeD;
+    private $threeD;
     /**
      * @var null|array
      */
-    protected $threeDV2;
+    private $threeDV2;
 
     /**
      * @return string|null

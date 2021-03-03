@@ -15,22 +15,22 @@ class GetPaymentMeanDataResponse extends SipsMessage
     /**
      * @var null|string
      */
-    protected $errorFieldName;
+    private $errorFieldName;
     
     /**
      * @var null|string
      */
-    protected $seal;
+    private $seal;
     
     /**
      * @var null|array
      */
-    protected $walletPaymentMeanData;
+    private $walletPaymentMeanData;
     
     /**
      * @var null|string
      */
-    protected $walletResponseCode;
+    private $walletResponseCode;
     
     /**
      * @return string|null

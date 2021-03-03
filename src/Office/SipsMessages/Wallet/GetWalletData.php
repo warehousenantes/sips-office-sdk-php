@@ -20,37 +20,37 @@ class GetWalletData extends SipsMessage
     /**
      * @var null|int
      */
-    protected $keyVersion;
+    private $keyVersion;
     
     /**
      * @var null|string
      */
-    protected $merchantId;
+    private $merchantId;
     
     /**
      * @var null|string
      */
-    protected $interfaceVersion;
+    private $interfaceVersion;
     
     /**
      * @var null|string
      */
-    protected $intermediateServiceProviderId;
+    private $intermediateServiceProviderId;
     
     /**
      * @var null|string
      */
-    protected $merchantWalletId;
+    private $merchantWalletId;
     
     /**
      * @var null|string
      */
-    protected $seal;
+    private $seal;
     
     /**
      * @var null|string
      */
-    protected $sealAlgorithm;
+    private $sealAlgorithm;
 
     /**
      * GetWalletData constructor.

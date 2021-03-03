@@ -4,15 +4,18 @@
 namespace Worldline\Sips\Common\Seal;
 
 
-use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+use Symfony\Component\Serializer\Encoder\EncoderInterface;
 
-class SealDataNormalizer extends ObjectNormalizer
+class SealStringEncoder implements EncoderInterface
 {
-    public function normalize($object, $format = NULL, array $context = []) {
-        $data =  parent::normalize($object, $format, $context);
-        $sealString = $this->handleArray($data);
-        
-        return $sealString;
+    public function encode($data, $format, array $context = [])
+    {
+        return $this->handleArray($data);
+    }
+
+    public function supportsEncoding($format)
+    {
+        return "sealstring" === $format;
     }
 
     private function handleArray($data) {

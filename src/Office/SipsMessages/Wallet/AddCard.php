@@ -20,57 +20,57 @@ class AddCard extends SipsMessage
     /**
      * @var null|string
      */
-    protected $merchantId;
+    private $merchantId;
     
     /**
      * @var null|string
      */
-    protected $interfaceVersion;
+    private $interfaceVersion;
     
     /**
      * @var null|string
      */
-    protected $cardNumber;
+    private $cardNumber;
     
     /**
      * @var null|string
      */
-    protected $cardExpiryDate;
+    private $cardExpiryDate;
     
     /**
      * @var null|string
      */
-    protected $merchantWalletId;
+    private $merchantWalletId;
     
     /**
      * @var null|string
      */
-    protected $paymentMeanAlias;
+    private $paymentMeanAlias;
     
     /**
      * @var null|string
      */
-    protected $paymentMeanBrand;
+    private $paymentMeanBrand;
     
     /**
      * @var null|string
      */
-    protected $intermediateServiceProviderId;
+    private $intermediateServiceProviderId;
     
     /**
      * @var null|string
      */
-    protected $seal;
+    private $seal;
     
     /**
      * @var null|string
      */
-    protected $keyVersion;
+    private $keyVersion;
     
     /**
      * @var null|string
      */
-    protected $sealAlgorithm;
+    private $sealAlgorithm;
 
     /**
      * AddCard constructor.
