@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Worldline\Sips\WalletPage\SipsMessages;
+namespace Worldline\Sips\Walletpage\SipsMessages;
 
 
 use Worldline\Sips\Common\SipsMessages\SipsMessage;
