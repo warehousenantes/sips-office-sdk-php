@@ -119,7 +119,7 @@ class GetTransactionDataResponse extends SipsMessage
 
     private ?string $acquirerResponseCode = null;
 
-    private ?string $paymentAttemptNumber = null;
+    private ?int $paymentAttemptNumber = null;
 
     private ?string $errorFieldName = null;
 
@@ -804,14 +804,13 @@ class GetTransactionDataResponse extends SipsMessage
         return $this;
     }
 
-    public function getPaymentAttemptNumber(): ?string
+    public function getPaymentAttemptNumber(): ?int
     {
         return $this->paymentAttemptNumber;
     }
 
-    public function setPaymentAttemptNumber(
-        ?string $paymentAttemptNumber
-    ): self {
+    public function setPaymentAttemptNumber(?int $paymentAttemptNumber): self
+    {
         $this->paymentAttemptNumber = $paymentAttemptNumber;
 
         return $this;

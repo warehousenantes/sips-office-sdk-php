@@ -161,7 +161,7 @@ class PaymentResult extends SipsMessage
 
     private ?string $panExpiryDate = null;
 
-    private ?string $paymentAttemptNumber = null;
+    private ?int $paymentAttemptNumber = null;
 
     private ?string $paymentMeanBrand = null;
 
@@ -1139,12 +1139,12 @@ class PaymentResult extends SipsMessage
         return $this;
     }
 
-    public function getPaymentAttemptNumber(): ?string
+    public function getPaymentAttemptNumber(): ?int
     {
         return $this->paymentAttemptNumber;
     }
 
-    public function setPaymentAttemptNumber(?string $paymentAttemptNumber): self
+    public function setPaymentAttemptNumber(?int $paymentAttemptNumber): self
     {
         $this->paymentAttemptNumber = $paymentAttemptNumber;
 
