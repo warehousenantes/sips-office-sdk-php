@@ -90,7 +90,7 @@ class Duplicate extends SipsMessage
 
     private ?string $seal = null;
 
-    private ?string $keyVersion = null;
+    private ?int $keyVersion = null;
 
     private ?string $sealAlgorithm = null;
 
@@ -543,12 +543,12 @@ class Duplicate extends SipsMessage
         return $this;
     }
 
-    public function getKeyVersion(): ?string
+    public function getKeyVersion(): ?int
     {
         return $this->keyVersion;
     }
 
-    public function setKeyVersion(?string $keyVersion): self
+    public function setKeyVersion(?int $keyVersion): self
     {
         $this->keyVersion = $keyVersion;
 

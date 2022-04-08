@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Worldline\Sips\Common;
 
 use Exception;
-use GuzzleHttp\Client;
-use GuzzleHttp\Psr7\Request;
+use Http\Discovery\HttpClientDiscovery;
+use Http\Discovery\MessageFactoryDiscovery;
 use Symfony\Component\PropertyInfo\Extractor\PhpDocExtractor;
 use Symfony\Component\PropertyInfo\Extractor\ReflectionExtractor;
 use Symfony\Component\PropertyInfo\PropertyInfoExtractor;
@@ -44,19 +44,19 @@ use Worldline\Sips\Paypage\SipsMessages\PaymentResult;
 
 class SipsClient
 {
-    private $environment;
+    private SipsEnvironment $environment;
 
-    private $merchantId;
+    private string $merchantId;
 
-    private $secretKey;
+    private string $secretKey;
 
-    private $keyVersion;
+    private int $keyVersion;
 
-    private $lastRequestAsJson;
+    private ?string $lastRequestAsJson = null;
 
-    private $lastResponseAsJson;
+    private ?string $lastResponseAsJson = null;
 
-    private $serializer;
+    private Serializer $serializer;
 
     /**
      * SipsClient constructor.
@@ -71,6 +71,7 @@ class SipsClient
         $this->setMerchantId($merchantId);
         $this->setSecretKey($secretKey);
         $this->setKeyVersion($keyVersion);
+
         $extractor = new PropertyInfoExtractor([], [new PhpDocExtractor(), new ReflectionExtractor()]);
         $normalizers = [new ArrayDenormalizer(), new ObjectNormalizer(null, null, null, $extractor)];
         $encoders = [new JsonEncoder()];
@@ -530,25 +531,37 @@ class SipsClient
         $sealCalculator = new JsonSealCalculator();
         $sealCalculator->calculateSeal($request, $this->getSecretKey());
 
-        $client = new Client(
-            ['base_uri' => $this->environment->getEnvironment()]
-        );
         $headers = [
             'Content-Type' => 'application/json',
             'Accept' => 'application/json',
         ];
-        $json = $this->serializer->serialize($request, 'json', ['ignored_attributes' => ['serviceUrl'], 'skip_null_values' => true]);
-        $this->lastRequestAsJson = $json;
-        $guzzleRequest = new Request(
-            'POST',
-            $request->getServiceUrl(),
-            $headers,
-            $json
+
+        $json = $this->serializer->serialize(
+            $request,
+            'json',
+            [
+                'ignored_attributes' => ['serviceUrl'],
+                'skip_null_values' => true,
+            ]
         );
-        $response = $client->send($guzzleRequest);
+        $this->lastRequestAsJson = $json;
+
+        $client = HttpClientDiscovery::find();
+        $messageFactory = MessageFactoryDiscovery::findRequestFactory();
+
+        $response = $client->sendRequest(
+            $messageFactory->createRequest(
+                'POST',
+                $this->environment->getEnvironment().$request->getServiceUrl(),
+                $headers,
+                $json
+            )
+        );
+
         $json = $response->getBody()->getContents();
         $this->lastResponseAsJson = $json;
         $obj = $this->serializer->deserialize($json, $className, 'json');
+
         if (null !== $obj->getSeal()) {
             $validSeal = $sealCalculator->isCorrectSeal(
                 $obj,

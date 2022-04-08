@@ -133,7 +133,7 @@ class PaymentResult extends SipsMessage
 
     private ?string $issuerWalletInformation = null;
 
-    private ?string $keyVersion = null;
+    private ?int $keyVersion = null;
 
     private ?string $mandateAuthentMethod = null;
 
@@ -971,12 +971,12 @@ class PaymentResult extends SipsMessage
         return $this;
     }
 
-    public function getKeyVersion(): ?string
+    public function getKeyVersion(): ?int
     {
         return $this->keyVersion;
     }
 
-    public function setKeyVersion(?string $keyVersion): self
+    public function setKeyVersion(?int $keyVersion): self
     {
         $this->keyVersion = $keyVersion;
 
