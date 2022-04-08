@@ -547,7 +547,7 @@ class SipsClient
         $this->lastRequestAsJson = $json;
 
         $client = HttpClientDiscovery::find();
-        $messageFactory = MessageFactoryDiscovery::findRequestFactory();
+        $messageFactory = MessageFactoryDiscovery::find();
 
         $response = $client->sendRequest(
             $messageFactory->createRequest(
