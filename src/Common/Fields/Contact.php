@@ -1,213 +1,123 @@
 <?php
 
+declare(strict_types=1);
 
 namespace Worldline\Sips\Common\Fields;
 
-
 /**
- * Class Contact
- * @package Worldline\Sips\Common\Fields
+ * Class Contact.
  */
 class Contact extends Field
 {
-    /**
-     *@var null|string
-     */
-    private $email;
-    
-    /**
-     *@var null|string
-     */
-    private $firstname;
-    
-    /**
-     *@var null|string
-     */
-    private $gender;
-    
-    /**
-     *@var null|string
-     */
-    private $lastname;
-    
-    /**
-     *@var null|string
-     */
-    private $legalId;
-    
-    /**
-     *@var null|string
-     */
-    private $mobile;
-    
-    /**
-     *@var null|string
-     */
-    private $phone;
-    
-    /**
-     *@var null|string
-     */
-    private $title;
+    private ?string $email = null;
 
-    /**
-     * @return string|null
-     */
+    private ?string $firstname = null;
+
+    private ?string $gender = null;
+
+    private ?string $lastname = null;
+
+    private ?string $legalId = null;
+
+    private ?string $mobile = null;
+
+    private ?string $phone = null;
+
+    private ?string $title = null;
+
     public function getEmail(): ?string
     {
         return $this->email;
     }
 
-    /**
-     * @param string|null $email
-     *
-     * @return Contact
-     */
-    public function setEmail(?string $email): Contact
+    public function setEmail(?string $email): self
     {
         $this->email = $email;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getFirstname(): ?string
     {
         return $this->firstname;
     }
 
-    /**
-     * @param string|null $firstname
-     *
-     * @return Contact
-     */
-    public function setFirstname(?string $firstname): Contact
+    public function setFirstname(?string $firstname): self
     {
         $this->firstname = $firstname;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getGender(): ?string
     {
         return $this->gender;
     }
 
-    /**
-     * @param string|null $gender
-     *
-     * @return Contact
-     */
-    public function setGender(?string $gender): Contact
+    public function setGender(?string $gender): self
     {
         $this->gender = $gender;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getLastname(): ?string
     {
         return $this->lastname;
     }
 
-    /**
-     * @param string|null $lastname
-     *
-     * @return Contact
-     */
-    public function setLastname(?string $lastname): Contact
+    public function setLastname(?string $lastname): self
     {
         $this->lastname = $lastname;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getLegalId(): ?string
     {
         return $this->legalId;
     }
 
-    /**
-     * @param string|null $legalId
-     *
-     * @return Contact
-     */
-    public function setLegalId(?string $legalId): Contact
+    public function setLegalId(?string $legalId): self
     {
         $this->legalId = $legalId;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getMobile(): ?string
     {
         return $this->mobile;
     }
 
-    /**
-     * @param string|null $mobile
-     *
-     * @return Contact
-     */
-    public function setMobile(?string $mobile): Contact
+    public function setMobile(?string $mobile): self
     {
         $this->mobile = $mobile;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getPhone(): ?string
     {
         return $this->phone;
     }
 
-    /**
-     * @param string|null $phone
-     *
-     * @return Contact
-     */
-    public function setPhone(?string $phone): Contact
+    public function setPhone(?string $phone): self
     {
         $this->phone = $phone;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getTitle(): ?string
     {
         return $this->title;
     }
 
-    /**
-     * @param string|null $title
-     *
-     * @return Contact
-     */
-    public function setTitle(?string $title): Contact
+    public function setTitle(?string $title): self
     {
         $this->title = $title;
 
         return $this;
     }
-    
 }

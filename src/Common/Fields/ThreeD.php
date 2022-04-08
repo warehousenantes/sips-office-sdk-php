@@ -1,158 +1,98 @@
 <?php
 
+declare(strict_types=1);
 
 namespace Worldline\Sips\Common\Fields;
 
-
 /**
- * Class ThreeD
- * @package Worldline\Sips\Common\Fields
+ * Class ThreeD.
  */
 class ThreeD extends Field
 {
     /**
-     * @var null|string
+     * @var mixed|string|null
      */
-    private $cavv;
-    /**
-     * @var null|string
-     */
-    private $cavvAlgorithm;
-    /**
-     * @var null|string
-     */
-    private $eci;
-    /**
-     * @var null|string
-     */
-    private $securityIndicator;
-    /**
-     * @var null|string
-     */
-    private $txStatus;
-    /**
-     * @var null|string
-     */
-    private $xd;
+    public $xid;
 
-    /**
-     * @return string|null
-     */
+    private ?string $cavv = null;
+
+    private ?string $cavvAlgorithm = null;
+
+    private ?string $eci = null;
+
+    private ?string $securityIndicator = null;
+
+    private ?string $txStatus = null;
+
     public function getCavv(): ?string
     {
         return $this->cavv;
     }
 
-    /**
-     * @param string|null $cavv
-     *
-     * @return ThreeD
-     */
-    public function setCavv(?string $cavv): ThreeD
+    public function setCavv(?string $cavv): self
     {
         $this->cavv = $cavv;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getCavvAlgorithm(): ?string
     {
         return $this->cavvAlgorithm;
     }
 
-    /**
-     * @param string|null $cavvAlgorithm
-     *
-     * @return ThreeD
-     */
-    public function setCavvAlgorithm(?string $cavvAlgorithm): ThreeD
+    public function setCavvAlgorithm(?string $cavvAlgorithm): self
     {
         $this->cavvAlgorithm = $cavvAlgorithm;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getEci(): ?string
     {
         return $this->eci;
     }
 
-    /**
-     * @param string|null $eci
-     *
-     * @return ThreeD
-     */
-    public function setEci(?string $eci): ThreeD
+    public function setEci(?string $eci): self
     {
         $this->eci = $eci;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getSecurityIndicator(): ?string
     {
         return $this->securityIndicator;
     }
 
-    /**
-     * @param string|null $securityIndicator
-     *
-     * @return ThreeD
-     */
-    public function setSecurityIndicator(?string $securityIndicator): ThreeD
+    public function setSecurityIndicator(?string $securityIndicator): self
     {
         $this->securityIndicator = $securityIndicator;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getTxStatus(): ?string
     {
         return $this->txStatus;
     }
 
-    /**
-     * @param string|null $txStatus
-     *
-     * @return ThreeD
-     */
-    public function setTxStatus(?string $txStatus): ThreeD
+    public function setTxStatus(?string $txStatus): self
     {
         $this->txStatus = $txStatus;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getxid(): ?string
     {
         return $this->xid;
     }
 
-    /**
-     * @param string|null $xid
-     *
-     * @return ThreeD
-     */
-    public function setxid(?string $xid): ThreeD
+    public function setxid(?string $xid): self
     {
         $this->xid = $xid;
 
         return $this;
     }
-    
 }

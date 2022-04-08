@@ -1,8 +1,8 @@
 <?php
 
+declare(strict_types=1);
 
 namespace Worldline\Sips\Common\Fields;
-
 
 /**@
  * Class InstalmentData
@@ -10,129 +10,75 @@ namespace Worldline\Sips\Common\Fields;
  */
 class InstalmentData extends Field
 {
-    /**
-     * @var null|int
-     */
-    private $number;
+    private ?int $number = null;
 
-    /**
-     * @var null|array
-     */
-    private $datesList;
+    private ?array $datesList = null;
 
-    /**
-     * @var null|array
-     */
-    private $transactionReferencesList;
+    private ?array $transactionReferencesList = null;
 
-    /**
-     * @var null|array
-     */
-    private $amountsList;
+    private ?array $amountsList = null;
 
-    /**
-     * @var null|array
-     */
-    private $s10TransactionIdsList;
+    private ?array $s10TransactionIdsList = null;
 
-    /**
-     * @return int|null
-     */
     public function getNumber(): ?int
     {
         return $this->number;
     }
 
-    /**
-     * @param int|null $number
-     *
-     * @return InstalmentData
-     */
-    public function setNumber(?int $number): InstalmentData
+    public function setNumber(?int $number): self
     {
         $this->number = $number;
 
         return $this;
     }
 
-    /**
-     * @return array|null
-     */
     public function getDatesList(): ?array
     {
         return $this->datesList;
     }
 
-    /**
-     * @param array|null $datesList
-     *
-     * @return InstalmentData
-     */
-    public function setDatesList(?array $datesList): InstalmentData
+    public function setDatesList(?array $datesList): self
     {
         $this->datesList = $datesList;
 
         return $this;
     }
 
-    /**
-     * @return array|null
-     */
     public function getTransactionReferencesList(): ?array
     {
         return $this->transactionReferencesList;
     }
 
-    /**
-     * @param array|null $transactionReferencesList
-     *
-     * @return InstalmentData
-     */
-    public function setTransactionReferencesList(?array $transactionReferencesList
-    ): InstalmentData {
+    public function setTransactionReferencesList(
+        ?array $transactionReferencesList
+    ): self {
         $this->transactionReferencesList = $transactionReferencesList;
 
         return $this;
     }
 
-    /**
-     * @return array|null
-     */
     public function getAmountsList(): ?array
     {
         return $this->amountsList;
     }
 
-    /**
-     * @param array|null $amountsList
-     *
-     * @return InstalmentData
-     */
-    public function setAmountsList(?array $amountsList): InstalmentData
+    public function setAmountsList(?array $amountsList): self
     {
         $this->amountsList = $amountsList;
 
         return $this;
     }
 
-    /**
-     * @return array|null
-     */
     public function getS10TransactionIdsList(): ?array
     {
         return $this->s10TransactionIdsList;
     }
 
-    /**
-     * @param array|null $s10TransactionIdsList
-     *
-     * @return InstalmentData
-     */
-    public function setS10TransactionIdsList(?array $s10TransactionIdsList
-    ): InstalmentData {
+    public function setS10TransactionIdsList(
+        ?array $s10TransactionIdsList
+    ): self {
         $this->s10TransactionIdsList = $s10TransactionIdsList;
 
         return $this;
     }
-    
 }

@@ -1,235 +1,151 @@
 <?php
 
+declare(strict_types=1);
 
 namespace Worldline\Sips\Common\Fields;
 
-
 /**
- * Class WalletPaymentMeanData
- * @package Worldline\Sips\Common\Fields
+ * Class WalletPaymentMeanData.
  */
 class WalletPaymentMeanData extends Field
 {
-    /**
-     * @var null| string
-     */
-    private $paymentMeanId;
-    /**
-     * @var null| string
-     */
-    private $maskedPan;
-    /**
-     * @var null| string
-     */
-    private $paymentMeanAlias;
-    /**
-     * @var null| string
-     */
-    private $panExpiryDate;
-    /**
-     * @var null| string
-     */
-    private $paymentMeanBrand;
-    /**
-     * @var null| string
-     */
-    private $transactionActors;
-    /**
-     * @var null| PspData
-     */
-    private $pspData;
-    /**
-     * @var null| string
-     */
-    private $mandateId;
-    /**
-     * @var null| string
-     */
-    private $issuerWalletId;
-    /**
-     * @var null| string
-     */
-    private $issuerWalletType;
+    private ?string $paymentMeanId = null;
 
-    /**
-     * @return string|null
-     */
+    private ?string $maskedPan = null;
+
+    private ?string $paymentMeanAlias = null;
+
+    private ?string $panExpiryDate = null;
+
+    private ?string $paymentMeanBrand = null;
+
+    private ?string $transactionActors = null;
+
+    private ?PspData $pspData = null;
+
+    private ?string $mandateId = null;
+
+    private ?string $issuerWalletId = null;
+
+    private ?string $issuerWalletType = null;
+
     public function getPaymentMeanId(): ?string
     {
         return $this->paymentMeanId;
     }
 
-    /**
-     * @param string|null $paymentMeanId
-     * @return WalletPaymentMeanData
-     */
-    public function setPaymentMeanId(?string $paymentMeanId): WalletPaymentMeanData
+    public function setPaymentMeanId(?string $paymentMeanId): self
     {
         $this->paymentMeanId = $paymentMeanId;
+
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getMaskedPan(): ?string
     {
         return $this->maskedPan;
     }
 
-    /**
-     * @param string|null $maskedPan
-     * @return WalletPaymentMeanData
-     */
-    public function setMaskedPan(?string $maskedPan): WalletPaymentMeanData
+    public function setMaskedPan(?string $maskedPan): self
     {
         $this->maskedPan = $maskedPan;
+
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getPaymentMeanAlias(): ?string
     {
         return $this->paymentMeanAlias;
     }
 
-    /**
-     * @param string|null $paymentMeanAlias
-     * @return WalletPaymentMeanData
-     */
-    public function setPaymentMeanAlias(?string $paymentMeanAlias): WalletPaymentMeanData
+    public function setPaymentMeanAlias(?string $paymentMeanAlias): self
     {
         $this->paymentMeanAlias = $paymentMeanAlias;
+
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getPanExpiryDate(): ?string
     {
         return $this->panExpiryDate;
     }
 
-    /**
-     * @param string|null $panExpiryDate
-     * @return WalletPaymentMeanData
-     */
-    public function setPanExpiryDate(?string $panExpiryDate): WalletPaymentMeanData
+    public function setPanExpiryDate(?string $panExpiryDate): self
     {
         $this->panExpiryDate = $panExpiryDate;
+
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getPaymentMeanBrand(): ?string
     {
         return $this->paymentMeanBrand;
     }
 
-    /**
-     * @param string|null $paymentMeanBrand
-     * @return WalletPaymentMeanData
-     */
-    public function setPaymentMeanBrand(?string $paymentMeanBrand): WalletPaymentMeanData
+    public function setPaymentMeanBrand(?string $paymentMeanBrand): self
     {
         $this->paymentMeanBrand = $paymentMeanBrand;
+
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getTransactionActors(): ?string
     {
         return $this->transactionActors;
     }
 
-    /**
-     * @param string|null $transactionActors
-     * @return WalletPaymentMeanData
-     */
-    public function setTransactionActors(?string $transactionActors): WalletPaymentMeanData
+    public function setTransactionActors(?string $transactionActors): self
     {
         $this->transactionActors = $transactionActors;
+
         return $this;
     }
 
-    /**
-     * @return PspData|null
-     */
     public function getPspData(): ?PspData
     {
         return $this->pspData;
     }
 
-    /**
-     * @param PspData|null $pspData
-     * @return WalletPaymentMeanData
-     */
-    public function setPspData(?PspData $pspData): WalletPaymentMeanData
+    public function setPspData(?PspData $pspData): self
     {
         $this->pspData = $pspData;
+
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getMandateId(): ?string
     {
         return $this->mandateId;
     }
 
-    /**
-     * @param string|null $mandateId
-     * @return WalletPaymentMeanData
-     */
-    public function setMandateId(?string $mandateId): WalletPaymentMeanData
+    public function setMandateId(?string $mandateId): self
     {
         $this->mandateId = $mandateId;
+
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getIssuerWalletId(): ?string
     {
         return $this->issuerWalletId;
     }
 
-    /**
-     * @param string|null $issuerWalletId
-     * @return WalletPaymentMeanData
-     */
-    public function setIssuerWalletId(?string $issuerWalletId): WalletPaymentMeanData
+    public function setIssuerWalletId(?string $issuerWalletId): self
     {
         $this->issuerWalletId = $issuerWalletId;
+
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getIssuerWalletType(): ?string
     {
         return $this->issuerWalletType;
     }
 
-    /**
-     * @param string|null $issuerWalletType
-     * @return WalletPaymentMeanData
-     */
-    public function setIssuerWalletType(?string $issuerWalletType): WalletPaymentMeanData
+    public function setIssuerWalletType(?string $issuerWalletType): self
     {
         $this->issuerWalletType = $issuerWalletType;
+
         return $this;
     }
-
-
 }

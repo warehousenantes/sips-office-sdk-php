@@ -11,7 +11,6 @@
         "Bancontact",
         "Payments"
     ],
-    "version": "0.0.1",
     "authors": [
         {
             "name": "Nicolas Ros",
@@ -20,19 +19,18 @@
         }
     ],
     "require": {
-        "php": ">=7.1.0",
-        "guzzlehttp/guzzle": "@stable",
-        "symfony/serializer": "@stable",
-        "symfony/property-access": "@stable",
-        "doctrine/annotations": "@stable",
-        "doctrine/cache": "@stable",
-        "symfony/property-info": "@stable",
-        "phpdocumentor/reflection-docblock": "@stable",
+        "php": ">=8.0.0",
         "ext-json": "*",
-        "ext-mbstring": "*"
+        "ext-mbstring": "*",
+        "guzzlehttp/guzzle": "^7.4.2",
+        "symfony/serializer": "^6.0.7"
     },
     "require-dev": {
-        "phpunit/phpunit": "@stable"
+        "rector/rector": "^0.12.20",
+        "friendsofphp/php-cs-fixer": "^3.8"
+    },
+    "config": {
+        "sort-packages": true
     },
     "autoload": {
         "psr-4": {

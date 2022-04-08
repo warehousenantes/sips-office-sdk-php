@@ -1,115 +1,71 @@
 <?php
 
+declare(strict_types=1);
 
 namespace Worldline\Sips\Office\SipsMessages\Wallet;
-
 
 use Worldline\Sips\Common\SipsMessages\SipsMessage;
 
 /**
- * Class SignOffResponse
- * @package Worldline\Sips\Office\SipsMessages\Wallet
+ * Class SignOffResponse.
  */
 class SignOffResponse extends SipsMessage
 {
-    /**
-     * @var null|string
-     */
-    private $walletActionDateTime;
-    
-    /**
-     * @var null|string
-     */
-    private $walletOrderResponseCode;
-    
-    /**
-     * @var null|string
-     */
-    private $errorFieldName;
-    
-    /**
-     * @var null|string
-     */
-    private $seal;
+    private ?string $walletActionDateTime = null;
 
-    /**
-     * @return string|null
-     */
+    private ?string $walletOrderResponseCode = null;
+
+    private ?string $errorFieldName = null;
+
+    private ?string $seal = null;
+
     public function getWalletActionDateTime(): ?string
     {
         return $this->walletActionDateTime;
     }
 
-    /**
-     * @param string|null $walletActionDateTime
-     *
-     * @return SignOffResponse
-     */
-    public function setWalletActionDateTime(?string $walletActionDateTime
-    ): SignOffResponse {
+    public function setWalletActionDateTime(
+        ?string $walletActionDateTime
+    ): self {
         $this->walletActionDateTime = $walletActionDateTime;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getWalletOrderResponseCode(): ?string
     {
         return $this->walletOrderResponseCode;
     }
 
-    /**
-     * @param string|null $walletOrderResponseCode
-     *
-     * @return SignOffResponse
-     */
-    public function setWalletOrderResponseCode(?string $walletOrderResponseCode
-    ): SignOffResponse {
+    public function setWalletOrderResponseCode(
+        ?string $walletOrderResponseCode
+    ): self {
         $this->walletOrderResponseCode = $walletOrderResponseCode;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getErrorFieldName(): ?string
     {
         return $this->errorFieldName;
     }
 
-    /**
-     * @param string|null $errorFieldName
-     *
-     * @return SignOffResponse
-     */
-    public function setErrorFieldName(?string $errorFieldName): SignOffResponse
+    public function setErrorFieldName(?string $errorFieldName): self
     {
         $this->errorFieldName = $errorFieldName;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getSeal(): ?string
     {
         return $this->seal;
     }
 
-    /**
-     * @param string|null $seal
-     *
-     * @return SignOffResponse
-     */
-    public function setSeal(?string $seal): SignOffResponse
+    public function setSeal(?string $seal): self
     {
         $this->seal = $seal;
 
         return $this;
     }
-    
 }

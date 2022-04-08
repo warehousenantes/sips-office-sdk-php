@@ -1,8 +1,8 @@
 <?php
 
+declare(strict_types=1);
 
 namespace Worldline\Sips\Walletpage\SipsMessages;
-
 
 use Worldline\Sips\Common\Fields\Address;
 use Worldline\Sips\Common\Fields\Contact;
@@ -11,843 +11,497 @@ use Worldline\Sips\Common\Fields\FraudData;
 use Worldline\Sips\Common\SipsMessages\SipsMessage;
 
 /**
- * Class WalletManagementInit
- * @package Worldline\Sips\WalletPage\SipsMessages
+ * Class WalletManagementInit.
  */
 class WalletManagementInit extends SipsMessage
 {
-    /**
-     * @var string
-     */
-    private $serviceUrl;
-    
-    /**
-     * @var null|string
-     */
-    private $automaticResponseURL;
-    
-    /**
-     * @var null|string
-     */
-    private $customerId;
-    
-    /**
-     * @var null|string
-     */
-    private $customerIpAddress;
-    
-    /**
-     * @var null|string
-     */
-    private $customerLAnguage;
-    
-    /**
-     * @var null|string
-     */
-    private $intermediateServiceProviderId;
-    
-    /**
-     * @var null|string
-     */
-    private $interfaceVersion;
-    
-    /**
-     * @var null|string
-     */
-    private $keyVersion;
-    
-    /**
-     * @var null|string
-     */
-    private $mandateId;
-    
-    /**
-     * @var null|string
-     */
-    private $merchantId;
-    
-    /**
-     * @var null|string
-     */
-    private $merchantSessionId;
-    
-    /**
-     * @var null|string
-     */
-    private $merchantWalletId;
-    
-    /**
-     * @var null|string
-     */
-    private $normalReturnUrl;
-    
-    /**
-     * @var null|string
-     */
-    private $paymentMeanBrandList;
-    
-    /**
-     * @var null|string
-     */
-    private $paymentMeanData;
-    
-    /**
-     * @var null|string
-     */
-    private $requestDateTime;
-    
-    /**
-     * @var null|string
-     */
-    private $responseEncoding;
-    
-    /**
-     * @var null|string
-     */
-    private $returnContext;
-    
-    /**
-     * @var null|string
-     */
-    private $seal;
-    
-    /**
-     * @var null|string
-     */
-    private $sealAlgorithm;
-    
-    /**
-     * @var null|string
-     */
-    private $templateName;
-    
-    /**
-     * @var null|string
-     */
-    private $transactionActors;
-    
-    /**
-     * @var null|array
-     */
-    private $walletActionNameList;
-    
-    /**
-     * @var null|FraudData
-     */
-    private $fraudData;
-    
-    /**
-     * @var null|Address
-     */
-    private $customerAddress;
-    
-    /**
-     * @var null|Contact
-     */
-    private $customerContact;
-    
-    /**
-     * @var null|CustomerData
-     */
-    private $customerData;
-    
-    /**
-     * @var null|Address
-     */
-    private $billingAddress;
-    
-    /**
-     * @var null|Contact
-     */
-    private $billingContact;
-    
-    /**
-     * @var null|Address
-     */
-    private $deliveryAddress;
-    
-    /**
-     * @var null|Contact
-     */
-    private $deliveryContact;
-    
-    /**
-     * @var null|Address
-     */
-    private $holderAddress;
-    
-    /**
-     * @var null|Contact
-     */
-    private $holderContact;
+    private string $serviceUrl;
+
+    private ?string $automaticResponseURL = null;
+
+    private ?string $customerId = null;
+
+    private ?string $customerIpAddress = null;
+
+    private ?string $customerLAnguage = null;
+
+    private ?string $intermediateServiceProviderId = null;
+
+    private ?string $interfaceVersion = null;
+
+    private ?string $keyVersion = null;
+
+    private ?string $mandateId = null;
+
+    private ?string $merchantId = null;
+
+    private ?string $merchantSessionId = null;
+
+    private ?string $merchantWalletId = null;
+
+    private ?string $normalReturnUrl = null;
+
+    private ?string $paymentMeanBrandList = null;
+
+    private ?string $paymentMeanData = null;
+
+    private ?string $requestDateTime = null;
+
+    private ?string $responseEncoding = null;
+
+    private ?string $returnContext = null;
+
+    private ?string $seal = null;
+
+    private ?string $sealAlgorithm = null;
+
+    private ?string $templateName = null;
+
+    private ?string $transactionActors = null;
+
+    private ?array $walletActionNameList = null;
+
+    private ?FraudData $fraudData = null;
+
+    private ?Address $customerAddress = null;
+
+    private ?Contact $customerContact = null;
+
+    private ?CustomerData $customerData = null;
+
+    private ?Address $billingAddress = null;
+
+    private ?Contact $billingContact = null;
+
+    private ?Address $deliveryAddress = null;
+
+    private ?Contact $deliveryContact = null;
+
+    private ?Address $holderAddress = null;
+
+    private ?Contact $holderContact = null;
 
     /**
      * WalletManagementInit constructor.
      */
     public function __construct()
     {
-        $this->serviceUrl = "rs-services/v2/walletManagementInit";
-        $this->setinterfaceVersion("WMR_WS_2.5");
+        $this->serviceUrl = 'rs-services/v2/walletManagementInit';
+        $this->setinterfaceVersion('WMR_WS_2.5');
     }
 
-    /**
-     * @return string
-     */
     public function getServiceUrl(): string
     {
         return $this->serviceUrl;
     }
 
-    /**
-     * @return string|null
-     */
     public function getAutomaticResponseURL(): ?string
     {
         return $this->automaticResponseURL;
     }
 
-    /**
-     * @param string|null $automaticResponseURL
-     *
-     * @return WalletManagementInit
-     */
-    public function setAutomaticResponseURL(?string $automaticResponseURL
-    ): WalletManagementInit {
+    public function setAutomaticResponseURL(
+        ?string $automaticResponseURL
+    ): self {
         $this->automaticResponseURL = $automaticResponseURL;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getCustomerId(): ?string
     {
         return $this->customerId;
     }
 
-    /**
-     * @param string|null $customerId
-     *
-     * @return WalletManagementInit
-     */
-    public function setCustomerId(?string $customerId): WalletManagementInit
+    public function setCustomerId(?string $customerId): self
     {
         $this->customerId = $customerId;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getCustomerIpAddress(): ?string
     {
         return $this->customerIpAddress;
     }
 
-    /**
-     * @param string|null $customerIpAddress
-     *
-     * @return WalletManagementInit
-     */
-    public function setCustomerIpAddress(?string $customerIpAddress
-    ): WalletManagementInit {
+    public function setCustomerIpAddress(
+        ?string $customerIpAddress
+    ): self {
         $this->customerIpAddress = $customerIpAddress;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getCustomerLAnguage(): ?string
     {
         return $this->customerLAnguage;
     }
 
-    /**
-     * @param string|null $customerLAnguage
-     *
-     * @return WalletManagementInit
-     */
-    public function setCustomerLAnguage(?string $customerLAnguage
-    ): WalletManagementInit {
+    public function setCustomerLAnguage(
+        ?string $customerLAnguage
+    ): self {
         $this->customerLAnguage = $customerLAnguage;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getIntermediateServiceProviderId(): ?string
     {
         return $this->intermediateServiceProviderId;
     }
 
-    /**
-     * @param string|null $intermediateServiceProviderId
-     *
-     * @return WalletManagementInit
-     */
     public function setIntermediateServiceProviderId(
         ?string $intermediateServiceProviderId
-    ): WalletManagementInit {
+    ): self {
         $this->intermediateServiceProviderId = $intermediateServiceProviderId;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getInterfaceVersion(): ?string
     {
         return $this->interfaceVersion;
     }
 
-    /**
-     * @param string|null $interfaceVersion
-     *
-     * @return WalletManagementInit
-     */
-    public function setInterfaceVersion(?string $interfaceVersion
-    ): WalletManagementInit {
+    public function setInterfaceVersion(
+        ?string $interfaceVersion
+    ): self {
         $this->interfaceVersion = $interfaceVersion;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getKeyVersion(): ?string
     {
         return $this->keyVersion;
     }
 
-    /**
-     * @param string|null $keyVersion
-     *
-     * @return WalletManagementInit
-     */
-    public function setKeyVersion(?string $keyVersion): WalletManagementInit
+    public function setKeyVersion(?string $keyVersion): self
     {
         $this->keyVersion = $keyVersion;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getMandateId(): ?string
     {
         return $this->mandateId;
     }
 
-    /**
-     * @param string|null $mandateId
-     *
-     * @return WalletManagementInit
-     */
-    public function setMandateId(?string $mandateId): WalletManagementInit
+    public function setMandateId(?string $mandateId): self
     {
         $this->mandateId = $mandateId;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getMerchantId(): ?string
     {
         return $this->merchantId;
     }
 
-    /**
-     * @param string|null $merchantId
-     *
-     * @return WalletManagementInit
-     */
-    public function setMerchantId(?string $merchantId): WalletManagementInit
+    public function setMerchantId(?string $merchantId): self
     {
         $this->merchantId = $merchantId;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getMerchantSessionId(): ?string
     {
         return $this->merchantSessionId;
     }
 
-    /**
-     * @param string|null $merchantSessionId
-     *
-     * @return WalletManagementInit
-     */
-    public function setMerchantSessionId(?string $merchantSessionId
-    ): WalletManagementInit {
+    public function setMerchantSessionId(
+        ?string $merchantSessionId
+    ): self {
         $this->merchantSessionId = $merchantSessionId;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getMerchantWalletId(): ?string
     {
         return $this->merchantWalletId;
     }
 
-    /**
-     * @param string|null $merchantWalletId
-     *
-     * @return WalletManagementInit
-     */
-    public function setMerchantWalletId(?string $merchantWalletId
-    ): WalletManagementInit {
+    public function setMerchantWalletId(
+        ?string $merchantWalletId
+    ): self {
         $this->merchantWalletId = $merchantWalletId;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getNormalReturnUrl(): ?string
     {
         return $this->normalReturnUrl;
     }
 
-    /**
-     * @param string|null $normalReturnUrl
-     *
-     * @return WalletManagementInit
-     */
-    public function setNormalReturnUrl(?string $normalReturnUrl
-    ): WalletManagementInit {
+    public function setNormalReturnUrl(
+        ?string $normalReturnUrl
+    ): self {
         $this->normalReturnUrl = $normalReturnUrl;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getPaymentMeanBrandList(): ?string
     {
         return $this->paymentMeanBrandList;
     }
 
-    /**
-     * @param string|null $paymentMeanBrandList
-     *
-     * @return WalletManagementInit
-     */
-    public function setPaymentMeanBrandList(?string $paymentMeanBrandList
-    ): WalletManagementInit {
+    public function setPaymentMeanBrandList(
+        ?string $paymentMeanBrandList
+    ): self {
         $this->paymentMeanBrandList = $paymentMeanBrandList;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getPaymentMeanData(): ?string
     {
         return $this->paymentMeanData;
     }
 
-    /**
-     * @param string|null $paymentMeanData
-     *
-     * @return WalletManagementInit
-     */
-    public function setPaymentMeanData(?string $paymentMeanData
-    ): WalletManagementInit {
+    public function setPaymentMeanData(
+        ?string $paymentMeanData
+    ): self {
         $this->paymentMeanData = $paymentMeanData;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getRequestDateTime(): ?string
     {
         return $this->requestDateTime;
     }
 
-    /**
-     * @param string|null $requestDateTime
-     *
-     * @return WalletManagementInit
-     */
-    public function setRequestDateTime(?string $requestDateTime
-    ): WalletManagementInit {
+    public function setRequestDateTime(
+        ?string $requestDateTime
+    ): self {
         $this->requestDateTime = $requestDateTime;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getResponseEncoding(): ?string
     {
         return $this->responseEncoding;
     }
 
-    /**
-     * @param string|null $responseEncoding
-     *
-     * @return WalletManagementInit
-     */
-    public function setResponseEncoding(?string $responseEncoding
-    ): WalletManagementInit {
+    public function setResponseEncoding(
+        ?string $responseEncoding
+    ): self {
         $this->responseEncoding = $responseEncoding;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getReturnContext(): ?string
     {
         return $this->returnContext;
     }
 
-    /**
-     * @param string|null $returnContext
-     *
-     * @return WalletManagementInit
-     */
-    public function setReturnContext(?string $returnContext
-    ): WalletManagementInit {
+    public function setReturnContext(
+        ?string $returnContext
+    ): self {
         $this->returnContext = $returnContext;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getSeal(): ?string
     {
         return $this->seal;
     }
 
-    /**
-     * @param string|null $seal
-     *
-     * @return WalletManagementInit
-     */
-    public function setSeal(?string $seal): WalletManagementInit
+    public function setSeal(?string $seal): self
     {
         $this->seal = $seal;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getSealAlgorithm(): ?string
     {
         return $this->sealAlgorithm;
     }
 
-    /**
-     * @param string|null $sealAlgorithm
-     *
-     * @return WalletManagementInit
-     */
-    public function setSealAlgorithm(?string $sealAlgorithm
-    ): WalletManagementInit {
+    public function setSealAlgorithm(
+        ?string $sealAlgorithm
+    ): self {
         $this->sealAlgorithm = $sealAlgorithm;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getTemplateName(): ?string
     {
         return $this->templateName;
     }
 
-    /**
-     * @param string|null $templateName
-     *
-     * @return WalletManagementInit
-     */
-    public function setTemplateName(?string $templateName): WalletManagementInit
+    public function setTemplateName(?string $templateName): self
     {
         $this->templateName = $templateName;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getTransactionActors(): ?string
     {
         return $this->transactionActors;
     }
 
-    /**
-     * @param string|null $transactionActors
-     *
-     * @return WalletManagementInit
-     */
-    public function setTransactionActors(?string $transactionActors
-    ): WalletManagementInit {
+    public function setTransactionActors(
+        ?string $transactionActors
+    ): self {
         $this->transactionActors = $transactionActors;
 
         return $this;
     }
 
-    /**
-     * @return array|null
-     */
     public function getWalletActionNameList(): ?array
     {
         return $this->walletActionNameList;
     }
 
-    /**
-     * @param array|null $walletActionNameList
-     *
-     * @return WalletManagementInit
-     */
-    public function setWalletActionNameList(?array $walletActionNameList
-    ): WalletManagementInit {
+    public function setWalletActionNameList(
+        ?array $walletActionNameList
+    ): self {
         $this->walletActionNameList = $walletActionNameList;
 
         return $this;
     }
 
-    /**
-     * @return FraudData|null
-     */
     public function getFraudData(): ?FraudData
     {
         return $this->fraudData;
     }
 
-    /**
-     * @param FraudData|null $fraudData
-     *
-     * @return WalletManagementInit
-     */
     public function setFraudData(
         ?FraudData $fraudData
-    ): WalletManagementInit {
+    ): self {
         $this->fraudData = $fraudData;
 
         return $this;
     }
 
-    /**
-     * @return Address|null
-     */
     public function getCustomerAddress(): ?Address
     {
         return $this->customerAddress;
     }
 
-    /**
-     * @param Address|null $customerAddress
-     *
-     * @return WalletManagementInit
-     */
     public function setCustomerAddress(
         ?Address $customerAddress
-    ): WalletManagementInit {
+    ): self {
         $this->customerAddress = $customerAddress;
 
         return $this;
     }
 
-    /**
-     * @return Contact|null
-     */
     public function getCustomerContact(): ?Contact
     {
         return $this->customerContact;
     }
 
-    /**
-     * @param Contact|null $customerContact
-     *
-     * @return WalletManagementInit
-     */
     public function setCustomerContact(
         ?Contact $customerContact
-    ): WalletManagementInit {
+    ): self {
         $this->customerContact = $customerContact;
 
         return $this;
     }
 
-    /**
-     * @return CustomerData|null
-     */
     public function getCustomerData(
-    ): ?CustomerData
-    {
+    ): ?CustomerData {
         return $this->customerData;
     }
 
-    /**
-     * @param CustomerData|null $customerData
-     *
-     * @return WalletManagementInit
-     */
     public function setCustomerData(
         ?CustomerData $customerData
-    ): WalletManagementInit {
+    ): self {
         $this->customerData = $customerData;
 
         return $this;
     }
 
-    /**
-     * @return Address|null
-     */
     public function getBillingAddress(): ?Address
     {
         return $this->billingAddress;
     }
 
-    /**
-     * @param Address|null $billingAddress
-     *
-     * @return WalletManagementInit
-     */
     public function setBillingAddress(
         ?Address $billingAddress
-    ): WalletManagementInit {
+    ): self {
         $this->billingAddress = $billingAddress;
 
         return $this;
     }
 
-    /**
-     * @return Contact|null
-     */
     public function getBillingContact(): ?Contact
     {
         return $this->billingContact;
     }
 
-    /**
-     * @param Contact|null $billingContact
-     *
-     * @return WalletManagementInit
-     */
     public function setBillingContact(
         ?Contact $billingContact
-    ): WalletManagementInit {
+    ): self {
         $this->billingContact = $billingContact;
 
         return $this;
     }
 
-    /**
-     * @return Address|null
-     */
     public function getDeliveryAddress(): ?Address
     {
         return $this->deliveryAddress;
     }
 
-    /**
-     * @param Address|null $deliveryAddress
-     *
-     * @return WalletManagementInit
-     */
     public function setDeliveryAddress(
         ?Address $deliveryAddress
-    ): WalletManagementInit {
+    ): self {
         $this->deliveryAddress = $deliveryAddress;
 
         return $this;
     }
 
-    /**
-     * @return Contact|null
-     */
     public function getDeliveryContact(): ?Contact
     {
         return $this->deliveryContact;
     }
 
-    /**
-     * @param Contact|null $deliveryContact
-     *
-     * @return WalletManagementInit
-     */
     public function setDeliveryContact(
         ?Contact $deliveryContact
-    ): WalletManagementInit {
+    ): self {
         $this->deliveryContact = $deliveryContact;
 
         return $this;
     }
 
-    /**
-     * @return Address|null
-     */
     public function getHolderAddress(): ?Address
     {
         return $this->holderAddress;
     }
 
-    /**
-     * @param Address|null $holderAddress
-     *
-     * @return WalletManagementInit
-     */
     public function setHolderAddress(
         ?Address $holderAddress
-    ): WalletManagementInit {
+    ): self {
         $this->holderAddress = $holderAddress;
 
         return $this;
     }
 
-    /**
-     * @return Contact|null
-     */
     public function getHolderContact(): ?Contact
     {
         return $this->holderContact;
     }
 
-    /**
-     * @param Contact|null $holderContact
-     *
-     * @return WalletManagementInit
-     */
     public function setHolderContact(
         ?Contact $holderContact
-    ): WalletManagementInit {
+    ): self {
         $this->holderContact = $holderContact;
 
         return $this;
     }
-    
 }

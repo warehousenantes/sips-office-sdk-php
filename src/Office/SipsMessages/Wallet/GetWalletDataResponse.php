@@ -1,168 +1,102 @@
 <?php
 
+declare(strict_types=1);
 
 namespace Worldline\Sips\Office\SipsMessages\Wallet;
-
 
 use Worldline\Sips\Common\SipsMessages\SipsMessage;
 
 /**
- * Class GetWalletDataResponse
- * @package Worldline\Sips\Office\Common\SipsMessages\Wallet
+ * Class GetWalletDataResponse.
  */
 class GetWalletDataResponse extends SipsMessage
 {
+    private ?string $walletCreationDateTime = null;
 
-    /**
-     * @var null|string
-     */
-    private $walletCreationDateTime;
-    
-    /**
-     * @var null|string
-     */
-    private $walletLAstActionDateTime;
-    
-    /**
-     * @var null|string
-     */
-    private $walletResponseCode;
-    
-    /**
-     * @var null|array
-     */
-    private $walletPaymentMeanDataList;
-    
-    /**
-     * @var null|string
-     */
-    private $errorFieldName;
-    
-    /**
-     * @var null|string
-     */
-    private $seal;
+    private ?string $walletLAstActionDateTime = null;
 
-    /**
-     * @return string|null
-     */
+    private ?string $walletResponseCode = null;
+
+    private ?array $walletPaymentMeanDataList = null;
+
+    private ?string $errorFieldName = null;
+
+    private ?string $seal = null;
+
     public function getWalletCreationDateTime(): ?string
     {
         return $this->walletCreationDateTime;
     }
 
-    /**
-     * @param string|null $walletCreationDateTime
-     *
-     * @return GetWalletDataResponse
-     */
-    public function setWalletCreationDateTime(?string $walletCreationDateTime
-    ): GetWalletDataResponse {
+    public function setWalletCreationDateTime(
+        ?string $walletCreationDateTime
+    ): self {
         $this->walletCreationDateTime = $walletCreationDateTime;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getWalletLAstActionDateTime(): ?string
     {
         return $this->walletLAstActionDateTime;
     }
 
-    /**
-     * @param string|null $walletLAstActionDateTime
-     *
-     * @return GetWalletDataResponse
-     */
     public function setWalletLAstActionDateTime(
         ?string $walletLAstActionDateTime
-    ): GetWalletDataResponse {
+    ): self {
         $this->walletLAstActionDateTime = $walletLAstActionDateTime;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getWalletResponseCode(): ?string
     {
         return $this->walletResponseCode;
     }
 
-    /**
-     * @param string|null $walletResponseCode
-     *
-     * @return GetWalletDataResponse
-     */
-    public function setWalletResponseCode(?string $walletResponseCode
-    ): GetWalletDataResponse {
+    public function setWalletResponseCode(
+        ?string $walletResponseCode
+    ): self {
         $this->walletResponseCode = $walletResponseCode;
 
         return $this;
     }
 
-    /**
-     * @return array|null
-     */
     public function getWalletPaymentMeanDataList(): ?array
     {
         return $this->walletPaymentMeanDataList;
     }
 
-    /**
-     * @param array|null $walletPaymentMeanDataList
-     *
-     * @return GetWalletDataResponse
-     */
     public function setWalletPaymentMeanDataList(
         ?array $walletPaymentMeanDataList
-    ): GetWalletDataResponse {
+    ): self {
         $this->walletPaymentMeanDataList = $walletPaymentMeanDataList;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getErrorFieldName(): ?string
     {
         return $this->errorFieldName;
     }
 
-    /**
-     * @param string|null $errorFieldName
-     *
-     * @return GetWalletDataResponse
-     */
-    public function setErrorFieldName(?string $errorFieldName
-    ): GetWalletDataResponse {
+    public function setErrorFieldName(
+        ?string $errorFieldName
+    ): self {
         $this->errorFieldName = $errorFieldName;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getSeal(): ?string
     {
         return $this->seal;
     }
 
-    /**
-     * @param string|null $seal
-     *
-     * @return GetWalletDataResponse
-     */
-    public function setSeal(?string $seal): GetWalletDataResponse
+    public function setSeal(?string $seal): self
     {
         $this->seal = $seal;
 
         return $this;
     }
-    
 }

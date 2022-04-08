@@ -1,238 +1,144 @@
 <?php
 
+declare(strict_types=1);
 
 namespace Worldline\Sips\Office\SipsMessages\Wallet;
-
 
 use Worldline\Sips\Common\SipsMessages\SipsMessage;
 
 /**
- * Class DeletePaymentMean
- * @package Worldline\Sips\Office\SipsMessages\Wallet
+ * Class DeletePaymentMean.
  */
 class DeletePaymentMean extends SipsMessage
 {
-    /**
-     * @var string
-     */
-    private $serviceUrl;
-    
-    /**
-     * @var null|string
-     */
-    private $merchantId;
-    
-    /**
-     * @var null|string
-     */
-    private $interfaceVersion;
-    
-    /**
-     * @var null|string
-     */
-    private $merchantWalletId;
-    
-    /**
-     * @var null|string
-     */
-    private $paymentMeanId;
-    
-    /**
-     * @var null|string
-     */
-    private $intermediateServiceProviderId;
-    
-    /**
-     * @var null|string
-     */
-    private $seal;
-    
-    /**
-     * @var null|string
-     */
-    private $keyVersion;
-    
-    /**
-     * @var null|string
-     */
-    private $sealAlgorithm;
+    private string $serviceUrl;
+
+    private ?string $merchantId = null;
+
+    private ?string $interfaceVersion = null;
+
+    private ?string $merchantWalletId = null;
+
+    private ?string $paymentMeanId = null;
+
+    private ?string $intermediateServiceProviderId = null;
+
+    private ?string $seal = null;
+
+    private ?string $keyVersion = null;
+
+    private ?string $sealAlgorithm = null;
 
     /**
      * DeletePaymentMean constructor.
      */
     public function __construct()
     {
-        $this->serviceUrl = "rs-services/v2/wallet/deletePaymentMean";
-        $this->setInterfaceVersion("WR_WS_2.27");
+        $this->serviceUrl = 'rs-services/v2/wallet/deletePaymentMean';
+        $this->setInterfaceVersion('WR_WS_2.27');
     }
 
-    /**
-     * @return string
-     */
     public function getServiceUrl(): string
     {
         return $this->serviceUrl;
     }
 
-    /**
-     * @return string|null
-     */
     public function getMerchantId(): ?string
     {
         return $this->merchantId;
     }
 
-    /**
-     * @param string|null $merchantId
-     *
-     * @return DeletePaymentMean
-     */
-    public function setMerchantId(?string $merchantId): DeletePaymentMean
+    public function setMerchantId(?string $merchantId): self
     {
         $this->merchantId = $merchantId;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getInterfaceVersion(): ?string
     {
         return $this->interfaceVersion;
     }
 
-    /**
-     * @param string|null $interfaceVersion
-     *
-     * @return DeletePaymentMean
-     */
-    public function setInterfaceVersion(?string $interfaceVersion
-    ): DeletePaymentMean {
+    public function setInterfaceVersion(
+        ?string $interfaceVersion
+    ): self {
         $this->interfaceVersion = $interfaceVersion;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getMerchantWalletId(): ?string
     {
         return $this->merchantWalletId;
     }
 
-    /**
-     * @param string|null $merchantWalletId
-     *
-     * @return DeletePaymentMean
-     */
-    public function setMerchantWalletId(?string $merchantWalletId
-    ): DeletePaymentMean {
+    public function setMerchantWalletId(
+        ?string $merchantWalletId
+    ): self {
         $this->merchantWalletId = $merchantWalletId;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getPaymentMeanId(): ?string
     {
         return $this->paymentMeanId;
     }
 
-    /**
-     * @param string|null $paymentMeanId
-     *
-     * @return DeletePaymentMean
-     */
-    public function setPaymentMeanId(?string $paymentMeanId): DeletePaymentMean
+    public function setPaymentMeanId(?string $paymentMeanId): self
     {
         $this->paymentMeanId = $paymentMeanId;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getIntermediateServiceProviderId(): ?string
     {
         return $this->intermediateServiceProviderId;
     }
 
-    /**
-     * @param string|null $intermediateServiceProviderId
-     *
-     * @return DeletePaymentMean
-     */
     public function setIntermediateServiceProviderId(
         ?string $intermediateServiceProviderId
-    ): DeletePaymentMean {
+    ): self {
         $this->intermediateServiceProviderId = $intermediateServiceProviderId;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getSeal(): ?string
     {
         return $this->seal;
     }
 
-    /**
-     * @param string|null $seal
-     *
-     * @return DeletePaymentMean
-     */
-    public function setSeal(?string $seal): DeletePaymentMean
+    public function setSeal(?string $seal): self
     {
         $this->seal = $seal;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getKeyVersion(): ?string
     {
         return $this->keyVersion;
     }
 
-    /**
-     * @param string|null $keyVersion
-     *
-     * @return DeletePaymentMean
-     */
-    public function setKeyVersion(?string $keyVersion): DeletePaymentMean
+    public function setKeyVersion(?string $keyVersion): self
     {
         $this->keyVersion = $keyVersion;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getSealAlgorithm(): ?string
     {
         return $this->sealAlgorithm;
     }
 
-    /**
-     * @param string|null $sealAlgorithm
-     *
-     * @return DeletePaymentMean
-     */
-    public function setSealAlgorithm(?string $sealAlgorithm): DeletePaymentMean
+    public function setSealAlgorithm(?string $sealAlgorithm): self
     {
         $this->sealAlgorithm = $sealAlgorithm;
 
         return $this;
     }
-    
 }

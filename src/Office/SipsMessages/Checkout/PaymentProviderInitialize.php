@@ -1,8 +1,8 @@
 <?php
 
+declare(strict_types=1);
 
 namespace Worldline\Sips\Office\SipsMessages\Checkout;
-
 
 use Worldline\Sips\Common\Fields\Address;
 use Worldline\Sips\Common\Fields\AuthenticationData;
@@ -14,1001 +14,589 @@ use Worldline\Sips\Common\Fields\PaymentMeanData;
 use Worldline\Sips\Common\SipsMessages\SipsMessage;
 
 /**
- * Class PaymentProviderInitialize
- * @package Worldline\Sips\Common\SipsMessages\Checkout
+ * Class PaymentProviderInitialize.
  */
 class PaymentProviderInitialize extends SipsMessage
 {
-    /**
-     * @var string
-     */
-    private $serviceUrl;
-    
-    /**
-     * @var null|int
-     */
-    private $amount;
-    
-    /**
-     * @var null|int
-     */
-    private $captureDay;
-    
-    /**
-     * @var null|string
-     */
-    private $captureMode;
-    
-    /**
-     * @var null|string
-     */
-    private $currencyCode;
-    
-    /**
-     * @var null|string
-     */
-    private $customerId;
-    
-    /**
-     * @var null|string
-     */
-    private $customerIpAddress;
-    
-    /**
-     * @var null|string
-     */
-    private $customerLanguage;
-    
-    /**
-     * @var null|string
-     */
-    private $interfaceVersion;
-    
-    /**
-     * @var null|string
-     */
-    private $intermediateServiceProviderId;
-    
-    /**
-     * @var null|string
-     */
-    private $invoiceReference;
-    
-    /**
-     * @var null|int
-     */
-    private $keyVersion;
-    
-    /**
-     * @var null|string
-     */
-    private $merchantId;
-    
-    /**
-     * @var null|string
-     */
-    private $merchantReturnUrl;
-    
-    /**
-     * @var null|string
-     */
-    private $merchantTransactionDateTime;
-    
-    /**
-     * @var null|string
-     */
-    private $orderChannel;
-    
-    /**
-     * @var null|string
-     */
-    private $orderId;
-    
-    /**
-     * @var null|string
-     */
-    private $paymentMeanBrand;
-    
-    /**
-     * @var null|string
-     */
-    private $paymentPattern;
-    
-    /**
-     * @var null|string
-     */
-    private $returnContext;
-    
-    /**
-     * @var null|string
-     */
-    private $seal;
-    
-    /**
-     * @var null|string
-     */
-    private $sealAlgorithm;
-    
-    /**
-     * @var null|string
-     */
-    private $statementReference;
-    
-    /**
-     * @var null|string
-     */
-    private $transactionReference;
-    
-    /**
-     * @var null|string
-     */
-    private $transactionOrigin;
-    
-    /**
-     * @var null|Address
-     */
-    private $billingAddress;
-    
-    /**
-     * @var null|Contact
-     */
-    private $billingContact;
-    
-    /**
-     * @var null|Address
-     */
-    private $customerAddress;
-    
-    /**
-     * @var null|Contact
-     */
-    private $customerContact;
-    
-    /**
-     * @var null|Address
-     */
-    private $deliveryAddress;
-    
-    /**
-     * @var null|Contact
-     */
-    private $deliveryContact;
-    
-    /**
-     * @var null|DeliveryData
-     */
-    private $deliveryData;
-    
-    /**
-     * @var null|AuthenticationData
-     */
-    private $authenticationData;
-    
-    /**
-     * @var null|CustomerData
-     */
-    private $customerData;
-    
-    /**
-     * @var null|FraudData
-     */
-    private $fraudData;
-    
-    /**
-     * @var null|Address
-     */
-    private $holderAddress;
-    
-    /**
-     * @var null|Contact
-     */
-    private $holderContact;
-    
-    /**
-     * @var null|int
-     */
-    private $responseKeyVersion;
-    
-    /**
-     * @var null|PaymentMeanData
-     */
-    private $paymentMeanData;
+    private string $serviceUrl;
+
+    private ?int $amount = null;
+
+    private ?int $captureDay = null;
+
+    private ?string $captureMode = null;
+
+    private ?string $currencyCode = null;
+
+    private ?string $customerId = null;
+
+    private ?string $customerIpAddress = null;
+
+    private ?string $customerLanguage = null;
+
+    private ?string $interfaceVersion = null;
+
+    private ?string $intermediateServiceProviderId = null;
+
+    private ?string $invoiceReference = null;
+
+    private ?int $keyVersion = null;
+
+    private ?string $merchantId = null;
+
+    private ?string $merchantReturnUrl = null;
+
+    private ?string $merchantTransactionDateTime = null;
+
+    private ?string $orderChannel = null;
+
+    private ?string $orderId = null;
+
+    private ?string $paymentMeanBrand = null;
+
+    private ?string $paymentPattern = null;
+
+    private ?string $returnContext = null;
+
+    private ?string $seal = null;
+
+    private ?string $sealAlgorithm = null;
+
+    private ?string $statementReference = null;
+
+    private ?string $transactionReference = null;
+
+    private ?string $transactionOrigin = null;
+
+    private ?Address $billingAddress = null;
+
+    private ?Contact $billingContact = null;
+
+    private ?Address $customerAddress = null;
+
+    private ?Contact $customerContact = null;
+
+    private ?Address $deliveryAddress = null;
+
+    private ?Contact $deliveryContact = null;
+
+    private ?DeliveryData $deliveryData = null;
+
+    private ?AuthenticationData $authenticationData = null;
+
+    private ?CustomerData $customerData = null;
+
+    private ?FraudData $fraudData = null;
+
+    private ?Address $holderAddress = null;
+
+    private ?Contact $holderContact = null;
+
+    private ?int $responseKeyVersion = null;
+
+    private ?PaymentMeanData $paymentMeanData = null;
 
     /**
      * PaymentProviderInitialize constructor.
      */
     public function __construct()
     {
-        $this->serviceUrl = "rs-services/v2/checkout/paymentProviderInitialize";
-        $this->setInterfaceVersion("IR_WS_2.27")
+        $this->serviceUrl = 'rs-services/v2/checkout/paymentProviderInitialize';
+        $this->setInterfaceVersion('IR_WS_2.27')
             ->setTransactionReference($this->generateReference());
     }
 
-    /**
-     * @return string
-     */
     public function getServiceUrl(): string
     {
         return $this->serviceUrl;
     }
 
-    /**
-     * @return int|null
-     */
     public function getAmount(): ?int
     {
         return $this->amount;
     }
 
-    /**
-     * @param int|null $amount
-     *
-     * @return PaymentProviderInitialize
-     */
-    public function setAmount(?int $amount): PaymentProviderInitialize
+    public function setAmount(?int $amount): self
     {
         $this->amount = $amount;
 
         return $this;
     }
 
-    /**
-     * @return int|null
-     */
     public function getCaptureDay(): ?int
     {
         return $this->captureDay;
     }
 
-    /**
-     * @param int|null $captureDay
-     *
-     * @return PaymentProviderInitialize
-     */
-    public function setCaptureDay(?int $captureDay): PaymentProviderInitialize
+    public function setCaptureDay(?int $captureDay): self
     {
         $this->captureDay = $captureDay;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getCaptureMode(): ?string
     {
         return $this->captureMode;
     }
 
-    /**
-     * @param string|null $captureMode
-     *
-     * @return PaymentProviderInitialize
-     */
-    public function setCaptureMode(?string $captureMode
-    ): PaymentProviderInitialize {
+    public function setCaptureMode(
+        ?string $captureMode
+    ): self {
         $this->captureMode = $captureMode;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getCurrencyCode(): ?string
     {
         return $this->currencyCode;
     }
 
-    /**
-     * @param string|null $currencyCode
-     *
-     * @return PaymentProviderInitialize
-     */
-    public function setCurrencyCode(?string $currencyCode
-    ): PaymentProviderInitialize {
+    public function setCurrencyCode(
+        ?string $currencyCode
+    ): self {
         $this->currencyCode = $currencyCode;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getCustomerId(): ?string
     {
         return $this->customerId;
     }
 
-    /**
-     * @param string|null $customerId
-     *
-     * @return PaymentProviderInitialize
-     */
-    public function setCustomerId(?string $customerId
-    ): PaymentProviderInitialize {
+    public function setCustomerId(
+        ?string $customerId
+    ): self {
         $this->customerId = $customerId;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getCustomerIpAddress(): ?string
     {
         return $this->customerIpAddress;
     }
 
-    /**
-     * @param string|null $customerIpAddress
-     *
-     * @return PaymentProviderInitialize
-     */
-    public function setCustomerIpAddress(?string $customerIpAddress
-    ): PaymentProviderInitialize {
+    public function setCustomerIpAddress(
+        ?string $customerIpAddress
+    ): self {
         $this->customerIpAddress = $customerIpAddress;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getCustomerLanguage(): ?string
     {
         return $this->customerLanguage;
     }
 
-    /**
-     * @param string|null $customerLanguage
-     *
-     * @return PaymentProviderInitialize
-     */
-    public function setCustomerLanguage(?string $customerLanguage
-    ): PaymentProviderInitialize {
+    public function setCustomerLanguage(
+        ?string $customerLanguage
+    ): self {
         $this->customerLanguage = $customerLanguage;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getInterfaceVersion(): ?string
     {
         return $this->interfaceVersion;
     }
 
-    /**
-     * @param string|null $interfaceVersion
-     *
-     * @return PaymentProviderInitialize
-     */
-    public function setInterfaceVersion(?string $interfaceVersion
-    ): PaymentProviderInitialize {
+    public function setInterfaceVersion(
+        ?string $interfaceVersion
+    ): self {
         $this->interfaceVersion = $interfaceVersion;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getIntermediateServiceProviderId(): ?string
     {
         return $this->intermediateServiceProviderId;
     }
 
-    /**
-     * @param string|null $intermediateServiceProviderId
-     *
-     * @return PaymentProviderInitialize
-     */
     public function setIntermediateServiceProviderId(
         ?string $intermediateServiceProviderId
-    ): PaymentProviderInitialize {
+    ): self {
         $this->intermediateServiceProviderId = $intermediateServiceProviderId;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getInvoiceReference(): ?string
     {
         return $this->invoiceReference;
     }
 
-    /**
-     * @param string|null $invoiceReference
-     *
-     * @return PaymentProviderInitialize
-     */
-    public function setInvoiceReference(?string $invoiceReference
-    ): PaymentProviderInitialize {
+    public function setInvoiceReference(
+        ?string $invoiceReference
+    ): self {
         $this->invoiceReference = $invoiceReference;
 
         return $this;
     }
 
-    /**
-     * @return int|null
-     */
     public function getKeyVersion(): ?int
     {
         return $this->keyVersion;
     }
 
-    /**
-     * @param int|null $keyVersion
-     *
-     * @return PaymentProviderInitialize
-     */
-    public function setKeyVersion(?int $keyVersion): PaymentProviderInitialize
+    public function setKeyVersion(?int $keyVersion): self
     {
         $this->keyVersion = $keyVersion;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getMerchantId(): ?string
     {
         return $this->merchantId;
     }
 
-    /**
-     * @param string|null $merchantId
-     *
-     * @return PaymentProviderInitialize
-     */
-    public function setMerchantId(?string $merchantId
-    ): PaymentProviderInitialize {
+    public function setMerchantId(
+        ?string $merchantId
+    ): self {
         $this->merchantId = $merchantId;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getMerchantReturnUrl(): ?string
     {
         return $this->merchantReturnUrl;
     }
 
-    /**
-     * @param string|null $merchantReturnUrl
-     *
-     * @return PaymentProviderInitialize
-     */
-    public function setMerchantReturnUrl(?string $merchantReturnUrl
-    ): PaymentProviderInitialize {
+    public function setMerchantReturnUrl(
+        ?string $merchantReturnUrl
+    ): self {
         $this->merchantReturnUrl = $merchantReturnUrl;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getMerchantTransactionDateTime(): ?string
     {
         return $this->merchantTransactionDateTime;
     }
 
-    /**
-     * @param string|null $merchantTransactionDateTime
-     *
-     * @return PaymentProviderInitialize
-     */
     public function setMerchantTransactionDateTime(
         ?string $merchantTransactionDateTime
-    ): PaymentProviderInitialize {
+    ): self {
         $this->merchantTransactionDateTime = $merchantTransactionDateTime;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getOrderChannel(): ?string
     {
         return $this->orderChannel;
     }
 
-    /**
-     * @param string|null $orderChannel
-     *
-     * @return PaymentProviderInitialize
-     */
-    public function setOrderChannel(?string $orderChannel
-    ): PaymentProviderInitialize {
+    public function setOrderChannel(
+        ?string $orderChannel
+    ): self {
         $this->orderChannel = $orderChannel;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getOrderId(): ?string
     {
         return $this->orderId;
     }
 
-    /**
-     * @param string|null $orderId
-     *
-     * @return PaymentProviderInitialize
-     */
-    public function setOrderId(?string $orderId): PaymentProviderInitialize
+    public function setOrderId(?string $orderId): self
     {
         $this->orderId = $orderId;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getPaymentMeanBrand(): ?string
     {
         return $this->paymentMeanBrand;
     }
 
-    /**
-     * @param string|null $paymentMeanBrand
-     *
-     * @return PaymentProviderInitialize
-     */
-    public function setPaymentMeanBrand(?string $paymentMeanBrand
-    ): PaymentProviderInitialize {
+    public function setPaymentMeanBrand(
+        ?string $paymentMeanBrand
+    ): self {
         $this->paymentMeanBrand = $paymentMeanBrand;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getPaymentPattern(): ?string
     {
         return $this->paymentPattern;
     }
 
-    /**
-     * @param string|null $paymentPattern
-     *
-     * @return PaymentProviderInitialize
-     */
-    public function setPaymentPattern(?string $paymentPattern
-    ): PaymentProviderInitialize {
+    public function setPaymentPattern(
+        ?string $paymentPattern
+    ): self {
         $this->paymentPattern = $paymentPattern;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getReturnContext(): ?string
     {
         return $this->returnContext;
     }
 
-    /**
-     * @param string|null $returnContext
-     *
-     * @return PaymentProviderInitialize
-     */
-    public function setReturnContext(?string $returnContext
-    ): PaymentProviderInitialize {
+    public function setReturnContext(
+        ?string $returnContext
+    ): self {
         $this->returnContext = $returnContext;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getSeal(): ?string
     {
         return $this->seal;
     }
 
-    /**
-     * @param string|null $seal
-     *
-     * @return PaymentProviderInitialize
-     */
-    public function setSeal(?string $seal): PaymentProviderInitialize
+    public function setSeal(?string $seal): self
     {
         $this->seal = $seal;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getSealAlgorithm(): ?string
     {
         return $this->sealAlgorithm;
     }
 
-    /**
-     * @param string|null $sealAlgorithm
-     *
-     * @return PaymentProviderInitialize
-     */
-    public function setSealAlgorithm(?string $sealAlgorithm
-    ): PaymentProviderInitialize {
+    public function setSealAlgorithm(
+        ?string $sealAlgorithm
+    ): self {
         $this->sealAlgorithm = $sealAlgorithm;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getStatementReference(): ?string
     {
         return $this->statementReference;
     }
 
-    /**
-     * @param string|null $statementReference
-     *
-     * @return PaymentProviderInitialize
-     */
-    public function setStatementReference(?string $statementReference
-    ): PaymentProviderInitialize {
+    public function setStatementReference(
+        ?string $statementReference
+    ): self {
         $this->statementReference = $statementReference;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getTransactionReference(): ?string
     {
         return $this->transactionReference;
     }
 
-    /**
-     * @param string|null $transactionReference
-     *
-     * @return PaymentProviderInitialize
-     */
-    public function setTransactionReference(?string $transactionReference
-    ): PaymentProviderInitialize {
+    public function setTransactionReference(
+        ?string $transactionReference
+    ): self {
         $this->transactionReference = $transactionReference;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getTransactionOrigin(): ?string
     {
         return $this->transactionOrigin;
     }
 
-    /**
-     * @param string|null $transactionOrigin
-     *
-     * @return PaymentProviderInitialize
-     */
-    public function setTransactionOrigin(?string $transactionOrigin
-    ): PaymentProviderInitialize {
+    public function setTransactionOrigin(
+        ?string $transactionOrigin
+    ): self {
         $this->transactionOrigin = $transactionOrigin;
 
         return $this;
     }
 
-    /**
-     * @return Address|null
-     */
     public function getBillingAddress(): ?Address
     {
         return $this->billingAddress;
     }
 
-    /**
-     * @param Address|null $billingAddress
-     *
-     * @return PaymentProviderInitialize
-     */
     public function setBillingAddress(
         ?Address $billingAddress
-    ): PaymentProviderInitialize {
+    ): self {
         $this->billingAddress = $billingAddress;
 
         return $this;
     }
 
-    /**
-     * @return Contact|null
-     */
     public function getBillingContact(): ?Contact
     {
         return $this->billingContact;
     }
 
-    /**
-     * @param Contact|null $billingContact
-     *
-     * @return PaymentProviderInitialize
-     */
     public function setBillingContact(
         ?Contact $billingContact
-    ): PaymentProviderInitialize {
+    ): self {
         $this->billingContact = $billingContact;
 
         return $this;
     }
 
-    /**
-     * @return Address|null
-     */
     public function getCustomerAddress(): ?Address
     {
         return $this->customerAddress;
     }
 
-    /**
-     * @param Address|null $customerAddress
-     *
-     * @return PaymentProviderInitialize
-     */
     public function setCustomerAddress(
         ?Address $customerAddress
-    ): PaymentProviderInitialize {
+    ): self {
         $this->customerAddress = $customerAddress;
 
         return $this;
     }
 
-    /**
-     * @return Contact|null
-     */
     public function getCustomerContact(): ?Contact
     {
         return $this->customerContact;
     }
 
-    /**
-     * @param Contact|null $customerContact
-     *
-     * @return PaymentProviderInitialize
-     */
     public function setCustomerContact(
         ?Contact $customerContact
-    ): PaymentProviderInitialize {
+    ): self {
         $this->customerContact = $customerContact;
 
         return $this;
     }
 
-    /**
-     * @return Address|null
-     */
     public function getDeliveryAddress(): ?Address
     {
         return $this->deliveryAddress;
     }
 
-    /**
-     * @param Address|null $deliveryAddress
-     *
-     * @return PaymentProviderInitialize
-     */
     public function setDeliveryAddress(
         ?Address $deliveryAddress
-    ): PaymentProviderInitialize {
+    ): self {
         $this->deliveryAddress = $deliveryAddress;
 
         return $this;
     }
 
-    /**
-     * @return Contact|null
-     */
     public function getDeliveryContact(): ?Contact
     {
         return $this->deliveryContact;
     }
 
-    /**
-     * @param Contact|null $deliveryContact
-     *
-     * @return PaymentProviderInitialize
-     */
     public function setDeliveryContact(
         ?Contact $deliveryContact
-    ): PaymentProviderInitialize {
+    ): self {
         $this->deliveryContact = $deliveryContact;
 
         return $this;
     }
 
-    /**
-     * @return DeliveryData|null
-     */
     public function getDeliveryData(
-    ): ?DeliveryData
-    {
+    ): ?DeliveryData {
         return $this->deliveryData;
     }
 
-    /**
-     * @param DeliveryData|null $deliveryData
-     *
-     * @return PaymentProviderInitialize
-     */
     public function setDeliveryData(
         ?DeliveryData $deliveryData
-    ): PaymentProviderInitialize {
+    ): self {
         $this->deliveryData = $deliveryData;
 
         return $this;
     }
 
-    /**
-     * @return AuthenticationData|null
-     */
     public function getAuthenticationData(
-    ): ?AuthenticationData
-    {
+    ): ?AuthenticationData {
         return $this->authenticationData;
     }
 
-    /**
-     * @param AuthenticationData|null $authenticationData
-     *
-     * @return PaymentProviderInitialize
-     */
     public function setAuthenticationData(
         ?AuthenticationData $authenticationData
-    ): PaymentProviderInitialize {
+    ): self {
         $this->authenticationData = $authenticationData;
 
         return $this;
     }
 
-    /**
-     * @return CustomerData|null
-     */
     public function getCustomerData(
-    ): ?CustomerData
-    {
+    ): ?CustomerData {
         return $this->customerData;
     }
 
-    /**
-     * @param CustomerData|null $customerData
-     *
-     * @return PaymentProviderInitialize
-     */
     public function setCustomerData(
         ?CustomerData $customerData
-    ): PaymentProviderInitialize {
+    ): self {
         $this->customerData = $customerData;
 
         return $this;
     }
 
-    /**
-     * @return FraudData|null
-     */
     public function getFraudData(): ?FraudData
     {
         return $this->fraudData;
     }
 
-    /**
-     * @param FraudData|null $fraudData
-     *
-     * @return PaymentProviderInitialize
-     */
     public function setFraudData(
         ?FraudData $fraudData
-    ): PaymentProviderInitialize {
+    ): self {
         $this->fraudData = $fraudData;
 
         return $this;
     }
 
-    /**
-     * @return Address|null
-     */
     public function getHolderAddress(): ?Address
     {
         return $this->holderAddress;
     }
 
-    /**
-     * @param Address|null $holderAddress
-     *
-     * @return PaymentProviderInitialize
-     */
     public function setHolderAddress(
         ?Address $holderAddress
-    ): PaymentProviderInitialize {
+    ): self {
         $this->holderAddress = $holderAddress;
 
         return $this;
     }
 
-    /**
-     * @return Contact|null
-     */
     public function getHolderContact(): ?Contact
     {
         return $this->holderContact;
     }
 
-    /**
-     * @param Contact|null $holderContact
-     *
-     * @return PaymentProviderInitialize
-     */
     public function setHolderContact(
         ?Contact $holderContact
-    ): PaymentProviderInitialize {
+    ): self {
         $this->holderContact = $holderContact;
 
         return $this;
     }
 
-    /**
-     * @return int|null
-     */
     public function getResponseKeyVersion(): ?int
     {
         return $this->responseKeyVersion;
     }
 
-    /**
-     * @param int|null $responseKeyVersion
-     *
-     * @return PaymentProviderInitialize
-     */
-    public function setResponseKeyVersion(?int $responseKeyVersion
-    ): PaymentProviderInitialize {
+    public function setResponseKeyVersion(
+        ?int $responseKeyVersion
+    ): self {
         $this->responseKeyVersion = $responseKeyVersion;
 
         return $this;
     }
 
-    /**
-     * @return PaymentMeanData|null
-     */
     public function getPaymentMeanData(
-    ): ?PaymentMeanData
-    {
+    ): ?PaymentMeanData {
         return $this->paymentMeanData;
     }
 
-    /**
-     * @param PaymentMeanData|null $paymentMeanData
-     *
-     * @return PaymentProviderInitialize
-     */
     public function setPaymentMeanData(
         ?PaymentMeanData $paymentMeanData
-    ): PaymentProviderInitialize {
+    ): self {
         $this->paymentMeanData = $paymentMeanData;
 
         return $this;
     }
-
 }

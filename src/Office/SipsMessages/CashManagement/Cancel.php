@@ -1,343 +1,203 @@
 <?php
 
+declare(strict_types=1);
 
 namespace Worldline\Sips\Office\SipsMessages\CashManagement;
-
 
 use Worldline\Sips\Common\Fields\Contact;
 use Worldline\Sips\Common\Fields\S10TransactionReference;
 use Worldline\Sips\Common\SipsMessages\SipsMessage;
 
 /**
- * Class Cancel
- * @package Worldline\Sips\Office\SipsMessages\CashManagement
+ * Class Cancel.
  */
 class Cancel extends SipsMessage
 {
-    /**
-     * @var string
-     */
-    private $serviceUrl;
+    private string $serviceUrl;
 
-    /**
-     * @var null|int
-     */
-    private $operationAmount;
+    private ?int $operationAmount = null;
 
-    /**
-     * @var null|string
-     */
-    private $currencyCode;
+    private ?string $currencyCode = null;
 
-    /**
-     * @var null|string
-     */
-    private $merchantId;
+    private ?string $merchantId = null;
 
-    /**
-     * @var null|string
-     */
-    private $interfaceVersion;
+    private ?string $interfaceVersion = null;
 
-    /**
-     * @var null|string
-     */
-    private $transactionReference;
+    private ?string $transactionReference = null;
 
-    /**
-     * @var null|string
-     */
-    private $operationOrigin;
+    private ?string $operationOrigin = null;
 
-    /**
-     * @var null|S10TransactionReference
-     */
-    private $s10TransactionReference;
+    private ?S10TransactionReference $s10TransactionReference = null;
 
-    /**
-     * @var null|string
-     */
-    private $intermediateServiceProviderId;
+    private ?string $intermediateServiceProviderId = null;
 
-    /**
-     * @var null|string
-     */
-    private $seal;
+    private ?string $seal = null;
 
-    /**
-     * @var null|string
-     */
-    private $keyVersion;
+    private ?string $keyVersion = null;
 
-    /**
-     * @var null|string
-     */
-    private $sealAlgorithm;
+    private ?string $sealAlgorithm = null;
 
-    /**
-     * @var null|Contact
-     */
-    private $customerContact;
+    private ?Contact $customerContact = null;
 
     /**
      * Cancel constructor.
      */
     public function __construct()
     {
-        $this->serviceUrl = "rs-services/v2/cashManagement/cancel";
-        $this->setInterfaceVersion("CR_WS_2.27");
+        $this->serviceUrl = 'rs-services/v2/cashManagement/cancel';
+        $this->setInterfaceVersion('CR_WS_2.27');
     }
 
-    /**
-     * @return string
-     */
     public function getServiceUrl(): string
     {
         return $this->serviceUrl;
     }
-    
-    /**
-     * @return int|null
-     */
+
     public function getOperationAmount(): ?int
     {
         return $this->operationAmount;
     }
 
-    /**
-     * @param int|null $operationAmount
-     *
-     * @return Cancel
-     */
-    public function setOperationAmount(?int $operationAmount): Cancel
+    public function setOperationAmount(?int $operationAmount): self
     {
         $this->operationAmount = $operationAmount;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getCurrencyCode(): ?string
     {
         return $this->currencyCode;
     }
 
-    /**
-     * @param string|null $currencyCode
-     *
-     * @return Cancel
-     */
-    public function setCurrencyCode(?string $currencyCode): Cancel
+    public function setCurrencyCode(?string $currencyCode): self
     {
         $this->currencyCode = $currencyCode;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getMerchantId(): ?string
     {
         return $this->merchantId;
     }
 
-    /**
-     * @param string|null $merchantId
-     *
-     * @return Cancel
-     */
-    public function setMerchantId(?string $merchantId): Cancel
+    public function setMerchantId(?string $merchantId): self
     {
         $this->merchantId = $merchantId;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getInterfaceVersion(): ?string
     {
         return $this->interfaceVersion;
     }
 
-    /**
-     * @param string|null $interfaceVersion
-     *
-     * @return Cancel
-     */
-    public function setInterfaceVersion(?string $interfaceVersion): Cancel
+    public function setInterfaceVersion(?string $interfaceVersion): self
     {
         $this->interfaceVersion = $interfaceVersion;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getTransactionReference(): ?string
     {
         return $this->transactionReference;
     }
 
-    /**
-     * @param string|null $transactionReference
-     *
-     * @return Cancel
-     */
-    public function setTransactionReference(?string $transactionReference
-    ): Cancel {
+    public function setTransactionReference(
+        ?string $transactionReference
+    ): self {
         $this->transactionReference = $transactionReference;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getOperationOrigin(): ?string
     {
         return $this->operationOrigin;
     }
 
-    /**
-     * @param string|null $operationOrigin
-     *
-     * @return Cancel
-     */
-    public function setOperationOrigin(?string $operationOrigin): Cancel
+    public function setOperationOrigin(?string $operationOrigin): self
     {
         $this->operationOrigin = $operationOrigin;
 
         return $this;
     }
 
-    /**
-     * @return S10TransactionReference|null
-     */
     public function getS10TransactionReference(
-    ): ?S10TransactionReference
-    {
+    ): ?S10TransactionReference {
         return $this->s10TransactionReference;
     }
 
-    /**
-     * @param S10TransactionReference|null $s10TransactionReference
-     *
-     * @return Cancel
-     */
     public function setS10TransactionReference(
         ?S10TransactionReference $s10TransactionReference
-    ): Cancel {
+    ): self {
         $this->s10TransactionReference = $s10TransactionReference;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getIntermediateServiceProviderId(): ?string
     {
         return $this->intermediateServiceProviderId;
     }
 
-    /**
-     * @param string|null $intermediateServiceProviderId
-     *
-     * @return Cancel
-     */
     public function setIntermediateServiceProviderId(
         ?string $intermediateServiceProviderId
-    ): Cancel {
+    ): self {
         $this->intermediateServiceProviderId = $intermediateServiceProviderId;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getSeal(): ?string
     {
         return $this->seal;
     }
 
-    /**
-     * @param string|null $seal
-     *
-     * @return Cancel
-     */
-    public function setSeal(?string $seal): Cancel
+    public function setSeal(?string $seal): self
     {
         $this->seal = $seal;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getKeyVersion(): ?string
     {
         return $this->keyVersion;
     }
 
-    /**
-     * @param string|null $keyVersion
-     *
-     * @return Cancel
-     */
-    public function setKeyVersion(?string $keyVersion): Cancel
+    public function setKeyVersion(?string $keyVersion): self
     {
         $this->keyVersion = $keyVersion;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getSealAlgorithm(): ?string
     {
         return $this->sealAlgorithm;
     }
 
-    /**
-     * @param string|null $sealAlgorithm
-     *
-     * @return Cancel
-     */
-    public function setSealAlgorithm(?string $sealAlgorithm): Cancel
+    public function setSealAlgorithm(?string $sealAlgorithm): self
     {
         $this->sealAlgorithm = $sealAlgorithm;
 
         return $this;
     }
 
-    /**
-     * @return Contact|null
-     */
     public function getCustomerContact(): ?Contact
     {
         return $this->customerContact;
     }
 
-    /**
-     * @param Contact|null $customerContact
-     *
-     * @return Cancel
-     */
     public function setCustomerContact(
         ?Contact $customerContact
-    ): Cancel {
+    ): self {
         $this->customerContact = $customerContact;
 
         return $this;
     }
-    
 }

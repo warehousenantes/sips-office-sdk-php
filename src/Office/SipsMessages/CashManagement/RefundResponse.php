@@ -1,215 +1,127 @@
 <?php
 
+declare(strict_types=1);
 
 namespace Worldline\Sips\Office\SipsMessages\CashManagement;
-
 
 use Worldline\Sips\Common\SipsMessages\SipsMessage;
 
 /**
- * Class RefundResponse
- * @package Worldline\Sips\Office\SipsMessages\CashManagement
+ * Class RefundResponse.
  */
 class RefundResponse extends SipsMessage
 {
-    /**
-     * @var null|string
-     */
-    private $acquirerResponseCode;
-    
-    /**
-     * @var null|string
-     */
-    private $authorisationId;
-    
-    /**
-     * @var null|int
-     */
-    private $newAmount;
-    
-    /**
-     * @var null|string
-     */
-    private $newStatus;
-    
-    /**
-     * @var null|string
-     */
-    private $operationDateTime;
-    
-    /**
-     * @var null|string
-     */
-    private $responseCode;
-    
-    /**
-     * @var null|string
-     */
-    private $seal;
-    
-    /**
-     * @var null|string
-     */
-    private $errorFieldName;
+    private ?string $acquirerResponseCode = null;
 
-    /**
-     * @return string|null
-     */
+    private ?string $authorisationId = null;
+
+    private ?int $newAmount = null;
+
+    private ?string $newStatus = null;
+
+    private ?string $operationDateTime = null;
+
+    private ?string $responseCode = null;
+
+    private ?string $seal = null;
+
+    private ?string $errorFieldName = null;
+
     public function getAcquirerResponseCode(): ?string
     {
         return $this->acquirerResponseCode;
     }
 
-    /**
-     * @param string|null $acquirerResponseCode
-     *
-     * @return RefundResponse
-     */
-    public function setAcquirerResponseCode(?string $acquirerResponseCode
-    ): RefundResponse {
+    public function setAcquirerResponseCode(
+        ?string $acquirerResponseCode
+    ): self {
         $this->acquirerResponseCode = $acquirerResponseCode;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getAuthorisationId(): ?string
     {
         return $this->authorisationId;
     }
 
-    /**
-     * @param string|null $authorisationId
-     *
-     * @return RefundResponse
-     */
-    public function setAuthorisationId(?string $authorisationId): RefundResponse
+    public function setAuthorisationId(?string $authorisationId): self
     {
         $this->authorisationId = $authorisationId;
 
         return $this;
     }
 
-    /**
-     * @return int|null
-     */
     public function getNewAmount(): ?int
     {
         return $this->newAmount;
     }
 
-    /**
-     * @param int|null $newAmount
-     *
-     * @return RefundResponse
-     */
-    public function setNewAmount(?int $newAmount): RefundResponse
+    public function setNewAmount(?int $newAmount): self
     {
         $this->newAmount = $newAmount;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getNewStatus(): ?string
     {
         return $this->newStatus;
     }
 
-    /**
-     * @param string|null $newStatus
-     *
-     * @return RefundResponse
-     */
-    public function setNewStatus(?string $newStatus): RefundResponse
+    public function setNewStatus(?string $newStatus): self
     {
         $this->newStatus = $newStatus;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getOperationDateTime(): ?string
     {
         return $this->operationDateTime;
     }
 
-    /**
-     * @param string|null $operationDateTime
-     *
-     * @return RefundResponse
-     */
-    public function setOperationDateTime(?string $operationDateTime
-    ): RefundResponse {
+    public function setOperationDateTime(
+        ?string $operationDateTime
+    ): self {
         $this->operationDateTime = $operationDateTime;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getResponseCode(): ?string
     {
         return $this->responseCode;
     }
 
-    /**
-     * @param string|null $responseCode
-     *
-     * @return RefundResponse
-     */
-    public function setResponseCode(?string $responseCode): RefundResponse
+    public function setResponseCode(?string $responseCode): self
     {
         $this->responseCode = $responseCode;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getSeal(): ?string
     {
         return $this->seal;
     }
 
-    /**
-     * @param string|null $seal
-     *
-     * @return RefundResponse
-     */
-    public function setSeal(?string $seal): RefundResponse
+    public function setSeal(?string $seal): self
     {
         $this->seal = $seal;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getErrorFieldName(): ?string
     {
         return $this->errorFieldName;
     }
 
-    /**
-     * @param string|null $errorFieldName
-     *
-     * @return RefundResponse
-     */
-    public function setErrorFieldName(?string $errorFieldName): RefundResponse
+    public function setErrorFieldName(?string $errorFieldName): self
     {
         $this->errorFieldName = $errorFieldName;
 
         return $this;
     }
-
 }

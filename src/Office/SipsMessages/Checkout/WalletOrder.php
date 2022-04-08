@@ -1,8 +1,8 @@
 <?php
 
+declare(strict_types=1);
 
 namespace Worldline\Sips\Office\SipsMessages\Checkout;
-
 
 use Worldline\Sips\Common\Fields\Address;
 use Worldline\Sips\Common\Fields\AuthenticationData;
@@ -11,921 +11,528 @@ use Worldline\Sips\Common\Fields\FraudData;
 use Worldline\Sips\Common\SipsMessages\SipsMessage;
 
 /**
- * Class WalletOrder
- * @package Worldline\Sips\Common\SipsMessages\Checkout
+ * Class WalletOrder.
  */
 class WalletOrder extends SipsMessage
 {
-    
-    /**
-     * @var string
-     */
-    private $serviceUrl;
-    
-    /**
-     * @var int
-     */
-    private $amount;
-    
-    /**
-     * @var int
-     */
-    private $captureDay;
-    
-    /**
-     * @var string
-     */
-    private $captureMode;
-    
-    /**
-     * @var string
-     */
-    private $currencyCode;
-    
-    /**
-     * @var string
-     */
-    private $customerId;
-    
-    /**
-     * @var string
-     */
-    private $customerIpAddress;
-    
-    /**
-     * @var string
-     */
-    private $customerLanguage;
-    
-    /**
-     * @var string
-     */
-    private $cardCSCValue;
-    
-    /**
-     * @var string
-     */
-    private $invoiceReference;
-    
-    /**
-     * @var string
-     */
-    private $interfaceVersion;
-    
-    /**
-     * @var string
-     */
-    private $intermediateServiceProviderId;
-    
-    /**
-     * @var int
-     */
-    private $keyVersion;
-    
-    /**
-     * @var string
-     */
-    private $merchantId;
-    
-    /**
-     * @var string
-     */
-    private $merchantTransactionDateTime;
-    
-    /**
-     * @var string
-     */
-    private $merchantWalletId;
-    
-    /**
-     * @var string
-     */
-    private $orderChannel;
-    
-    /**
-     * @var string
-     */
-    private $orderId;
-    
-    /**
-     * @var string
-     */
-    private $paymentMeanId;
-    
-    /**
-     * @var string
-     */
-    private $returnContext;
-    
-    /**
-     * @var string
-     */
-    private $seal;
-    
-    /**
-     * @var string
-     */
-    private $sealAlgorithm;
-    
-    /**
-     * @var string
-     */
-    private $statementReference;
-    
-    /**
-     * @var string
-     */
-    private $transactionOrigin;
-    
-    /**
-     * @var string
-     */
-    private $paymentPattern;
-    
-    /**
-     * @var Address
-     */
-    private $billingAddess;
-    
-    /**
-     * @var Contact
-     */
-    private $billingContact;
-    
-    /**
-     * @var Address
-     */
-    private $customerAddress;
-    
-    /**
-     * @var Contact
-     */
-    private $customerContact;
-    
-    /**
-     * @var Address
-     */
-    private $deliveryAddress;
-    
-    /**
-     * @var Contact
-     */
-    private $deliveryContact;
-    
-    /**
-     * @var FraudData
-     */
-    private $fraudData;
-    
-    /**
-     * @var Address
-     */
-    private $holderAddress;
-    
-    /**
-     * @var Contact
-     */
-    private $holderContact;
-    
-    /**
-     * @var AuthenticationData
-     */
-    private $authenticationData;
-    
-    /**
-     * @var string
-     */
-    private $transactionReference;
+    private string $serviceUrl;
+
+    private ?int $amount = null;
+
+    private ?int $captureDay = null;
+
+    private ?string $captureMode = null;
+
+    private ?string $currencyCode = null;
+
+    private ?string $customerId = null;
+
+    private ?string $customerIpAddress = null;
+
+    private ?string $customerLanguage = null;
+
+    private ?string $cardCSCValue = null;
+
+    private ?string $invoiceReference = null;
+
+    private ?string $interfaceVersion = null;
+
+    private ?string $intermediateServiceProviderId = null;
+
+    private ?int $keyVersion = null;
+
+    private ?string $merchantId = null;
+
+    private ?string $merchantTransactionDateTime = null;
+
+    private ?string $merchantWalletId = null;
+
+    private ?string $orderChannel = null;
+
+    private ?string $orderId = null;
+
+    private ?string $paymentMeanId = null;
+
+    private ?string $returnContext = null;
+
+    private ?string $seal = null;
+
+    private ?string $sealAlgorithm = null;
+
+    private ?string $statementReference = null;
+
+    private ?string $transactionOrigin = null;
+
+    private ?string $paymentPattern = null;
+
+    private ?Address $billingAddess = null;
+
+    private ?Contact $billingContact = null;
+
+    private ?Address $customerAddress = null;
+
+    private ?Contact $customerContact = null;
+
+    private ?Address $deliveryAddress = null;
+
+    private ?Contact $deliveryContact = null;
+
+    private ?FraudData $fraudData = null;
+
+    private ?Address $holderAddress = null;
+
+    private ?Contact $holderContact = null;
+
+    private ?AuthenticationData $authenticationData = null;
+
+    private ?string $transactionReference = null;
 
     /**
      * WalletOrder constructor.
      */
     public function __construct()
     {
-        $this->serviceUrl = "rs-services/v2/checkout/walletOrder";
-        $this->setInterfaceVersion("IR_WS_2.27")
+        $this->serviceUrl = 'rs-services/v2/checkout/walletOrder';
+        $this->setInterfaceVersion('IR_WS_2.27')
             ->setTransactionReference($this->generateReference());
     }
 
-    /**
-     * @return string
-     */
     public function getServiceUrl(): string
     {
         return $this->serviceUrl;
     }
 
-    /**
-     * @return int
-     */
     public function getAmount(): int
     {
         return $this->amount;
     }
 
-    /**
-     * @param int $amount
-     *
-     * @return WalletOrder
-     */
-    public function setAmount(int $amount): WalletOrder
+    public function setAmount(int $amount): self
     {
         $this->amount = $amount;
 
         return $this;
     }
 
-    /**
-     * @return int
-     */
     public function getCaptureDay(): int
     {
         return $this->captureDay;
     }
 
-    /**
-     * @param int $captureDay
-     *
-     * @return WalletOrder
-     */
-    public function setCaptureDay(int $captureDay): WalletOrder
+    public function setCaptureDay(int $captureDay): self
     {
         $this->captureDay = $captureDay;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getCaptureMode(): string
     {
         return $this->captureMode;
     }
 
-    /**
-     * @param string $captureMode
-     *
-     * @return WalletOrder
-     */
-    public function setCaptureMode(string $captureMode): WalletOrder
+    public function setCaptureMode(string $captureMode): self
     {
         $this->captureMode = $captureMode;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getCurrencyCode(): string
     {
         return $this->currencyCode;
     }
 
-    /**
-     * @param string $currencyCode
-     *
-     * @return WalletOrder
-     */
-    public function setCurrencyCode(string $currencyCode): WalletOrder
+    public function setCurrencyCode(string $currencyCode): self
     {
         $this->currencyCode = $currencyCode;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getCustomerId(): string
     {
         return $this->customerId;
     }
 
-    /**
-     * @param string $customerId
-     *
-     * @return WalletOrder
-     */
-    public function setCustomerId(string $customerId): WalletOrder
+    public function setCustomerId(string $customerId): self
     {
         $this->customerId = $customerId;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getCustomerIpAddress(): string
     {
         return $this->customerIpAddress;
     }
 
-    /**
-     * @param string $customerIpAddress
-     *
-     * @return WalletOrder
-     */
-    public function setCustomerIpAddress(string $customerIpAddress): WalletOrder
+    public function setCustomerIpAddress(string $customerIpAddress): self
     {
         $this->customerIpAddress = $customerIpAddress;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getCustomerLanguage(): string
     {
         return $this->customerLanguage;
     }
 
-    /**
-     * @param string $customerLanguage
-     *
-     * @return WalletOrder
-     */
-    public function setCustomerLanguage(string $customerLanguage): WalletOrder
+    public function setCustomerLanguage(string $customerLanguage): self
     {
         $this->customerLanguage = $customerLanguage;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getCardCSCValue(): string
     {
         return $this->cardCSCValue;
     }
 
-    /**
-     * @param string $cardCSCValue
-     *
-     * @return WalletOrder
-     */
-    public function setCardCSCValue(string $cardCSCValue): WalletOrder
+    public function setCardCSCValue(string $cardCSCValue): self
     {
         $this->cardCSCValue = $cardCSCValue;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getInvoiceReference(): string
     {
         return $this->invoiceReference;
     }
 
-    /**
-     * @param string $invoiceReference
-     *
-     * @return WalletOrder
-     */
-    public function setInvoiceReference(string $invoiceReference): WalletOrder
+    public function setInvoiceReference(string $invoiceReference): self
     {
         $this->invoiceReference = $invoiceReference;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getInterfaceVersion(): string
     {
         return $this->interfaceVersion;
     }
 
-    /**
-     * @param string $interfaceVersion
-     *
-     * @return WalletOrder
-     */
-    public function setInterfaceVersion(string $interfaceVersion): WalletOrder
+    public function setInterfaceVersion(string $interfaceVersion): self
     {
         $this->interfaceVersion = $interfaceVersion;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getIntermediateServiceProviderId(): string
     {
         return $this->intermediateServiceProviderId;
     }
 
-    /**
-     * @param string $intermediateServiceProviderId
-     *
-     * @return WalletOrder
-     */
     public function setIntermediateServiceProviderId(
         string $intermediateServiceProviderId
-    ): WalletOrder {
+    ): self {
         $this->intermediateServiceProviderId = $intermediateServiceProviderId;
 
         return $this;
     }
 
-    /**
-     * @return int
-     */
     public function getKeyVersion(): int
     {
         return $this->keyVersion;
     }
 
-    /**
-     * @param int $keyVersion
-     *
-     * @return WalletOrder
-     */
-    public function setKeyVersion(int $keyVersion): WalletOrder
+    public function setKeyVersion(int $keyVersion): self
     {
         $this->keyVersion = $keyVersion;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getMerchantId(): string
     {
         return $this->merchantId;
     }
 
-    /**
-     * @param string $merchantId
-     *
-     * @return WalletOrder
-     */
-    public function setMerchantId(string $merchantId): WalletOrder
+    public function setMerchantId(string $merchantId): self
     {
         $this->merchantId = $merchantId;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getMerchantTransactionDateTime(): string
     {
         return $this->merchantTransactionDateTime;
     }
 
-    /**
-     * @param string $merchantTransactionDateTime
-     *
-     * @return WalletOrder
-     */
     public function setMerchantTransactionDateTime(
         string $merchantTransactionDateTime
-    ): WalletOrder {
+    ): self {
         $this->merchantTransactionDateTime = $merchantTransactionDateTime;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getMerchantWalletId(): string
     {
         return $this->merchantWalletId;
     }
 
-    /**
-     * @param string $merchantWalletId
-     *
-     * @return WalletOrder
-     */
-    public function setMerchantWalletId(string $merchantWalletId): WalletOrder
+    public function setMerchantWalletId(string $merchantWalletId): self
     {
         $this->merchantWalletId = $merchantWalletId;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getOrderChannel(): string
     {
         return $this->orderChannel;
     }
 
-    /**
-     * @param string $orderChannel
-     *
-     * @return WalletOrder
-     */
-    public function setOrderChannel(string $orderChannel): WalletOrder
+    public function setOrderChannel(string $orderChannel): self
     {
         $this->orderChannel = $orderChannel;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getOrderId(): string
     {
         return $this->orderId;
     }
 
-    /**
-     * @param string $orderId
-     *
-     * @return WalletOrder
-     */
-    public function setOrderId(string $orderId): WalletOrder
+    public function setOrderId(string $orderId): self
     {
         $this->orderId = $orderId;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getPaymentMeanId(): string
     {
         return $this->paymentMeanId;
     }
 
-    /**
-     * @param string $paymentMeanId
-     *
-     * @return WalletOrder
-     */
-    public function setPaymentMeanId(string $paymentMeanId): WalletOrder
+    public function setPaymentMeanId(string $paymentMeanId): self
     {
         $this->paymentMeanId = $paymentMeanId;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getReturnContext(): string
     {
         return $this->returnContext;
     }
 
-    /**
-     * @param string $returnContext
-     *
-     * @return WalletOrder
-     */
-    public function setReturnContext(string $returnContext): WalletOrder
+    public function setReturnContext(string $returnContext): self
     {
         $this->returnContext = $returnContext;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getSeal(): string
     {
         return $this->seal;
     }
 
-    /**
-     * @param string $seal
-     *
-     * @return WalletOrder
-     */
-    public function setSeal(string $seal): WalletOrder
+    public function setSeal(string $seal): self
     {
         $this->seal = $seal;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getSealAlgorithm(): string
     {
         return $this->sealAlgorithm;
     }
 
-    /**
-     * @param string $sealAlgorithm
-     *
-     * @return WalletOrder
-     */
-    public function setSealAlgorithm(string $sealAlgorithm): WalletOrder
+    public function setSealAlgorithm(string $sealAlgorithm): self
     {
         $this->sealAlgorithm = $sealAlgorithm;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getStatementReference(): string
     {
         return $this->statementReference;
     }
 
-    /**
-     * @param string $statementReference
-     *
-     * @return WalletOrder
-     */
-    public function setStatementReference(string $statementReference
-    ): WalletOrder {
+    public function setStatementReference(
+        string $statementReference
+    ): self {
         $this->statementReference = $statementReference;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getTransactionOrigin(): string
     {
         return $this->transactionOrigin;
     }
 
-    /**
-     * @param string $transactionOrigin
-     *
-     * @return WalletOrder
-     */
-    public function setTransactionOrigin(string $transactionOrigin): WalletOrder
+    public function setTransactionOrigin(string $transactionOrigin): self
     {
         $this->transactionOrigin = $transactionOrigin;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getPaymentPattern(): string
     {
         return $this->paymentPattern;
     }
 
-    /**
-     * @param string $paymentPattern
-     *
-     * @return WalletOrder
-     */
-    public function setPaymentPattern(string $paymentPattern): WalletOrder
+    public function setPaymentPattern(string $paymentPattern): self
     {
         $this->paymentPattern = $paymentPattern;
 
         return $this;
     }
 
-    /**
-     * @return Address
-     */
     public function getBillingAddess(): Address
     {
         return $this->billingAddess;
     }
 
-    /**
-     * @param Address $billingAddess
-     *
-     * @return WalletOrder
-     */
     public function setBillingAddess(
         Address $billingAddess
-    ): WalletOrder {
+    ): self {
         $this->billingAddess = $billingAddess;
 
         return $this;
     }
 
-    /**
-     * @return Contact
-     */
     public function getBillingContact(): Contact
     {
         return $this->billingContact;
     }
 
-    /**
-     * @param Contact $billingContact
-     *
-     * @return WalletOrder
-     */
     public function setBillingContact(
         Contact $billingContact
-    ): WalletOrder {
+    ): self {
         $this->billingContact = $billingContact;
 
         return $this;
     }
 
-    /**
-     * @return Address
-     */
     public function getCustomerAddress(): Address
     {
         return $this->customerAddress;
     }
 
-    /**
-     * @param Address $customerAddress
-     *
-     * @return WalletOrder
-     */
     public function setCustomerAddress(
         Address $customerAddress
-    ): WalletOrder {
+    ): self {
         $this->customerAddress = $customerAddress;
 
         return $this;
     }
 
-    /**
-     * @return Contact
-     */
     public function getCustomerContact(): Contact
     {
         return $this->customerContact;
     }
 
-    /**
-     * @param Contact $customerContact
-     *
-     * @return WalletOrder
-     */
     public function setCustomerContact(
         Contact $customerContact
-    ): WalletOrder {
+    ): self {
         $this->customerContact = $customerContact;
 
         return $this;
     }
 
-    /**
-     * @return Address
-     */
     public function getDeliveryAddress(): Address
     {
         return $this->deliveryAddress;
     }
 
-    /**
-     * @param Address $deliveryAddress
-     *
-     * @return WalletOrder
-     */
     public function setDeliveryAddress(
         Address $deliveryAddress
-    ): WalletOrder {
+    ): self {
         $this->deliveryAddress = $deliveryAddress;
 
         return $this;
     }
 
-    /**
-     * @return Contact
-     */
     public function getDeliveryContact(): Contact
     {
         return $this->deliveryContact;
     }
 
-    /**
-     * @param Contact $deliveryContact
-     *
-     * @return WalletOrder
-     */
     public function setDeliveryContact(
         Contact $deliveryContact
-    ): WalletOrder {
+    ): self {
         $this->deliveryContact = $deliveryContact;
 
         return $this;
     }
 
-    /**
-     * @return FraudData
-     */
     public function getFraudData(): FraudData
     {
         return $this->fraudData;
     }
 
-    /**
-     * @param FraudData $fraudData
-     *
-     * @return WalletOrder
-     */
     public function setFraudData(
         FraudData $fraudData
-    ): WalletOrder {
+    ): self {
         $this->fraudData = $fraudData;
 
         return $this;
     }
 
-    /**
-     * @return Address
-     */
     public function getHolderAddress(): Address
     {
         return $this->holderAddress;
     }
 
-    /**
-     * @param Address $holderAddress
-     *
-     * @return WalletOrder
-     */
     public function setHolderAddress(
         Address $holderAddress
-    ): WalletOrder {
+    ): self {
         $this->holderAddress = $holderAddress;
 
         return $this;
     }
 
-    /**
-     * @return Contact
-     */
     public function getHolderContact(): Contact
     {
         return $this->holderContact;
     }
 
-    /**
-     * @param Contact $holderContact
-     *
-     * @return WalletOrder
-     */
     public function setHolderContact(
         Contact $holderContact
-    ): WalletOrder {
+    ): self {
         $this->holderContact = $holderContact;
 
         return $this;
     }
 
-    /**
-     * @return AuthenticationData
-     */
     public function getAuthenticationData(
-    ): AuthenticationData
-    {
+    ): AuthenticationData {
         return $this->authenticationData;
     }
 
-    /**
-     * @param AuthenticationData $authenticationData
-     *
-     * @return WalletOrder
-     */
     public function setAuthenticationData(
         AuthenticationData $authenticationData
-    ): WalletOrder {
+    ): self {
         $this->authenticationData = $authenticationData;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getTransactionReference(): string
     {
         return $this->transactionReference;
     }
 
-    /**
-     * @param string $transactionReference
-     *
-     * @return WalletOrder
-     */
-    public function setTransactionReference(string $transactionReference
-    ): WalletOrder {
+    public function setTransactionReference(
+        string $transactionReference
+    ): self {
         $this->transactionReference = $transactionReference;
 
         return $this;
     }
-
 }

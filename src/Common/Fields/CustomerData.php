@@ -1,215 +1,124 @@
 <?php
 
+declare(strict_types=1);
 
 namespace Worldline\Sips\Common\Fields;
 
-
 /**
- * Class CustomerData
- *
- * @package Worldline\Sips\Common\Fields
+ * Class CustomerData.
  */
 class CustomerData extends Field
 {
+    private ?string $birthCity = null;
 
-     /**
-     * @var null|string
-     */
-    private $birthCity;
+    private ?string $birthCountry = null;
 
-     /**
-     * @var null|string
-     */
-    private $birthCountry;
-    
-     /**
-     * @var null|string
-     */
-    private $birthDate;
+    private ?string $birthDate = null;
 
-     /**
-     * @var null|string
-     */
-    private $birthZipCode;
-    
-     /**
-     * @var null|string
-     */
-    private $nationalityCountry;
-    
-     /**
-     * @var null|string
-     */
-    private $newPwd;
-    
-     /**
-     * @var null|string
-     */
-    private $pwd;
+    private ?string $birthZipCode = null;
 
-     /**
-     * @var null|string
-     */
-    private $maidenName;
+    private ?string $nationalityCountry = null;
 
-    /**
-     * @return string|null
-     */
+    private ?string $newPwd = null;
+
+    private ?string $pwd = null;
+
+    private ?string $maidenName = null;
+
     public function getBirthCity(): ?string
     {
         return $this->birthCity;
     }
 
-    /**
-     * @param string|null $birthCity
-     *
-     * @return CustomerData
-     */
-    public function setBirthCity(?string $birthCity): CustomerData
+    public function setBirthCity(?string $birthCity): self
     {
         $this->birthCity = $birthCity;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getBirthCountry(): ?string
     {
         return $this->birthCountry;
     }
 
-    /**
-     * @param string|null $birthCountry
-     *
-     * @return CustomerData
-     */
-    public function setBirthCountry(?string $birthCountry): CustomerData
+    public function setBirthCountry(?string $birthCountry): self
     {
         $this->birthCountry = $birthCountry;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getBirthDate(): ?string
     {
         return $this->birthDate;
     }
 
-    /**
-     * @param string|null $birthDate
-     *
-     * @return CustomerData
-     */
-    public function setBirthDate(?string $birthDate): CustomerData
+    public function setBirthDate(?string $birthDate): self
     {
         $this->birthDate = $birthDate;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getBirthZipCode(): ?string
     {
         return $this->birthZipCode;
     }
 
-    /**
-     * @param string|null $birthZipCode
-     *
-     * @return CustomerData
-     */
-    public function setBirthZipCode(?string $birthZipCode): CustomerData
+    public function setBirthZipCode(?string $birthZipCode): self
     {
         $this->birthZipCode = $birthZipCode;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getNationalityCountry(): ?string
     {
         return $this->nationalityCountry;
     }
 
-    /**
-     * @param string|null $nationalityCountry
-     *
-     * @return CustomerData
-     */
-    public function setNationalityCountry(?string $nationalityCountry
-    ): CustomerData {
+    public function setNationalityCountry(
+        ?string $nationalityCountry
+    ): self {
         $this->nationalityCountry = $nationalityCountry;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getNewPwd(): ?string
     {
         return $this->newPwd;
     }
 
-    /**
-     * @param string|null $newPwd
-     *
-     * @return CustomerData
-     */
-    public function setNewPwd(?string $newPwd): CustomerData
+    public function setNewPwd(?string $newPwd): self
     {
         $this->newPwd = $newPwd;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getPwd(): ?string
     {
         return $this->pwd;
     }
 
-    /**
-     * @param string|null $pwd
-     *
-     * @return CustomerData
-     */
-    public function setPwd(?string $pwd): CustomerData
+    public function setPwd(?string $pwd): self
     {
         $this->pwd = $pwd;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getMaidenName(): ?string
     {
         return $this->maidenName;
     }
 
-    /**
-     * @param string|null $maidenName
-     *
-     * @return CustomerData
-     */
-    public function setMaidenName(?string $maidenName): CustomerData
+    public function setMaidenName(?string $maidenName): self
     {
         $this->maidenName = $maidenName;
 
         return $this;
     }
-    
 }

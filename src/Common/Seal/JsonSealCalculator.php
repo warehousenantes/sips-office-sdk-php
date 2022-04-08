@@ -1,10 +1,8 @@
 <?php
 
+declare(strict_types=1);
 
 namespace Worldline\Sips\Common\Seal;
-
-
-
 
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;
@@ -12,71 +10,51 @@ use Worldline\Sips\Common\SipsMessages\SipsMessage;
 
 class JsonSealCalculator
 {
-    /**
-     * @var Serializer
-     */
-    private $serializer;
+    private Serializer $serializer;
 
     /**
      * JsonSealCalculator constructor.
      */
-    public function __construct() {
+    public function __construct()
+    {
         $encoders = [new SealStringEncoder()];
         $normalizers = [new ObjectNormalizer()];
         $this->serializer = new Serializer($normalizers, $encoders);
     }
 
     /**
-     * @param SipsMessage $sipsRequest
      * @param $secretKey
      */
-    public function calculateSeal(SipsMessage &$sipsRequest, $secretKey)
+    public function calculateSeal(SipsMessage &$sipsRequest, $secretKey): void
     {
         $seal = $this->encrypt($this->getSealData($sipsRequest), $secretKey);
         $sipsRequest->setSeal($seal);
     }
 
-    /**
-     * @param string $sealData
-     * @param string $secretKey
-     *
-     * @return string
-     */
     public function encrypt(string $sealData, string $secretKey): string
     {
-        if (mb_detect_encoding($sealData, 'UTF-8', true) != "UTF-8") {
+        if ('UTF-8' !== mb_detect_encoding($sealData, 'UTF-8', true)) {
             $sealData = utf8_encode($sealData);
         }
+
         $secretKey = utf8_encode($secretKey);
-        $seal = hash_hmac("sha256", $sealData, $secretKey);
-        return $seal;
+
+        return hash_hmac('sha256', $sealData, $secretKey);
     }
 
-    /**
-     * @param SipsMessage $array
-     *
-     * @return string
-     */
     public function getSealData(SipsMessage $array): string
     {
-        return $this->serializer->serialize($array, 'sealstring', ['ignored_attributes' => ['serviceUrl','keyVersion','sealAlgorithm','seal'], 'skip_null_values' => true]);
-        //return $this->serializer->normalize($array, null, ['ignored_attributes' => ['serviceUrl','keyVersion','sealAlgorithm','seal'], 'skip_null_values' => true]);
+        return $this->serializer->serialize($array, 'sealstring', ['ignored_attributes' => ['serviceUrl', 'keyVersion', 'sealAlgorithm', 'seal'], 'skip_null_values' => true]);
+        // return $this->serializer->normalize($array, null, ['ignored_attributes' => ['serviceUrl','keyVersion','sealAlgorithm','seal'], 'skip_null_values' => true]);
     }
 
     /**
-     * @param SipsMessage $sipsResponse
      * @param $secretKey
-     *
-     * @return bool
      */
     public function isCorrectSeal(SipsMessage $sipsResponse, $secretKey): bool
     {
-
         $seal = $this->encrypt($this->getSealData($sipsResponse), $secretKey);
-        if ($seal == $sipsResponse->getSeal()) {
-            return true;
-        } else {
-            return false;
-        }
+
+        return $seal === $sipsResponse->getSeal();
     }
 }

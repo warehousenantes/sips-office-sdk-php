@@ -1,8 +1,8 @@
 <?php
 
+declare(strict_types=1);
 
 namespace Worldline\Sips\Common;
-
 
 use Exception;
 use GuzzleHttp\Client;
@@ -16,6 +16,7 @@ use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;
 use Worldline\Sips\Common\Seal\JsonSealCalculator;
 use Worldline\Sips\Common\Seal\PostSealCalculator;
+use Worldline\Sips\Common\SipsMessages\SipsMessage;
 use Worldline\Sips\Office\SipsMessages\CashManagement\Cancel;
 use Worldline\Sips\Office\SipsMessages\CashManagement\Duplicate;
 use Worldline\Sips\Office\SipsMessages\CashManagement\DuplicateResponse;
@@ -29,7 +30,6 @@ use Worldline\Sips\Office\SipsMessages\Checkout\WalletOrder;
 use Worldline\Sips\Office\SipsMessages\Checkout\WalletOrderResponse;
 use Worldline\Sips\Office\SipsMessages\Diagnostic\GetTransactionData;
 use Worldline\Sips\Office\SipsMessages\Diagnostic\GetTransactionDataResponse;
-use Worldline\Sips\Common\SipsMessages\SipsMessage;
 use Worldline\Sips\Office\SipsMessages\Wallet\AddCard;
 use Worldline\Sips\Office\SipsMessages\Wallet\AddCardResponse;
 use Worldline\Sips\Office\SipsMessages\Wallet\DeletePaymentMean;
@@ -44,7 +44,6 @@ use Worldline\Sips\Paypage\SipsMessages\PaymentResult;
 
 class SipsClient
 {
-
     private $environment;
 
     private $merchantId;
@@ -61,11 +60,6 @@ class SipsClient
 
     /**
      * SipsClient constructor.
-     *
-     * @param SipsEnvironment $environment
-     * @param string $merchantId
-     * @param string $secretKey
-     * @param int $keyVersion
      */
     public function __construct(
         SipsEnvironment $environment,
@@ -83,109 +77,71 @@ class SipsClient
         $this->serializer = new Serializer($normalizers, $encoders);
     }
 
-    /**
-     * @return string
-     */
     public function getEnvironment(): string
     {
         return $this->environment;
     }
 
-    /**
-     * @param SipsEnvironment $environment
-     */
-    public function setEnvironment(SipsEnvironment $environment)
+    public function setEnvironment(SipsEnvironment $environment): void
     {
         $this->environment = $environment;
     }
 
-    /**
-     * @return string
-     */
     public function getSecretKey(): string
     {
         return $this->secretKey;
     }
 
-    /**
-     * @param string $secretKey
-     */
-    public function setSecretKey(string $secretKey)
+    public function setSecretKey(string $secretKey): void
     {
         $this->secretKey = $secretKey;
     }
 
-    /**
-     * @return string
-     */
     public function getMerchantId(): string
     {
         return $this->merchantId;
     }
 
-    /**
-     * @param string $merchantId
-     */
-    public function setMerchantId(string $merchantId)
+    public function setMerchantId(string $merchantId): void
     {
         $this->merchantId = $merchantId;
     }
 
-    /**
-     * @return int
-     */
     public function getKeyVersion(): int
     {
         return $this->keyVersion;
     }
 
-    /**
-     * @param int $keyVersion
-     */
-    public function setKeyVersion(int $keyVersion)
+    public function setKeyVersion(int $keyVersion): void
     {
         $this->keyVersion = $keyVersion;
     }
 
     /**
      * @param bool $prettyPrint
-     * @return string
      */
     public function getLastRequestAsJson($prettyPrint = false): string
     {
         if ($prettyPrint) {
-            return json_encode(json_decode($this->lastRequestAsJson,true),JSON_PRETTY_PRINT);
-        } else {
-            return $this->lastRequestAsJson;
+            return json_encode(json_decode($this->lastRequestAsJson, true, 512, \JSON_THROW_ON_ERROR), \JSON_PRETTY_PRINT);
         }
+
+        return $this->lastRequestAsJson;
     }
 
     /**
      * @param bool $prettyPrint
-     * @return string
      */
     public function getLastResponseAsJson($prettyPrint = false): string
     {
         if ($prettyPrint) {
-            return json_encode(json_decode($this->lastResponseAsJson,true),JSON_PRETTY_PRINT);
-        } else {
-            return $this->lastResponseAsJson;
+            return json_encode(json_decode($this->lastResponseAsJson, true, 512, \JSON_THROW_ON_ERROR), \JSON_PRETTY_PRINT);
         }
+
+        return $this->lastResponseAsJson;
     }
 
     /**
-     * @param int $amount
-     * @param string $currencyCode
-     * @param string $cardNumber
-     * @param string $cardExpiryDate
-     * @param string $cardCSCValue
-     * @param string|null $statementReference
-     * @param string|null $transactionReference
-     * @param string|null $captureMode
-     * @param int|null $captureDay
-     * @param string|null $orderChannel
-     *
-     * @return CardOrderResponse
      * @throws Exception
      */
     public function doCardOrder(
@@ -209,28 +165,31 @@ class SipsClient
         if (isset($statementReference)) {
             $cardOrder->setStatementReference($statementReference);
         }
+
         if (isset($transactionReference)) {
             $cardOrder->setTransactionReference($transactionReference);
         }
+
         if (isset($captureMode)) {
             $cardOrder->setCaptureMode($captureMode);
         }
+
         if (isset($captureDay)) {
             $cardOrder->setCaptureDay($captureDay);
         }
+
         if (isset($orderChannel)) {
             $cardOrder->setOrderChannel($orderChannel);
         }
-        $result = $this->send($cardOrder);
 
-        return $result;
+        return $this->send($cardOrder);
     }
 
     public function doWalletOrder(
         int $amount,
         string $currencyCode,
         string $merchantWalletId,
-        $paymentMeanId = "1",
+        $paymentMeanId = '1',
         string $statementReference = null,
         string $transactionReference = null,
         string $orderChannel = null
@@ -243,29 +202,24 @@ class SipsClient
         if (isset($statementReference)) {
             $walletOrder->setStatementReference($statementReference);
         }
+
         if (isset($transactionReference)) {
             $walletOrder->setTransactionReference($transactionReference);
         }
+
         $walletOrder->setOrderChannel($orderChannel);
         try {
             $result = $this->send($walletOrder);
-        } catch (Exception $e) {
+        } catch (Exception) {
             $result = new WalletOrderResponse();
-            $result->setErrorFieldName("Seal: seal does not match")
-                ->setResponseCode("34");
+            $result->setErrorFieldName('Seal: seal does not match')
+                ->setResponseCode('34');
         }
 
         return $result;
     }
 
     /**
-     * @param int $amount
-     * @param string $merchantReturnUrl
-     * @param string|null $transactionReference
-     * @param string|null $statementReference
-     * @param string|null $orderId
-     *
-     * @return string
      * @throws \Exception
      */
     public function doGetBcmcIntent(
@@ -278,36 +232,33 @@ class SipsClient
         $paymentProviderInitialize = new PaymentProviderInitialize();
         $paymentProviderInitialize->setAmount($amount);
         $paymentProviderInitialize->setMerchantReturnUrl($merchantReturnUrl);
-        if (!is_null($transactionReference)) {
+        if (null !== $transactionReference) {
             $paymentProviderInitialize->setTransactionReference(
                 $transactionReference
             );
         }
-        if (!is_null($statementReference)) {
+
+        if (null !== $statementReference) {
             $paymentProviderInitialize->setStatementReference(
                 $statementReference
             );
         }
-        if (!is_null($orderId)) {
+
+        if (null !== $orderId) {
             $paymentProviderInitialize->setOrderId($orderId);
         }
+
         $paymentProviderInitialize->setCurrencyCode('978');
         $paymentProviderInitialize->setOrderChannel('INTERNET');
         $paymentProviderInitialize->setPaymentMeanBrand('BCMCMOBILE');
         $paymentProviderInitialize->setResponseKeyVersion(1);
+
         $result = $this->send($paymentProviderInitialize);
 
         return $result->getRedirectionUrl();
     }
 
     /**
-     * @param int $amount
-     * @param string $merchantReturnUrl
-     * @param string|null $transactionReference
-     * @param string|null $statementReference
-     * @param string|null $orderId
-     *
-     * @return string
      * @throws \Exception
      */
     public function doGetBcmcQR(
@@ -320,32 +271,34 @@ class SipsClient
         $paymentProviderInitialize = new PaymentProviderInitialize();
         $paymentProviderInitialize->setAmount($amount);
         $paymentProviderInitialize->setMerchantReturnUrl($merchantReturnUrl);
-        if (!is_null($transactionReference)) {
+        if (null !== $transactionReference) {
             $paymentProviderInitialize->setTransactionReference(
                 $transactionReference
             );
         }
-        if (!is_null($statementReference)) {
+
+        if (null !== $statementReference) {
             $paymentProviderInitialize->setStatementReference(
                 $statementReference
             );
         }
-        if (!is_null($orderId)) {
+
+        if (null !== $orderId) {
             $paymentProviderInitialize->setOrderId($orderId);
         }
+
         $paymentProviderInitialize->setCurrencyCode('978');
         $paymentProviderInitialize->setOrderChannel('INTERNET');
         $paymentProviderInitialize->setPaymentMeanBrand('BCMCMOBILE');
         $paymentProviderInitialize->setResponseKeyVersion(1);
+
         $result = $this->send($paymentProviderInitialize);
 
-
-        return "https://chart.googleapis.com/chart?chs=400x400&cht=qr&chl=".$result->getOuterRedirectionUrl(
+        return 'https://chart.googleapis.com/chart?chs=400x400&cht=qr&chl='.$result->getOuterRedirectionUrl(
             );
     }
 
     /**
-     * @return PaymentProviderFinalizeResponse
      * @throws \Exception
      */
     public function doPaymentProviderFinalize(): PaymentProviderFinalizeResponse
@@ -356,51 +309,42 @@ class SipsClient
             $_POST['Data'],
             $this->getSecretKey()
         )) {
-            throw new Exception(
-                "Invalid seal in response. Response not trusted."
-            );
-        } else {
-            $data = [];
-            foreach (explode('|', base64_decode($_POST['Data'])) as $var) {
-                $var = explode('=', $var, 2);
-                $data[$var[0]] = $var[1];
-            }
-            $paymentProviderFinalize = new PaymentProviderFinalize();
-            $paymentProviderFinalize->setTransactionReference(
-                $data['transactionReference']
-            );
-            $paymentProviderFinalize->setMessageVersion(
-                $data['messageVersion']
-            );
-            $paymentProviderFinalize->setRedirectionData(
-                $data['redirectionData']
-            );
-            $result = $this->send($paymentProviderFinalize);
+            throw new Exception('Invalid seal in response. Response not trusted.');
         }
 
-        return $result;
+        $data = [];
+        foreach (explode('|', base64_decode($_POST['Data'], true)) as $var) {
+            $var = explode('=', $var, 2);
+            $data[$var[0]] = $var[1];
+        }
+
+        $paymentProviderFinalize = new PaymentProviderFinalize();
+        $paymentProviderFinalize->setTransactionReference(
+            $data['transactionReference']
+        );
+        $paymentProviderFinalize->setMessageVersion(
+            $data['messageVersion']
+        );
+        $paymentProviderFinalize->setRedirectionData(
+            $data['redirectionData']
+        );
+
+        return $this->send($paymentProviderFinalize);
     }
 
     /**
-     * @param string $transactionReference
-     *
-     * @return GetTransactionDataResponse
      * @throws \Exception
      */
-    public function doGetTransactionData(string $transactionReference
+    public function doGetTransactionData(
+        string $transactionReference
     ): GetTransactionDataResponse {
         $getTransactionData = new GetTransactionData();
         $getTransactionData->setTransactionReference($transactionReference);
-        $result = $this->send($getTransactionData);
 
-        return $result;
+        return $this->send($getTransactionData);
     }
 
     /**
-     * @param string $transactionReference
-     * @param int|null $amount
-     *
-     * @return SipsMessage
      * @throws \Exception
      */
     public function doRefund(
@@ -408,14 +352,15 @@ class SipsClient
         int $amount = null
     ): SipsMessage {
         $transactionInfo = $this->doGetTransactionData($transactionReference);
-        if (is_null($amount)) {
+        if (null === $amount) {
             $amount = $transactionInfo->getCurrentAmount();
         }
-        if ($transactionInfo->getGetTransDataResponseCode() == "00") {
-            if ($transactionInfo->getTransactionStatus(
-                ) == "TO_CAPTURE" or $transactionInfo->getTransactionStatus(
-                ) == "CAPTURED") {
-                if ($transactionInfo->getTransactionStatus() == "TO_CAPTURE") {
+
+        if ('00' === $transactionInfo->getGetTransDataResponseCode()) {
+            if ('TO_CAPTURE' === $transactionInfo->getTransactionStatus(
+                ) || 'CAPTURED' === $transactionInfo->getTransactionStatus(
+                )) {
+                if ('TO_CAPTURE' === $transactionInfo->getTransactionStatus()) {
                     $request = new Cancel();
                     $request->setTransactionReference($transactionReference);
                     $request->setCurrencyCode(
@@ -423,7 +368,8 @@ class SipsClient
                     );
                     $request->setOperationAmount($amount);
                 }
-                if ($transactionInfo->getTransactionStatus() == "CAPTURED") {
+
+                if ('CAPTURED' === $transactionInfo->getTransactionStatus()) {
                     $request = new Refund();
                     $request->setTransactionReference($transactionReference);
                     $request->setCurrencyCode(
@@ -431,29 +377,17 @@ class SipsClient
                     );
                     $request->setOperationAmount($amount);
                 }
-                $response = $this->send($request);
 
-                return $response;
-            } else {
-                throw new Exception(
-                    "Transaction is in a non-refundable state. Status : ".$transactionInfo->getTransactionStatus(
-                    )
-                );
+                return $this->send($request);
             }
+
+            throw new Exception('Transaction is in a non-refundable state. Status : '.$transactionInfo->getTransactionStatus());
         } else {
-            throw new Exception(
-                "TransactionData could not be fetched. getTransDataResponseCode =  ".$transactionInfo->getGetTransDataResponseCode(
-                )
-            );
+            throw new Exception('TransactionData could not be fetched. getTransDataResponseCode =  '.$transactionInfo->getGetTransDataResponseCode());
         }
     }
 
     /**
-     * @param string $fromTransactionReference
-     * @param int|null $amount
-     * @param string|null $transactionReference
-     *
-     * @return DuplicateResponse
      * @throws \Exception
      */
     public function doDuplicate(
@@ -464,30 +398,23 @@ class SipsClient
         $transactionInfo = $this->doGetTransactionData(
             $fromTransactionReference
         );
-        if (is_null($amount)) {
+        if (null === $amount) {
             $amount = $transactionInfo->getOriginAmount();
         }
+
         $request = new Duplicate();
         $request->setFromMerchantId($this->getMerchantId());
         $request->setFromTransactionReference($fromTransactionReference);
         $request->setAmount($amount);
         $request->setCurrencyCode($transactionInfo->getCurrencyCode());
-        if (!is_null($transactionReference)) {
+        if (null !== $transactionReference) {
             $request->setTransactionReference($transactionReference);
         }
-        $response = $this->send($request);
 
-        return $response;
+        return $this->send($request);
     }
 
     /**
-     * @param string $merchantWalletId
-     * @param string $cardNumber
-     * @param string $cardExpiryDate
-     * @param string|null $paymentMeanAlias
-     * @param string|null $paymentMeanBrand
-     *
-     * @return AddCardResponse
      * @throws \Exception
      */
     public function doAddCard(
@@ -501,30 +428,27 @@ class SipsClient
         $request->setMerchantWalletId($merchantWalletId)
             ->setCardNumber($cardNumber)
             ->setCardExpiryDate($cardExpiryDate);
-        if (!is_null($paymentMeanAlias)) {
+        if (null !== $paymentMeanAlias) {
             $request->setPaymentMeanAlias($paymentMeanAlias);
         }
-        if (!is_null($paymentMeanBrand)) {
+
+        if (null !== $paymentMeanBrand) {
             $request->setPaymentMeanBrand($paymentMeanBrand);
         }
-        $response = $this->send($request);
 
-        return $response;
+        return $this->send($request);
     }
 
     /**
-     * @param string $merchantWalletId
-     *
-     * @return GetWalletDataResponse
      * @throws \Exception
      */
-    public function doGetWalletData(string $merchantWalletId
+    public function doGetWalletData(
+        string $merchantWalletId
     ): GetWalletDataResponse {
         $request = new GetWalletData();
         $request->setMerchantWalletId($merchantWalletId);
-        $result = $this->send($request);
 
-        return $result;
+        return $this->send($request);
     }
 
     public function doGetPaymentMean(
@@ -536,20 +460,16 @@ class SipsClient
             ->setPaymentMeanId($paymentMeanId);
         try {
             $result = $this->send($request);
-        } catch (Exception $e) {
+        } catch (Exception) {
             $result = new GetPaymentMeanDataResponse();
-            $result->setErrorFieldName("Seal: seal does not match")
-                ->setWalletResponseCode("34");
+            $result->setErrorFieldName('Seal: seal does not match')
+                ->setWalletResponseCode('34');
         }
 
         return $result;
     }
 
     /**
-     * @param string $merchantWalletId
-     * @param string $paymentMeanId
-     *
-     * @return DeletePaymentMeanResponse
      * @throws \Exception
      */
     public function doDeletePaymentMean(
@@ -559,28 +479,22 @@ class SipsClient
         $request = new DeletePaymentMean();
         $request->setMerchantWalletId($merchantWalletId)
             ->setPaymentMeanId($paymentMeanId);
-        $response = $this->send($request);
 
-        return $response;
+        return $this->send($request);
     }
 
     /**
-     * @param string $mercahntWalletId
-     *
-     * @return SignOffResponse
      * @throws \Exception
      */
     public function doSignOffWallet(string $mercahntWalletId): SignOffResponse
     {
         $request = new SignOff();
         $request->setMerchantWalletId($mercahntWalletId);
-        $response = $this->send($request);
 
-        return $response;
+        return $this->send($request);
     }
 
     /**
-     * @return PaymentResult
      * @throws \Exception
      */
     public function finalizeTransaction(): PaymentResult
@@ -589,45 +503,44 @@ class SipsClient
         $seal = $_POST['Seal'];
         $sealCalculator = new PostSealCalculator();
         if (!$sealCalculator->isCorrectSeal($seal, $data, $this->secretKey)) {
-            throw new Exception(
-                "Invalid seal in response. Response not trusted."
-            );
+            throw new Exception('Invalid seal in response. Response not trusted.');
         }
+
         $data = explode('|', $data);
         $dataArray = [];
         foreach ($data as $value) {
             $value = explode('=', $value, 2);
             $dataArray[$value[0]] = $value[1];
         }
-        $result = $this->serializer->denormalize($dataArray, PaymentResult::class);
 
-        return $result;
+        return $this->serializer->denormalize($dataArray, PaymentResult::class);
     }
 
     /**
-     * @param SipsMessage $request
+     * @throws \Exception
      *
      * @return mixed
-     * @throws \Exception
      */
     public function send(SipsMessage &$request)
     {
-        $className = get_class($request)."Response";
+        $className = $request::class.'Response';
         $request->setMerchantId($this->getMerchantId());
         $request->setKeyVersion($this->getKeyVersion());
+
         $sealCalculator = new JsonSealCalculator();
         $sealCalculator->calculateSeal($request, $this->getSecretKey());
+
         $client = new Client(
             ['base_uri' => $this->environment->getEnvironment()]
         );
         $headers = [
-            "Content-Type" => "application/json",
-            "Accept" => "application/json",
+            'Content-Type' => 'application/json',
+            'Accept' => 'application/json',
         ];
         $json = $this->serializer->serialize($request, 'json', ['ignored_attributes' => ['serviceUrl'], 'skip_null_values' => true]);
         $this->lastRequestAsJson = $json;
         $guzzleRequest = new Request(
-            "POST",
+            'POST',
             $request->getServiceUrl(),
             $headers,
             $json
@@ -642,13 +555,10 @@ class SipsClient
                 $this->getSecretKey()
             );
             if (!$validSeal) {
-                throw new Exception(
-                    "Invalid seal in response. Response not trusted."
-                );
+                throw new Exception('Invalid seal in response. Response not trusted.');
             }
         }
 
         return $obj;
     }
-
 }

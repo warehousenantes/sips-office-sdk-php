@@ -1,185 +1,119 @@
 <?php
 
+declare(strict_types=1);
 
 namespace Worldline\Sips\Office\SipsMessages\Checkout;
 
-
 use Worldline\Sips\Common\Fields\ThreeD;
-use Worldline\Sips\Common\Fields\ThreeDV2;
 use Worldline\Sips\Common\SipsMessages\SipsMessage;
 
 /**
- * Class CardValidateAuthenticationResponse
- * @package Worldline\Sips\Office\SipsMessages\Checkout
+ * Class CardValidateAuthenticationResponse.
  */
 class CardValidateAuthenticationResponse extends SipsMessage
 {
-    /**
-     * @var null|string
-     */
-    private $responseCode;
-    /**
-     * @var null|string
-     */
-    private $holderAuthentResponseCode;
-    /**
-     * @var null|string
-     */
-    private $seal;
-    /**
-     * @var null|string
-     */
-    private $errorFieldName;
-    /**
-     * @var null|string
-     */
-    private $holderAuthentStatus;
-    /**
-     * @var null|string
-     */
-    private $holderAuthentMethod;
-    /**
-     * @var null|string
-     */
-    private $holderAuthentProgram;
-    /**
-     * @var null|array
-     */
-    private $threeD;
-    /**
-     * @var null|array
-     */
-    private $threeDV2;
+    private ?string $responseCode = null;
 
-    /**
-     * @return string|null
-     */
+    private ?string $holderAuthentResponseCode = null;
+
+    private ?string $seal = null;
+
+    private ?string $errorFieldName = null;
+
+    private ?string $holderAuthentStatus = null;
+
+    private ?string $holderAuthentMethod = null;
+
+    private ?string $holderAuthentProgram = null;
+
+    private ?array $threeD = null;
+
+    private ?array $threeDV2 = null;
+
     public function getResponseCode(): ?string
     {
         return $this->responseCode;
     }
 
-    /**
-     * @param string|null $responseCode
-     * @return CardValidateAuthenticationResponse
-     */
-    public function setResponseCode(?string $responseCode): CardValidateAuthenticationResponse
+    public function setResponseCode(?string $responseCode): self
     {
         $this->responseCode = $responseCode;
+
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getHolderAuthentResponseCode(): ?string
     {
         return $this->holderAuthentResponseCode;
     }
 
-    /**
-     * @param string|null $holderAuthentResponseCode
-     * @return CardValidateAuthenticationResponse
-     */
-    public function setHolderAuthentResponseCode(?string $holderAuthentResponseCode): CardValidateAuthenticationResponse
+    public function setHolderAuthentResponseCode(?string $holderAuthentResponseCode): self
     {
         $this->holderAuthentResponseCode = $holderAuthentResponseCode;
+
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getSeal(): ?string
     {
         return $this->seal;
     }
 
-    /**
-     * @param string|null $seal
-     * @return CardValidateAuthenticationResponse
-     */
-    public function setSeal(?string $seal): CardValidateAuthenticationResponse
+    public function setSeal(?string $seal): self
     {
         $this->seal = $seal;
+
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getErrorFieldName(): ?string
     {
         return $this->errorFieldName;
     }
 
-    /**
-     * @param string|null $errorFieldName
-     * @return CardValidateAuthenticationResponse
-     */
-    public function setErrorFieldName(?string $errorFieldName): CardValidateAuthenticationResponse
+    public function setErrorFieldName(?string $errorFieldName): self
     {
         $this->errorFieldName = $errorFieldName;
+
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getHolderAuthentStatus(): ?string
     {
         return $this->holderAuthentStatus;
     }
 
-    /**
-     * @param string|null $holderAuthentStatus
-     * @return CardValidateAuthenticationResponse
-     */
-    public function setHolderAuthentStatus(?string $holderAuthentStatus): CardValidateAuthenticationResponse
+    public function setHolderAuthentStatus(?string $holderAuthentStatus): self
     {
         $this->holderAuthentStatus = $holderAuthentStatus;
+
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getHolderAuthentMethod(): ?string
     {
         return $this->holderAuthentMethod;
     }
 
-    /**
-     * @param string|null $holderAuthentMethod
-     * @return CardValidateAuthenticationResponse
-     */
-    public function setHolderAuthentMethod(?string $holderAuthentMethod): CardValidateAuthenticationResponse
+    public function setHolderAuthentMethod(?string $holderAuthentMethod): self
     {
         $this->holderAuthentMethod = $holderAuthentMethod;
+
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getHolderAuthentProgram(): ?string
     {
         return $this->holderAuthentProgram;
     }
 
-    /**
-     * @param string|null $holderAuthentProgram
-     * @return CardValidateAuthenticationResponse
-     */
-    public function setHolderAuthentProgram(?string $holderAuthentProgram): CardValidateAuthenticationResponse
+    public function setHolderAuthentProgram(?string $holderAuthentProgram): self
     {
         $this->holderAuthentProgram = $holderAuthentProgram;
+
         return $this;
     }
 
-    /**
-     * @return array|null
-     */
     public function getThreeD(): ?array
     {
         return $this->threeD;
@@ -187,31 +121,23 @@ class CardValidateAuthenticationResponse extends SipsMessage
 
     /**
      * @param ThreeD|null $threeD
-     * @return CardValidateAuthenticationResponse
      */
-    public function setThreeD(?array $threeD): CardValidateAuthenticationResponse
+    public function setThreeD(?array $threeD): self
     {
         $this->threeD = $threeD;
+
         return $this;
     }
 
-    /**
-     * @return array|null
-     */
     public function getThreeDV2(): ?array
     {
         return $this->threeDV2;
     }
 
-    /**
-     * @param array|null $threeDV2
-     * @return CardValidateAuthenticationResponse
-     */
-    public function setThreeDV2(?array $threeDV2): CardValidateAuthenticationResponse
+    public function setThreeDV2(?array $threeDV2): self
     {
         $this->threeDV2 = $threeDV2;
+
         return $this;
     }
-
-
 }

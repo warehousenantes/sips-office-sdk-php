@@ -1,104 +1,64 @@
 <?php
 
+declare(strict_types=1);
 
 namespace Worldline\Sips\Office\SipsMessages\Token;
-
 
 use Worldline\Sips\Common\SipsMessages\SipsMessage;
 
 /**
- * Class PanToTokenResponse
- *
- * @package Worldline\Sips\Office\SipsMessages\Token
+ * Class PanToTokenResponse.
  */
 class PanToTokenResponse extends SipsMessage
 {
-    /**
-     * @var null|string
-     */
-    private $responseCode;
+    private ?string $responseCode = null;
 
-    /**
-     * @var null|array
-     */
-    private $responseTokenPanDataList;
+    private ?array $responseTokenPanDataList = null;
 
-    /**
-     * @var null|string
-     */
-    private $seal;
+    private ?string $seal = null;
 
-    /**
-     * @var null|string
-     */
-    private $errorFieldName;
+    private ?string $errorFieldName = null;
 
-    /**
-     * @return string|null
-     */
     public function getResponseCode(): ?string
     {
         return $this->responseCode;
     }
 
-    /**
-     * @return array|null
-     */
     public function getResponseTokenPanDataList(): ?array
     {
         return $this->responseTokenPanDataList;
     }
 
-    /**
-     * @param array|null $responseTokenPanDataList
-     *
-     * @return PanToTokenResponse
-     */
-    public function setResponseTokenPanDataList(?array $responseTokenPanDataList
-    ): PanToTokenResponse {
+    public function setResponseTokenPanDataList(
+        ?array $responseTokenPanDataList
+    ): self {
         $this->responseTokenPanDataList = $responseTokenPanDataList;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getSeal(): ?string
     {
         return $this->seal;
     }
 
-    /**
-     * @param string|null $seal
-     *
-     * @return PanToTokenResponse
-     */
-    public function setSeal(?string $seal): PanToTokenResponse
+    public function setSeal(?string $seal): self
     {
         $this->seal = $seal;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getErrorFieldName(): ?string
     {
         return $this->errorFieldName;
     }
 
-    /**
-     * @param string|null $errorFieldName
-     *
-     * @return PanToTokenResponse
-     */
-    public function setErrorFieldName(?string $errorFieldName
-    ): PanToTokenResponse {
+    public function setErrorFieldName(
+        ?string $errorFieldName
+    ): self {
         $this->errorFieldName = $errorFieldName;
 
         return $this;
     }
-    
 }

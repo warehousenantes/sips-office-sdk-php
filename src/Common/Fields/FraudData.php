@@ -1,290 +1,169 @@
 <?php
 
+declare(strict_types=1);
 
 namespace Worldline\Sips\Common\Fields;
 
-
 /**
- * Class FraudData
- *
- * @package Worldline\Sips\Common\Fields
+ * Class FraudData.
  */
 class FraudData extends Field
 {
+    private ?string $allowedCardArea = null;
 
-    /**
-     * @var null|string
-     */
-    private $allowedCardArea;
+    private ?array $allowedCardCountryList = null;
 
-    /**
-     * @var null|array
-     */
-    private $allowedCardCountryList;
+    private ?string $allowedIpArea = null;
 
-    /**
-     * @var null|string
-     */
-    private $allowedIpArea;
+    private ?array $allowedIpCountryList = null;
 
-    /**
-     * @var null|array
-     */
-    private $allowedIpCountryList;
+    private ?string $bypass3DS = null;
 
-    /**
-     * @var null|string
-     */
-    private $bypass3DS;
+    private ?array $bypassCtrlList = null;
 
-    /**
-     * @var null|array
-     */
-    private $bypassCtrlList;
+    private ?array $bypassInfoList = null;
 
-    /**
-     * @var null|array
-     */
-    private $bypassInfoList;
+    private ?string $deniedCardArea = null;
 
-    /**
-     * @var null|string
-     */
-    private $deniedCardArea;
+    private ?array $deniedCardCountryList = null;
 
-    /**
-     * @var null|array
-     */
-    private $deniedCardCountryList;
+    private ?string $deniedIpArea = null;
 
-    /**
-     * @var null|string
-     */
-    private $deniedIpArea;
+    private ?array $deniedIpCountryList = null;
 
-    /**
-     * @var null|array
-     */
-    private $deniedIpCountryList;
-
-    /**
-     * @return string|null
-     */
     public function getAllowedCardArea(): ?string
     {
         return $this->allowedCardArea;
     }
 
-    /**
-     * @param string|null $allowedCardArea
-     *
-     * @return FraudData
-     */
-    public function setAllowedCardArea(?string $allowedCardArea): FraudData
+    public function setAllowedCardArea(?string $allowedCardArea): self
     {
         $this->allowedCardArea = $allowedCardArea;
 
         return $this;
     }
 
-    /**
-     * @return array|null
-     */
     public function getAllowedCardCountryList(): ?array
     {
         return $this->allowedCardCountryList;
     }
 
-    /**
-     * @param array|null $allowedCardCountryList
-     *
-     * @return FraudData
-     */
-    public function setAllowedCardCountryList(?array $allowedCardCountryList
-    ): FraudData {
+    public function setAllowedCardCountryList(
+        ?array $allowedCardCountryList
+    ): self {
         $this->allowedCardCountryList = $allowedCardCountryList;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getAllowedIpArea(): ?string
     {
         return $this->allowedIpArea;
     }
 
-    /**
-     * @param string|null $allowedIpArea
-     *
-     * @return FraudData
-     */
-    public function setAllowedIpArea(?string $allowedIpArea): FraudData
+    public function setAllowedIpArea(?string $allowedIpArea): self
     {
         $this->allowedIpArea = $allowedIpArea;
 
         return $this;
     }
 
-    /**
-     * @return array|null
-     */
     public function getAllowedIpCountryList(): ?array
     {
         return $this->allowedIpCountryList;
     }
 
-    /**
-     * @param array|null $allowedIpCountryList
-     *
-     * @return FraudData
-     */
-    public function setAllowedIpCountryList(?array $allowedIpCountryList
-    ): FraudData {
+    public function setAllowedIpCountryList(
+        ?array $allowedIpCountryList
+    ): self {
         $this->allowedIpCountryList = $allowedIpCountryList;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getBypass3DS(): ?string
     {
         return $this->bypass3DS;
     }
 
-    /**
-     * @param string|null $bypass3DS
-     *
-     * @return FraudData
-     */
-    public function setBypass3DS(?string $bypass3DS): FraudData
+    public function setBypass3DS(?string $bypass3DS): self
     {
         $this->bypass3DS = $bypass3DS;
 
         return $this;
     }
 
-    /**
-     * @return array|null
-     */
     public function getBypassCtrlList(): ?array
     {
         return $this->bypassCtrlList;
     }
 
-    /**
-     * @param array|null $bypassCtrlList
-     *
-     * @return FraudData
-     */
-    public function setBypassCtrlList(?array $bypassCtrlList): FraudData
+    public function setBypassCtrlList(?array $bypassCtrlList): self
     {
         $this->bypassCtrlList = $bypassCtrlList;
 
         return $this;
     }
 
-    /**
-     * @return array|null
-     */
     public function getBypassInfoList(): ?array
     {
         return $this->bypassInfoList;
     }
 
-    /**
-     * @param array|null $bypassInfoList
-     *
-     * @return FraudData
-     */
-    public function setBypassInfoList(?array $bypassInfoList): FraudData
+    public function setBypassInfoList(?array $bypassInfoList): self
     {
         $this->bypassInfoList = $bypassInfoList;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getDeniedCardArea(): ?string
     {
         return $this->deniedCardArea;
     }
 
-    /**
-     * @param string|null $deniedCardArea
-     *
-     * @return FraudData
-     */
-    public function setDeniedCardArea(?string $deniedCardArea): FraudData
+    public function setDeniedCardArea(?string $deniedCardArea): self
     {
         $this->deniedCardArea = $deniedCardArea;
 
         return $this;
     }
 
-    /**
-     * @return array|null
-     */
     public function getDeniedCardCountryList(): ?array
     {
         return $this->deniedCardCountryList;
     }
 
-    /**
-     * @param array|null $deniedCardCountryList
-     *
-     * @return FraudData
-     */
-    public function setDeniedCardCountryList(?array $deniedCardCountryList
-    ): FraudData {
+    public function setDeniedCardCountryList(
+        ?array $deniedCardCountryList
+    ): self {
         $this->deniedCardCountryList = $deniedCardCountryList;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getDeniedIpArea(): ?string
     {
         return $this->deniedIpArea;
     }
 
-    /**
-     * @param string|null $deniedIpArea
-     *
-     * @return FraudData
-     */
-    public function setDeniedIpArea(?string $deniedIpArea): FraudData
+    public function setDeniedIpArea(?string $deniedIpArea): self
     {
         $this->deniedIpArea = $deniedIpArea;
 
         return $this;
     }
 
-    /**
-     * @return array|null
-     */
     public function getDeniedIpCountryList(): ?array
     {
         return $this->deniedIpCountryList;
     }
 
-    /**
-     * @param array|null $deniedIpCountryList
-     *
-     * @return FraudData
-     */
-    public function setDeniedIpCountryList(?array $deniedIpCountryList
-    ): FraudData {
+    public function setDeniedIpCountryList(
+        ?array $deniedIpCountryList
+    ): self {
         $this->deniedIpCountryList = $deniedIpCountryList;
 
         return $this;
     }
-    
 }

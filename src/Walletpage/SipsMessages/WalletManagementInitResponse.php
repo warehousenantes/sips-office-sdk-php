@@ -1,191 +1,117 @@
 <?php
 
+declare(strict_types=1);
 
 namespace Worldline\Sips\Walletpage\SipsMessages;
-
 
 use Worldline\Sips\Common\SipsMessages\SipsMessage;
 
 /**
- * Class WalletManagementInitResponse
- * @package Worldline\Sips\WalletPage\SipsMessages
+ * Class WalletManagementInitResponse.
  */
 class WalletManagementInitResponse extends SipsMessage
 {
-    /**
-     * @var null|string
-     */
-    private $redirectionData;
-    
-    /**
-     * @var null|string
-     */
-    private $redirectionStatusCode;
-    
-    /**
-     * @var null|string
-     */
-    private $redirectionStatusMessage;
-    
-    /**
-     * @var null|string
-     */
-    private $redirectionUrl;
-    
-    /**
-     * @var null|string
-     */
-    private $redirectionVersion;
-    
-    /**
-     * @var null|string
-     */
-    private $seal;
-    
-    /**
-     * @var null|string
-     */
-    private $errorfieldName;
+    private ?string $redirectionData = null;
 
-    /**
-     * @return string|null
-     */
+    private ?string $redirectionStatusCode = null;
+
+    private ?string $redirectionStatusMessage = null;
+
+    private ?string $redirectionUrl = null;
+
+    private ?string $redirectionVersion = null;
+
+    private ?string $seal = null;
+
+    private ?string $errorfieldName = null;
+
     public function getRedirectionData(): ?string
     {
         return $this->redirectionData;
     }
 
-    /**
-     * @param string|null $redirectionData
-     *
-     * @return WalletManagementInitResponse
-     */
-    public function setRedirectionData(?string $redirectionData
-    ): WalletManagementInitResponse {
+    public function setRedirectionData(
+        ?string $redirectionData
+    ): self {
         $this->redirectionData = $redirectionData;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getRedirectionStatusCode(): ?string
     {
         return $this->redirectionStatusCode;
     }
 
-    /**
-     * @param string|null $redirectionStatusCode
-     *
-     * @return WalletManagementInitResponse
-     */
-    public function setRedirectionStatusCode(?string $redirectionStatusCode
-    ): WalletManagementInitResponse {
+    public function setRedirectionStatusCode(
+        ?string $redirectionStatusCode
+    ): self {
         $this->redirectionStatusCode = $redirectionStatusCode;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getRedirectionStatusMessage(): ?string
     {
         return $this->redirectionStatusMessage;
     }
 
-    /**
-     * @param string|null $redirectionStatusMessage
-     *
-     * @return WalletManagementInitResponse
-     */
     public function setRedirectionStatusMessage(
         ?string $redirectionStatusMessage
-    ): WalletManagementInitResponse {
+    ): self {
         $this->redirectionStatusMessage = $redirectionStatusMessage;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getRedirectionUrl(): ?string
     {
         return $this->redirectionUrl;
     }
 
-    /**
-     * @param string|null $redirectionUrl
-     *
-     * @return WalletManagementInitResponse
-     */
-    public function setRedirectionUrl(?string $redirectionUrl
-    ): WalletManagementInitResponse {
+    public function setRedirectionUrl(
+        ?string $redirectionUrl
+    ): self {
         $this->redirectionUrl = $redirectionUrl;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getRedirectionVersion(): ?string
     {
         return $this->redirectionVersion;
     }
 
-    /**
-     * @param string|null $redirectionVersion
-     *
-     * @return WalletManagementInitResponse
-     */
-    public function setRedirectionVersion(?string $redirectionVersion
-    ): WalletManagementInitResponse {
+    public function setRedirectionVersion(
+        ?string $redirectionVersion
+    ): self {
         $this->redirectionVersion = $redirectionVersion;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getSeal(): ?string
     {
         return $this->seal;
     }
 
-    /**
-     * @param string|null $seal
-     *
-     * @return WalletManagementInitResponse
-     */
-    public function setSeal(?string $seal): WalletManagementInitResponse
+    public function setSeal(?string $seal): self
     {
         $this->seal = $seal;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getErrorfieldName(): ?string
     {
         return $this->errorfieldName;
     }
 
-    /**
-     * @param string|null $errorfieldName
-     *
-     * @return WalletManagementInitResponse
-     */
-    public function setErrorfieldName(?string $errorfieldName
-    ): WalletManagementInitResponse {
+    public function setErrorfieldName(
+        ?string $errorfieldName
+    ): self {
         $this->errorfieldName = $errorfieldName;
 
         return $this;
     }
-    
 }

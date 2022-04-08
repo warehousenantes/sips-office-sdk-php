@@ -1,166 +1,99 @@
 <?php
 
+declare(strict_types=1);
 
 namespace Worldline\Sips\Office\SipsMessages\Wallet;
-
 
 use Worldline\Sips\Common\SipsMessages\SipsMessage;
 
 /**
- * Class AddCardResponse
- * @package Worldline\Sips\Office\SipsMessages\Wallet
+ * Class AddCardResponse.
  */
 class AddCardResponse extends SipsMessage
 {
-    
-    /**
-     * @var null|string
-     */
-    private $walletActionDateTime;
+    private ?string $walletActionDateTime = null;
 
-    /**
-     * @var null|string
-     */
-    private $paymentMeanId;
+    private ?string $paymentMeanId = null;
 
-    /**
-     * @var null|string
-     */
-    private $maskedPan;
+    private ?string $maskedPan = null;
 
-    /**
-     * @var null|string
-     */
-    private $walletResponseCode;
+    private ?string $walletResponseCode = null;
 
-    /**
-     * @var null|string
-     */
-    private $errorFieldName;
+    private ?string $errorFieldName = null;
 
-    /**
-     * @var null|string
-     */
-    private $seal;
+    private ?string $seal = null;
 
-    /**
-     * @return string|null
-     */
     public function getWalletActionDateTime(): ?string
     {
         return $this->walletActionDateTime;
     }
 
-    /**
-     * @param string|null $walletActionDateTime
-     *
-     * @return AddCardResponse
-     */
-    public function setWalletActionDateTime(?string $walletActionDateTime
-    ): AddCardResponse {
+    public function setWalletActionDateTime(
+        ?string $walletActionDateTime
+    ): self {
         $this->walletActionDateTime = $walletActionDateTime;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getPaymentMeanId(): ?string
     {
         return $this->paymentMeanId;
     }
 
-    /**
-     * @param string|null $paymentMeanId
-     *
-     * @return AddCardResponse
-     */
-    public function setPaymentMeanId(?string $paymentMeanId): AddCardResponse
+    public function setPaymentMeanId(?string $paymentMeanId): self
     {
         $this->paymentMeanId = $paymentMeanId;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getMaskedPan(): ?string
     {
         return $this->maskedPan;
     }
 
-    /**
-     * @param string|null $maskedPan
-     *
-     * @return AddCardResponse
-     */
-    public function setMaskedPan(?string $maskedPan): AddCardResponse
+    public function setMaskedPan(?string $maskedPan): self
     {
         $this->maskedPan = $maskedPan;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getWalletResponseCode(): ?string
     {
         return $this->walletResponseCode;
     }
 
-    /**
-     * @param string|null $walletResponseCode
-     *
-     * @return AddCardResponse
-     */
-    public function setWalletResponseCode(?string $walletResponseCode
-    ): AddCardResponse {
+    public function setWalletResponseCode(
+        ?string $walletResponseCode
+    ): self {
         $this->walletResponseCode = $walletResponseCode;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getErrorFieldName(): ?string
     {
         return $this->errorFieldName;
     }
 
-    /**
-     * @param string|null $errorFieldName
-     *
-     * @return AddCardResponse
-     */
-    public function setErrorFieldName(?string $errorFieldName): AddCardResponse
+    public function setErrorFieldName(?string $errorFieldName): self
     {
         $this->errorFieldName = $errorFieldName;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getSeal(): ?string
     {
         return $this->seal;
     }
 
-    /**
-     * @param string|null $seal
-     *
-     * @return AddCardResponse
-     */
-    public function setSeal(?string $seal): AddCardResponse
+    public function setSeal(?string $seal): self
     {
         $this->seal = $seal;
 
         return $this;
     }
-    
 }

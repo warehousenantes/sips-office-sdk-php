@@ -1,189 +1,114 @@
 <?php
 
+declare(strict_types=1);
 
 namespace Worldline\Sips\Common\Fields;
 
-
 /**
- * Class ShoppingCartDetail
- * @package Worldline\Sips\Common\Fields
+ * Class ShoppingCartDetail.
  */
 class ShoppingCartDetail extends Field
 {
-    /**
-     * @var null|int
-     */
-    private $discountAmount;
+    private ?int $discountAmount = null;
 
-    /**
-     * @var null|string
-     */
-    private $mainProduct;
+    private ?string $mainProduct = null;
 
-    /**
-     * @var null|array
-     */
-    private $mainProductCategoryList;
+    private ?array $mainProductCategoryList = null;
 
-    /**
-     * @var null|array
-     */
-    private $shoppingCartItemList;
+    private ?array $shoppingCartItemList = null;
 
-    /**
-     * @var null|int
-     */
-    private $shoppingCartTotalAmount;
+    private ?int $shoppingCartTotalAmount = null;
 
-    /**
-     * @var null|int
-     */
-    private $shoppingCartTotalQuantity;
+    private ?int $shoppingCartTotalQuantity = null;
 
-    /**
-     * @var null|int
-     */
-    private $shoppingCartTotalTaxAmount;
+    private ?int $shoppingCartTotalTaxAmount = null;
 
-    /**
-     * @return int|null
-     */
     public function getDiscountAmount(): ?int
     {
         return $this->discountAmount;
     }
 
-    /**
-     * @param int|null $discountAmount
-     *
-     * @return \Worldline\Sips\Common\Fields\ShoppingCartDetail
-     */
-    public function setDiscountAmount(?int $discountAmount): ShoppingCartDetail
+    public function setDiscountAmount(?int $discountAmount): self
     {
         $this->discountAmount = $discountAmount;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getMainProduct(): ?string
     {
         return $this->mainProduct;
     }
 
-    /**
-     * @param string|null $mainProduct
-     *
-     * @return ShoppingCartDetail
-     */
-    public function setMainProduct(?string $mainProduct): ShoppingCartDetail
+    public function setMainProduct(?string $mainProduct): self
     {
         $this->mainProduct = $mainProduct;
 
         return $this;
     }
 
-    /**
-     * @return array|null
-     */
     public function getMainProductCategoryList(): ?array
     {
         return $this->mainProductCategoryList;
     }
 
-    /**
-     * @param array|null $mainProductCategoryList
-     *
-     * @return ShoppingCartDetail
-     */
-    public function setMainProductCategoryList(?array $mainProductCategoryList
-    ): ShoppingCartDetail {
+    public function setMainProductCategoryList(
+        ?array $mainProductCategoryList
+    ): self {
         $this->mainProductCategoryList = $mainProductCategoryList;
 
         return $this;
     }
 
-    /**
-     * @return array|null
-     */
     public function getShoppingCartItemList(): ?array
     {
         return $this->shoppingCartItemList;
     }
 
-    /**
-     * @param array|null $shoppingCartItemList
-     *
-     * @return ShoppingCartDetail
-     */
-    public function setShoppingCartItemList(?array $shoppingCartItemList
-    ): ShoppingCartDetail {
+    public function setShoppingCartItemList(
+        ?array $shoppingCartItemList
+    ): self {
         $this->shoppingCartItemList = $shoppingCartItemList;
 
         return $this;
     }
 
-    /**
-     * @return int|null
-     */
     public function getShoppingCartTotalAmount(): ?int
     {
         return $this->shoppingCartTotalAmount;
     }
 
-    /**
-     * @param int|null $shoppingCartTotalAmount
-     *
-     * @return ShoppingCartDetail
-     */
-    public function setShoppingCartTotalAmount(?int $shoppingCartTotalAmount
-    ): ShoppingCartDetail {
+    public function setShoppingCartTotalAmount(
+        ?int $shoppingCartTotalAmount
+    ): self {
         $this->shoppingCartTotalAmount = $shoppingCartTotalAmount;
 
         return $this;
     }
 
-    /**
-     * @return int|null
-     */
     public function getShoppingCartTotalQuantity(): ?int
     {
         return $this->shoppingCartTotalQuantity;
     }
 
-    /**
-     * @param int|null $shoppingCartTotalQuantity
-     *
-     * @return ShoppingCartDetail
-     */
-    public function setShoppingCartTotalQuantity(?int $shoppingCartTotalQuantity
-    ): ShoppingCartDetail {
+    public function setShoppingCartTotalQuantity(
+        ?int $shoppingCartTotalQuantity
+    ): self {
         $this->shoppingCartTotalQuantity = $shoppingCartTotalQuantity;
 
         return $this;
     }
 
-    /**
-     * @return int|null
-     */
     public function getShoppingCartTotalTaxAmount(): ?int
     {
         return $this->shoppingCartTotalTaxAmount;
     }
 
-    /**
-     * @param int|null $shoppingCartTotalTaxAmount
-     *
-     * @return ShoppingCartDetail
-     */
     public function setShoppingCartTotalTaxAmount(
         ?int $shoppingCartTotalTaxAmount
-    ): ShoppingCartDetail {
+    ): self {
         $this->shoppingCartTotalTaxAmount = $shoppingCartTotalTaxAmount;
 
         return $this;
     }
-    
 }

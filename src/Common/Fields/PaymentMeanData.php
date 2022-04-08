@@ -1,39 +1,26 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Worldline\Sips\Common\Fields;
 
 /**
- * Class PaymentMeanData
- *
- * @package Worldline\Sips\Common\Fields
+ * Class PaymentMeanData.
  */
 class PaymentMeanData extends Field
 {
+    private ?BcmcMobile $bcmcMobile = null;
 
-    /**
-     * @var null|BcmcMobile
-     */
-    private $bcmcMobile;
-
-    /**
-     * @return BcmcMobile|null
-     */
     public function getBcmcMobile(): ?BcmcMobile
     {
         return $this->bcmcMobile;
     }
 
-    /**
-     * @param BcmcMobile|null $bcmcMobile
-     *
-     * @return PaymentMeanData
-     */
     public function setBcmcMobile(
         ?BcmcMobile $bcmcMobile
-    ): PaymentMeanData {
+    ): self {
         $this->bcmcMobile = $bcmcMobile;
 
         return $this;
     }
-    
 }

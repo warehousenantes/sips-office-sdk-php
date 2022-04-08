@@ -1,8 +1,8 @@
 <?php
 
+declare(strict_types=1);
 
 namespace Worldline\Sips\Office\SipsMessages\Checkout;
-
 
 use Worldline\Sips\Common\Fields\Address;
 use Worldline\Sips\Common\Fields\AuthenticationData;
@@ -19,1288 +19,744 @@ use Worldline\Sips\Common\Fields\TravelContext;
 use Worldline\Sips\Common\SipsMessages\SipsMessage;
 
 /**
- * Class CardCheckEnrollment
- * @package Worldline\Sips\Common\SipsMessages\Checkout
+ * Class CardCheckEnrollment.
  */
 class CardCheckEnrollment extends SipsMessage
 {
-    /**
-     * @var string
-     */
-    private $serviceUrl;
+    private string $serviceUrl;
 
-    /**
-     * @var null|int
-     */
-    private $amount;
+    private ?int $amount = null;
 
-    /**
-     * @var null|int
-     */
-    private $captureDay;
+    private ?int $captureDay = null;
 
-    /**
-     * @var null|string
-     */
-    private $captureMode;
+    private ?string $captureMode = null;
 
-    /**
-     * @var null|string
-     */
-    private $cardCSCValue;
+    private ?string $cardCSCValue = null;
 
-    /**
-     * @var null|string
-     */
-    private $cardExpiryDate;
+    private ?string $cardExpiryDate = null;
 
-    /**
-     * @var null|string
-     */
-    private $cardNumber;
+    private ?string $cardNumber = null;
 
-    /**
-     * @var null|string
-     */
-    private $currencyCode;
+    private ?string $currencyCode = null;
 
-    /**
-     * @var null|string
-     */
-    private $customerId;
+    private ?string $customerId = null;
 
-    /**
-     * @var null|string
-     */
-    private $invoiceReference;
+    private ?string $invoiceReference = null;
 
-    /**
-     * @var null|string
-     */
-    private $merchantId;
+    private ?string $merchantId = null;
 
-    /**
-     * @var null|string
-     */
-    private $merchantName;
+    private ?string $merchantName = null;
 
-    /**
-     * @var null|string
-     */
-    private $merchantReturnUrl;
+    private ?string $merchantReturnUrl = null;
 
-    /**
-     * @var null|string
-     */
-    private $merchantUrl;
+    private ?string $merchantUrl = null;
 
-    /**
-     * @var null|string
-     */
-    private $merchantTransactionDateTime;
+    private ?string $merchantTransactionDateTime = null;
 
-    /**
-     * @var null|string
-     */
-    private $orderChannel;
+    private ?string $orderChannel = null;
 
-    /**
-     * @var null|string
-     */
-    private $orderId;
+    private ?string $orderId = null;
 
-    /**
-     * @var null|string
-     */
-    private $returnContext;
+    private ?string $returnContext = null;
 
-    /**
-     * @var null|string
-     */
-    private $interfaceVersion;
+    private ?string $interfaceVersion = null;
 
-    /**
-     * @var null|string
-     */
-    private $transactionReference;
+    private ?string $transactionReference = null;
 
-    /**
-     * @var null|string
-     */
-    private $transactionOrigin;
+    private ?string $transactionOrigin = null;
 
-    /**
-     * @var null|string
-     */
-    private $statementReference;
+    private ?string $statementReference = null;
 
-    /**
-     * @var null|string
-     */
-    private $paymentPattern;
+    private ?string $paymentPattern = null;
 
-    /**
-     * @var null|string
-     */
-    private $customerIpAddress;
+    private ?string $customerIpAddress = null;
 
-    /**
-     * @var null|string
-     */
-    private $customerLanguage;
+    private ?string $customerLanguage = null;
 
-    /**
-     * @var null|Address
-     */
-    private $billingAddress;
+    private ?Address $billingAddress = null;
 
-    /**
-     * @var null|Contact
-     */
-    private $billingContact;
+    private ?Contact $billingContact = null;
 
-    /**
-     * @var null|Address
-     */
-    private $customerAddress;
+    private ?Address $customerAddress = null;
 
-    /**
-     * @var null|Contact
-     */
-    private $customerContact;
+    private ?Contact $customerContact = null;
 
-    /**
-     * @var null|Address
-     */
-    private $deliveryAddress;
+    private ?Address $deliveryAddress = null;
 
-    /**
-     * @var null|Contact
-     */
-    private $deliveryContact;
+    private ?Contact $deliveryContact = null;
 
-    /**
-     * @var null|DeliveryData
-     */
-    private $deliveryData;
+    private ?DeliveryData $deliveryData = null;
 
-    /**
-     * @var null|Address
-     */
-    private $holderAddress;
+    private ?Address $holderAddress = null;
 
-    /**
-     * @var null|Contact
-     */
-    private $holderContact;
+    private ?Contact $holderContact = null;
 
-    /**
-     * @var null|CustomerData
-     */
-    private $customerData;
+    private ?CustomerData $customerData = null;
 
-    /**
-     * @var null|ShoppingCartDetail
-     */
-    private $shoppingCartDetail;
+    private ?ShoppingCartDetail $shoppingCartDetail = null;
 
-    /**
-     * @var null|FraudData
-     */
-    private $fraudData;
+    private ?FraudData $fraudData = null;
 
-    /**
-     * @var null|AuthenticationData
-     */
-    private $authenticationData;
+    private ?AuthenticationData $authenticationData = null;
 
-    /**
-     * @var null|S10TransactionReference
-     */
-    private $s10TransactionReference;
+    private ?S10TransactionReference $s10TransactionReference = null;
 
-    /**
-     * @var null|string
-     */
-    private $panType;
+    private ?string $panType = null;
 
-    /**
-     * @var null|string
-     */
-    private $intermediateServiceProviderId;
+    private ?string $intermediateServiceProviderId = null;
 
-    /**
-     * @var null|string
-     */
-    private $seal;
+    private ?string $seal = null;
 
-    /**
-     * @var null|string
-     */
-    private $keyVersion;
+    private ?string $keyVersion = null;
 
-    /**
-     * @var null|string
-     */
-    private $sealAlgorithm;
+    private ?string $sealAlgorithm = null;
 
-    /**
-     * @var null|string
-     */
-    private $paymentMeanBrand;
+    private ?string $paymentMeanBrand = null;
 
-    /**
-     * @var null|string
-     */
-    private $paymentMeanBrandSelectionStatus;
+    private ?string $paymentMeanBrandSelectionStatus = null;
 
-    /**
-     * @var null|TravelContext
-     */
-    private $travelContext;
+    private ?TravelContext $travelContext = null;
 
-    /**
-     * @var null|OrderContext
-     */
-    private $orderContext;
+    private ?OrderContext $orderContext = null;
 
-    /**
-     * @var null|PaymentMeanData
-     */
-    private $paymentMeanData;
+    private ?PaymentMeanData $paymentMeanData = null;
 
-    /**
-     * @var null|CustomerAccountHistoric
-     */
-    private $customerAccountHistoric;
-
+    private ?CustomerAccountHistoric $customerAccountHistoric = null;
 
     /**
      * CardCheckEnrollment constructor.
      */
     public function __construct()
     {
-        $this->serviceUrl = "rs-services/v2/checkout/cardCheckEnrollment";
+        $this->serviceUrl = 'rs-services/v2/checkout/cardCheckEnrollment';
         $this->setTransactionReference($this->generateReference())
-            ->setInterfaceVersion("IR_WS_2.27");
+            ->setInterfaceVersion('IR_WS_2.27');
     }
 
-    /**
-     * @return string
-     */
     public function getServiceUrl(): string
     {
         return $this->serviceUrl;
     }
 
-    /**
-     * @return int|null
-     */
     public function getAmount(): ?int
     {
         return $this->amount;
     }
 
-    /**
-     * @param int|null $amount
-     *
-     * @return CardCheckEnrollment
-     */
-    public function setAmount(?int $amount): CardCheckEnrollment
+    public function setAmount(?int $amount): self
     {
         $this->amount = $amount;
 
         return $this;
     }
 
-    /**
-     * @return int|null
-     */
     public function getCaptureDay(): ?int
     {
         return $this->captureDay;
     }
 
-    /**
-     * @param int|null $captureDay
-     *
-     * @return CardCheckEnrollment
-     */
-    public function setCaptureDay(?int $captureDay): CardCheckEnrollment
+    public function setCaptureDay(?int $captureDay): self
     {
         $this->captureDay = $captureDay;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getCaptureMode(): ?string
     {
         return $this->captureMode;
     }
 
-    /**
-     * @param string|null $captureMode
-     *
-     * @return CardCheckEnrollment
-     */
-    public function setCaptureMode(?string $captureMode): CardCheckEnrollment
+    public function setCaptureMode(?string $captureMode): self
     {
         $this->captureMode = $captureMode;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getCardCSCValue(): ?string
     {
         return $this->cardCSCValue;
     }
 
-    /**
-     * @param string|null $cardCSCValue
-     *
-     * @return CardCheckEnrollment
-     */
-    public function setCardCSCValue(?string $cardCSCValue): CardCheckEnrollment
+    public function setCardCSCValue(?string $cardCSCValue): self
     {
         $this->cardCSCValue = $cardCSCValue;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getCardExpiryDate(): ?string
     {
         return $this->cardExpiryDate;
     }
 
-    /**
-     * @param string|null $cardExpiryDate
-     *
-     * @return CardCheckEnrollment
-     */
-    public function setCardExpiryDate(?string $cardExpiryDate
-    ): CardCheckEnrollment {
+    public function setCardExpiryDate(
+        ?string $cardExpiryDate
+    ): self {
         $this->cardExpiryDate = $cardExpiryDate;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getCardNumber(): ?string
     {
         return $this->cardNumber;
     }
 
-    /**
-     * @param string|null $cardNumber
-     *
-     * @return CardCheckEnrollment
-     */
-    public function setCardNumber(?string $cardNumber): CardCheckEnrollment
+    public function setCardNumber(?string $cardNumber): self
     {
         $this->cardNumber = $cardNumber;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getCurrencyCode(): ?string
     {
         return $this->currencyCode;
     }
 
-    /**
-     * @param string|null $currencyCode
-     *
-     * @return CardCheckEnrollment
-     */
-    public function setCurrencyCode(?string $currencyCode): CardCheckEnrollment
+    public function setCurrencyCode(?string $currencyCode): self
     {
         $this->currencyCode = $currencyCode;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getCustomerId(): ?string
     {
         return $this->customerId;
     }
 
-    /**
-     * @param string|null $customerId
-     *
-     * @return CardCheckEnrollment
-     */
-    public function setCustomerId(?string $customerId): CardCheckEnrollment
+    public function setCustomerId(?string $customerId): self
     {
         $this->customerId = $customerId;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getInvoiceReference(): ?string
     {
         return $this->invoiceReference;
     }
 
-    /**
-     * @param string|null $invoiceReference
-     *
-     * @return CardCheckEnrollment
-     */
-    public function setInvoiceReference(?string $invoiceReference
-    ): CardCheckEnrollment {
+    public function setInvoiceReference(
+        ?string $invoiceReference
+    ): self {
         $this->invoiceReference = $invoiceReference;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getMerchantId(): ?string
     {
         return $this->merchantId;
     }
 
-    /**
-     * @param string|null $merchantId
-     *
-     * @return CardCheckEnrollment
-     */
-    public function setMerchantId(?string $merchantId): CardCheckEnrollment
+    public function setMerchantId(?string $merchantId): self
     {
         $this->merchantId = $merchantId;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getMerchantName(): ?string
     {
         return $this->merchantName;
     }
 
-    /**
-     * @param string|null $merchantName
-     *
-     * @return CardCheckEnrollment
-     */
-    public function setMerchantName(?string $merchantName): CardCheckEnrollment
+    public function setMerchantName(?string $merchantName): self
     {
         $this->merchantName = $merchantName;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getMerchantReturnUrl(): ?string
     {
         return $this->merchantReturnUrl;
     }
 
-    /**
-     * @param string|null $merchantReturnUrl
-     *
-     * @return CardCheckEnrollment
-     */
-    public function setMerchantReturnUrl(?string $merchantReturnUrl
-    ): CardCheckEnrollment {
+    public function setMerchantReturnUrl(
+        ?string $merchantReturnUrl
+    ): self {
         $this->merchantReturnUrl = $merchantReturnUrl;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getMerchantUrl(): ?string
     {
         return $this->merchantUrl;
     }
 
-    /**
-     * @param string|null $merchantUrl
-     *
-     * @return CardCheckEnrollment
-     */
-    public function setMerchantUrl(?string $merchantUrl): CardCheckEnrollment
+    public function setMerchantUrl(?string $merchantUrl): self
     {
         $this->merchantUrl = $merchantUrl;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getMerchantTransactionDateTime(): ?string
     {
         return $this->merchantTransactionDateTime;
     }
 
-    /**
-     * @param string|null $merchantTransactionDateTime
-     *
-     * @return CardCheckEnrollment
-     */
     public function setMerchantTransactionDateTime(
         ?string $merchantTransactionDateTime
-    ): CardCheckEnrollment {
+    ): self {
         $this->merchantTransactionDateTime = $merchantTransactionDateTime;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getOrderChannel(): ?string
     {
         return $this->orderChannel;
     }
 
-    /**
-     * @param string|null $orderChannel
-     *
-     * @return CardCheckEnrollment
-     */
-    public function setOrderChannel(?string $orderChannel): CardCheckEnrollment
+    public function setOrderChannel(?string $orderChannel): self
     {
         $this->orderChannel = $orderChannel;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getOrderId(): ?string
     {
         return $this->orderId;
     }
 
-    /**
-     * @param string|null $orderId
-     *
-     * @return CardCheckEnrollment
-     */
-    public function setOrderId(?string $orderId): CardCheckEnrollment
+    public function setOrderId(?string $orderId): self
     {
         $this->orderId = $orderId;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getReturnContext(): ?string
     {
         return $this->returnContext;
     }
 
-    /**
-     * @param string|null $returnContext
-     *
-     * @return CardCheckEnrollment
-     */
-    public function setReturnContext(?string $returnContext
-    ): CardCheckEnrollment {
+    public function setReturnContext(
+        ?string $returnContext
+    ): self {
         $this->returnContext = $returnContext;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getInterfaceVersion(): ?string
     {
         return $this->interfaceVersion;
     }
 
-    /**
-     * @param string|null $interfaceVersion
-     *
-     * @return CardCheckEnrollment
-     */
-    public function setInterfaceVersion(?string $interfaceVersion
-    ): CardCheckEnrollment {
+    public function setInterfaceVersion(
+        ?string $interfaceVersion
+    ): self {
         $this->interfaceVersion = $interfaceVersion;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getTransactionReference(): ?string
     {
         return $this->transactionReference;
     }
 
-    /**
-     * @param string|null $transactionReference
-     *
-     * @return CardCheckEnrollment
-     */
-    public function setTransactionReference(?string $transactionReference
-    ): CardCheckEnrollment {
+    public function setTransactionReference(
+        ?string $transactionReference
+    ): self {
         $this->transactionReference = $transactionReference;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getTransactionOrigin(): ?string
     {
         return $this->transactionOrigin;
     }
 
-    /**
-     * @param string|null $transactionOrigin
-     *
-     * @return CardCheckEnrollment
-     */
-    public function setTransactionOrigin(?string $transactionOrigin
-    ): CardCheckEnrollment {
+    public function setTransactionOrigin(
+        ?string $transactionOrigin
+    ): self {
         $this->transactionOrigin = $transactionOrigin;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getStatementReference(): ?string
     {
         return $this->statementReference;
     }
 
-    /**
-     * @param string|null $statementReference
-     *
-     * @return CardCheckEnrollment
-     */
-    public function setStatementReference(?string $statementReference
-    ): CardCheckEnrollment {
+    public function setStatementReference(
+        ?string $statementReference
+    ): self {
         $this->statementReference = $statementReference;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getPaymentPattern(): ?string
     {
         return $this->paymentPattern;
     }
 
-    /**
-     * @param string|null $paymentPattern
-     *
-     * @return CardCheckEnrollment
-     */
-    public function setPaymentPattern(?string $paymentPattern
-    ): CardCheckEnrollment {
+    public function setPaymentPattern(
+        ?string $paymentPattern
+    ): self {
         $this->paymentPattern = $paymentPattern;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getCustomerIpAddress(): ?string
     {
         return $this->customerIpAddress;
     }
 
-    /**
-     * @param string|null $customerIpAddress
-     *
-     * @return CardCheckEnrollment
-     */
-    public function setCustomerIpAddress(?string $customerIpAddress
-    ): CardCheckEnrollment {
+    public function setCustomerIpAddress(
+        ?string $customerIpAddress
+    ): self {
         $this->customerIpAddress = $customerIpAddress;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getCustomerLanguage(): ?string
     {
         return $this->customerLanguage;
     }
 
-    /**
-     * @param string|null $customerLanguage
-     *
-     * @return CardCheckEnrollment
-     */
-    public function setCustomerLanguage(?string $customerLanguage
-    ): CardCheckEnrollment {
+    public function setCustomerLanguage(
+        ?string $customerLanguage
+    ): self {
         $this->customerLanguage = $customerLanguage;
 
         return $this;
     }
 
-    /**
-     * @return Address|null
-     */
     public function getBillingAddress(): ?Address
     {
         return $this->billingAddress;
     }
 
-    /**
-     * @param Address|null $billingAddress
-     *
-     * @return CardCheckEnrollment
-     */
     public function setBillingAddress(
         ?Address $billingAddress
-    ): CardCheckEnrollment {
+    ): self {
         $this->billingAddress = $billingAddress;
 
         return $this;
     }
 
-    /**
-     * @return Contact|null
-     */
     public function getBillingContact(): ?Contact
     {
         return $this->billingContact;
     }
 
-    /**
-     * @param Contact|null $billingContact
-     *
-     * @return CardCheckEnrollment
-     */
     public function setBillingContact(
         ?Contact $billingContact
-    ): CardCheckEnrollment {
+    ): self {
         $this->billingContact = $billingContact;
 
         return $this;
     }
 
-    /**
-     * @return Address|null
-     */
     public function getCustomerAddress(): ?Address
     {
         return $this->customerAddress;
     }
 
-    /**
-     * @param Address|null $customerAddress
-     *
-     * @return CardCheckEnrollment
-     */
     public function setCustomerAddress(
         ?Address $customerAddress
-    ): CardCheckEnrollment {
+    ): self {
         $this->customerAddress = $customerAddress;
 
         return $this;
     }
 
-    /**
-     * @return Contact|null
-     */
     public function getCustomerContact(): ?Contact
     {
         return $this->customerContact;
     }
 
-    /**
-     * @param Contact|null $customerContact
-     *
-     * @return CardCheckEnrollment
-     */
     public function setCustomerContact(
         ?Contact $customerContact
-    ): CardCheckEnrollment {
+    ): self {
         $this->customerContact = $customerContact;
 
         return $this;
     }
 
-    /**
-     * @return Address|null
-     */
     public function getDeliveryAddress(): ?Address
     {
         return $this->deliveryAddress;
     }
 
-    /**
-     * @param Address|null $deliveryAddress
-     *
-     * @return CardCheckEnrollment
-     */
     public function setDeliveryAddress(
         ?Address $deliveryAddress
-    ): CardCheckEnrollment {
+    ): self {
         $this->deliveryAddress = $deliveryAddress;
 
         return $this;
     }
 
-    /**
-     * @return Contact|null
-     */
     public function getDeliveryContact(): ?Contact
     {
         return $this->deliveryContact;
     }
 
-    /**
-     * @param Contact|null $deliveryContact
-     *
-     * @return CardCheckEnrollment
-     */
     public function setDeliveryContact(
         ?Contact $deliveryContact
-    ): CardCheckEnrollment {
+    ): self {
         $this->deliveryContact = $deliveryContact;
 
         return $this;
     }
 
-    /**
-     * @return DeliveryData|null
-     */
     public function getDeliveryData(
-    ): ?DeliveryData
-    {
+    ): ?DeliveryData {
         return $this->deliveryData;
     }
 
-    /**
-     * @param DeliveryData|null $deliveryData
-     *
-     * @return CardCheckEnrollment
-     */
     public function setDeliveryData(
         ?DeliveryData $deliveryData
-    ): CardCheckEnrollment {
+    ): self {
         $this->deliveryData = $deliveryData;
 
         return $this;
     }
 
-    /**
-     * @return Address|null
-     */
     public function getHolderAddress(): ?Address
     {
         return $this->holderAddress;
     }
 
-    /**
-     * @param Address|null $holderAddress
-     *
-     * @return CardCheckEnrollment
-     */
     public function setHolderAddress(
         ?Address $holderAddress
-    ): CardCheckEnrollment {
+    ): self {
         $this->holderAddress = $holderAddress;
 
         return $this;
     }
 
-    /**
-     * @return Contact|null
-     */
     public function getHolderContact(): ?Contact
     {
         return $this->holderContact;
     }
 
-    /**
-     * @param Contact|null $holderContact
-     *
-     * @return CardCheckEnrollment
-     */
     public function setHolderContact(
         ?Contact $holderContact
-    ): CardCheckEnrollment {
+    ): self {
         $this->holderContact = $holderContact;
 
         return $this;
     }
 
-    /**
-     * @return CustomerData|null
-     */
     public function getCustomerData(
-    ): ?CustomerData
-    {
+    ): ?CustomerData {
         return $this->customerData;
     }
 
-    /**
-     * @param CustomerData|null $customerData
-     *
-     * @return CardCheckEnrollment
-     */
     public function setCustomerData(
         ?CustomerData $customerData
-    ): CardCheckEnrollment {
+    ): self {
         $this->customerData = $customerData;
 
         return $this;
     }
 
-    /**
-     * @return ShoppingCartDetail|null
-     */
     public function getShoppingCartDetail(
-    ): ?ShoppingCartDetail
-    {
+    ): ?ShoppingCartDetail {
         return $this->shoppingCartDetail;
     }
 
-    /**
-     * @param ShoppingCartDetail|null $shoppingCartDetail
-     *
-     * @return CardCheckEnrollment
-     */
     public function setShoppingCartDetail(
         ?ShoppingCartDetail $shoppingCartDetail
-    ): CardCheckEnrollment {
+    ): self {
         $this->shoppingCartDetail = $shoppingCartDetail;
 
         return $this;
     }
 
-    /**
-     * @return FraudData|null
-     */
     public function getFraudData(): ?FraudData
     {
         return $this->fraudData;
     }
 
-    /**
-     * @param FraudData|null $fraudData
-     *
-     * @return CardCheckEnrollment
-     */
     public function setFraudData(
         ?FraudData $fraudData
-    ): CardCheckEnrollment {
+    ): self {
         $this->fraudData = $fraudData;
 
         return $this;
     }
 
-    /**
-     * @return AuthenticationData|null
-     */
     public function getAuthenticationData(
-    ): ?AuthenticationData
-    {
+    ): ?AuthenticationData {
         return $this->authenticationData;
     }
 
-    /**
-     * @param AuthenticationData|null $authenticationData
-     *
-     * @return CardCheckEnrollment
-     */
     public function setAuthenticationData(
         ?AuthenticationData $authenticationData
-    ): CardCheckEnrollment {
+    ): self {
         $this->authenticationData = $authenticationData;
 
         return $this;
     }
 
-    /**
-     * @return S10TransactionReference|null
-     */
     public function getS10TransactionReference(
-    ): ?S10TransactionReference
-    {
+    ): ?S10TransactionReference {
         return $this->s10TransactionReference;
     }
 
-    /**
-     * @param S10TransactionReference|null $s10TransactionReference
-     *
-     * @return CardCheckEnrollment
-     */
     public function setS10TransactionReference(
         ?S10TransactionReference $s10TransactionReference
-    ): CardCheckEnrollment {
+    ): self {
         $this->s10TransactionReference = $s10TransactionReference;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getPanType(): ?string
     {
         return $this->panType;
     }
 
-    /**
-     * @param string|null $panType
-     *
-     * @return CardCheckEnrollment
-     */
-    public function setPanType(?string $panType): CardCheckEnrollment
+    public function setPanType(?string $panType): self
     {
         $this->panType = $panType;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getIntermediateServiceProviderId(): ?string
     {
         return $this->intermediateServiceProviderId;
     }
 
-    /**
-     * @param string|null $intermediateServiceProviderId
-     *
-     * @return CardCheckEnrollment
-     */
     public function setIntermediateServiceProviderId(
         ?string $intermediateServiceProviderId
-    ): CardCheckEnrollment {
+    ): self {
         $this->intermediateServiceProviderId = $intermediateServiceProviderId;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getSeal(): ?string
     {
         return $this->seal;
     }
 
-    /**
-     * @param string|null $seal
-     *
-     * @return CardCheckEnrollment
-     */
-    public function setSeal(?string $seal): CardCheckEnrollment
+    public function setSeal(?string $seal): self
     {
         $this->seal = $seal;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getKeyVersion(): ?string
     {
         return $this->keyVersion;
     }
 
-    /**
-     * @param string|null $keyVersion
-     *
-     * @return CardCheckEnrollment
-     */
-    public function setKeyVersion(?string $keyVersion): CardCheckEnrollment
+    public function setKeyVersion(?string $keyVersion): self
     {
         $this->keyVersion = $keyVersion;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getSealAlgorithm(): ?string
     {
         return $this->sealAlgorithm;
     }
 
-    /**
-     * @param string|null $sealAlgorithm
-     *
-     * @return CardCheckEnrollment
-     */
-    public function setSealAlgorithm(?string $sealAlgorithm
-    ): CardCheckEnrollment {
+    public function setSealAlgorithm(
+        ?string $sealAlgorithm
+    ): self {
         $this->sealAlgorithm = $sealAlgorithm;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getPaymentMeanBrand(): ?string
     {
         return $this->paymentMeanBrand;
     }
 
-    /**
-     * @param string|null $paymentMeanBrand
-     *
-     * @return CardCheckEnrollment
-     */
-    public function setPaymentMeanBrand(?string $paymentMeanBrand
-    ): CardCheckEnrollment {
+    public function setPaymentMeanBrand(
+        ?string $paymentMeanBrand
+    ): self {
         $this->paymentMeanBrand = $paymentMeanBrand;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getPaymentMeanBrandSelectionStatus(): ?string
     {
         return $this->paymentMeanBrandSelectionStatus;
     }
 
-    /**
-     * @param string|null $paymentMeanBrandSelectionStatus
-     *
-     * @return CardCheckEnrollment
-     */
     public function setPaymentMeanBrandSelectionStatus(
         ?string $paymentMeanBrandSelectionStatus
-    ): CardCheckEnrollment {
+    ): self {
         $this->paymentMeanBrandSelectionStatus = $paymentMeanBrandSelectionStatus;
 
         return $this;
     }
 
-    /**
-     * @return TravelContext|null
-     */
     public function getTravelContext(
-    ): ?TravelContext
-    {
+    ): ?TravelContext {
         return $this->travelContext;
     }
 
-    /**
-     * @param TravelContext|null $travelContext
-     *
-     * @return CardCheckEnrollment
-     */
     public function setTravelContext(
         ?TravelContext $travelContext
-    ): CardCheckEnrollment {
+    ): self {
         $this->travelContext = $travelContext;
 
         return $this;
     }
 
-    /**
-     * @return OrderContext|null
-     */
     public function getOrderContext(
-    ): ?OrderContext
-    {
+    ): ?OrderContext {
         return $this->orderContext;
     }
 
-    /**
-     * @param OrderContext|null $orderContext
-     *
-     * @return CardCheckEnrollment
-     */
     public function setOrderContext(
         ?OrderContext $orderContext
-    ): CardCheckEnrollment {
+    ): self {
         $this->orderContext = $orderContext;
 
         return $this;
     }
 
-    /**
-     * @return PaymentMeanData|null
-     */
     public function getPaymentMeanData(
-    ): ?PaymentMeanData
-    {
+    ): ?PaymentMeanData {
         return $this->paymentMeanData;
     }
 
-    /**
-     * @param PaymentMeanData|null $paymentMeanData
-     *
-     * @return CardCheckEnrollment
-     */
     public function setPaymentMeanData(
         ?PaymentMeanData $paymentMeanData
-    ): CardCheckEnrollment {
+    ): self {
         $this->paymentMeanData = $paymentMeanData;
 
         return $this;
     }
 
-    /**
-     * @return CustomerAccountHistoric|null
-     */
     public function getCustomerAccountHistoric(
-    ): ?CustomerAccountHistoric
-    {
+    ): ?CustomerAccountHistoric {
         return $this->customerAccountHistoric;
     }
 
-    /**
-     * @param CustomerAccountHistoric|null $customerAccountHistoric
-     *
-     * @return CardCheckEnrollment
-     */
     public function setCustomerAccountHistoric(
         ?CustomerAccountHistoric $customerAccountHistoric
-    ): CardCheckEnrollment {
+    ): self {
         $this->customerAccountHistoric = $customerAccountHistoric;
 
         return $this;
     }
-
- }
+}

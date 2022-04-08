@@ -1,997 +1,587 @@
 <?php
 
+declare(strict_types=1);
 
 namespace Worldline\Sips\Office\SipsMessages\Checkout;
-
 
 use Worldline\Sips\Common\Fields\CardData;
 use Worldline\Sips\Common\Fields\S10TransactionReference;
 use Worldline\Sips\Common\SipsMessages\SipsMessage;
 
 /**
- * Class WalletOrderResponse
- * @package Worldline\Sips\Common\SipsMessages\Checkout
+ * Class WalletOrderResponse.
  */
 class WalletOrderResponse extends SipsMessage
 {
-    /**
-     * @var null|string
-     */
-    private $acquirerResponseCode;
+    private ?string $acquirerResponseCode = null;
 
-    /**
-     * @var null|string
-     */
-    private $authorisationId;
+    private ?string $authorisationId = null;
 
-    /**
-     * @var null|string
-     */
-    private $cardScheme;
+    private ?string $cardScheme = null;
 
-    /**
-     * @var null|string
-     */
-    private $complementaryCode;
+    private ?string $complementaryCode = null;
 
-    /**
-     * @var null|string
-     */
-    private $complementaryInfo;
+    private ?string $complementaryInfo = null;
 
-    /**
-     * @var null|string
-     */
-    private $maskedPan;
+    private ?string $maskedPan = null;
 
-    /**
-     * @var null|string
-     */
-    private $responseCode;
+    private ?string $responseCode = null;
 
-    /**
-     * @var null|string
-     */
-    private $returnContext;
+    private ?string $returnContext = null;
 
-    /**
-     * @var null|string
-     */
-    private $transactionDateTime;
+    private ?string $transactionDateTime = null;
 
-    /**
-     * @var null|string
-     */
-    private $tokenPan;
+    private ?string $tokenPan = null;
 
-    /**
-     * @var null|string
-     */
-    private $scoreColor;
+    private ?string $scoreColor = null;
 
-    /**
-     * @var null|string
-     */
-    private $scoreInfo;
+    private ?string $scoreInfo = null;
 
-    /**
-     * @var null|string
-     */
-    private $scoreProfile;
+    private ?string $scoreProfile = null;
 
-    /**
-     * @var null|string
-     */
-    private $scoreThreshold;
+    private ?string $scoreThreshold = null;
 
-    /**
-     * @var null|string
-     */
-    private $scoreValue;
+    private ?string $scoreValue = null;
 
-    /**
-     * @var null|S10TransactionReference
-     */
-    private $s10TransactionReference;
+    private ?S10TransactionReference $s10TransactionReference = null;
 
-    /**
-     * @var null|string
-     */
-    private $transactionReference;
+    private ?string $transactionReference = null;
 
-    /**
-     * @var null|CardData
-     */
-    private $cardData;
+    private ?CardData $cardData = null;
 
-    /**
-     * @var null|string
-     */
-    private $seal;
+    private ?string $seal = null;
 
-    /**
-     * @var null|string
-     */
-    private $preAuthorisationProfile;
+    private ?string $preAuthorisationProfile = null;
 
-    /**
-     * @var null|string
-     */
-    private $preAuthorisationProfileValue;
+    private ?string $preAuthorisationProfileValue = null;
 
-    /**
-     * @var null|array
-     */
-    private $preAuthorisationRuleResultList;
+    private ?array $preAuthorisationRuleResultList = null;
 
-    /**
-     * @var null|int
-     */
-    private $captureDay;
+    private ?int $captureDay = null;
 
-    /**
-     * @var null|string
-     */
-    private $captureMode;
+    private ?string $captureMode = null;
 
-    /**
-     * @var null|string
-     */
-    private $transactionPlatform;
+    private ?string $transactionPlatform = null;
 
-    /**
-     * @var null|string
-     */
-    private $cardCSCResultCode;
+    private ?string $cardCSCResultCode = null;
 
-    /**
-     * @var null|string
-     */
-    private $avsPostcodeResponseCode;
+    private ?string $avsPostcodeResponseCode = null;
 
-    /**
-     * @var null|string
-     */
-    private $avsAddressResponseCode;
+    private ?string $avsAddressResponseCode = null;
 
-    /**
-     * @var null|string
-     */
-    private $authorMessageReference;
+    private ?string $authorMessageReference = null;
 
-    /**
-     * @var null|string
-     */
-    private $authorisationTypeLabel;
+    private ?string $authorisationTypeLabel = null;
 
-    /**
-     * @var null|string
-     */
-    private $acquirerResponseMessage;
+    private ?string $acquirerResponseMessage = null;
 
-    /**
-     * @var null|string
-     */
-    private $recurringResponseCode;
+    private ?string $recurringResponseCode = null;
 
-    /**
-     * @var null|string
-     */
-    private $holderAuthentRelegationCode;
+    private ?string $holderAuthentRelegationCode = null;
 
-    /**
-     * @var null|string
-     */
-    private $holderAuthentStatus;
+    private ?string $holderAuthentStatus = null;
 
-    /**
-     * @var null|string
-     */
-    private $guaranteeIndicator;
+    private ?string $guaranteeIndicator = null;
 
-    /**
-     * @var null|string
-     */
-    private $acceptanceSystemApplicationId;
+    private ?string $acceptanceSystemApplicationId = null;
 
-    /**
-     * @var null|string
-     */
-    private $errorFieldName;
+    private ?string $errorFieldName = null;
 
-    /**
-     * @var null|string
-     */
-    private $intermediateServiceProviderOperationId;
+    private ?string $intermediateServiceProviderOperationId = null;
 
-    /**
-     * @var null|string
-     */
-    private $orderId;
+    private ?string $orderId = null;
 
-    /**
-     * @return string|null
-     */
     public function getAcquirerResponseCode(): ?string
     {
         return $this->acquirerResponseCode;
     }
 
-    /**
-     * @param string|null $acquirerResponseCode
-     *
-     * @return WalletOrderResponse
-     */
-    public function setAcquirerResponseCode(?string $acquirerResponseCode
-    ): WalletOrderResponse {
+    public function setAcquirerResponseCode(
+        ?string $acquirerResponseCode
+    ): self {
         $this->acquirerResponseCode = $acquirerResponseCode;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getAuthorisationId(): ?string
     {
         return $this->authorisationId;
     }
 
-    /**
-     * @param string|null $authorisationId
-     *
-     * @return WalletOrderResponse
-     */
-    public function setAuthorisationId(?string $authorisationId
-    ): WalletOrderResponse {
+    public function setAuthorisationId(
+        ?string $authorisationId
+    ): self {
         $this->authorisationId = $authorisationId;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getCardScheme(): ?string
     {
         return $this->cardScheme;
     }
 
-    /**
-     * @param string|null $cardScheme
-     *
-     * @return WalletOrderResponse
-     */
-    public function setCardScheme(?string $cardScheme): WalletOrderResponse
+    public function setCardScheme(?string $cardScheme): self
     {
         $this->cardScheme = $cardScheme;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getComplementaryCode(): ?string
     {
         return $this->complementaryCode;
     }
 
-    /**
-     * @param string|null $complementaryCode
-     *
-     * @return WalletOrderResponse
-     */
-    public function setComplementaryCode(?string $complementaryCode
-    ): WalletOrderResponse {
+    public function setComplementaryCode(
+        ?string $complementaryCode
+    ): self {
         $this->complementaryCode = $complementaryCode;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getComplementaryInfo(): ?string
     {
         return $this->complementaryInfo;
     }
 
-    /**
-     * @param string|null $complementaryInfo
-     *
-     * @return WalletOrderResponse
-     */
-    public function setComplementaryInfo(?string $complementaryInfo
-    ): WalletOrderResponse {
+    public function setComplementaryInfo(
+        ?string $complementaryInfo
+    ): self {
         $this->complementaryInfo = $complementaryInfo;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getMaskedPan(): ?string
     {
         return $this->maskedPan;
     }
 
-    /**
-     * @param string|null $maskedPan
-     *
-     * @return WalletOrderResponse
-     */
-    public function setMaskedPan(?string $maskedPan): WalletOrderResponse
+    public function setMaskedPan(?string $maskedPan): self
     {
         $this->maskedPan = $maskedPan;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getResponseCode(): ?string
     {
         return $this->responseCode;
     }
 
-    /**
-     * @param string|null $responseCode
-     *
-     * @return WalletOrderResponse
-     */
-    public function setResponseCode(?string $responseCode): WalletOrderResponse
+    public function setResponseCode(?string $responseCode): self
     {
         $this->responseCode = $responseCode;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getReturnContext(): ?string
     {
         return $this->returnContext;
     }
 
-    /**
-     * @param string|null $returnContext
-     *
-     * @return WalletOrderResponse
-     */
-    public function setReturnContext(?string $returnContext
-    ): WalletOrderResponse {
+    public function setReturnContext(
+        ?string $returnContext
+    ): self {
         $this->returnContext = $returnContext;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getTransactionDateTime(): ?string
     {
         return $this->transactionDateTime;
     }
 
-    /**
-     * @param string|null $transactionDateTime
-     *
-     * @return WalletOrderResponse
-     */
-    public function setTransactionDateTime(?string $transactionDateTime
-    ): WalletOrderResponse {
+    public function setTransactionDateTime(
+        ?string $transactionDateTime
+    ): self {
         $this->transactionDateTime = $transactionDateTime;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getTokenPan(): ?string
     {
         return $this->tokenPan;
     }
 
-    /**
-     * @param string|null $tokenPan
-     *
-     * @return WalletOrderResponse
-     */
-    public function setTokenPan(?string $tokenPan): WalletOrderResponse
+    public function setTokenPan(?string $tokenPan): self
     {
         $this->tokenPan = $tokenPan;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getScoreColor(): ?string
     {
         return $this->scoreColor;
     }
 
-    /**
-     * @param string|null $scoreColor
-     *
-     * @return WalletOrderResponse
-     */
-    public function setScoreColor(?string $scoreColor): WalletOrderResponse
+    public function setScoreColor(?string $scoreColor): self
     {
         $this->scoreColor = $scoreColor;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getScoreInfo(): ?string
     {
         return $this->scoreInfo;
     }
 
-    /**
-     * @param string|null $scoreInfo
-     *
-     * @return WalletOrderResponse
-     */
-    public function setScoreInfo(?string $scoreInfo): WalletOrderResponse
+    public function setScoreInfo(?string $scoreInfo): self
     {
         $this->scoreInfo = $scoreInfo;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getScoreProfile(): ?string
     {
         return $this->scoreProfile;
     }
 
-    /**
-     * @param string|null $scoreProfile
-     *
-     * @return WalletOrderResponse
-     */
-    public function setScoreProfile(?string $scoreProfile): WalletOrderResponse
+    public function setScoreProfile(?string $scoreProfile): self
     {
         $this->scoreProfile = $scoreProfile;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getScoreThreshold(): ?string
     {
         return $this->scoreThreshold;
     }
 
-    /**
-     * @param string|null $scoreThreshold
-     *
-     * @return WalletOrderResponse
-     */
-    public function setScoreThreshold(?string $scoreThreshold
-    ): WalletOrderResponse {
+    public function setScoreThreshold(
+        ?string $scoreThreshold
+    ): self {
         $this->scoreThreshold = $scoreThreshold;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getScoreValue(): ?string
     {
         return $this->scoreValue;
     }
 
-    /**
-     * @param string|null $scoreValue
-     *
-     * @return WalletOrderResponse
-     */
-    public function setScoreValue(?string $scoreValue): WalletOrderResponse
+    public function setScoreValue(?string $scoreValue): self
     {
         $this->scoreValue = $scoreValue;
 
         return $this;
     }
 
-    /**
-     * @return S10TransactionReference|null
-     */
     public function getS10TransactionReference(): ?S10TransactionReference
     {
         return $this->s10TransactionReference;
     }
 
-    /**
-     * @param S10TransactionReference|null $s10TransactionReference
-     *
-     * @return WalletOrderResponse
-     */
-    public function setS10TransactionReference(?S10TransactionReference $s10TransactionReference
-    ): WalletOrderResponse {
+    public function setS10TransactionReference(
+        ?S10TransactionReference $s10TransactionReference
+    ): self {
         $this->s10TransactionReference = $s10TransactionReference;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getTransactionReference(): ?string
     {
         return $this->transactionReference;
     }
 
-    /**
-     * @param string|null $transactionReference
-     *
-     * @return WalletOrderResponse
-     */
-    public function setTransactionReference(?string $transactionReference
-    ): WalletOrderResponse {
+    public function setTransactionReference(
+        ?string $transactionReference
+    ): self {
         $this->transactionReference = $transactionReference;
 
         return $this;
     }
 
-    /**
-     * @return CardData|null
-     */
     public function getCardData(): ?CardData
     {
         return $this->cardData;
     }
 
-    /**
-     * @param CardData|null $cardData
-     *
-     * @return WalletOrderResponse
-     */
-    public function setCardData(?CardData $cardData): WalletOrderResponse
+    public function setCardData(?CardData $cardData): self
     {
         $this->cardData = $cardData;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getSeal(): ?string
     {
         return $this->seal;
     }
 
-    /**
-     * @param string|null $seal
-     *
-     * @return WalletOrderResponse
-     */
-    public function setSeal(?string $seal): WalletOrderResponse
+    public function setSeal(?string $seal): self
     {
         $this->seal = $seal;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getPreAuthorisationProfile(): ?string
     {
         return $this->preAuthorisationProfile;
     }
 
-    /**
-     * @param string|null $preAuthorisationProfile
-     *
-     * @return WalletOrderResponse
-     */
-    public function setPreAuthorisationProfile(?string $preAuthorisationProfile
-    ): WalletOrderResponse {
+    public function setPreAuthorisationProfile(
+        ?string $preAuthorisationProfile
+    ): self {
         $this->preAuthorisationProfile = $preAuthorisationProfile;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getPreAuthorisationProfileValue(): ?string
     {
         return $this->preAuthorisationProfileValue;
     }
 
-    /**
-     * @param string|null $preAuthorisationProfileValue
-     *
-     * @return WalletOrderResponse
-     */
     public function setPreAuthorisationProfileValue(
         ?string $preAuthorisationProfileValue
-    ): WalletOrderResponse {
+    ): self {
         $this->preAuthorisationProfileValue = $preAuthorisationProfileValue;
 
         return $this;
     }
 
-    /**
-     * @return array|null
-     */
     public function getPreAuthorisationRuleResultList(): ?array
     {
         return $this->preAuthorisationRuleResultList;
     }
 
-    /**
-     * @param array|null $preAuthorisationRuleResultList
-     *
-     * @return WalletOrderResponse
-     */
     public function setPreAuthorisationRuleResultList(
         ?array $preAuthorisationRuleResultList
-    ): WalletOrderResponse {
+    ): self {
         $this->preAuthorisationRuleResultList = $preAuthorisationRuleResultList;
 
         return $this;
     }
 
-    /**
-     * @return int|null
-     */
     public function getCaptureDay(): ?int
     {
         return $this->captureDay;
     }
 
-    /**
-     * @param int|null $captureDay
-     *
-     * @return WalletOrderResponse
-     */
-    public function setCaptureDay(?int $captureDay): WalletOrderResponse
+    public function setCaptureDay(?int $captureDay): self
     {
         $this->captureDay = $captureDay;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getCaptureMode(): ?string
     {
         return $this->captureMode;
     }
 
-    /**
-     * @param string|null $captureMode
-     *
-     * @return WalletOrderResponse
-     */
-    public function setCaptureMode(?string $captureMode): WalletOrderResponse
+    public function setCaptureMode(?string $captureMode): self
     {
         $this->captureMode = $captureMode;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getTransactionPlatform(): ?string
     {
         return $this->transactionPlatform;
     }
 
-    /**
-     * @param string|null $transactionPlatform
-     *
-     * @return WalletOrderResponse
-     */
-    public function setTransactionPlatform(?string $transactionPlatform
-    ): WalletOrderResponse {
+    public function setTransactionPlatform(
+        ?string $transactionPlatform
+    ): self {
         $this->transactionPlatform = $transactionPlatform;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getCardCSCResultCode(): ?string
     {
         return $this->cardCSCResultCode;
     }
 
-    /**
-     * @param string|null $cardCSCResultCode
-     *
-     * @return WalletOrderResponse
-     */
-    public function setCardCSCResultCode(?string $cardCSCResultCode
-    ): WalletOrderResponse {
+    public function setCardCSCResultCode(
+        ?string $cardCSCResultCode
+    ): self {
         $this->cardCSCResultCode = $cardCSCResultCode;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getAvsPostcodeResponseCode(): ?string
     {
         return $this->avsPostcodeResponseCode;
     }
 
-    /**
-     * @param string|null $avsPostcodeResponseCode
-     *
-     * @return WalletOrderResponse
-     */
-    public function setAvsPostcodeResponseCode(?string $avsPostcodeResponseCode
-    ): WalletOrderResponse {
+    public function setAvsPostcodeResponseCode(
+        ?string $avsPostcodeResponseCode
+    ): self {
         $this->avsPostcodeResponseCode = $avsPostcodeResponseCode;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getAvsAddressResponseCode(): ?string
     {
         return $this->avsAddressResponseCode;
     }
 
-    /**
-     * @param string|null $avsAddressResponseCode
-     *
-     * @return WalletOrderResponse
-     */
-    public function setAvsAddressResponseCode(?string $avsAddressResponseCode
-    ): WalletOrderResponse {
+    public function setAvsAddressResponseCode(
+        ?string $avsAddressResponseCode
+    ): self {
         $this->avsAddressResponseCode = $avsAddressResponseCode;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getAuthorMessageReference(): ?string
     {
         return $this->authorMessageReference;
     }
 
-    /**
-     * @param string|null $authorMessageReference
-     *
-     * @return WalletOrderResponse
-     */
-    public function setAuthorMessageReference(?string $authorMessageReference
-    ): WalletOrderResponse {
+    public function setAuthorMessageReference(
+        ?string $authorMessageReference
+    ): self {
         $this->authorMessageReference = $authorMessageReference;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getAuthorisationTypeLabel(): ?string
     {
         return $this->authorisationTypeLabel;
     }
 
-    /**
-     * @param string|null $authorisationTypeLabel
-     *
-     * @return WalletOrderResponse
-     */
-    public function setAuthorisationTypeLabel(?string $authorisationTypeLabel
-    ): WalletOrderResponse {
+    public function setAuthorisationTypeLabel(
+        ?string $authorisationTypeLabel
+    ): self {
         $this->authorisationTypeLabel = $authorisationTypeLabel;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getAcquirerResponseMessage(): ?string
     {
         return $this->acquirerResponseMessage;
     }
 
-    /**
-     * @param string|null $acquirerResponseMessage
-     *
-     * @return WalletOrderResponse
-     */
-    public function setAcquirerResponseMessage(?string $acquirerResponseMessage
-    ): WalletOrderResponse {
+    public function setAcquirerResponseMessage(
+        ?string $acquirerResponseMessage
+    ): self {
         $this->acquirerResponseMessage = $acquirerResponseMessage;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getRecurringResponseCode(): ?string
     {
         return $this->recurringResponseCode;
     }
 
-    /**
-     * @param string|null $recurringResponseCode
-     *
-     * @return WalletOrderResponse
-     */
-    public function setRecurringResponseCode(?string $recurringResponseCode
-    ): WalletOrderResponse {
+    public function setRecurringResponseCode(
+        ?string $recurringResponseCode
+    ): self {
         $this->recurringResponseCode = $recurringResponseCode;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getHolderAuthentRelegationCode(): ?string
     {
         return $this->holderAuthentRelegationCode;
     }
 
-    /**
-     * @param string|null $holderAuthentRelegationCode
-     *
-     * @return WalletOrderResponse
-     */
     public function setHolderAuthentRelegationCode(
         ?string $holderAuthentRelegationCode
-    ): WalletOrderResponse {
+    ): self {
         $this->holderAuthentRelegationCode = $holderAuthentRelegationCode;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getHolderAuthentStatus(): ?string
     {
         return $this->holderAuthentStatus;
     }
 
-    /**
-     * @param string|null $holderAuthentStatus
-     *
-     * @return WalletOrderResponse
-     */
-    public function setHolderAuthentStatus(?string $holderAuthentStatus
-    ): WalletOrderResponse {
+    public function setHolderAuthentStatus(
+        ?string $holderAuthentStatus
+    ): self {
         $this->holderAuthentStatus = $holderAuthentStatus;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getGuaranteeIndicator(): ?string
     {
         return $this->guaranteeIndicator;
     }
 
-    /**
-     * @param string|null $guaranteeIndicator
-     *
-     * @return WalletOrderResponse
-     */
-    public function setGuaranteeIndicator(?string $guaranteeIndicator
-    ): WalletOrderResponse {
+    public function setGuaranteeIndicator(
+        ?string $guaranteeIndicator
+    ): self {
         $this->guaranteeIndicator = $guaranteeIndicator;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getAcceptanceSystemApplicationId(): ?string
     {
         return $this->acceptanceSystemApplicationId;
     }
 
-    /**
-     * @param string|null $acceptanceSystemApplicationId
-     *
-     * @return WalletOrderResponse
-     */
     public function setAcceptanceSystemApplicationId(
         ?string $acceptanceSystemApplicationId
-    ): WalletOrderResponse {
+    ): self {
         $this->acceptanceSystemApplicationId = $acceptanceSystemApplicationId;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getErrorFieldName(): ?string
     {
         return $this->errorFieldName;
     }
 
-    /**
-     * @param string|null $errorFieldName
-     *
-     * @return WalletOrderResponse
-     */
-    public function setErrorFieldName(?string $errorFieldName
-    ): WalletOrderResponse {
+    public function setErrorFieldName(
+        ?string $errorFieldName
+    ): self {
         $this->errorFieldName = $errorFieldName;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getIntermediateServiceProviderOperationId(): ?string
     {
         return $this->intermediateServiceProviderOperationId;
     }
 
-    /**
-     * @param string|null $intermediateServiceProviderOperationId
-     *
-     * @return WalletOrderResponse
-     */
     public function setIntermediateServiceProviderOperationId(
         ?string $intermediateServiceProviderOperationId
-    ): WalletOrderResponse {
+    ): self {
         $this->intermediateServiceProviderOperationId = $intermediateServiceProviderOperationId;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getOrderId(): ?string
     {
         return $this->orderId;
     }
 
-    /**
-     * @param string|null $orderId
-     *
-     * @return WalletOrderResponse
-     */
-    public function setOrderId(?string $orderId): WalletOrderResponse
+    public function setOrderId(?string $orderId): self
     {
         $this->orderId = $orderId;
 
         return $this;
     }
-    
 }

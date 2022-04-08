@@ -1,213 +1,124 @@
 <?php
 
+declare(strict_types=1);
 
 namespace Worldline\Sips\Common\Fields;
 
-
 /**
- * Class HolderData
- * @package Worldline\Sips\Common\Fields
+ * Class HolderData.
  */
 class HolderData extends Field
 {
-    /**
-     * @var null|string
-     */
-    private $birthCity;
+    private ?string $birthCity = null;
 
-    /**
-     * @var null|string
-     */
-    private $birthCountry;
+    private ?string $birthCountry = null;
 
-    /**
-     * @var null|string
-     */
-    private $birthDate;
+    private ?string $birthDate = null;
 
-    /**
-     * @var null|string
-     */
-    private $birthZipCode;
+    private ?string $birthZipCode = null;
 
-    /**
-     * @var null|string
-     */
-    private $nationalityCountry;
+    private ?string $nationalityCountry = null;
 
-    /**
-     * @var null|string
-     */
-    private $newPassword;
+    private ?string $newPassword = null;
 
-    /**
-     * @var null|string
-     */
-    private $password;
+    private ?string $password = null;
 
-    /**
-     * @var null|string
-     */
-    private $maidenName;
+    private ?string $maidenName = null;
 
-    /**
-     * @return string|null
-     */
     public function getBirthCity(): ?string
     {
         return $this->birthCity;
     }
 
-    /**
-     * @param string|null $birthCity
-     *
-     * @return HolderData
-     */
-    public function setBirthCity(?string $birthCity): HolderData
+    public function setBirthCity(?string $birthCity): self
     {
         $this->birthCity = $birthCity;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getBirthCountry(): ?string
     {
         return $this->birthCountry;
     }
 
-    /**
-     * @param string|null $birthCountry
-     *
-     * @return HolderData
-     */
-    public function setBirthCountry(?string $birthCountry): HolderData
+    public function setBirthCountry(?string $birthCountry): self
     {
         $this->birthCountry = $birthCountry;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getBirthDate(): ?string
     {
         return $this->birthDate;
     }
 
-    /**
-     * @param string|null $birthDate
-     *
-     * @return HolderData
-     */
-    public function setBirthDate(?string $birthDate): HolderData
+    public function setBirthDate(?string $birthDate): self
     {
         $this->birthDate = $birthDate;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getBirthZipCode(): ?string
     {
         return $this->birthZipCode;
     }
 
-    /**
-     * @param string|null $birthZipCode
-     *
-     * @return HolderData
-     */
-    public function setBirthZipCode(?string $birthZipCode): HolderData
+    public function setBirthZipCode(?string $birthZipCode): self
     {
         $this->birthZipCode = $birthZipCode;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getNationalityCountry(): ?string
     {
         return $this->nationalityCountry;
     }
 
-    /**
-     * @param string|null $nationalityCountry
-     *
-     * @return HolderData
-     */
-    public function setNationalityCountry(?string $nationalityCountry
-    ): HolderData {
+    public function setNationalityCountry(
+        ?string $nationalityCountry
+    ): self {
         $this->nationalityCountry = $nationalityCountry;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getNewPassword(): ?string
     {
         return $this->newPassword;
     }
 
-    /**
-     * @param string|null $newPassword
-     *
-     * @return HolderData
-     */
-    public function setNewPassword(?string $newPassword): HolderData
+    public function setNewPassword(?string $newPassword): self
     {
         $this->newPassword = $newPassword;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getPassword(): ?string
     {
         return $this->password;
     }
 
-    /**
-     * @param string|null $password
-     *
-     * @return HolderData
-     */
-    public function setPassword(?string $password): HolderData
+    public function setPassword(?string $password): self
     {
         $this->password = $password;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getMaidenName(): ?string
     {
         return $this->maidenName;
     }
 
-    /**
-     * @param string|null $maidenName
-     *
-     * @return HolderData
-     */
-    public function setMaidenName(?string $maidenName): HolderData
+    public function setMaidenName(?string $maidenName): self
     {
         $this->maidenName = $maidenName;
 
         return $this;
     }
-    
 }

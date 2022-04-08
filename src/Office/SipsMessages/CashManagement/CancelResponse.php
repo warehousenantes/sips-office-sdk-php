@@ -1,190 +1,113 @@
 <?php
 
+declare(strict_types=1);
 
 namespace Worldline\Sips\Office\SipsMessages\CashManagement;
-
 
 use Worldline\Sips\Common\SipsMessages\SipsMessage;
 
 /**
- * Class CancelResponse
- * @package Worldline\Sips\Office\SipsMessages\CashManagement
+ * Class CancelResponse.
  */
 class CancelResponse extends SipsMessage
 {
-    /**
-     * @var null|int
-     */
-    private $newAmount;
-    
-    /**
-     * @var null|string
-     */
-    private $operationDateTime;
-    
-    /**
-     * @var null|string
-     */
-    private $responseCode;
-    
-    /**
-     * @var null|string
-     */
-    private $newStatus;
-    
-    /**
-     * @var null|string
-     */
-    private $seal;
-    
-    /**
-     * @var null|string
-     */
-    private $acquirerResponseCode;
-    
-    /**
-     * @var null|string
-     */
-    private $errorFieldName;
-    
-    /**
-     * @return string|null
-     */
+    private ?int $newAmount = null;
+
+    private ?string $operationDateTime = null;
+
+    private ?string $responseCode = null;
+
+    private ?string $newStatus = null;
+
+    private ?string $seal = null;
+
+    private ?string $acquirerResponseCode = null;
+
+    private ?string $errorFieldName = null;
+
     public function getNewAmount(): ?string
     {
         return $this->newAmount;
     }
 
-    /**
-     * @param int|null $newAmount
-     *
-     * @return CancelResponse
-     */
-    public function setNewAmount(?int $newAmount): CancelResponse
+    public function setNewAmount(?int $newAmount): self
     {
         $this->newAmount = $newAmount;
 
         return $this;
     }
 
-    /**
-     * @return int|null
-     */
     public function getOperationDateTime(): ?int
     {
         return $this->operationDateTime;
     }
 
-    /**
-     * @param string|null $operationDateTime
-     *
-     * @return CancelResponse
-     */
-    public function setOperationDateTime(?string $operationDateTime
-    ): CancelResponse {
+    public function setOperationDateTime(
+        ?string $operationDateTime
+    ): self {
         $this->operationDateTime = $operationDateTime;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getResponseCode(): ?string
     {
         return $this->responseCode;
     }
 
-    /**
-     * @param string|null $responseCode
-     *
-     * @return CancelResponse
-     */
-    public function setResponseCode(?string $responseCode): CancelResponse
+    public function setResponseCode(?string $responseCode): self
     {
         $this->responseCode = $responseCode;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getNewStatus(): ?string
     {
         return $this->newStatus;
     }
 
-    /**
-     * @param string|null $newStatus
-     *
-     * @return CancelResponse
-     */
-    public function setNewStatus(?string $newStatus): CancelResponse
+    public function setNewStatus(?string $newStatus): self
     {
         $this->newStatus = $newStatus;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getSeal(): ?string
     {
         return $this->seal;
     }
 
-    /**
-     * @param string|null $seal
-     *
-     * @return CancelResponse
-     */
-    public function setSeal(?string $seal): CancelResponse
+    public function setSeal(?string $seal): self
     {
         $this->seal = $seal;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getAcquirerResponseCode(): ?string
     {
         return $this->acquirerResponseCode;
     }
 
-    /**
-     * @param string|null $acquirerResponseCode
-     *
-     * @return CancelResponse
-     */
-    public function setAcquirerResponseCode(?string $acquirerResponseCode
-    ): CancelResponse {
+    public function setAcquirerResponseCode(
+        ?string $acquirerResponseCode
+    ): self {
         $this->acquirerResponseCode = $acquirerResponseCode;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getErrorFieldName(): ?string
     {
         return $this->errorFieldName;
     }
 
-    /**
-     * @param string|null $errorFieldName
-     *
-     * @return CancelResponse
-     */
-    public function setErrorFieldName(?string $errorFieldName): CancelResponse
+    public function setErrorFieldName(?string $errorFieldName): self
     {
         $this->errorFieldName = $errorFieldName;
 
         return $this;
     }
-    
 }

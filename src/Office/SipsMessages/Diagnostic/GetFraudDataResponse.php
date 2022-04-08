@@ -1,446 +1,264 @@
 <?php
 
+declare(strict_types=1);
 
 namespace Worldline\Sips\Office\SipsMessages\Diagnostic;
-
 
 use Worldline\Sips\Common\SipsMessages\SipsMessage;
 
 /**
- * Class GetFraudDataResponse
- * @package Worldline\Sips\Office\SipsMessages\Diagnostic
+ * Class GetFraudDataResponse.
  */
 class GetFraudDataResponse extends SipsMessage
 {
-    /**
-     * @var null|string
-     */
-    private $complementaryCode;
-    
-    /**
-     * @var null|string
-     */
-    private $fraudResponseCode;
-    
-    /**
-     * @var null|string
-     */
-    private $preAuthenticationColor;
-    
-    /**
-     * @var null|string
-     */
-    private $preAuthenticationProfile;
-    
-    /**
-     * @var null|string
-     */
-    private $preAuthenticationProfileValue;
-    
-    /**
-     * @var null|array
-     */
-    private $preAuthenticationRuleResultList;
-    
-    /**
-     * @var null|string
-     */
-    private $preAuthenticationThreshold;
-    
-    /**
-     * @var null|string
-     */
-    private $preAuthenticationValue;
-    
-    /**
-     * @var null|string
-     */
-    private $preAuthorisationProfile;
-    
-    /**
-     * @var null|string
-     */
-    private $preAuthorisationProfileValue;
-    
-    /**
-     * @var null|array
-     */
-    private $preAuthorisationRuleResultList;
-    
-    /**
-     * @var null|string
-     */
-    private $scoreColor;
-    
-    /**
-     * @var null|string
-     */
-    private $scoreProfile;
-    
-    /**
-     * @var null|string
-     */
-    private $scoreThreshold;
-    
-    /**
-     * @var null|string
-     */
-    private $scoreValue;
-    
-    /**
-     * @var null|string
-     */
-    private $seal;
-    
-    /**
-     * @var null|string
-     */
-    private $errorFieldName;
+    private ?string $complementaryCode = null;
 
-    /**
-     * @return string|null
-     */
+    private ?string $fraudResponseCode = null;
+
+    private ?string $preAuthenticationColor = null;
+
+    private ?string $preAuthenticationProfile = null;
+
+    private ?string $preAuthenticationProfileValue = null;
+
+    private ?array $preAuthenticationRuleResultList = null;
+
+    private ?string $preAuthenticationThreshold = null;
+
+    private ?string $preAuthenticationValue = null;
+
+    private ?string $preAuthorisationProfile = null;
+
+    private ?string $preAuthorisationProfileValue = null;
+
+    private ?array $preAuthorisationRuleResultList = null;
+
+    private ?string $scoreColor = null;
+
+    private ?string $scoreProfile = null;
+
+    private ?string $scoreThreshold = null;
+
+    private ?string $scoreValue = null;
+
+    private ?string $seal = null;
+
+    private ?string $errorFieldName = null;
+
     public function getComplementaryCode(): ?string
     {
         return $this->complementaryCode;
     }
 
-    /**
-     * @param string|null $complementaryCode
-     *
-     * @return GetFraudDataResponse
-     */
-    public function setComplementaryCode(?string $complementaryCode
-    ): GetFraudDataResponse {
+    public function setComplementaryCode(
+        ?string $complementaryCode
+    ): self {
         $this->complementaryCode = $complementaryCode;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getFraudResponseCode(): ?string
     {
         return $this->fraudResponseCode;
     }
 
-    /**
-     * @param string|null $fraudResponseCode
-     *
-     * @return GetFraudDataResponse
-     */
-    public function setFraudResponseCode(?string $fraudResponseCode
-    ): GetFraudDataResponse {
+    public function setFraudResponseCode(
+        ?string $fraudResponseCode
+    ): self {
         $this->fraudResponseCode = $fraudResponseCode;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getPreAuthenticationColor(): ?string
     {
         return $this->preAuthenticationColor;
     }
 
-    /**
-     * @param string|null $preAuthenticationColor
-     *
-     * @return GetFraudDataResponse
-     */
-    public function setPreAuthenticationColor(?string $preAuthenticationColor
-    ): GetFraudDataResponse {
+    public function setPreAuthenticationColor(
+        ?string $preAuthenticationColor
+    ): self {
         $this->preAuthenticationColor = $preAuthenticationColor;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getPreAuthenticationProfile(): ?string
     {
         return $this->preAuthenticationProfile;
     }
 
-    /**
-     * @param string|null $preAuthenticationProfile
-     *
-     * @return GetFraudDataResponse
-     */
     public function setPreAuthenticationProfile(
         ?string $preAuthenticationProfile
-    ): GetFraudDataResponse {
+    ): self {
         $this->preAuthenticationProfile = $preAuthenticationProfile;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getPreAuthenticationProfileValue(): ?string
     {
         return $this->preAuthenticationProfileValue;
     }
 
-    /**
-     * @param string|null $preAuthenticationProfileValue
-     *
-     * @return GetFraudDataResponse
-     */
     public function setPreAuthenticationProfileValue(
         ?string $preAuthenticationProfileValue
-    ): GetFraudDataResponse {
+    ): self {
         $this->preAuthenticationProfileValue = $preAuthenticationProfileValue;
 
         return $this;
     }
 
-    /**
-     * @return array|null
-     */
     public function getPreAuthenticationRuleResultList(): ?array
     {
         return $this->preAuthenticationRuleResultList;
     }
 
-    /**
-     * @param array|null $preAuthenticationRuleResultList
-     *
-     * @return GetFraudDataResponse
-     */
     public function setPreAuthenticationRuleResultList(
         ?array $preAuthenticationRuleResultList
-    ): GetFraudDataResponse {
+    ): self {
         $this->preAuthenticationRuleResultList = $preAuthenticationRuleResultList;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getPreAuthenticationThreshold(): ?string
     {
         return $this->preAuthenticationThreshold;
     }
 
-    /**
-     * @param string|null $preAuthenticationThreshold
-     *
-     * @return GetFraudDataResponse
-     */
     public function setPreAuthenticationThreshold(
         ?string $preAuthenticationThreshold
-    ): GetFraudDataResponse {
+    ): self {
         $this->preAuthenticationThreshold = $preAuthenticationThreshold;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getPreAuthenticationValue(): ?string
     {
         return $this->preAuthenticationValue;
     }
 
-    /**
-     * @param string|null $preAuthenticationValue
-     *
-     * @return GetFraudDataResponse
-     */
-    public function setPreAuthenticationValue(?string $preAuthenticationValue
-    ): GetFraudDataResponse {
+    public function setPreAuthenticationValue(
+        ?string $preAuthenticationValue
+    ): self {
         $this->preAuthenticationValue = $preAuthenticationValue;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getPreAuthorisationProfile(): ?string
     {
         return $this->preAuthorisationProfile;
     }
 
-    /**
-     * @param string|null $preAuthorisationProfile
-     *
-     * @return GetFraudDataResponse
-     */
-    public function setPreAuthorisationProfile(?string $preAuthorisationProfile
-    ): GetFraudDataResponse {
+    public function setPreAuthorisationProfile(
+        ?string $preAuthorisationProfile
+    ): self {
         $this->preAuthorisationProfile = $preAuthorisationProfile;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getPreAuthorisationProfileValue(): ?string
     {
         return $this->preAuthorisationProfileValue;
     }
 
-    /**
-     * @param string|null $preAuthorisationProfileValue
-     *
-     * @return GetFraudDataResponse
-     */
     public function setPreAuthorisationProfileValue(
         ?string $preAuthorisationProfileValue
-    ): GetFraudDataResponse {
+    ): self {
         $this->preAuthorisationProfileValue = $preAuthorisationProfileValue;
 
         return $this;
     }
 
-    /**
-     * @return array|null
-     */
     public function getPreAuthorisationRuleResultList(): ?array
     {
         return $this->preAuthorisationRuleResultList;
     }
 
-    /**
-     * @param array|null $preAuthorisationRuleResultList
-     *
-     * @return GetFraudDataResponse
-     */
     public function setPreAuthorisationRuleResultList(
         ?array $preAuthorisationRuleResultList
-    ): GetFraudDataResponse {
+    ): self {
         $this->preAuthorisationRuleResultList = $preAuthorisationRuleResultList;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getScoreColor(): ?string
     {
         return $this->scoreColor;
     }
 
-    /**
-     * @param string|null $scoreColor
-     *
-     * @return GetFraudDataResponse
-     */
-    public function setScoreColor(?string $scoreColor): GetFraudDataResponse
+    public function setScoreColor(?string $scoreColor): self
     {
         $this->scoreColor = $scoreColor;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getScoreProfile(): ?string
     {
         return $this->scoreProfile;
     }
 
-    /**
-     * @param string|null $scoreProfile
-     *
-     * @return GetFraudDataResponse
-     */
-    public function setScoreProfile(?string $scoreProfile): GetFraudDataResponse
+    public function setScoreProfile(?string $scoreProfile): self
     {
         $this->scoreProfile = $scoreProfile;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getScoreThreshold(): ?string
     {
         return $this->scoreThreshold;
     }
 
-    /**
-     * @param string|null $scoreThreshold
-     *
-     * @return GetFraudDataResponse
-     */
-    public function setScoreThreshold(?string $scoreThreshold
-    ): GetFraudDataResponse {
+    public function setScoreThreshold(
+        ?string $scoreThreshold
+    ): self {
         $this->scoreThreshold = $scoreThreshold;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getScoreValue(): ?string
     {
         return $this->scoreValue;
     }
 
-    /**
-     * @param string|null $scoreValue
-     *
-     * @return GetFraudDataResponse
-     */
-    public function setScoreValue(?string $scoreValue): GetFraudDataResponse
+    public function setScoreValue(?string $scoreValue): self
     {
         $this->scoreValue = $scoreValue;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getSeal(): ?string
     {
         return $this->seal;
     }
 
-    /**
-     * @param string|null $seal
-     *
-     * @return GetFraudDataResponse
-     */
-    public function setSeal(?string $seal): GetFraudDataResponse
+    public function setSeal(?string $seal): self
     {
         $this->seal = $seal;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getErrorFieldName(): ?string
     {
         return $this->errorFieldName;
     }
 
-    /**
-     * @param string|null $errorFieldName
-     *
-     * @return GetFraudDataResponse
-     */
-    public function setErrorFieldName(?string $errorFieldName
-    ): GetFraudDataResponse {
+    public function setErrorFieldName(
+        ?string $errorFieldName
+    ): self {
         $this->errorFieldName = $errorFieldName;
 
         return $this;
     }
-    
 }

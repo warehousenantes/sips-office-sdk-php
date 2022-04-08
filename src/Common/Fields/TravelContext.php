@@ -1,288 +1,170 @@
 <?php
 
+declare(strict_types=1);
 
 namespace Worldline\Sips\Common\Fields;
 
-
 /**
- * Class TravelContext
- * @package Worldline\Sips\Common\Fields
+ * Class TravelContext.
  */
 class TravelContext extends Field
 {
-    /**
-     * @var null|string
-     */
-    private $departureDate;
+    private ?string $departureDate = null;
 
-    /**
-     * @var null|string
-     */
-    private $passengerName;
+    private ?string $passengerName = null;
 
-    /**
-     * @var null|string
-     */
-    private $originAirport;
+    private ?string $originAirport = null;
 
-    /**
-     * @var null|int
-     */
-    private $numberOfRoutingCities;
+    private ?int $numberOfRoutingCities = null;
 
-    /**
-     * @var null|array
-     */
-    private $routingCityList;
+    private ?array $routingCityList = null;
 
-    /**
-     * @var null|int
-     */
-    private $numberOfAirlineCarriers;
+    private ?int $numberOfAirlineCarriers = null;
 
-    /**
-     * @var null|array
-     */
-    private $airlineCarrierList;
+    private ?array $airlineCarrierList = null;
 
-    /**
-     * @var null|string
-     */
-    private $fareBasis;
+    private ?string $fareBasis = null;
 
-    /**
-     * @var null|int
-     */
-    private $numberOfPassengers;
+    private ?int $numberOfPassengers = null;
 
-    /**
-     * @var null|string
-     */
-    private $destinationAirport;
+    private ?string $destinationAirport = null;
 
-    /**
-     * @var null|string
-     */
-    private $reservationCode;
+    private ?string $reservationCode = null;
 
-    /**
-     * @return string|null
-     */
     public function getDepartureDate(): ?string
     {
         return $this->departureDate;
     }
 
-    /**
-     * @param string|null $departureDate
-     *
-     * @return TravelContext
-     */
-    public function setDepartureDate(?string $departureDate): TravelContext
+    public function setDepartureDate(?string $departureDate): self
     {
         $this->departureDate = $departureDate;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getPassengerName(): ?string
     {
         return $this->passengerName;
     }
 
-    /**
-     * @param string|null $passengerName
-     *
-     * @return TravelContext
-     */
-    public function setPassengerName(?string $passengerName): TravelContext
+    public function setPassengerName(?string $passengerName): self
     {
         $this->passengerName = $passengerName;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getOriginAirport(): ?string
     {
         return $this->originAirport;
     }
 
-    /**
-     * @param string|null $originAirport
-     *
-     * @return TravelContext
-     */
-    public function setOriginAirport(?string $originAirport): TravelContext
+    public function setOriginAirport(?string $originAirport): self
     {
         $this->originAirport = $originAirport;
 
         return $this;
     }
 
-    /**
-     * @return int|null
-     */
     public function getNumberOfRoutingCities(): ?int
     {
         return $this->numberOfRoutingCities;
     }
 
-    /**
-     * @param int|null $numberOfRoutingCities
-     *
-     * @return TravelContext
-     */
-    public function setNumberOfRoutingCities(?int $numberOfRoutingCities
-    ): TravelContext {
+    public function setNumberOfRoutingCities(
+        ?int $numberOfRoutingCities
+    ): self {
         $this->numberOfRoutingCities = $numberOfRoutingCities;
 
         return $this;
     }
 
-    /**
-     * @return array|null
-     */
     public function getRoutingCityList(): ?array
     {
         return $this->routingCityList;
     }
 
-    /**
-     * @param array|null $routingCityList
-     *
-     * @return TravelContext
-     */
-    public function setRoutingCityList(?array $routingCityList): TravelContext
+    public function setRoutingCityList(?array $routingCityList): self
     {
         $this->routingCityList = $routingCityList;
 
         return $this;
     }
 
-    /**
-     * @return int|null
-     */
     public function getNumberOfAirlineCarriers(): ?int
     {
         return $this->numberOfAirlineCarriers;
     }
 
-    /**
-     * @param int|null $numberOfAirlineCarriers
-     *
-     * @return TravelContext
-     */
-    public function setNumberOfAirlineCarriers(?int $numberOfAirlineCarriers
-    ): TravelContext {
+    public function setNumberOfAirlineCarriers(
+        ?int $numberOfAirlineCarriers
+    ): self {
         $this->numberOfAirlineCarriers = $numberOfAirlineCarriers;
 
         return $this;
     }
 
-    /**
-     * @return array|null
-     */
     public function getAirlineCarrierList(): ?array
     {
         return $this->airlineCarrierList;
     }
 
-    /**
-     * @param array|null $airlineCarrierList
-     *
-     * @return TravelContext
-     */
-    public function setAirlineCarrierList(?array $airlineCarrierList
-    ): TravelContext {
+    public function setAirlineCarrierList(
+        ?array $airlineCarrierList
+    ): self {
         $this->airlineCarrierList = $airlineCarrierList;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getFareBasis(): ?string
     {
         return $this->fareBasis;
     }
 
-    /**
-     * @param string|null $fareBasis
-     *
-     * @return TravelContext
-     */
-    public function setFareBasis(?string $fareBasis): TravelContext
+    public function setFareBasis(?string $fareBasis): self
     {
         $this->fareBasis = $fareBasis;
 
         return $this;
     }
 
-    /**
-     * @return int|null
-     */
     public function getNumberOfPassengers(): ?int
     {
         return $this->numberOfPassengers;
     }
 
-    /**
-     * @param int|null $numberOfPassengers
-     *
-     * @return TravelContext
-     */
-    public function setNumberOfPassengers(?int $numberOfPassengers
-    ): TravelContext {
+    public function setNumberOfPassengers(
+        ?int $numberOfPassengers
+    ): self {
         $this->numberOfPassengers = $numberOfPassengers;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getDestinationAirport(): ?string
     {
         return $this->destinationAirport;
     }
 
-    /**
-     * @param string|null $destinationAirport
-     *
-     * @return TravelContext
-     */
-    public function setDestinationAirport(?string $destinationAirport
-    ): TravelContext {
+    public function setDestinationAirport(
+        ?string $destinationAirport
+    ): self {
         $this->destinationAirport = $destinationAirport;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getReservationCode(): ?string
     {
         return $this->reservationCode;
     }
 
-    /**
-     * @param string|null $reservationCode
-     *
-     * @return TravelContext
-     */
-    public function setReservationCode(?string $reservationCode): TravelContext
+    public function setReservationCode(?string $reservationCode): self
     {
         $this->reservationCode = $reservationCode;
 
         return $this;
     }
-    
 }

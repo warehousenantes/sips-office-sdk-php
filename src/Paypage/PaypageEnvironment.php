@@ -1,34 +1,33 @@
 <?php
 
+declare(strict_types=1);
 
 namespace Worldline\Sips\Paypage;
-
 
 use Exception;
 use Worldline\Sips\Common\SipsEnvironment;
 
 class PaypageEnvironment extends SipsEnvironment
 {
-    private $possibleEnvironments = [
-        "SIMU" => "https://payment-webinit.simu.sips-atos.com/",
-        "TEST" => "https://payment-webinit.test.sips-atos.com/",
-        "PROD" => "https://payment-webinit.sips-atos.com/",
+    protected array $possibleEnvironments = [
+        'SIMU' => 'https://payment-webinit.simu.sips-atos.com/',
+        'TEST' => 'https://payment-webinit.test.sips-atos.com/',
+        'PROD' => 'https://payment-webinit.sips-atos.com/',
     ];
+
     protected $environment;
 
     /**
      * PaypageEnvironment constructor.
-     * @param string $environment
+     *
      * @throws \Exception
      */
     public function __construct(string $environment)
     {
-        if (key_exists(strtoupper($environment), $this->possibleEnvironments)) {
+        if (\array_key_exists(mb_strtoupper($environment), $this->possibleEnvironments)) {
             $this->environment = $this->possibleEnvironments[$environment];
         } else {
-            throw new Exception("Invalid environment. Choose between SIMU, TEST or PROD");
+            throw new Exception('Invalid environment. Choose between SIMU, TEST or PROD');
         }
     }
-
-
 }

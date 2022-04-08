@@ -1,241 +1,147 @@
 <?php
 
+declare(strict_types=1);
 
 namespace Worldline\Sips\Office\SipsMessages\Checkout;
-
 
 use Worldline\Sips\Common\SipsMessages\SipsMessage;
 
 /**
- * Class CardCheckEnrollmentResponse
- * @package Worldline\Sips\Common\SipsMessages\Checkout
+ * Class CardCheckEnrollmentResponse.
  */
 class CardCheckEnrollmentResponse extends SipsMessage
 {
-     /**
-     * @var null|string
-     */
-    private $redirectionUrl;
-    
-     /**
-     * @var null|string
-     */
-    private $errorFieldName;
-    
-     /**
-     * @var null|string
-     */
-    private $paReqMessage;
-    
-     /**
-     * @var null|string
-     */
-    private $redirectionData;
-    
-     /**
-     * @var null|string
-     */
-    private $redirectionStatusCode;
-    
-     /**
-     * @var null|string
-     */
-    private $messageVersion;
-    
-     /**
-     * @var null|string
-     */
-    private $seal;
-    
-     /**
-     * @var null|string
-     */
-    private $paymentMeanBrandSelectionStatus;
-    
-     /**
-     * @var null|string
-     */
-    private $responseCode;
+    private ?string $redirectionUrl = null;
 
-    /**
-     * @return string|null
-     */
+    private ?string $errorFieldName = null;
+
+    private ?string $paReqMessage = null;
+
+    private ?string $redirectionData = null;
+
+    private ?string $redirectionStatusCode = null;
+
+    private ?string $messageVersion = null;
+
+    private ?string $seal = null;
+
+    private ?string $paymentMeanBrandSelectionStatus = null;
+
+    private ?string $responseCode = null;
+
     public function getRedirectionUrl(): ?string
     {
         return $this->redirectionUrl;
     }
 
-    /**
-     * @param string|null $redirectionUrl
-     *
-     * @return CardCheckEnrollmentResponse
-     */
-    public function setRedirectionUrl(?string $redirectionUrl
-    ): CardCheckEnrollmentResponse {
+    public function setRedirectionUrl(
+        ?string $redirectionUrl
+    ): self {
         $this->redirectionUrl = $redirectionUrl;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getErrorFieldName(): ?string
     {
         return $this->errorFieldName;
     }
 
-    /**
-     * @param string|null $errorFieldName
-     *
-     * @return CardCheckEnrollmentResponse
-     */
-    public function setErrorFieldName(?string $errorFieldName
-    ): CardCheckEnrollmentResponse {
+    public function setErrorFieldName(
+        ?string $errorFieldName
+    ): self {
         $this->errorFieldName = $errorFieldName;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getPaReqMessage(): ?string
     {
         return $this->paReqMessage;
     }
 
-    /**
-     * @param string|null $paReqMessage
-     *
-     * @return CardCheckEnrollmentResponse
-     */
-    public function setPaReqMessage(?string $paReqMessage
-    ): CardCheckEnrollmentResponse {
+    public function setPaReqMessage(
+        ?string $paReqMessage
+    ): self {
         $this->paReqMessage = $paReqMessage;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getRedirectionData(): ?string
     {
         return $this->redirectionData;
     }
 
-    /**
-     * @param string|null $redirectionData
-     *
-     * @return CardCheckEnrollmentResponse
-     */
-    public function setRedirectionData(?string $redirectionData
-    ): CardCheckEnrollmentResponse {
+    public function setRedirectionData(
+        ?string $redirectionData
+    ): self {
         $this->redirectionData = $redirectionData;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getRedirectionStatusCode(): ?string
     {
         return $this->redirectionStatusCode;
     }
 
-    /**
-     * @param string|null $redirectionStatusCode
-     *
-     * @return CardCheckEnrollmentResponse
-     */
-    public function setRedirectionStatusCode(?string $redirectionStatusCode
-    ): CardCheckEnrollmentResponse {
+    public function setRedirectionStatusCode(
+        ?string $redirectionStatusCode
+    ): self {
         $this->redirectionStatusCode = $redirectionStatusCode;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getMessageVersion(): ?string
     {
         return $this->messageVersion;
     }
 
-    /**
-     * @param string|null $messageVersion
-     *
-     * @return CardCheckEnrollmentResponse
-     */
-    public function setMessageVersion(?string $messageVersion
-    ): CardCheckEnrollmentResponse {
+    public function setMessageVersion(
+        ?string $messageVersion
+    ): self {
         $this->messageVersion = $messageVersion;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getSeal(): ?string
     {
         return $this->seal;
     }
 
-    /**
-     * @param string|null $seal
-     *
-     * @return CardCheckEnrollmentResponse
-     */
-    public function setSeal(?string $seal): CardCheckEnrollmentResponse
+    public function setSeal(?string $seal): self
     {
         $this->seal = $seal;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getPaymentMeanBrandSelectionStatus(): ?string
     {
         return $this->paymentMeanBrandSelectionStatus;
     }
 
-    /**
-     * @param string|null $paymentMeanBrandSelectionStatus
-     *
-     * @return CardCheckEnrollmentResponse
-     */
     public function setPaymentMeanBrandSelectionStatus(
         ?string $paymentMeanBrandSelectionStatus
-    ): CardCheckEnrollmentResponse {
+    ): self {
         $this->paymentMeanBrandSelectionStatus = $paymentMeanBrandSelectionStatus;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getResponseCode(): ?string
     {
         return $this->responseCode;
     }
 
-    /**
-     * @param string|null $responseCode
-     *
-     * @return CardCheckEnrollmentResponse
-     */
-    public function setResponseCode(?string $responseCode
-    ): CardCheckEnrollmentResponse {
+    public function setResponseCode(
+        ?string $responseCode
+    ): self {
         $this->responseCode = $responseCode;
 
         return $this;
     }
-    
 }

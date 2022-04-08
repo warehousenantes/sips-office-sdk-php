@@ -1,115 +1,70 @@
 <?php
 
+declare(strict_types=1);
 
 namespace Worldline\Sips\Common\Fields;
 
-
 /**
- * Class CardAuthPolicy
- * @package Worldline\Sips\Common\Fields
+ * Class CardAuthPolicy.
  */
 class CardAuthPolicy extends Field
 {
-    /**
-     * @var null|string
-     */
-    private $checkAVS;
-    
-    /**
-     * @var null|string
-     */
-    private $ignorePostCodeCheckResult;
-    
-    /**
-     * @var null|string
-     */
-    private $ignoreAddressCheckResult;
-    
-    /**
-     * @var null|string
-     */
-    private $automaticReverse;
-    
-    /**
-     * @return string|null
-     */
+    private ?string $checkAVS = null;
+
+    private ?string $ignorePostCodeCheckResult = null;
+
+    private ?string $ignoreAddressCheckResult = null;
+
+    private ?string $automaticReverse = null;
+
     public function getCheckAVS(): ?string
     {
         return $this->checkAVS;
     }
 
-    /**
-     * @param string|null $checkAVS
-     *
-     * @return CardAuthPolicy
-     */
-    public function setCheckAVS(?string $checkAVS): CardAuthPolicy
+    public function setCheckAVS(?string $checkAVS): self
     {
         $this->checkAVS = $checkAVS;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getIgnorePostCodeCheckResult(): ?string
     {
         return $this->ignorePostCodeCheckResult;
     }
 
-    /**
-     * @param string|null $ignorePostCodeCheckResult
-     *
-     * @return CardAuthPolicy
-     */
     public function setIgnorePostCodeCheckResult(
         ?string $ignorePostCodeCheckResult
-    ): CardAuthPolicy {
+    ): self {
         $this->ignorePostCodeCheckResult = $ignorePostCodeCheckResult;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getIgnoreAddressCheckResult(): ?string
     {
         return $this->ignoreAddressCheckResult;
     }
 
-    /**
-     * @param string|null $ignoreAddressCheckResult
-     *
-     * @return CardAuthPolicy
-     */
     public function setIgnoreAddressCheckResult(
         ?string $ignoreAddressCheckResult
-    ): CardAuthPolicy {
+    ): self {
         $this->ignoreAddressCheckResult = $ignoreAddressCheckResult;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getAutomaticReverse(): ?string
     {
         return $this->automaticReverse;
     }
 
-    /**
-     * @param string|null $automaticReverse
-     *
-     * @return CardAuthPolicy
-     */
-    public function setAutomaticReverse(?string $automaticReverse
-    ): CardAuthPolicy {
+    public function setAutomaticReverse(
+        ?string $automaticReverse
+    ): self {
         $this->automaticReverse = $automaticReverse;
 
         return $this;
     }
-    
 }

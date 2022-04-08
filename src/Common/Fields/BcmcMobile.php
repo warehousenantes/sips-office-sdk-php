@@ -1,61 +1,39 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Worldline\Sips\Common\Fields;
 
 /**
- * Class BcmcMobile
- *
- * @package Worldline\Sips\Common\Fields
+ * Class BcmcMobile.
  */
 class BcmcMobile extends Field
 {
+    private ?string $defaultRedirectUrl = null;
 
-    /**
-     * @var null|string
-     */
-    private $defaultRedirectUrl;
+    private ?string $completionRedirectUrl = null;
 
-    /**
-     * @var null|string
-     */
-    private $completionRedirectUrl;
-
-    /**
-     * @return string|null
-     */
     public function getDefaultRedirectUrl(): ?string
     {
         return $this->defaultRedirectUrl;
     }
 
-    /**
-     * @param string|null $defaultRedirectUrl
-     *
-     * @return BcmcMobile
-     */
-    public function setDefaultRedirectUrl(?string $defaultRedirectUrl): BcmcMobile
+    public function setDefaultRedirectUrl(?string $defaultRedirectUrl): self
     {
         $this->defaultRedirectUrl = $defaultRedirectUrl;
+
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getCompletionRedirectUrl(): ?string
     {
         return $this->completionRedirectUrl;
     }
 
-    /**
-     * @param string|null $completionRedirectUrl
-     *
-     * @return BcmcMobile
-     */
-    public function setCompletionRedirectUrl(?string $completionRedirectUrl): BcmcMobile
+    public function setCompletionRedirectUrl(?string $completionRedirectUrl): self
     {
         $this->completionRedirectUrl = $completionRedirectUrl;
+
         return $this;
     }
-
 }

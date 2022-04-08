@@ -1,238 +1,144 @@
 <?php
 
+declare(strict_types=1);
 
 namespace Worldline\Sips\Office\SipsMessages\Wallet;
-
 
 use Worldline\Sips\Common\SipsMessages\SipsMessage;
 
 /**
- * Class GetPaymentMeanData
- * @package Worldline\Sips\Office\SipsMessages\Wallet
+ * Class GetPaymentMeanData.
  */
 class GetPaymentMeanData extends SipsMessage
 {
-    /**
-     * @var string
-     */
-    private $serviceUrl;
-    
-    /**
-     * @var null|int
-     */
-    private $keyVersion;
-    
-    /**
-     * @var null|string
-     */
-    private $merchantId;
-    
-    /**
-     * @var null|string
-     */
-    private $interfaceVersion;
-    
-    /**
-     * @var null|string
-     */
-    private $intermediateServiceProviderId;
-    
-    /**
-     * @var null|string
-     */
-    private $merchantWalletId;
-    
-    /**
-     * @var null|string
-     */
-    private $paymentMeanId;
-    
-    /**
-     * @var null|string
-     */
-    private $seal;
-    
-    /**
-     * @var null|string
-     */
-    private $sealAlgorithm;
+    private string $serviceUrl;
+
+    private ?int $keyVersion = null;
+
+    private ?string $merchantId = null;
+
+    private ?string $interfaceVersion = null;
+
+    private ?string $intermediateServiceProviderId = null;
+
+    private ?string $merchantWalletId = null;
+
+    private ?string $paymentMeanId = null;
+
+    private ?string $seal = null;
+
+    private ?string $sealAlgorithm = null;
 
     /**
      * GetPaymentMean constructor.
      */
     public function __construct()
     {
-        $this->serviceUrl = "rs-services/v2/wallet/getPaymentMeanData";
-        $this->setInterfaceVersion("WR_WS_2.27");
+        $this->serviceUrl = 'rs-services/v2/wallet/getPaymentMeanData';
+        $this->setInterfaceVersion('WR_WS_2.27');
     }
 
-    /**
-     * @return string
-     */
     public function getServiceUrl(): string
     {
         return $this->serviceUrl;
     }
 
-    /**
-     * @return int|null
-     */
     public function getKeyVersion(): ?int
     {
         return $this->keyVersion;
     }
 
-    /**
-     * @param int|null $keyVersion
-     *
-     * @return GetPaymentMeanData
-     */
-    public function setKeyVersion(?int $keyVersion): GetPaymentMeanData
+    public function setKeyVersion(?int $keyVersion): self
     {
         $this->keyVersion = $keyVersion;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getMerchantId(): ?string
     {
         return $this->merchantId;
     }
 
-    /**
-     * @param string|null $merchantId
-     *
-     * @return GetPaymentMeanData
-     */
-    public function setMerchantId(?string $merchantId): GetPaymentMeanData
+    public function setMerchantId(?string $merchantId): self
     {
         $this->merchantId = $merchantId;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getInterfaceVersion(): ?string
     {
         return $this->interfaceVersion;
     }
 
-    /**
-     * @param string|null $interfaceVersion
-     *
-     * @return GetPaymentMeanData
-     */
-    public function setInterfaceVersion(?string $interfaceVersion
-    ): GetPaymentMeanData {
+    public function setInterfaceVersion(
+        ?string $interfaceVersion
+    ): self {
         $this->interfaceVersion = $interfaceVersion;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getIntermediateServiceProviderId(): ?string
     {
         return $this->intermediateServiceProviderId;
     }
 
-    /**
-     * @param string|null $intermediateServiceProviderId
-     *
-     * @return GetPaymentMeanData
-     */
     public function setIntermediateServiceProviderId(
         ?string $intermediateServiceProviderId
-    ): GetPaymentMeanData {
+    ): self {
         $this->intermediateServiceProviderId = $intermediateServiceProviderId;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getMerchantWalletId(): ?string
     {
         return $this->merchantWalletId;
     }
 
-    /**
-     * @param string|null $merchantWalletId
-     *
-     * @return GetPaymentMeanData
-     */
-    public function setMerchantWalletId(?string $merchantWalletId
-    ): GetPaymentMeanData {
+    public function setMerchantWalletId(
+        ?string $merchantWalletId
+    ): self {
         $this->merchantWalletId = $merchantWalletId;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getPaymentMeanId(): ?string
     {
         return $this->paymentMeanId;
     }
 
-    /**
-     * @param string|null $paymentMeanId
-     *
-     * @return GetPaymentMeanData
-     */
-    public function setPaymentMeanId(?string $paymentMeanId): GetPaymentMeanData
+    public function setPaymentMeanId(?string $paymentMeanId): self
     {
         $this->paymentMeanId = $paymentMeanId;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getSeal(): ?string
     {
         return $this->seal;
     }
 
-    /**
-     * @param string|null $seal
-     *
-     * @return GetPaymentMeanData
-     */
-    public function setSeal(?string $seal): GetPaymentMeanData
+    public function setSeal(?string $seal): self
     {
         $this->seal = $seal;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getSealAlgorithm(): ?string
     {
         return $this->sealAlgorithm;
     }
 
-    /**
-     * @param string|null $sealAlgorithm
-     *
-     * @return GetPaymentMeanData
-     */
-    public function setSealAlgorithm(?string $sealAlgorithm): GetPaymentMeanData
+    public function setSealAlgorithm(?string $sealAlgorithm): self
     {
         $this->sealAlgorithm = $sealAlgorithm;
 
         return $this;
     }
-        
 }

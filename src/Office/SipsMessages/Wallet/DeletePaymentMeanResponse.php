@@ -1,115 +1,72 @@
 <?php
 
+declare(strict_types=1);
 
 namespace Worldline\Sips\Office\SipsMessages\Wallet;
-
 
 use Worldline\Sips\Common\SipsMessages\SipsMessage;
 
 /**
- * Class DeletePaymentMeanResponse
- * @package Worldline\Sips\Office\SipsMessages\Wallet
+ * Class DeletePaymentMeanResponse.
  */
 class DeletePaymentMeanResponse extends SipsMessage
 {
-    /**
-     * @var null|string
-     */
-    private $walletActionDateTime;
+    private ?string $walletActionDateTime = null;
 
-    /**
-     * @var null|string
-     */
-    private $walletResponseCode;
+    private ?string $walletResponseCode = null;
 
-    /**
-     * @var null|string
-     */
-    private $errorFieldName;
+    private ?string $errorFieldName = null;
 
-    /**
-     * @var null|string
-     */
-    private $seal;
+    private ?string $seal = null;
 
-    /**
-     * @return string|null
-     */
     public function getWalletActionDateTime(): ?string
     {
         return $this->walletActionDateTime;
     }
 
-    /**
-     * @param string|null $walletActionDateTime
-     *
-     * @return DeletePaymentMeanResponse
-     */
-    public function setWalletActionDateTime(?string $walletActionDateTime
-    ): DeletePaymentMeanResponse {
+    public function setWalletActionDateTime(
+        ?string $walletActionDateTime
+    ): self {
         $this->walletActionDateTime = $walletActionDateTime;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getWalletResponseCode(): ?string
     {
         return $this->walletResponseCode;
     }
 
-    /**
-     * @param string|null $walletResponseCode
-     *
-     * @return DeletePaymentMeanResponse
-     */
-    public function setWalletResponseCode(?string $walletResponseCode
-    ): DeletePaymentMeanResponse {
+    public function setWalletResponseCode(
+        ?string $walletResponseCode
+    ): self {
         $this->walletResponseCode = $walletResponseCode;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getErrorFieldName(): ?string
     {
         return $this->errorFieldName;
     }
 
-    /**
-     * @param string|null $errorFieldName
-     *
-     * @return DeletePaymentMeanResponse
-     */
-    public function setErrorFieldName(?string $errorFieldName
-    ): DeletePaymentMeanResponse {
+    public function setErrorFieldName(
+        ?string $errorFieldName
+    ): self {
         $this->errorFieldName = $errorFieldName;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getSeal(): ?string
     {
         return $this->seal;
     }
 
-    /**
-     * @param string|null $seal
-     *
-     * @return DeletePaymentMeanResponse
-     */
-    public function setSeal(?string $seal): DeletePaymentMeanResponse
+    public function setSeal(?string $seal): self
     {
         $this->seal = $seal;
 
         return $this;
     }
-    
 }

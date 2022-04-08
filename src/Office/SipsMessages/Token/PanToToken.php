@@ -1,238 +1,142 @@
 <?php
 
-namespace Worldline\Sips\Office\SipsMessages\Token;
+declare(strict_types=1);
 
+namespace Worldline\Sips\Office\SipsMessages\Token;
 
 use Worldline\Sips\Common\SipsMessages\SipsMessage;
 
 /**
- * Class PanToToken
- *
- * @package Worldline\Sips\Office\SipsMessages\Token
+ * Class PanToToken.
  */
 class PanToToken extends SipsMessage
 {
-    /**
-     * @var string
-     */
-    private $serviceUrl;
-    
-    /**
-     * @var null|string
-     */
-    private $merchantId;
-    
-    /**
-     * @var null|string
-     */
-    private $interfaceVersion;
-    
-    /**
-     * @var null|string
-     */
-    private $userId;
-    
-    /**
-     * @var null|array
-     */
-    private $panDataList;
-    
-    /**
-     * @var null|string
-     */
-    private $intermediateServiceProviderId;
-    
-    /**
-     * @var null|string
-     */
-    private $seal;
-    
-    /**
-     * @var null|string
-     */
-    private $keyVersion;
-    
-    /**
-     * @var null|string
-     */
-    private $sealAlgorithm;
+    private string $serviceUrl;
+
+    private ?string $merchantId = null;
+
+    private ?string $interfaceVersion = null;
+
+    private ?string $userId = null;
+
+    private ?array $panDataList = null;
+
+    private ?string $intermediateServiceProviderId = null;
+
+    private ?string $seal = null;
+
+    private ?string $keyVersion = null;
+
+    private ?string $sealAlgorithm = null;
 
     /**
      * PanToToken constructor.
      */
     public function __construct()
     {
-        $this->serviceUrl = "rs-services/v2/token/panToToken";
-        $this->setInterfaceVersion("TR_WS_2.27");
+        $this->serviceUrl = 'rs-services/v2/token/panToToken';
+        $this->setInterfaceVersion('TR_WS_2.27');
     }
 
-    /**
-     * @return string
-     */
     public function getServiceUrl(): string
     {
         return $this->serviceUrl;
     }
 
-    /**
-     * @return string|null
-     */
     public function getMerchantId(): ?string
     {
         return $this->merchantId;
     }
 
-    /**
-     * @param string|null $merchantId
-     *
-     * @return PanToToken
-     */
-    public function setMerchantId(?string $merchantId): PanToToken
+    public function setMerchantId(?string $merchantId): self
     {
         $this->merchantId = $merchantId;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getInterfaceVersion(): ?string
     {
         return $this->interfaceVersion;
     }
 
-    /**
-     * @param string|null $interfaceVersion
-     *
-     * @return PanToToken
-     */
-    public function setInterfaceVersion(?string $interfaceVersion): PanToToken
+    public function setInterfaceVersion(?string $interfaceVersion): self
     {
         $this->interfaceVersion = $interfaceVersion;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getUserId(): ?string
     {
         return $this->userId;
     }
 
-    /**
-     * @param string|null $userId
-     *
-     * @return PanToToken
-     */
-    public function setUserId(?string $userId): PanToToken
+    public function setUserId(?string $userId): self
     {
         $this->userId = $userId;
 
         return $this;
     }
 
-    /**
-     * @return array|null
-     */
     public function getPanDataList(): ?array
     {
         return $this->panDataList;
     }
 
-    /**
-     * @param array|null $panDataList
-     *
-     * @return PanToToken
-     */
-    public function setPanDataList(?array $panDataList): PanToToken
+    public function setPanDataList(?array $panDataList): self
     {
         $this->panDataList = $panDataList;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getIntermediateServiceProviderId(): ?string
     {
         return $this->intermediateServiceProviderId;
     }
 
-    /**
-     * @param string|null $intermediateServiceProviderId
-     *
-     * @return PanToToken
-     */
     public function setIntermediateServiceProviderId(
         ?string $intermediateServiceProviderId
-    ): PanToToken {
+    ): self {
         $this->intermediateServiceProviderId = $intermediateServiceProviderId;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getSeal(): ?string
     {
         return $this->seal;
     }
 
-    /**
-     * @param string|null $seal
-     *
-     * @return PanToToken
-     */
-    public function setSeal(?string $seal): PanToToken
+    public function setSeal(?string $seal): self
     {
         $this->seal = $seal;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getKeyVersion(): ?string
     {
         return $this->keyVersion;
     }
 
-    /**
-     * @param string|null $keyVersion
-     *
-     * @return PanToToken
-     */
-    public function setKeyVersion(?string $keyVersion): PanToToken
+    public function setKeyVersion(?string $keyVersion): self
     {
         $this->keyVersion = $keyVersion;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getSealAlgorithm(): ?string
     {
         return $this->sealAlgorithm;
     }
 
-    /**
-     * @param string|null $sealAlgorithm
-     *
-     * @return PanToToken
-     */
-    public function setSealAlgorithm(?string $sealAlgorithm): PanToToken
+    public function setSealAlgorithm(?string $sealAlgorithm): self
     {
         $this->sealAlgorithm = $sealAlgorithm;
 
         return $this;
     }
-    
 }

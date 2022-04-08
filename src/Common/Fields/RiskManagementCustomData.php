@@ -1,64 +1,41 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Worldline\Sips\Common\Fields;
 
-
 /**
- * Class RiskManagementCustomData
- * @package Worldline\Sips\Common\Fields
+ * Class RiskManagementCustomData.
  */
 class RiskManagementCustomData extends Field
 {
-    /**
-     * @var null|int
-     */
-    private $riskManagementCustomSequence;
-    
-    /**
-     * @var null|string
-     */
-    private $risktManagementCustomValue;
+    private ?int $riskManagementCustomSequence = null;
 
-    /**
-     * @return int|null
-     */
+    private ?string $risktManagementCustomValue = null;
+
     public function getRiskManagementCustomSequence(): ?int
     {
         return $this->riskManagementCustomSequence;
     }
 
-    /**
-     * @param int|null $riskManagementCustomSequence
-     *
-     * @return RiskManagementCustomData
-     */
     public function setRiskManagementCustomSequence(
         ?int $riskManagementCustomSequence
-    ): RiskManagementCustomData {
+    ): self {
         $this->riskManagementCustomSequence = $riskManagementCustomSequence;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getRisktManagementCustomValue(): ?string
     {
         return $this->risktManagementCustomValue;
     }
 
-    /**
-     * @param string|null $risktManagementCustomValue
-     *
-     * @return RiskManagementCustomData
-     */
     public function setRisktManagementCustomValue(
         ?string $risktManagementCustomValue
-    ): RiskManagementCustomData {
+    ): self {
         $this->risktManagementCustomValue = $risktManagementCustomValue;
 
         return $this;
     }
-
 }

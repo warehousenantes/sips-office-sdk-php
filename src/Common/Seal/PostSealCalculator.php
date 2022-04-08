@@ -1,28 +1,18 @@
 <?php
 
+declare(strict_types=1);
 
 namespace Worldline\Sips\Common\Seal;
 
-
 class PostSealCalculator
 {
-    /**
-     * @param string $data
-     * @param string $secretKey
-     * @return string
-     */
-    public function calculateSeal(string $data, string $secretKey) : string
+    public function calculateSeal(string $data, string $secretKey): string
     {
-        $seal = hash("sha256", $data . $secretKey);
-        return $seal;
+        return hash('sha256', $data.$secretKey);
     }
 
-    public function isCorrectSeal(string $seal, string $data, string $secretKey) : bool
+    public function isCorrectSeal(string $seal, string $data, string $secretKey): bool
     {
-        if ($this->calculateSeal($data, $secretKey) == $seal) {
-            return true;
-        } else {
-            return false;
-        }
+        return $this->calculateSeal($data, $secretKey) === $seal;
     }
 }

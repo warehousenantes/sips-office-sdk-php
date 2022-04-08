@@ -1,241 +1,146 @@
 <?php
 
+declare(strict_types=1);
 
 namespace Worldline\Sips\Paypage\SipsMessages;
-
 
 use Worldline\Sips\Common\SipsMessages\SipsMessage;
 
 /**
- * Class PaymentInitResponse
- * @package Worldline\Sips\Paypage\SipsMessages
+ * Class PaymentInitResponse.
  */
 class PaymentInitResponse extends SipsMessage
 {
-    /**
-     * @var null|string
-     */
-    private $errorFieldName;
+    private ?string $errorFieldName = null;
 
-    /**
-     * @var null|string
-     */
-    private $redirectionData;
+    private ?string $redirectionData = null;
 
-    /**
-     * @var null|string
-     */
-    private $redirectionStatusCode;
+    private ?string $redirectionStatusCode = null;
 
-    /**
-     * @var null|string
-     */
-    private $redirectionStatusMessage;
+    private ?string $redirectionStatusMessage = null;
 
-    /**
-     * @var null|string
-     */
-    private $redirectionUrl;
+    private ?string $redirectionUrl = null;
 
-    /**
-     * @var null|string
-     */
-    private $redirectionVersion;
+    private ?string $redirectionVersion = null;
 
-    /**
-     * @var null|string
-     */
-    private $responseCode;
+    private ?string $responseCode = null;
 
-    /**
-     * @var null|string
-     */
-    private $seal;
+    private ?string $seal = null;
 
-    /**
-     * @var null|string
-     */
-    private $responseEncoding;
+    private ?string $responseEncoding = null;
 
-    /**
-     * @return string|null
-     */
     public function getErrorFieldName(): ?string
     {
         return $this->errorFieldName;
     }
 
-    /**
-     * @param string|null $errorFieldName
-     *
-     * @return PaymentInitResponse
-     */
-    public function setErrorFieldName(?string $errorFieldName
-    ): PaymentInitResponse {
+    public function setErrorFieldName(
+        ?string $errorFieldName
+    ): self {
         $this->errorFieldName = $errorFieldName;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getRedirectionData(): ?string
     {
         return $this->redirectionData;
     }
 
-    /**
-     * @param string|null $redirectionData
-     *
-     * @return PaymentInitResponse
-     */
-    public function setRedirectionData(?string $redirectionData
-    ): PaymentInitResponse {
+    public function setRedirectionData(
+        ?string $redirectionData
+    ): self {
         $this->redirectionData = $redirectionData;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getRedirectionStatusCode(): ?string
     {
         return $this->redirectionStatusCode;
     }
 
-    /**
-     * @param string|null $redirectionStatusCode
-     *
-     * @return PaymentInitResponse
-     */
-    public function setRedirectionStatusCode(?string $redirectionStatusCode
-    ): PaymentInitResponse {
+    public function setRedirectionStatusCode(
+        ?string $redirectionStatusCode
+    ): self {
         $this->redirectionStatusCode = $redirectionStatusCode;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getRedirectionStatusMessage(): ?string
     {
         return $this->redirectionStatusMessage;
     }
 
-    /**
-     * @param string|null $redirectionStatusMessage
-     *
-     * @return PaymentInitResponse
-     */
     public function setRedirectionStatusMessage(
         ?string $redirectionStatusMessage
-    ): PaymentInitResponse {
+    ): self {
         $this->redirectionStatusMessage = $redirectionStatusMessage;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getRedirectionUrl(): ?string
     {
         return $this->redirectionUrl;
     }
 
-    /**
-     * @param string|null $redirectionUrl
-     *
-     * @return PaymentInitResponse
-     */
-    public function setRedirectionUrl(?string $redirectionUrl
-    ): PaymentInitResponse {
+    public function setRedirectionUrl(
+        ?string $redirectionUrl
+    ): self {
         $this->redirectionUrl = $redirectionUrl;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getRedirectionVersion(): ?string
     {
         return $this->redirectionVersion;
     }
 
-    /**
-     * @param string|null $redirectionVersion
-     *
-     * @return PaymentInitResponse
-     */
-    public function setRedirectionVersion(?string $redirectionVersion
-    ): PaymentInitResponse {
+    public function setRedirectionVersion(
+        ?string $redirectionVersion
+    ): self {
         $this->redirectionVersion = $redirectionVersion;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getResponseCode(): ?string
     {
         return $this->responseCode;
     }
 
-    /**
-     * @param string|null $responseCode
-     *
-     * @return PaymentInitResponse
-     */
-    public function setResponseCode(?string $responseCode): PaymentInitResponse
+    public function setResponseCode(?string $responseCode): self
     {
         $this->responseCode = $responseCode;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getSeal(): ?string
     {
         return $this->seal;
     }
 
-    /**
-     * @param string|null $seal
-     *
-     * @return PaymentInitResponse
-     */
-    public function setSeal(?string $seal): PaymentInitResponse
+    public function setSeal(?string $seal): self
     {
         $this->seal = $seal;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getResponseEncoding(): ?string
     {
         return $this->responseEncoding;
     }
 
-    /**
-     * @param string|null $responseEncoding
-     *
-     * @return PaymentInitResponse
-     */
-    public function setResponseEncoding(?string $responseEncoding
-    ): PaymentInitResponse {
+    public function setResponseEncoding(
+        ?string $responseEncoding
+    ): self {
         $this->responseEncoding = $responseEncoding;
 
         return $this;
     }
-
 }

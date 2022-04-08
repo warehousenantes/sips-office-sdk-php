@@ -1,116 +1,69 @@
 <?php
 
+declare(strict_types=1);
 
 namespace Worldline\Sips\Common\Fields;
 
-
 /**
- * Class OrderContext
- *
- * @package Worldline\Sips\Common\Fields
+ * Class OrderContext.
  */
 class OrderContext extends Field
 {
+    private ?string $customerHostName = null;
 
-    /**
-     * @var null|string
-     */
-    private $customerHostName;
+    private ?string $customerBrowserType = null;
 
-    /**
-     * @var null|string
-     */
-    private $customerBrowserType;
+    private ?string $customerANI = null;
 
-    /**
-     * @var null|string
-     */
-    private $customerANI;
+    private ?string $customerANIInformationIdentifier = null;
 
-    /**
-     * @var null|string
-     */
-    private $customerANIInformationIdentifier;
-
-    /**
-     * @return string|null
-     */
     public function getCustomerHostName(): ?string
     {
         return $this->customerHostName;
     }
 
-    /**
-     * @param string|null $customerHostName
-     *
-     * @return OrderContext
-     */
-    public function setCustomerHostName(?string $customerHostName): OrderContext
+    public function setCustomerHostName(?string $customerHostName): self
     {
         $this->customerHostName = $customerHostName;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getCustomerBrowserType(): ?string
     {
         return $this->customerBrowserType;
     }
 
-    /**
-     * @param string|null $customerBrowserType
-     *
-     * @return OrderContext
-     */
-    public function setCustomerBrowserType(?string $customerBrowserType
-    ): OrderContext {
+    public function setCustomerBrowserType(
+        ?string $customerBrowserType
+    ): self {
         $this->customerBrowserType = $customerBrowserType;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getCustomerANI(): ?string
     {
         return $this->customerANI;
     }
 
-    /**
-     * @param string|null $customerANI
-     *
-     * @return OrderContext
-     */
-    public function setCustomerANI(?string $customerANI): OrderContext
+    public function setCustomerANI(?string $customerANI): self
     {
         $this->customerANI = $customerANI;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getCustomerANIInformationIdentifier(): ?string
     {
         return $this->customerANIInformationIdentifier;
     }
 
-    /**
-     * @param string|null $customerANIInformationIdentifier
-     *
-     * @return OrderContext
-     */
     public function setCustomerANIInformationIdentifier(
         ?string $customerANIInformationIdentifier
-    ): OrderContext {
+    ): self {
         $this->customerANIInformationIdentifier = $customerANIInformationIdentifier;
 
         return $this;
     }
-    
 }

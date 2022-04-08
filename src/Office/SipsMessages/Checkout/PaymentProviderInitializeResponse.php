@@ -1,293 +1,177 @@
 <?php
 
+declare(strict_types=1);
 
 namespace Worldline\Sips\Office\SipsMessages\Checkout;
-
 
 use Worldline\Sips\Common\SipsMessages\SipsMessage;
 
 /**
- * Class PaymentProviderInitializeResponse
- * @package Worldline\Sips\Common\SipsMessages\Checkout
+ * Class PaymentProviderInitializeResponse.
  */
 class PaymentProviderInitializeResponse extends SipsMessage
 {
-    /**
-     * @var null|string
-     */
-    private $responseCode;
+    private ?string $responseCode = null;
 
-    /**
-     * @var null|string
-     */
-    private $redirectionUrl;
+    private ?string $redirectionUrl = null;
 
-    /**
-     * @var null|string
-     */
-    private $redirectionData;
+    private ?string $redirectionData = null;
 
-    /**
-     * @var null|string
-     */
-    private $messageVersion;
+    private ?string $messageVersion = null;
 
-    /**
-     * @var null|string
-     */
-    private $paymentProviderSessionId;
+    private ?string $paymentProviderSessionId = null;
 
-    /**
-     * @var null|string
-     */
-    private $outerRedirectionUrl;
+    private ?string $outerRedirectionUrl = null;
 
-    /**
-     * @var null|string
-     */
-    private $acquirerNativeResponseCode;
+    private ?string $acquirerNativeResponseCode = null;
 
-    /**
-     * @var null|string
-     */
-    private $acquirerResponseIdentifier;
+    private ?string $acquirerResponseIdentifier = null;
 
-    /**
-     * @var null|string
-     */
-    private $acquirerResponseMessage;
+    private ?string $acquirerResponseMessage = null;
 
-    /**
-     * @var null|string
-     */
-    private $seal;
+    private ?string $seal = null;
 
-    /**
-     * @var null|string
-     */
-    private $errorFieldName;
+    private ?string $errorFieldName = null;
 
-    /**
-     * @return string|null
-     */
     public function getResponseCode(): ?string
     {
         return $this->responseCode;
     }
 
-    /**
-     * @param string|null $responseCode
-     *
-     * @return PaymentProviderInitializeResponse
-     */
-    public function setResponseCode(?string $responseCode
-    ): PaymentProviderInitializeResponse {
+    public function setResponseCode(
+        ?string $responseCode
+    ): self {
         $this->responseCode = $responseCode;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getRedirectionUrl(): ?string
     {
         return $this->redirectionUrl;
     }
 
-    /**
-     * @param string|null $redirectionUrl
-     *
-     * @return PaymentProviderInitializeResponse
-     */
-    public function setRedirectionUrl(?string $redirectionUrl
-    ): PaymentProviderInitializeResponse {
+    public function setRedirectionUrl(
+        ?string $redirectionUrl
+    ): self {
         $this->redirectionUrl = $redirectionUrl;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getRedirectionData(): ?string
     {
         return $this->redirectionData;
     }
 
-    /**
-     * @param string|null $redirectionData
-     *
-     * @return PaymentProviderInitializeResponse
-     */
-    public function setRedirectionData(?string $redirectionData
-    ): PaymentProviderInitializeResponse {
+    public function setRedirectionData(
+        ?string $redirectionData
+    ): self {
         $this->redirectionData = $redirectionData;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getMessageVersion(): ?string
     {
         return $this->messageVersion;
     }
 
-    /**
-     * @param string|null $messageVersion
-     *
-     * @return PaymentProviderInitializeResponse
-     */
-    public function setMessageVersion(?string $messageVersion
-    ): PaymentProviderInitializeResponse {
+    public function setMessageVersion(
+        ?string $messageVersion
+    ): self {
         $this->messageVersion = $messageVersion;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getPaymentProviderSessionId(): ?string
     {
         return $this->paymentProviderSessionId;
     }
 
-    /**
-     * @param string|null $paymentProviderSessionId
-     *
-     * @return PaymentProviderInitializeResponse
-     */
     public function setPaymentProviderSessionId(
         ?string $paymentProviderSessionId
-    ): PaymentProviderInitializeResponse {
+    ): self {
         $this->paymentProviderSessionId = $paymentProviderSessionId;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getOuterRedirectionUrl(): ?string
     {
         return $this->outerRedirectionUrl;
     }
 
-    /**
-     * @param string|null $outerRedirectionUrl
-     *
-     * @return PaymentProviderInitializeResponse
-     */
-    public function setOuterRedirectionUrl(?string $outerRedirectionUrl
-    ): PaymentProviderInitializeResponse {
+    public function setOuterRedirectionUrl(
+        ?string $outerRedirectionUrl
+    ): self {
         $this->outerRedirectionUrl = $outerRedirectionUrl;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getAcquirerNativeResponseCode(): ?string
     {
         return $this->acquirerNativeResponseCode;
     }
 
-    /**
-     * @param string|null $acquirerNativeResponseCode
-     *
-     * @return PaymentProviderInitializeResponse
-     */
     public function setAcquirerNativeResponseCode(
         ?string $acquirerNativeResponseCode
-    ): PaymentProviderInitializeResponse {
+    ): self {
         $this->acquirerNativeResponseCode = $acquirerNativeResponseCode;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getAcquirerResponseIdentifier(): ?string
     {
         return $this->acquirerResponseIdentifier;
     }
 
-    /**
-     * @param string|null $acquirerResponseIdentifier
-     *
-     * @return PaymentProviderInitializeResponse
-     */
     public function setAcquirerResponseIdentifier(
         ?string $acquirerResponseIdentifier
-    ): PaymentProviderInitializeResponse {
+    ): self {
         $this->acquirerResponseIdentifier = $acquirerResponseIdentifier;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getAcquirerResponseMessage(): ?string
     {
         return $this->acquirerResponseMessage;
     }
 
-    /**
-     * @param string|null $acquirerResponseMessage
-     *
-     * @return PaymentProviderInitializeResponse
-     */
-    public function setAcquirerResponseMessage(?string $acquirerResponseMessage
-    ): PaymentProviderInitializeResponse {
+    public function setAcquirerResponseMessage(
+        ?string $acquirerResponseMessage
+    ): self {
         $this->acquirerResponseMessage = $acquirerResponseMessage;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getSeal(): ?string
     {
         return $this->seal;
     }
 
-    /**
-     * @param string|null $seal
-     *
-     * @return PaymentProviderInitializeResponse
-     */
-    public function setSeal(?string $seal): PaymentProviderInitializeResponse
+    public function setSeal(?string $seal): self
     {
         $this->seal = $seal;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getErrorFieldName(): ?string
     {
         return $this->errorFieldName;
     }
 
-    /**
-     * @param string|null $errorFieldName
-     *
-     * @return PaymentProviderInitializeResponse
-     */
-    public function setErrorFieldName(?string $errorFieldName
-    ): PaymentProviderInitializeResponse {
+    public function setErrorFieldName(
+        ?string $errorFieldName
+    ): self {
         $this->errorFieldName = $errorFieldName;
 
         return $this;
     }
-    
 }
