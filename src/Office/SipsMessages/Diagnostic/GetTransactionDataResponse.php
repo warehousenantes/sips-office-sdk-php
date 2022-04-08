@@ -37,7 +37,7 @@ class GetTransactionDataResponse extends SipsMessage
 
     private ?string $orderId = null;
 
-    private ?string $originAmount = null;
+    private ?int $originAmount = null;
 
     private ?string $transactionDateTime = null;
 
@@ -278,14 +278,13 @@ class GetTransactionDataResponse extends SipsMessage
         return $this;
     }
 
-    public function getOriginAmount(): ?string
+    public function getOriginAmount(): ?int
     {
         return $this->originAmount;
     }
 
-    public function setOriginAmount(
-        ?string $originAmount
-    ): self {
+    public function setOriginAmount(?int $originAmount): self
+    {
         $this->originAmount = $originAmount;
 
         return $this;
