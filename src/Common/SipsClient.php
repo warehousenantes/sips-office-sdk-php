@@ -78,7 +78,7 @@ class SipsClient
         $this->serializer = new Serializer($normalizers, $encoders);
     }
 
-    public function getEnvironment(): string
+    public function getEnvironment(): SipsEnvironment
     {
         return $this->environment;
     }
