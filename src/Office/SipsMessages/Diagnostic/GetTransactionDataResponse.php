@@ -65,7 +65,7 @@ class GetTransactionDataResponse extends SipsMessage
 
     private ?string $dccStatus = null;
 
-    private ?string $remainingAmount = null;
+    private ?int $remainingAmount = null;
 
     private ?string $fromTransactionReference = null;
 
@@ -457,14 +457,13 @@ class GetTransactionDataResponse extends SipsMessage
         return $this;
     }
 
-    public function getRemainingAmount(): ?string
+    public function getRemainingAmount(): ?int
     {
         return $this->remainingAmount;
     }
 
-    public function setRemainingAmount(
-        ?string $remainingAmount
-    ): self {
+    public function setRemainingAmount(?int $remainingAmount): self
+    {
         $this->remainingAmount = $remainingAmount;
 
         return $this;
