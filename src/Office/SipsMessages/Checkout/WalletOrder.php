@@ -39,7 +39,7 @@ class WalletOrder extends SipsMessage
 
     private ?string $intermediateServiceProviderId = null;
 
-    private ?int $keyVersion = null;
+    private ?string $keyVersion = null;
 
     private ?string $merchantId = null;
 
@@ -240,7 +240,7 @@ class WalletOrder extends SipsMessage
         return $this->keyVersion;
     }
 
-    public function setKeyVersion(int $keyVersion): self
+    public function setKeyVersion(string $keyVersion): self
     {
         $this->keyVersion = $keyVersion;
 

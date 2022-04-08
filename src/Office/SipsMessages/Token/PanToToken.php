@@ -25,7 +25,7 @@ class PanToToken extends SipsMessage
 
     private ?string $seal = null;
 
-    private ?int $keyVersion = null;
+    private ?string $keyVersion = null;
 
     private ?string $sealAlgorithm = null;
 
@@ -116,12 +116,12 @@ class PanToToken extends SipsMessage
         return $this;
     }
 
-    public function getKeyVersion(): ?int
+    public function getKeyVersion(): ?string
     {
         return $this->keyVersion;
     }
 
-    public function setKeyVersion(?int $keyVersion): self
+    public function setKeyVersion(?string $keyVersion): self
     {
         $this->keyVersion = $keyVersion;
 

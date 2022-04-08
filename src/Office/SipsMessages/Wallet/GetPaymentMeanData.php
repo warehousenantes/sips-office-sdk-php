@@ -13,7 +13,7 @@ class GetPaymentMeanData extends SipsMessage
 {
     private string $serviceUrl;
 
-    private ?int $keyVersion = null;
+    private ?string $keyVersion = null;
 
     private ?string $merchantId = null;
 
@@ -43,12 +43,12 @@ class GetPaymentMeanData extends SipsMessage
         return $this->serviceUrl;
     }
 
-    public function getKeyVersion(): ?int
+    public function getKeyVersion(): ?string
     {
         return $this->keyVersion;
     }
 
-    public function setKeyVersion(?int $keyVersion): self
+    public function setKeyVersion(?string $keyVersion): self
     {
         $this->keyVersion = $keyVersion;
 

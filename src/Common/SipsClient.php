@@ -50,7 +50,7 @@ class SipsClient
 
     private string $secretKey;
 
-    private int $keyVersion;
+    private string $keyVersion;
 
     private ?string $lastRequestAsJson = null;
 
@@ -65,7 +65,7 @@ class SipsClient
         SipsEnvironment $environment,
         string $merchantId,
         string $secretKey,
-        int $keyVersion
+        string $keyVersion
     ) {
         $this->setEnvironment($environment);
         $this->setMerchantId($merchantId);
@@ -108,12 +108,12 @@ class SipsClient
         $this->merchantId = $merchantId;
     }
 
-    public function getKeyVersion(): int
+    public function getKeyVersion(): string
     {
         return $this->keyVersion;
     }
 
-    public function setKeyVersion(int $keyVersion): void
+    public function setKeyVersion(string $keyVersion): void
     {
         $this->keyVersion = $keyVersion;
     }
